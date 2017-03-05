@@ -11,7 +11,8 @@ var git = require('gulp-git');
 /**
  * Project path
  */
-var basedir = '..';
+var basedir = '.';
+var sharedDestinationDir = basedir + '/src/client/src/app/shared';
 
 /**
  * Shared library
@@ -40,7 +41,7 @@ gulp.task('shared', function() {
 
       console.log('library  '+ shared);
 
-        var dest = basedir + '/src/client/app/shared';
+        var dest = sharedDestinationDir;
           gulp.src([shared + '/**']).pipe(gulp.dest(dest));
           console.log('Shared client library copied to : ' + dest);
 
