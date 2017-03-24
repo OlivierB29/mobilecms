@@ -1,0 +1,42 @@
+<md-sidenav-container>
+
+    <!-- slide menu -->
+    <md-sidenav #sidenav class='menu-content'>
+
+        <nav>
+            <div *ngFor="let menu of menuItems" class='menu-content'>
+
+
+
+                <button routerLink="{{menu.routerLink}}" routerLinkActive="active" md-button class='slidemenu-button'>
+                     <md-icon class='slidemenu-button-icon'>{{menu.icon}}</md-icon> <span class='slidemenu-button-text'>{{menu.title}}</span>
+                </button>
+
+            </div>
+        </nav>
+    </md-sidenav>
+
+
+    <!-- container -->
+    <div class="my-content">
+
+
+<md-toolbar color="primary">
+  <span>
+      <md-icon (click)='sidenav.open()' class='top-menu-icon'>menu</md-icon>
+
+      <span class='top-menu-title'>{{i18n.title}}</span>
+</span>
+</md-toolbar>
+
+<div class='fill'>
+    <img src="public/resources/banner.jpg"  alt="" >
+</div>
+    <!-- content -->
+        <router-outlet></router-outlet>
+
+    </div>
+
+
+</md-sidenav-container>
+

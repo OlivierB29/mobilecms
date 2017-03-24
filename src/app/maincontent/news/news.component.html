@@ -1,0 +1,13 @@
+<div class='article-list'>
+
+  <h3>{{page.i18n.title}}</h3>
+  <div *ngFor="let currentItem of (page.items | orderbydesc:'date')">
+
+    <my-newsdetail-component [id]='currentItem.id'></my-newsdetail-component>
+
+  </div>
+
+
+
+</div>
+

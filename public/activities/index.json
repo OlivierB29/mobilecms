@@ -1,0 +1,38 @@
+[
+    {
+        "id": "activitya",
+        "name": "activitya",
+        "logo": "activitya.jpg",
+        "calendar": "true"
+    },
+    {
+        "id": "activityb",
+        "name": "activityb",
+        "logo": "activityb.jpg",
+        "calendar": "true"
+    },
+    {
+        "id": "activityc",
+        "name": "activityc",
+        "logo": "",
+        "calendar": "false"
+    },
+    {
+        "id": "activityd",
+        "name": "activityd",
+        "logo": "",
+        "calendar": "false"
+    },
+    {
+        "id": "activitye",
+        "name": "activitye",
+        "logo": "",
+        "calendar": "false"
+    },
+    {
+        "id": "activityf",
+        "name": "activityf",
+        "logo": "",
+        "calendar": "false"
+    }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id" : "news",
+    "routerLink" : "/news",
+    "routerLinkActive" : "active",
+    "title" : "News",
+    "order" : "1"
+  },
+  {
+    "id" : "clubs",
+    "routerLink" : "/clubs",
+    "routerLinkActive" : "active",
+    "title" : "Clubs",
+    "order" : "2"
+  },
+  {
+    "id" : "calendar",
+    "routerLink" : "/calendar",
+    "routerLinkActive" : "active",
+    "title" : "Calendar",
+    "order" : "3"
+  },
+
+  {
+    "id" : "structure",
+    "routerLink" : "/structure",
+    "routerLinkActive" : "active",
+    "title" : "Structure",
+    "order" : "4"
+  },
+
+  {
+    "id" : "documents",
+    "routerLink" : "/documents",
+    "routerLinkActive" : "active",
+    "title" : "Documents",
+    "order" : "5"
+  },
+
+  {
+      "id" : "reports",
+      "routerLink" : "/reports",
+      "routerLinkActive" : "active",
+      "title" : "Reports",
+      "order" : "6"
+    },
+  {
+    "id" : "links",
+    "routerLink" : "/links",
+    "routerLinkActive" : "active",
+    "title" : "Links",
+    "order" : "7"
+  },
+{
+  "id" : "contact",
+  "routerLink" : "/contact",
+  "routerLinkActive" : "active",
+  "title" : "Contact",
+  "order" : "8"
+}
+
+]

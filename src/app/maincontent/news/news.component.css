@@ -1,0 +1,101 @@
+
+
+
+/* liste */
+.article-list {
+  /* global border around article-list */
+  border-width: 1px 1px 1px 1px;
+  border-color: #ddd;
+  border-style: solid;
+  /* spacing between article-list and border */
+  padding: .7em 0.7em;
+}
+
+
+
+
+@media all and (max-width: 28.999999em) {
+
+
+  .mainbody {
+    width: 98%;
+    margin: 0 auto;
+  }
+
+  .maincontent {
+    width: 100%;
+  }
+
+  .articlebody {
+    width: 100%;
+  }
+
+  .feedmenu {
+    width: 100%;
+  }
+
+  .featuredmenu {
+      width: 100%;
+  }
+
+
+}
+
+@media all and (min-width: 29em) {
+    .mainbody {
+      width: 90%;
+    }
+
+    .maincontent {
+      width: 100%;
+    }
+
+    .articlebody {
+      width: 65%;
+    }
+
+
+    .feedmenu {
+      width: 100%;
+    }
+
+
+    .featuredmenu {
+        width: 33%;
+    }
+}
+
+/* Second breakpoint at 55em */
+
+@media all and (min-width: 55em) {
+
+
+
+   .mainbody {
+    width: 55em;
+    margin: 0 auto;
+  }
+
+
+    .maincontent {
+        width: 100%;
+    }
+
+  .feedmenu {
+    width: 15%;
+    float: left;
+  }
+
+  .featuredmenu {
+    width: 15%;
+    float: right;
+  }
+
+  .articlebody {
+    width: 69%;
+    display: inline-block;
+  }
+
+
+
+}

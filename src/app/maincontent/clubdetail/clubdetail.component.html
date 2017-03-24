@@ -1,0 +1,5 @@
+      <div *ngIf="item" class='club-content' >
+    			<div class="club-title">{{item.title}}</div>
+          <div [innerHTML]="item.description"></div>
+          <div><a *ngIf="item.url" href="{{item.url}}">{{item.url | prettyurl}}</a></div>
+      </div>

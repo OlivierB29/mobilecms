@@ -1,0 +1,40 @@
+
+/* element */
+.activity-button {
+  text-align: center;
+  background-color: #eee;
+
+  border-width: 2px;
+  border-style: solid;
+  border-color: #ddd;
+
+
+float: left;
+width: 30%;
+
+
+
+height: 10em;
+margin: 1em 0;
+font-size: 1em;
+}
+
+/* element */
+.activity-buttonbar {
+  text-align: center;
+
+}
+
+/* Image CSS Fit */
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}

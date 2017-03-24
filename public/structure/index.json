@@ -1,0 +1,16 @@
+[
+    {
+
+        "id": "1",
+        "title": "Structure",
+        "description": "President, Vice President"
+
+    },
+    {
+
+        "date": "2",
+        "title": "Technical directors",
+        "description": "Activity A Technical Director, Activity B Technical Director"
+    }
+
+]

@@ -1,0 +1,24 @@
+
+
+
+<!--
+  <div class="buttons">
+    <button [disabled]="!heroes.canAdd()" (click)="heroes.addInactive()">Add inactive hero</button>
+    <button [disabled]="!heroes.canAdd()" (click)="heroes.addActive()">Add active hero</button>
+    <button [disabled]="!heroes.canRemove()" (click)="heroes.remove()">Remove hero</button>
+  </div>
+-->
+
+<div class="coincoin" >aaaaaaaaaaaaaaaaaaaaaa</div>
+
+<div class="buttons">
+  <button  >Add inactive hero</button>
+</div>
+       <ul class="buttons">
+         <li *ngFor="let menu of items">
+           {{menu.title}} ,
+           {{menu.routerLink}} ,
+           <a href="{{menu.routerLink}}" class="button"><button  >{{menu.title}}</button></a>
+
+         </li>
+       </ul>

@@ -1,0 +1,47 @@
+[
+    {
+        "id" : "1",
+        "date": "201509",
+        "activity": "activitya",
+        "title": "some seminar of activity A",
+        "organization": "Some org",
+        "description": "some infos",
+        "url": "", "location" : "", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : ""
+    },
+    {
+        "id" : "2",
+        "date": "201509",
+        "activity": "activitya",
+        "title": "a new seminar of activity A",
+        "organization": "Bretagne",
+        "description": "some infos",
+        "url": "", "location" : "", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : ""
+    },
+    {
+        "id" : "3",
+        "date": "20161117",
+        "activity": "activityb",
+        "title": "another seminar of activity B",
+        "organization": "another org",
+        "description": "foo",
+        "url": "", "location" : "", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : ""
+    },
+    {
+        "id" : "4",
+        "date": "20161130",
+        "activity": "activityb",
+        "title": "yet another seminar of activity B",
+        "organization": "another org",
+        "description": "foo",
+        "url": "", "location" : "", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : ""
+    },
+    {
+        "id" : "5",
+        "date": "20161206",
+        "activity": "activityc",
+        "title": "seminar of activity C animated by M. SAMPLE",
+        "organization": "another org",
+        "description": "foo",
+        "url": "", "location" : "", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : ""
+    }
+]

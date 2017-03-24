@@ -1,0 +1,55 @@
+
+
+/* Customizations by Olivier for microcms */
+
+
+
+
+/* everywhere else */
+* {
+  /*font-family: Arial, Helvetica, sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+
+/* Image CSS Fit */
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
+
+.debug1 {
+  border-color: yellow;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.debug2 {
+  border-color: red;
+  border-width: 1px;
+  border-style: dotted;
+}
+
+.debug3 {
+  border-color: green;
+  border-width: 1px;
+  border-style: dotted;
+}
+
+
+.debug4 {
+  border-color: blue;
+  border-width: 1px;
+  border-style: dotted;
+}

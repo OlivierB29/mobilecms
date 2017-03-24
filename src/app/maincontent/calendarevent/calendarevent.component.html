@@ -1,0 +1,12 @@
+<!-- ########################################################################################### -->
+
+<div *ngIf="current">
+
+<h1>{{current.title}}</h1>
+
+<div>{{current.description | br}}</div>
+
+<div *ngIf="current.location">{{i18n.location}} {{current.location}}</div>
+
+
+</div>

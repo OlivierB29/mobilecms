@@ -1,0 +1,10 @@
+
+<div class='footer-content'>
+  <div *ngFor="let currentItem of (items | orderbyasc:'id')" class='footer-article' >
+
+    <span *ngIf="currentItem.title" class="footer-title">{{currentItem.title}}</span>
+    <div *ngIf="currentItem.description" [innerHTML]="currentItem.description"></div>
+
+  </div>
+
+<div>

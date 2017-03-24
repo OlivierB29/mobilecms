@@ -1,0 +1,70 @@
+[
+  {
+    "id" : "news",
+    "routerLink" : "/actualites",
+    "routerLinkActive" : "active",
+    "title" : "Actualités",
+    "icon" : "list",
+    "order" : "1"
+  },
+  {
+    "id" : "clubs",
+    "routerLink" : "/clubs",
+    "routerLinkActive" : "active",
+    "title" : "Clubs",
+    "icon" : "place",
+    "order" : "2"
+  },
+  {
+    "id" : "calendar",
+    "routerLink" : "/calendrier",
+    "routerLinkActive" : "active",
+    "title" : "Calendriers",
+    "icon" : "event",
+    "order" : "3"
+  },
+
+  {
+    "id" : "structure",
+    "routerLink" : "/structure",
+    "routerLinkActive" : "active",
+    "title" : "Organisation",
+    "icon" : "person",
+    "order" : "4"
+  },
+
+  {
+    "id" : "documents",
+    "routerLink" : "/documents",
+    "routerLinkActive" : "active",
+    "title" : "Documents",
+    "icon" : "attachment",
+    "order" : "5"
+  },
+
+  {
+      "id" : "reports",
+      "routerLink" : "/comptesrendus",
+      "routerLinkActive" : "active",
+      "title" : "Comptes Rendus",
+      "icon" : "apps",
+      "order" : "6"
+    },
+  {
+    "id" : "links",
+    "routerLink" : "/links",
+    "routerLinkActive" : "active",
+    "title" : "Liens",
+    "icon" : "bookmark",
+    "order" : "7"
+  },
+{
+  "id" : "contact",
+  "routerLink" : "/contact",
+  "routerLinkActive" : "active",
+  "title" : "Contact",
+  "icon" : "mail",
+  "order" : "8"
+}
+
+]

@@ -1,0 +1,9 @@
+
+
+  <ul>
+    <li *ngFor="let event of items"
+        [@eventState]="event.state"
+        (click)="event.toggleState()">
+      {{event.title}}
+    </li>
+  </ul>

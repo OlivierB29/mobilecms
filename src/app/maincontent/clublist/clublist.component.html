@@ -1,0 +1,16 @@
+<div *ngIf="activity">
+  <h3>{{i18n.title}} : {{activity | uppercase}} </h3>
+  <div>
+    <button md-button *ngFor='let dep of departmentObjectList' (click)='displayClubs(dep.code)' class='department-button'>{{dep.name}}</button>
+  </div>
+</div>
+
+
+
+<div *ngIf="activity  && department ">
+  <div class='article-list'>
+    <div *ngFor="let club of (clubs | activityfilter:activity | departmentfilter:department)" class='club-content'>
+      <my-clubdetail-component [id]="club.id"></my-clubdetail-component>
+    </div>
+  </div>
+</div>

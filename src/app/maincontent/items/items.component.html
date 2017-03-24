@@ -1,0 +1,12 @@
+<div class='article-list' >
+
+
+  <div >
+
+    <div *ngFor="let currentItem of (items | orderbyasc:'id')" class='article-content' >
+			<md-toolbar>{{currentItem.title}}</md-toolbar>
+      <div [innerHTML]="currentItem.description"></div>
+    </div>
+  </div>
+
+  </div>

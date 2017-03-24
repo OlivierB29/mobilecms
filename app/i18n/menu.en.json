@@ -1,0 +1,70 @@
+[
+  {
+    "id" : "news",
+    "routerLink" : "/news",
+    "routerLinkActive" : "active",
+    "title" : "News",
+    "icon" : "apps",
+    "order" : "1"
+  },
+  {
+    "id" : "clubs",
+    "routerLink" : "/clubs",
+    "routerLinkActive" : "active",
+    "title" : "Clubs",
+    "icon" : "apps",
+    "order" : "2"
+  },
+  {
+    "id" : "calendar",
+    "routerLink" : "/calendar",
+    "routerLinkActive" : "active",
+    "title" : "Calendar",
+    "icon" : "web",
+    "order" : "3"
+  },
+
+  {
+    "id" : "structure",
+    "routerLink" : "/structure",
+    "routerLinkActive" : "active",
+    "title" : "Structure",
+    "icon" : "account circle",
+    "order" : "4"
+  },
+
+  {
+    "id" : "documents",
+    "routerLink" : "/documents",
+    "routerLinkActive" : "active",
+    "title" : "Documents",
+    "icon" : "apps",
+    "order" : "5"
+  },
+
+  {
+      "id" : "reports",
+      "routerLink" : "/reports",
+      "routerLinkActive" : "active",
+      "title" : "Reports",
+      "icon" : "apps",
+      "order" : "6"
+    },
+  {
+    "id" : "links",
+    "routerLink" : "/links",
+    "routerLinkActive" : "active",
+    "title" : "Links",
+    "icon" : "apps",
+    "order" : "7"
+  },
+{
+  "id" : "contact",
+  "routerLink" : "/contact",
+  "routerLinkActive" : "active",
+  "title" : "Contact",
+  "icon" : "apps",
+  "order" : "8"
+}
+
+]
