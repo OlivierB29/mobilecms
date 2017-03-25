@@ -2,11 +2,11 @@
 
 <div *ngIf="current">
 
-<h1>{{current.title}}</h1>
+<h1 [innerHTML]='current.title'></h1>
 
-<div>{{current.description | br}}</div>
+<div [innerHTML]='current.description | br'></div>
 
-<div *ngIf="current.location">{{i18n.location}} {{current.location}}</div>
+<div *ngIf="current.location"> <span [innerHTML]='i18n.location'></span> <span [innerHTML]='current.location'></span></div>
 
 
 </div>

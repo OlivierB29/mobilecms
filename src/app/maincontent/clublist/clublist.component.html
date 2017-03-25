@@ -1,7 +1,7 @@
 <div *ngIf="activity">
-  <h3>{{i18n.title}} : {{activity | uppercase}} </h3>
+  <h3 [innerHTML]='i18n.title + ": " + (activity | uppercase)'></h3>
   <div>
-    <button md-button *ngFor='let dep of departmentObjectList' (click)='displayClubs(dep.code)' class='department-button'>{{dep.name}}</button>
+    <button md-button *ngFor='let dep of departmentObjectList' (click)='displayClubs(dep.code)' class='department-button' [innerHTML]='dep.name'></button>
   </div>
 </div>
 

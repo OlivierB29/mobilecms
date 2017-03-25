@@ -17,7 +17,7 @@ import { ConfService } from '../../shared/services/conf.service';
 export  class BannerComponent implements OnInit {
 
 
-  resourcesUrl: string = '';
+  bannerUrl: string = '';
 
 
   layout: string = 'desktop';
@@ -28,7 +28,7 @@ export  class BannerComponent implements OnInit {
 
 ngOnInit(): void {
 
-          this.resourcesUrl = this.conf.getResources() + '/public/resources';
+          this.bannerUrl =  'public/resources/banner.jpg';
 }
 
 }

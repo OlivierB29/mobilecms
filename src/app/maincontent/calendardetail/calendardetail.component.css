@@ -2,7 +2,7 @@
 /* element */
 .article-content {
   /*additional border : add a thicker aspect*/
-  border-width: 1px 0 0 0;
+  border-width: 1px 1px 1px 1px ;
   border-style: solid;
 
   /* spacing between article-content  */
@@ -12,6 +12,7 @@
 	color: #333;
 
 }
+
 
 
 

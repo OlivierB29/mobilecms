@@ -1,13 +1,14 @@
 <div *ngIf="!activity">
 
-  <h3>{{i18n.title}}</h3>
+  <h3 [innerHTML]='i18n.title'></h3>
 
 
 
   <div *ngFor="let activityLink of activityObjectList">
-    <button md-button routerLink="/calendrier/{{activityLink.name}}" class='my-activity-button'>{{activityLink.name | uppercase}}
-    <img class="fill-img" *ngIf="activityLink.logo" src="public/activities/{{activityLink.name}}/{{activityLink.logo}}" alt="{{activityLink.name | uppercase}}"
-            title="{{activityLink.name | uppercase}}"></button>
+    <button md-button [routerLink]='"/calendrier/" + activityLink.name' class='my-activity-button' >
+    <span [innerHTML]='activityLink.name | uppercase'></span>
+    <img class="fill-img" *ngIf="activityLink.logo" [src]='"public/activities/" + activityLink.name + "/" + activityLink.logo'   [alt]="activityLink.name" [title]="activityLink.name | uppercase">        
+     </button>
   </div>
 
 

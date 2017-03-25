@@ -1,20 +1,22 @@
 
       <div *ngIf="item" class='article-content'>
 
+
+        <md-toolbar class="article-title" [innerHTML]='item.title'></md-toolbar>
   			<div class="article-title">
-  				{{item.title}}
           <!-- conditional display of class -->
-
-            <div *ngIf="item.organization && (item.organization.indexOf(localregion) == -1)" class='article-title-moreinfo alternate-title' >{{i18n.organizationlabel}}: {{item.organization}}</div>
-            <div *ngIf="item.organization && (item.organization.indexOf(localregion) > -1)" class='article-title-moreinfo'>{{i18n.organizationlabel}}: {{item.organization}}</div>
-
+            <div *ngIf="item.organization" class='article-title-moreinfo'>
+            <span [innerHTML]='i18n.organizationlabel + ":"'></span>
+            <span *ngIf="item.organization.indexOf(localregion) == -1" class='alternate-title' >{{item.organization}}</span>
+            <span *ngIf="item.organization.indexOf(localregion) > -1" > {{item.organization}}</span>
+            </div>
   			</div>
 
 
 
         <div [innerHTML]="item.description | br"></div>
 
-        <div *ngIf="item.location">
-          {{i18n.location}} : {{item.location}}
+        <div *ngIf="item.location" [innerHTML]='i18n.location + " : " + item.location'>
+
         </div>
     </div>

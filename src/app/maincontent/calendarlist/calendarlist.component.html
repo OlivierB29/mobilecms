@@ -1,6 +1,6 @@
 
 <div *ngIf="activity">
-<h3>{{i18n.title}} {{activity | uppercase}}</h3>
+<h3><span [innerHTML]='i18n.title'></span> <span [innerHTML]='activity | uppercase'></span></h3>
 
 
   <div class='article-list' *ngIf='items' >
