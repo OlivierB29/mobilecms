@@ -44,7 +44,7 @@ export class CalendarActivitiesComponent implements OnInit {
   ngOnInit(): void {
 
 
-  this.dataService.getLocale( 'maincontent/clublist',
+  this.dataService.getLocale( 'maincontent/calendar',
   this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
                 error => this.log.debug('Locale' + error),
                 () => this.log.debug('Locale complete'));
