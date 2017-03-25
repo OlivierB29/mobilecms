@@ -6,8 +6,6 @@ import './rxjs-extensions';
 import { ConfService } from './shared/services/conf.service';
 import { Log } from './shared/services/log.service';
 
-import { LocaleService }          from './shared/services/locale.service';
-
 
 
 @Component({
@@ -27,7 +25,7 @@ export class AppComponent {
     layout: string = 'desktop';
 
     constructor(private ngZone: NgZone, private conf: ConfService,
-       private log: Log, private locale: LocaleService) {
+       private log: Log) {
 /*
 
         window.onresize = (e) => {

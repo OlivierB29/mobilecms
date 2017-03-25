@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 
 import { ConfService } from '../../shared/services/conf.service';
-import { LocaleService } from '../../shared/services/locale.service';
+
 import { Log } from '../../shared/services/log.service';
+import { ReadService } from '../../shared/services/read.service';
 
 @Component({
     moduleId: module.id,
@@ -23,8 +24,8 @@ export class HomeComponent implements OnInit {
 
 
         private conf: ConfService,
-        private log: Log,
-        private locale: LocaleService
+        private dataService: ReadService,
+        private log: Log
           ) {
 
 
@@ -34,7 +35,7 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void {
 
 
-        this.locale.getLocale('app/maincontent/home/i18n',
+        this.dataService.getLocale(  '/maincontent/home',
          this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
             error => this.log.debug('Locale' + error),
             () => this.log.debug('Locale complete'));

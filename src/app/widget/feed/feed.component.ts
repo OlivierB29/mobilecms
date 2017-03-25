@@ -1,7 +1,7 @@
 import { Log } from '../../shared/services/log.service';
 import { Component, OnInit } from '@angular/core';
-import { CalendarService } from '../../shared/services/calendar.service';
 
+import { ReadService } from '../../shared/services/read.service';
 
 import { ConfService } from '../../shared/services/conf.service';
 import { Event }        from '../../shared/model/event';
@@ -23,11 +23,10 @@ export class FeedComponent implements OnInit {
 
     imageservice: string = '';
 
-    layout: string = 'desktop';
 
     items: Event[] = [];
 
-    constructor(private dataservice: CalendarService,
+    constructor(private dataService: ReadService,
       private conf: ConfService,
       private router: Router,
           private log: Log) {
@@ -35,10 +34,10 @@ export class FeedComponent implements OnInit {
 
     ngOnInit(): void {
       //case : activity selected
-        this.dataservice.getCalendarFeed('')
-            .subscribe((data: Event[]) => this.items = data,
-            error => this.log.debug('getCalendarEvents ' + error),
-            () => this.log.debug('getCalendarEvents complete :' + this.items.length));
+this.dataService.getAll('calendar')
+                .subscribe((data: Event[]) => this.items = data,
+                error => this.log.debug('getCalendarEvents ' + error),
+                () => this.log.debug('getCalendarEvents complete :'  + this.items.length));
 
     }
 

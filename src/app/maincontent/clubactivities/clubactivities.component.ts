@@ -1,4 +1,4 @@
-import { LocaleService } from '../../shared/services/locale.service';
+
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
@@ -37,15 +37,14 @@ export class ClubActivitiesComponent implements OnInit {
     private dataService: ReadService,
     private conf : ConfService,
     private log : Log,
-    private route: ActivatedRoute,
-    private locale: LocaleService
+    private route: ActivatedRoute
   ) {
   }
 
   ngOnInit(): void {
 
 
-  this.locale.getLocale(this.conf.getI18n() + '/maincontent/clublist/i18n',
+  this.dataService.getLocale( 'maincontent/clublist',
   this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
                 error => this.log.debug('Locale' + error),
                 () => this.log.debug('Locale complete'));

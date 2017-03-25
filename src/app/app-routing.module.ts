@@ -9,9 +9,6 @@ import { NewsComponent }   from './maincontent/news/news.component';
 import { ClubListComponent }   from './maincontent/clublist/clublist.component';
 import { ContactComponent } from './maincontent/contact/contact.component';
 
-import { MenuComponent }   from './maincontent/menu/menu.component';
-import { Menu2Component }   from './maincontent/menu2/menu2.component';
-
 
 import { StructureComponent }   from './maincontent/items/structure/structure.component';
 import { DocumentsComponent }   from './maincontent/items/documents/documents.component';
@@ -148,14 +145,6 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
        {
          path: 'calendar/detail/:id',
          component: CalendarEventComponent
-       },
-       {
-         path: 'menu',
-         component: MenuComponent
-       },
-       {
-         path: 'menu2',
-         component: Menu2Component
        }
 
     ], { useHash: true })

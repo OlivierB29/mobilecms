@@ -25,7 +25,7 @@
   <span>
       <md-icon (click)='sidenav.open()' class='top-menu-icon'>menu</md-icon>
 
-      <span class='top-menu-title'>{{i18n.title}}</span>
+      <span class='top-menu-title' [innerHTML]='i18n.title'></span>
 </span>
 </md-toolbar>
 

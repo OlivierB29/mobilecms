@@ -5,7 +5,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { ReadService } from '../../shared/services/read.service';
 import { ConfService } from '../../shared/services/conf.service';
-import { LocaleService } from '../../shared/services/locale.service';
+
 import { Log } from '../../shared/services/log.service';
 
 
@@ -51,8 +51,7 @@ export class CalendarListComponent implements OnInit {
 
         private conf: ConfService,
         private log: Log,
-        private route: ActivatedRoute,
-        private locale: LocaleService
+        private route: ActivatedRoute
     ) {
     }
 
@@ -94,7 +93,7 @@ export class CalendarListComponent implements OnInit {
         this.routerLink = this.route.routeConfig.path;
 
 
-        this.locale.getLocale(this.conf.getI18n() + '/maincontent/calendar/i18n/',
+        this.dataservice.getLocale( 'maincontent/calendar/',
          this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
             error => this.log.debug('Locale' + error),
             () => this.log.debug('Locale complete'));

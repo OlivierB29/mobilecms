@@ -8,7 +8,7 @@ import { Item }        from '../../shared/model/item';
 
 import { ReadService } from '../../shared/services/read.service';
 import { ConfService } from '../../shared/services/conf.service';
-import { LocaleService } from '../../shared/services/locale.service';
+
 import { Log } from '../../shared/services/log.service';
 
 @Component({
@@ -30,9 +30,7 @@ export class ContactComponent implements OnInit {
 
         private dataservice: ReadService,
         private conf: ConfService,
-        private log: Log,
-
-        private locale: LocaleService,
+        private log: Log
 
     ) {
 
@@ -50,7 +48,7 @@ export class ContactComponent implements OnInit {
 
 
 
-        this.locale.getLocale(this.conf.getI18n() + '/maincontent/contact/i18n',
+        this.dataservice.getLocale( 'maincontent/contact',
         this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
             error => this.log.debug('Locale' + error),
             () => this.log.debug('Locale complete'));
