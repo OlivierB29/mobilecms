@@ -63,7 +63,9 @@ export class CalendarActivitiesComponent implements OnInit {
     this.context = this.conf.getContext();
 
     this.dataService.getAll('activities')
-                                  .subscribe((data:Activity[]) => this.activityObjectList = data,
+                                  .subscribe((data:Activity[]) => this.activityObjectList = data.filter(function (el) {
+  return el.calendar == 'true';
+}),
                                       error => this.log.debug('getActivities'+error),
                                       () => this.log.debug('getActivities complete' + this.activityObjectList.length));
 
