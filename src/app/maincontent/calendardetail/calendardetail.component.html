@@ -2,7 +2,7 @@
       <div *ngIf="item" class='article-content'>
 
 
-        <md-toolbar class="article-title" [innerHTML]='item.title'></md-toolbar>
+        <md-card class="article-title" [innerHTML]='item.title'></md-card>
   			<div class="article-title">
           <!-- conditional display of class -->
             <div *ngIf="item.organization" class='article-title-moreinfo'>
