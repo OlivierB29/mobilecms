@@ -16,6 +16,8 @@ export class NewsComponent implements OnInit {
 
   items: any[] = [];
 
+  maxElements = 4;
+
   //Localization
   i18n = <any>{};
 

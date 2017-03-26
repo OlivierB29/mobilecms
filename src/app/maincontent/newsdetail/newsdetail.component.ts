@@ -15,7 +15,7 @@ export class NewsDetailComponent implements OnInit {
 
     @Input() id: string;
 
-    @Input() active: string;
+    @Input() active: boolean;
 
 
     item: any = {};
@@ -30,7 +30,7 @@ export class NewsDetailComponent implements OnInit {
         if (this.id) {
 
             this.readService.get('news', this.id)
-                .subscribe((data: any) => this.item = data,
+                .subscribe((data: any) => { this.item = data; this.item.state = this.active },
                 error => console.log('get' + error),
                 () => { console.log('get complete'); });
         } else {
@@ -43,14 +43,7 @@ export class NewsDetailComponent implements OnInit {
 
 
     showArticle(): void {
-
-        if(this.item.state != 'active') {
-          this.item.state = 'active';
-        } else {
-          this.item.state = 'inactive';
-        }
-
-
+        this.active = !this.active;
     }
 
 

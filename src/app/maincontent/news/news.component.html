@@ -1,9 +1,11 @@
 <div class='article-list'>
 
   <h3 [innerHTML]='i18n.title'></h3>
-  <div *ngFor="let currentItem of (items | orderbydesc:'date')">
+  <div *ngFor="let currentItem of (items | orderbydesc:'date'); let i=index">
+   
 
-    <my-newsdetail-component [id]='currentItem.id'></my-newsdetail-component>
+
+    <my-newsdetail-component [id]='currentItem.id' [active]='i<maxElements'></my-newsdetail-component>
 
   </div>
 

@@ -4,13 +4,13 @@
 
   <div *ngIf="item" class='article-content'>
     			<md-card  (click)="showArticle()" class='article-title'>
-            <span [innerHTML]="item.title"></span><span *ngIf='item.state == "inactive"'>[...]</span>
+            <span [innerHTML]="item.title"></span><span *ngIf='!active'>[...]</span>
           </md-card>
 
 
 
       
-      <div *ngIf='item.state != "inactive"' [innerHTML]="item.description | br" class="article-description"></div>
+      <div *ngIf='active' [innerHTML]="item.description | br" class="article-description"></div>
 
   </div>
 
