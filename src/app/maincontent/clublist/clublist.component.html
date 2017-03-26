@@ -1,8 +1,15 @@
 <div *ngIf="activity">
   <h3 [innerHTML]='i18n.title + ": " + (activity | uppercase)'></h3>
-  <div>
-    <button md-button *ngFor='let dep of departmentObjectList' (click)='displayClubs(dep.code)' class='department-button' [innerHTML]='dep.name'></button>
-  </div>
+
+<md-button-toggle-group #group="mdButtonToggleGroup">
+  
+  <md-button-toggle *ngFor='let dep of departmentObjectList' [value]='dep.code' (click)='displayClubs(dep.code)'>
+    <div [innerHTML]='dep.name'></div>
+  </md-button-toggle>
+
+
+</md-button-toggle-group>
+
 </div>
 
 
@@ -14,3 +21,4 @@
     </div>
   </div>
 </div>
+

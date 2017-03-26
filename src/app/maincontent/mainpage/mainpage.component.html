@@ -8,8 +8,8 @@
 
 
 
-                <button routerLink="{{menu.routerLink}}" routerLinkActive="active" md-button class='slidemenu-button'>
-                     <md-icon class='slidemenu-button-icon'>{{menu.icon}}</md-icon> <span class='slidemenu-button-text'>{{menu.title}}</span>
+                <button [routerLink]="menu.routerLink" routerLinkActive="active" md-button class='slidemenu-button'>
+                     <md-icon class='slidemenu-button-icon' [innerHTML]='menu.icon'></md-icon> <span class='slidemenu-button-text' [innerHTML]='menu.title'></span>
                 </button>
 
             </div>

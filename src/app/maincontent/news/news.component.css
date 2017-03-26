@@ -4,7 +4,7 @@
 /* liste */
 .article-list {
   /* global border around article-list */
-  border-width: 1px 1px 1px 1px;
+  border-width: 0px 0px 0px 1px;
   border-color: #ddd;
   border-style: solid;
   /* spacing between article-list and border */

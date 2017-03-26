@@ -15,6 +15,9 @@ export class NewsDetailComponent implements OnInit {
 
     @Input() id: string;
 
+    @Input() active: string;
+
+
     item: any = {};
 
     constructor(

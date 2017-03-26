@@ -3,9 +3,9 @@
 
 
   <div *ngIf="item" class='article-content'>
-    			<md-toolbar  (click)="showArticle()">
-            <span>{{item.title}}</span><span *ngIf='item.state == "inactive"'>[...]</span>
-          </md-toolbar>
+    			<md-card  (click)="showArticle()" class='article-title'>
+            <span [innerHTML]="item.title"></span><span *ngIf='item.state == "inactive"'>[...]</span>
+          </md-card>
 
 
 
