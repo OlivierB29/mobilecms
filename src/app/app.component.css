@@ -27,29 +27,3 @@
     min-width: 100%;
     min-height: 100%
 }
-
-
-.debug1 {
-  border-color: yellow;
-  border-width: 1px;
-  border-style: solid;
-}
-
-.debug2 {
-  border-color: red;
-  border-width: 1px;
-  border-style: dotted;
-}
-
-.debug3 {
-  border-color: green;
-  border-width: 1px;
-  border-style: dotted;
-}
-
-
-.debug4 {
-  border-color: blue;
-  border-width: 1px;
-  border-style: dotted;
-}

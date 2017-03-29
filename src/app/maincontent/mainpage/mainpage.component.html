@@ -1,19 +1,21 @@
 <md-sidenav-container>
 
     <!-- slide menu -->
-    <md-sidenav #sidenav class='menu-content'>
+    <md-sidenav #sidenav >
+
 
         <nav>
-            <div *ngFor="let menu of menuItems" class='menu-content'>
+            <div *ngFor="let menu of menuItems" >
 
 
 
-                <button [routerLink]="menu.routerLink" routerLinkActive="active" md-button class='slidemenu-button'>
-                     <md-icon class='slidemenu-button-icon' [innerHTML]='menu.icon'></md-icon> <span class='slidemenu-button-text' [innerHTML]='menu.title'></span>
+                <button [routerLink]="menu.routerLink" routerLinkActive="active" md-button color="primary" class='slidemenu-button'>
+                     <md-icon class='slidemenu-button-icon' [innerHTML]='menu.icon' ></md-icon> <span class='slidemenu-button-text' [innerHTML]='menu.title'></span>
                 </button>
 
             </div>
         </nav>
+
     </md-sidenav>
 
 
