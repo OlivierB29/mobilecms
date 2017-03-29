@@ -17,23 +17,25 @@ font-size: 2em;
 
 }
 
+.top-menu-bar {
+  box-shadow: 5px 5px 10px 0px #656565;
+}
 
 .top-menu-icon {
-  padding-right:  0.2em;
-  font-size: 1.7em;
+  width: 1em;
+  height: auto;
+  font-size: 1.5em;  
 }
 
 
-.top-menu-icon:hover {
-  cursor: pointer;
-}
+
+
+
 
 .top-menu-title {
-  font-size: 1.7em; 
+  font-size: 1.5em; 
 }
-.top-menu-title:hover {
-  cursor: pointer;
-}
+
 
 .my-content {
   margin: 0;
