@@ -85,14 +85,14 @@ export class ClubListComponent implements OnInit {
 
 
 displayClubs(departmentCode: string): void {
-  console.log('!!!!!!!!!!!!!!!!!!!!!!!! displayClubs ' + departmentCode);
+
 this.department = departmentCode;
 }
 
 
 getLogoUrl(id : string, file : string) : string {
   
-  console.log('!!!!!!!!!!!!!!!!!!!!!!!! getLogoUrl ' + id + ' ' + file);
+
   return  'public/activities/'+id+'/'+file ;
 }
 

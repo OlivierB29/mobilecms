@@ -86,7 +86,6 @@ export class MainPageComponent {
 
     } 
 
-    console.log('!!!!!!!!!!!!!!!!!!!! ' + this.menuMode + ' ' + this.menuOpened);
 
 
 

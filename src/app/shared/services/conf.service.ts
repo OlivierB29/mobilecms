@@ -23,7 +23,7 @@ export class ConfService {
       this.loadFile('conf.json')
           .subscribe((data: any[]) => this._config = data,
           error => console.log('config' + error),
-          () => console.log('config complete !!!!!!!!!!!!!' + this._config));
+          () => console.log('config complete' + this._config));
 
     }
 

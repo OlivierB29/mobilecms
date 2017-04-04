@@ -82,7 +82,7 @@ export class ClubActivitiesComponent implements OnInit {
 
 getLogoUrl(id : string, file : string) : string {
   
-  console.log('!!!!!!!!!!!!!!!!!!!!!!!! getLogoUrl ' + id + ' ' + file);
+
   return  'public/activities/'+id+'/'+file ;
 }
 
