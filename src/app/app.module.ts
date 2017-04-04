@@ -19,7 +19,7 @@ import { ContactComponent } from './maincontent/contact/contact.component';
 
 import { ActivityFilterPipe } from './shared/filters/activityfilter.pipe';
 import { DepartmentFilterPipe } from './shared/filters/departmentfilter.pipe';
-import { DateFilterPipe } from './shared/filters/datefilter.pipe';
+
 import { OrderbyAscPipe } from './shared/filters/orderbyasc.pipe';
 import { OrderbyDescPipe } from './shared/filters/orderbydesc.pipe';
 import { PrettyUrlPipe } from './shared/filters/prettyurl.pipe';
@@ -65,7 +65,7 @@ import { MainPageComponent } from './maincontent/mainpage/mainpage.component';
   imports: [BrowserModule, HttpModule, AppRoutingModule, MaterialModule,  SharedModule.forRoot()],
 
     declarations: [
-        DateFilterPipe,
+
         ActivityFilterPipe,
         OrderbyAscPipe,
         OrderbyDescPipe,
