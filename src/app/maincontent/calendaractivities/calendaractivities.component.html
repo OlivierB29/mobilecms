@@ -1,3 +1,4 @@
+<div class='article-list'>
 <div *ngIf="!activity">
 
   <h3 [innerHTML]='i18n.title'></h3>
@@ -19,4 +20,5 @@
 <div *ngIf="activity">
 
   <my-calendar-list [activity]='activity'></my-calendar-list>
+</div>
 </div>

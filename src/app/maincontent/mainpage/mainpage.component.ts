@@ -1,5 +1,5 @@
 
-import { Component, OnInit, AfterViewInit, NgZone } from '@angular/core';
+import { Component, OnInit, AfterViewInit, NgZone , ViewChild , ElementRef } from '@angular/core';
 
 import '../../rxjs-extensions';
 
@@ -18,6 +18,7 @@ import { MenuItem } from '../../shared/model/menuitem';
     styleUrls: ['mainpage.component.css']
 })
 export class MainPageComponent {
+        
 
     activityObjectList: Activity[] = [];
 
@@ -30,7 +31,20 @@ export class MainPageComponent {
 
     lang: string;
 
+    /*
 
+    https://material.angular.io/components/component/sidenav
+    */
+    menuMode : string;
+
+    /*
+    opened
+    https://www.npmjs.com/package/@angular2-material/sidenav
+    */
+    menuOpened: boolean;
+
+
+    mobileLayout : boolean;
 
     constructor(private conf: ConfService,
             private dataService: ReadService,
@@ -56,7 +70,28 @@ export class MainPageComponent {
             error => this.log.debug('getMenu ' + error),
             () => this.log.debug('getMenu complete'));
 
+    var layout = this.conf.getLayout();
+
+    this.mobileLayout = layout !== 'desktop';
+
+     switch (layout)  { 
+    case 'desktop': 
+       this.menuMode = 'side';
+       this.menuOpened = true;
+
+      break; 
+    default: 
+       this.menuMode = 'over';
+       this.menuOpened = false;
+
+    } 
+
+    console.log('!!!!!!!!!!!!!!!!!!!! ' + this.menuMode + ' ' + this.menuOpened);
+
+
 
     }
+
+
 
 }

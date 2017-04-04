@@ -1,28 +1,37 @@
 
+
+.slidemenu {
+padding-top: 5em;
+background-color: #5e7987;
+box-shadow: 5px 5px 10px 0px #656565;
+z-index: 90;
+}
+
 .slidemenu-button {
 width: 100%;
 text-align: left;
-border-bottom: 1px solid white; 
+border-top: 1px solid white; 
 color: white;
 background-color: #5e7987;
 
 }
 
 .slidemenu-button-icon {
-font-size: 2em;
+font-size: 1.5em;
 }
 
 .slidemenu-button-text {
-font-size: 2em;
+font-size: 1.5em;
 
 }
 
 .top-menu-bar {
   box-shadow: 5px 5px 10px 0px #656565;
+  z-index: 100;
 }
 
 .top-menu-icon {
-  font-size: 1.2em;  
+  font-size: 1em;  
 }
 
 .top-menu-title {
