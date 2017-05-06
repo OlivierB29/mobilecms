@@ -29,9 +29,9 @@
   },
   "devDependencies": {
     "@angular/cli": "1.0.0",
-    "@angular/compiler-cli": "^4.0.0",
-    "@types/jasmine": "2.5.46",
-    "@types/node": "~7.0.10",
+    "@angular/compiler-cli": "^4.1.1",
+    "@types/jasmine": "2.5.47",
+    "@types/node": "~7.0.18",
     "codelyzer": "~3.0.1",
     "jasmine-core": "~2.6.1",
     "jasmine-spec-reporter": "~4.1.0",
