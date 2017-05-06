@@ -32,7 +32,7 @@ export class ReadService {
     }
 
     public getAll = (type: string): Observable<any[]> => {
-        var url: string = 'public/' + type + '/index.json';
+        var url: string = 'public/' + type + '/index/index.json';
         console.log('getAll ' + url);
 
 
@@ -43,7 +43,7 @@ export class ReadService {
 
 
     public getAllItems = (type: string): Observable<any[]> => {
-        var url: string = 'public/' + type + '/index.json';
+        var url: string = 'public/' + type + '/index/index.json';
         console.log('getAll ' + url);
 
 
