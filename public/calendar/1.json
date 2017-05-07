@@ -5,5 +5,17 @@
         "title": "some seminar of activity A",
         "organization": "Some org",
         "description": "some infos",
-        "url": "", "location" : "", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : ""
+        "url": "", "location" : "some place", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : "",
+        
+        "images":[
+            {"url":"https://angular.io/resources/images/logos/angular/angular.png","title":"angular logo 1"},
+            {"url":"https://angular.io/resources/images/logos/angular/angular.png","title":"angular logo 2"},
+            {"url":"https://angular.io/resources/images/logos/angular/angular.png","title":"angular logo 3"}
+          ],
+        "attachments":
+          [
+            {"url":"https://angular.io/resources/images/logos/angular/angular_solidBlack.svg","title":"angular SVG logo 1"},
+            {"url":"https://angular.io/resources/images/logos/angular/angular_solidBlack.svg","title":"angular SVG logo 2"},
+            {"url":"https://angular.io/resources/images/logos/angular/angular_solidBlack.svg","title":"angular SVG logo 3"}
+          ]
     }
