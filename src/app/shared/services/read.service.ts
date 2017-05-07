@@ -11,6 +11,9 @@ export class ReadService {
     constructor(private http: Http) {
     }
 
+  //  private root = 'http://localhost';
+    private root = '';
+
 
     public getMenu = (uri: string, locale: string): Observable<MenuItem[]> => {
         var url: string = 'i18n/' + uri + '/menu.' + locale + '.json';
@@ -32,7 +35,7 @@ export class ReadService {
     }
 
     public getAll = (type: string): Observable<any[]> => {
-        var url: string = 'public/' + type + '/index/index.json';
+        var url: string = this.root + '/public/' + type + '/index/index.json';
         console.log('getAll ' + url);
 
 
@@ -43,7 +46,7 @@ export class ReadService {
 
 
     public getAllItems = (type: string): Observable<any[]> => {
-        var url: string = 'public/' + type + '/index/index.json';
+        var url: string = this.root + '/public/' + type + '/index/index.json';
         console.log('getAll ' + url);
 
 
@@ -55,7 +58,7 @@ export class ReadService {
 
     public get = (type: string, id: string): Observable<any[]> => {
 
-        var url: string = 'public/' + type + '/' + id + '.json';
+        var url: string = this.root + '/public/' + type + '/' + id + '.json';
         console.log('getAll ' + url);
 
 

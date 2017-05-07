@@ -6,6 +6,10 @@
     <div *ngFor="let currentItem of (items | orderbyasc:'id')" class='article-content' >
 			<md-card [innerHTML]='currentItem.title'></md-card>
       <div [innerHTML]="currentItem.description"></div>
+
+      <div *ngFor="let attachment of currentItem.attachments">
+        <a [href]="attachment.url" [innerHTML]="attachment.title"></a>
+      </div>
     </div>
   </div>
 

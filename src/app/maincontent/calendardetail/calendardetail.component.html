@@ -17,7 +17,7 @@
         <div *ngIf="item.location" [innerHTML]='i18n.location + " : " + item.location'></div>
 
         <div *ngFor="let attachment of item.attachments">
-          <a [href]="attachment.url" [innerHTML]="attachment.title"></a>
+          <a [href]="attachment.url" [innerHTML]="attachment.title"></a> <span [innerHTML]="attachment.description"></span>
         </div>
 
         <div *ngFor="let image of item.images">
