@@ -12,11 +12,18 @@
             </div>
   			</div>
 
+        <div [innerHTML]="item.description | br" class="article-description"></div>
 
+        <div *ngIf="item.location" [innerHTML]='i18n.location + " : " + item.location'></div>
 
-        <div [innerHTML]="item.description | br"></div>
-
-        <div *ngIf="item.location" [innerHTML]='i18n.location + " : " + item.location'>
-
+        <div *ngFor="let attachment of item.attachments">
+          <a [href]="attachment.url" [innerHTML]="attachment.title"></a>
         </div>
+
+        <div *ngFor="let image of item.images">
+          <img [src]="image.url" [alt]="image.title">
+        </div>
+
+
+
     </div>

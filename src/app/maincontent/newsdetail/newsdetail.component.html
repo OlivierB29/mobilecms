@@ -9,9 +9,19 @@
 
 
 
-      
-      <div *ngIf='active' [innerHTML]="item.description | br" class="article-description"></div>
+
+      <div *ngIf='active' >
+        <div [innerHTML]="item.description | br" class="article-description"></div>
+
+        <div *ngFor="let attachment of item.attachments">
+          <a [href]="attachment.url" [innerHTML]="attachment.title"></a>
+        </div>
+
+        <div *ngFor="let image of item.images">
+          <img [src]="image.url" [alt]="image.title">
+        </div>
+
+
+      </div>
 
   </div>
-
-
