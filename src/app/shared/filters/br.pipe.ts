@@ -2,7 +2,7 @@ import { Pipe } from '@angular/core';
 import { PipeTransform } from '@angular/core';
 
 /*
-https: // angular.io/docs/ts/latest/guide/pipes.html
+https://angular.io/docs/ts/latest/guide/pipes.html
 
 */
 @Pipe({name: 'br'})

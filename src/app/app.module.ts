@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { APP_BASE_HREF } from '@angular/common';
@@ -27,8 +26,8 @@ import { BrPipe } from './shared/filters/br.pipe';
 
 
 // Tools
-import { ConfService }    from './shared/services/conf.service';
-import { Log }    from './shared/services/log.service';
+import { ConfService } from './shared/services/conf.service';
+import { Log } from './shared/services/log.service';
 
 
 import { RouterModule } from '@angular/router';

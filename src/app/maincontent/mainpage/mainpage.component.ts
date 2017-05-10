@@ -33,13 +33,13 @@ export class MainPageComponent {
 
   /*
 
-  https: // material.angular.io/components/component/sidenav
+  https://material.angular.io/components/component/sidenav
   */
   menuMode: string;
 
   /*
   opened
-  https: // www.npmjs.com/package/@angular2-material/sidenav
+  https://www.npmjs.com/package/@angular2-material/sidenav
   */
   menuOpened: boolean;
 
