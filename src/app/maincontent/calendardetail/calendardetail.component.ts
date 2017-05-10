@@ -33,7 +33,7 @@ export class CalendarDetailComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log('app-my-calendardetail-component '  +  this.id);
+        this.log.debug('app-my-calendardetail-component '  +  this.id);
 
 
   this.readService.getLocale( 'maincontent/calendar',
@@ -45,8 +45,8 @@ export class CalendarDetailComponent implements OnInit {
 
             this.readService.get('calendar', this.id)
                 .subscribe((data: any) => this.item = data,
-                error => console.log('get'  +  error),
-                () => { console.log('get complete'); });
+                error => this.log.debug('get'  +  error),
+                () => { this.log.debug('get complete'); });
         } else {
             console.error('app-my-calendardetail-component empty id');
         }

@@ -70,8 +70,8 @@ export class CalendarEventComponent implements OnInit {
 
             this.dataService.get('calendar', this.id)
                 .subscribe((data: any) => this.current = data,
-                error => console.log('get'  +  error),
-                () => { console.log('get complete'); });
+                error => this.log.error('calendar get'  +  error),
+                () => { this.log.debug('get complete'); });
         } else {
             console.error('app-my-newsdetail-component empty id');
         }

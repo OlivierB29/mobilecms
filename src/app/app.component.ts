@@ -17,34 +17,13 @@ import { Log } from './shared/services/log.service';
 export class AppComponent {
 
 
-
-
-    /*width: number ;
-    height: number ;
-  */
     layout= 'desktop';
 
     constructor(private ngZone: NgZone, private conf: ConfService,
        private log: Log) {
-/*
-
-        window.onresize = (e) => {
-            ngZone.run(() => {
-                this.layout = this.conf.getLayout();
-                this.log.debug('layout on onresize '  +  this.layout);
-            });
-        };
-*/
-    }
-/*
-    ngAfterViewInit() {
-
-        this.layout = this.conf.getLayout();
-        this.log.debug('layout on load '  +  this.layout);
 
     }
 
-*/
 
 
 }

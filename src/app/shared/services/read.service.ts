@@ -7,20 +7,22 @@ import { Observable } from 'rxjs/Observable';
 
 import { environment } from '../../environment';
 
+import { Log } from '../../shared/services/log.service';
 
 
 @Injectable()
 export class ReadService {
 
-    constructor(private http: Http) {
+  private root = environment.server;
+
+    constructor(private log: Log, private http: Http) {
     }
 
-  private root = environment.server;
 
 
     public getMenu = (uri: string, locale: string): Observable<MenuItem[]> => {
-        const url= 'i18n/'  +  uri  +  '/menu.'  +  locale  +  '.json';
-        console.log('getMenu ...'  +  url);
+        const url = 'i18n/'  +  uri  +  '/menu.'  +  locale  +  '.json';
+          this.log.debug('getMenu ...'  +  url);
 
         return this.http.get(url)
             .map((response: Response) => <MenuItem[]>response.json())
@@ -29,8 +31,8 @@ export class ReadService {
     }
 
     public getLocale = (uri: string, locale: string): Observable<any> => {
-        const url= 'i18n/'  +  uri  +  '/'  +  locale  +  '.json';
-        console.log('getLocale '  +  url);
+        const url = 'i18n/'  +  uri  +  '/'  +  locale  +  '.json';
+        this.log.debug('getLocale '  +  url);
 
         return this.http.get(url)
             .map((response: Response) => response.json())
@@ -38,8 +40,8 @@ export class ReadService {
     }
 
     public getAll = (type: string): Observable<any[]> => {
-        const url: string = this.root  +  '/public/'  +  type  +  '/index/index.json';
-        console.log('getAll '  +  url);
+        const url = this.root  +  '/public/'  +  type  +  '/index/index.json';
+        this.log.debug('getAll '  +  url);
 
 
         return this.http.get(url)
@@ -49,8 +51,8 @@ export class ReadService {
 
 
     public getAllItems = (type: string): Observable<any[]> => {
-        const url: string = this.root  +  '/public/'  +  type  +  '/index/index.json';
-        console.log('getAll '  +  url);
+        const url = this.root  +  '/public/'  +  type  +  '/index/index.json';
+        this.log.debug('getAll '  +  url);
 
 
         return this.http.get(url)
@@ -61,8 +63,8 @@ export class ReadService {
 
     public get = (type: string, id: string): Observable<any[]> => {
 
-        const url: string = this.root  +  '/public/'  +  type  +  '/'  +  id  +  '.json';
-        console.log('getAll '  +  url);
+        const url = this.root  +  '/public/'  +  type  +  '/'  +  id  +  '.json';
+        this.log.debug('getAll '  +  url);
 
 
         return this.http.get(url)

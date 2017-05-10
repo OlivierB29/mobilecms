@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { environment } from '../../environment';
 
+import { Log } from '../../shared/services/log.service';
 
 
 @Injectable()
@@ -15,14 +16,14 @@ export class ConfService {
 
   private root = environment.server;
 
-  constructor(private http: Http) {
+  constructor(private log: Log,  private http: Http) {
   }
 
     load() {
       this.loadFile('conf.json')
           .subscribe((data: any[]) => this._config = data,
-          error => console.log('config'  +  error),
-          () => console.log('config complete'  +  this._config));
+          error => console.error('config'  +  error),
+          () => this.log.debug('config complete'  +  this._config));
 
     }
 
@@ -35,13 +36,13 @@ export class ConfService {
 
   getLayout(): string {
 
-    let layout= 'desktop';
+    let layout = 'desktop';
 
 
 
 
 
-    if(window.matchMedia('(min-width: 55em)').matches) {
+    if (window.matchMedia('(min-width: 55em)').matches ) {
       layout = 'desktop';
     } else if (window.matchMedia('(min-width: 29em)').matches) {
       layout = 'medium';
@@ -76,8 +77,8 @@ export class ConfService {
 
     getDefaultLocale(): string {
 
-      let locale= 'en';
-      let lang = navigator.language;
+      let locale = 'en';
+      const lang = navigator.language;
 
       if (lang === 'fr-FR' || lang === 'fr') {
         locale = 'fr';
@@ -89,10 +90,7 @@ export class ConfService {
 
 
 
-    isDebug(): boolean {
 
-      return false;
-    }
 
     getResources(): string {
       return this.root;
@@ -111,7 +109,7 @@ export class ConfService {
 
     private handleErrorObservable(error: Response) {
       console.error('conf.handleErrorObservable');
-        if(error &&  error.statusText) {
+        if (error &&  error.statusText) {
         console.error('handle conf '  +  error.statusText);
         }
 

@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  server:""
+  server: '',
+  log: 'error'
 };
