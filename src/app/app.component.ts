@@ -16,13 +16,13 @@ import { Log } from './shared/services/log.service';
 })
 export class AppComponent {
 
- 
+
 
 
     /*width: number ;
     height: number ;
   */
-    layout: string = 'desktop';
+    layout= 'desktop';
 
     constructor(private ngZone: NgZone, private conf: ConfService,
        private log: Log) {

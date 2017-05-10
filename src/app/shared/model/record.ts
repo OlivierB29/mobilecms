@@ -1,11 +1,11 @@
 export class Record {
 
-    keyname: string = '';
+    keyname = '';
 
-    keyvalue: string = '';
+    keyvalue = '';
 
-    properties: any = {};
+    properties = {};
 
-    datafile: string = '';
+    datafile = '';
 
 }

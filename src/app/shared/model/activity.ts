@@ -10,5 +10,7 @@ logo: string;
 
 calendar: string;
 
+link: string; //navigation URL
 
+image: string; //image URL
 }

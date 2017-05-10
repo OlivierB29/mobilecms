@@ -5,14 +5,14 @@ export class Event {
     title: string; //  17-03 interesting seminar
     organization: string; //  Some org
     description: string; //  Some informations
-    location: string; //  
-    url: string; //  
+    location: string; // location
+    url: string; // url
 
-    state: string = 'inactive';
+    state = 'inactive';
 
     toggleState(): void {
 
-        this.state = (this.state === 'active' ? 'inactive': 'active');
+        this.state = (this.state === 'active' ? 'inactive' : 'active');
 
     }
 
@@ -22,12 +22,5 @@ export class Event {
         return ['/calendar/', this.id];
     }
 
-    test(): string {
 
-        return '/calendar/' +  this.id;
-    }
-
-    coucou() {
-      console.log(this.title);
-    }
 }

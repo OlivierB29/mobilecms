@@ -17,10 +17,10 @@ import { ConfService } from '../../shared/services/conf.service';
 export  class BannerComponent implements OnInit {
 
 
-  bannerUrl: string = '';
+  bannerUrl= '';
 
 
-  layout: string = 'desktop';
+  layout= 'desktop';
 
 
   constructor(private conf: ConfService) {

@@ -35,7 +35,7 @@ export class ConfService {
 
   getLayout(): string {
 
-    let layout: string = 'desktop';
+    let layout= 'desktop';
 
 
 
@@ -76,7 +76,7 @@ export class ConfService {
 
     getDefaultLocale(): string {
 
-      let locale: string = 'en';
+      let locale= 'en';
       let lang = navigator.language;
 
       if (lang === 'fr-FR' || lang === 'fr') {

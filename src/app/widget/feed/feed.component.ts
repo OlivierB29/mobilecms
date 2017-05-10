@@ -21,7 +21,7 @@ import { Router } from '@angular/router';
 
 export class FeedComponent implements OnInit {
 
-    imageservice: string = '';
+    imageservice= '';
 
 
     items: Event[] = [];

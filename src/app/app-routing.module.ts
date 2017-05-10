@@ -43,12 +43,9 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
          component: ClubActivitiesComponent
        },
        {
-         path: 'clubs/: activity',
+         path: 'clubs/:activity',
          component: ClubActivitiesComponent
        },
-  
-
-
        {
            path: 'links',
            component: LinksComponent
@@ -57,7 +54,6 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
            path: 'liens',
            component: LinksComponent
        },
-
        {
            path: 'contact',
            component: ContactComponent
@@ -71,9 +67,6 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
          path: 'comptesrendus',
          component: ReportsComponent
        },
-
-
-
        {
            path: 'links',
            component: LinksComponent
@@ -82,8 +75,6 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
            path: 'liens',
            component: LinksComponent
        },
-
-
        {
          path: 'reports',
          component: ReportsComponent
@@ -92,33 +83,29 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
          path: 'comptesrendus',
          component: ReportsComponent
        },
-
-
        {
          path: 'calendrier',
          component: CalendarActivitiesComponent
        },
        {
-         path: 'calendrier/: activity',
+         path: 'calendrier/:activity',
          component: CalendarActivitiesComponent
        },
        {
-         path: 'calendrier/detail/: id',
+         path: 'calendrier/detail/:id',
          component: CalendarEventComponent
        },
-
-
        // EN
        {
          path: 'news',
          component: NewsComponent
        },
        {
-         path: 'news/: activity',
+         path: 'news/:activity',
          component: NewsComponent
        },
        {
-         path: 'news/: activity/: date',
+         path: 'news/:activity/:date',
          component: NewsComponent
        },
        // FR
@@ -127,11 +114,11 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
          component: NewsComponent
        },
        {
-         path: 'actualites/: activity',
+         path: 'actualites/:activity',
          component: NewsComponent
        },
        {
-         path: 'actualites/: activity/: date',
+         path: 'actualites/:activity/:date',
          component: NewsComponent
        },
        {
@@ -139,11 +126,11 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
          component: CalendarActivitiesComponent
        },
        {
-         path: 'calendar/: activity',
+         path: 'calendar/:activity',
          component: CalendarActivitiesComponent
        },
        {
-         path: 'calendar/detail/: id',
+         path: 'calendar/detail/:id',
          component: CalendarEventComponent
        }
 

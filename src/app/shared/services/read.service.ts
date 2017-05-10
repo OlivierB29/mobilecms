@@ -19,7 +19,7 @@ export class ReadService {
 
 
     public getMenu = (uri: string, locale: string): Observable<MenuItem[]> => {
-        const url: string = 'i18n/'  +  uri  +  '/menu.'  +  locale  +  '.json';
+        const url= 'i18n/'  +  uri  +  '/menu.'  +  locale  +  '.json';
         console.log('getMenu ...'  +  url);
 
         return this.http.get(url)
@@ -29,7 +29,7 @@ export class ReadService {
     }
 
     public getLocale = (uri: string, locale: string): Observable<any> => {
-        const url: string = 'i18n/'  +  uri  +  '/'  +  locale  +  '.json';
+        const url= 'i18n/'  +  uri  +  '/'  +  locale  +  '.json';
         console.log('getLocale '  +  url);
 
         return this.http.get(url)
