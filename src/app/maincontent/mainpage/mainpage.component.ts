@@ -13,12 +13,12 @@ import { MenuItem } from '../../shared/model/menuitem';
 
 @Component({
     moduleId: module.id,
-    selector: 'my-mainpage',
+    selector: 'app-my-mainpage',
     templateUrl: 'mainpage.component.html',
     styleUrls: ['mainpage.component.css']
 })
 export class MainPageComponent {
-        
+
 
     activityObjectList: Activity[] = [];
 
@@ -26,25 +26,25 @@ export class MainPageComponent {
 
     activity: string;
 
-    //Localization
+    // Localization
     i18n = <any>{};
 
     lang: string;
 
     /*
 
-    https://material.angular.io/components/component/sidenav
+    https: // material.angular.io/components/component/sidenav
     */
-    menuMode : string;
+    menuMode: string;
 
     /*
     opened
-    https://www.npmjs.com/package/@angular2-material/sidenav
+    https: // www.npmjs.com/package/@angular2-material/sidenav
     */
     menuOpened: boolean;
 
 
-    mobileLayout : boolean;
+    mobileLayout: boolean;
 
     constructor(private conf: ConfService,
             private dataService: ReadService,
@@ -59,32 +59,32 @@ export class MainPageComponent {
 
   this.dataService.getLocale( 'maincontent/mainpage',
   this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
-                error => this.log.debug('Locale' + error),
+                error => this.log.debug('Locale'  +  error),
                 () => this.log.debug('Locale complete'));
 
 
         // Load the menu items
-        this.log.debug('loading menu ' + this.conf.getDefaultLocale());
+        this.log.debug('loading menu '  +  this.conf.getDefaultLocale());
         this.dataService.getMenu('menu', this.conf.getDefaultLocale())
             .subscribe((data: MenuItem[]) => this.menuItems = data,
-            error => this.log.debug('getMenu ' + error),
+            error => this.log.debug('getMenu '  +  error),
             () => this.log.debug('getMenu complete'));
 
-    var layout = this.conf.getLayout();
+    let layout = this.conf.getLayout();
 
     this.mobileLayout = layout !== 'desktop';
 
-     switch (layout)  { 
+     switch (layout)  {
     case 'desktop': 
        this.menuMode = 'side';
        this.menuOpened = true;
 
-      break; 
+      break;
     default: 
        this.menuMode = 'over';
        this.menuOpened = false;
 
-    } 
+    }
 
 
 

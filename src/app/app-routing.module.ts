@@ -4,15 +4,15 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './maincontent/home/home.component';
 
 
-import { CalendarEventComponent }  from './maincontent/calendarevent/calendarevent.component';
-import { NewsComponent }   from './maincontent/news/news.component';
-import { ClubListComponent }   from './maincontent/clublist/clublist.component';
+import { CalendarEventComponent } from './maincontent/calendarevent/calendarevent.component';
+import { NewsComponent } from './maincontent/news/news.component';
+import { ClubListComponent } from './maincontent/clublist/clublist.component';
 import { ContactComponent } from './maincontent/contact/contact.component';
 
 
-import { StructureComponent }   from './maincontent/items/structure/structure.component';
-import { DocumentsComponent }   from './maincontent/items/documents/documents.component';
-import { LinksComponent }   from './maincontent/items/links/links.component';
+import { StructureComponent } from './maincontent/items/structure/structure.component';
+import { DocumentsComponent } from './maincontent/items/documents/documents.component';
+import { LinksComponent } from './maincontent/items/links/links.component';
 import { ReportsComponent } from './maincontent/items/reports/reports.component';
 import { ClubActivitiesComponent } from './maincontent/clubactivities/clubactivities.component';
 import { CalendarActivitiesComponent } from './maincontent/calendaractivities/calendaractivities.component';
@@ -43,7 +43,7 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
          component: ClubActivitiesComponent
        },
        {
-         path: 'clubs/:activity',
+         path: 'clubs/: activity',
          component: ClubActivitiesComponent
        },
   
@@ -99,39 +99,39 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
          component: CalendarActivitiesComponent
        },
        {
-         path: 'calendrier/:activity',
+         path: 'calendrier/: activity',
          component: CalendarActivitiesComponent
        },
        {
-         path: 'calendrier/detail/:id',
+         path: 'calendrier/detail/: id',
          component: CalendarEventComponent
        },
 
 
-       //EN
+       // EN
        {
          path: 'news',
          component: NewsComponent
        },
        {
-         path: 'news/:activity',
+         path: 'news/: activity',
          component: NewsComponent
        },
        {
-         path: 'news/:activity/:date',
+         path: 'news/: activity/: date',
          component: NewsComponent
        },
-       //FR
+       // FR
        {
          path: 'actualites',
          component: NewsComponent
        },
        {
-         path: 'actualites/:activity',
+         path: 'actualites/: activity',
          component: NewsComponent
        },
        {
-         path: 'actualites/:activity/:date',
+         path: 'actualites/: activity/: date',
          component: NewsComponent
        },
        {
@@ -139,11 +139,11 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
          component: CalendarActivitiesComponent
        },
        {
-         path: 'calendar/:activity',
+         path: 'calendar/: activity',
          component: CalendarActivitiesComponent
        },
        {
-         path: 'calendar/detail/:id',
+         path: 'calendar/detail/: id',
          component: CalendarEventComponent
        }
 
@@ -153,13 +153,13 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
 })
 export class AppRoutingModule { }
 
-//IMPORTANT
-//VERY IMPORTANT
+// IMPORTANT
+// VERY IMPORTANT
 // ### Without useHash
-//links are without #, but it requires an Apache configuration !
-//RouterModule.forRoot(routes);
+// links are without #, but it requires an Apache configuration !
+// RouterModule.forRoot(routes);
 
 // ### With useHash
-// an URL uses #. http://localhost/#/mycomponent
-//Any request to http://localhost/#/mycomponent queries index.html
-//RouterModule.forRoot(routes, { useHash: true });
+// an URL uses #. http: // localhost/#/mycomponent
+// Any request to http: // localhost/#/mycomponent queries index.html
+// RouterModule.forRoot(routes, { useHash: true });

@@ -8,11 +8,11 @@ https://angular.io/docs/ts/latest/guide/pipes.html
 @Pipe({name: 'prettyurl'})
 export class PrettyUrlPipe implements PipeTransform {
 
-    transform(value:string) {
-        var result = '';
+    transform(value: string) {
+        let result = '';
         if (value) {
 
-            result = value.replace('http://', '');
+            result = value.replace('http: // ', '');
         }
         return result;
     }

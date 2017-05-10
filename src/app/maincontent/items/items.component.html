@@ -3,7 +3,7 @@
 
   <div >
 
-    <div *ngFor="let currentItem of (items | orderbyasc:'id')" class='article-content' >
+    <div *ngFor="let currentItem of (items | orderbyasc: 'id')" class='article-content' >
 			<md-card [innerHTML]='currentItem.title'></md-card>
       <div [innerHTML]="currentItem.description"></div>
 

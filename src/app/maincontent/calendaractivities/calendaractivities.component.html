@@ -6,9 +6,9 @@
 
 
   <div *ngFor="let activityLink of activityObjectList">
-    <button md-button [routerLink]='"/calendrier/" + activityLink.name' class='my-activity-button' >
+    <button md-button [routerLink]='"/calendrier/"  +  activityLink.name' class='my-activity-button' >
     <span [innerHTML]='activityLink.name | uppercase'></span>
-    <img class="fill-img" *ngIf="activityLink.logo" [src]='"public/activities/" + activityLink.name + "/" + activityLink.logo'   [alt]="activityLink.name" [title]="activityLink.name | uppercase">        
+    <img class="fill-img" *ngIf="activityLink.logo" [src]='"public/activities/"  +  activityLink.name  +  "/"  +  activityLink.logo'   [alt]="activityLink.name" [title]="activityLink.name | uppercase">
      </button>
   </div>
 
@@ -19,6 +19,6 @@
 
 <div *ngIf="activity">
 
-  <my-calendar-list [activity]='activity'></my-calendar-list>
+  <app-my-calendar-list [activity]='activity'></app-my-calendar-list>
 </div>
 </div>

@@ -10,7 +10,7 @@ import { Log } from '../../shared/services/log.service';
 
 @Component({
     moduleId: module.id,
-    selector: 'my-calendardetail-component',
+    selector: 'app-my-calendardetail-component',
     templateUrl: 'calendardetail.component.html',
     styleUrls: ['calendardetail.component.css']
 })
@@ -21,7 +21,7 @@ export class CalendarDetailComponent implements OnInit {
     item: any = {};
 
 
-  //Localization
+  // Localization
   i18n = {};
 
     constructor(
@@ -33,22 +33,22 @@ export class CalendarDetailComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log('my-calendardetail-component ' + this.id);
+        console.log('app-my-calendardetail-component '  +  this.id);
 
 
   this.readService.getLocale( 'maincontent/calendar',
   this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
-                error => this.log.debug('Locale' + error),
+                error => this.log.debug('Locale'  +  error),
                 () => this.log.debug('Locale complete'));
 
         if (this.id) {
 
             this.readService.get('calendar', this.id)
                 .subscribe((data: any) => this.item = data,
-                error => console.log('get' + error),
+                error => console.log('get'  +  error),
                 () => { console.log('get complete'); });
         } else {
-            console.error('my-calendardetail-component empty id');
+            console.error('app-my-calendardetail-component empty id');
         }
 
 

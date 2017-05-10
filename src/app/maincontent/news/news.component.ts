@@ -8,7 +8,7 @@ import { ConfService } from '../../shared/services/conf.service';
 
 @Component({
     moduleId: module.id,
-    selector: 'my-news-component',
+    selector: 'app-my-news-component',
     templateUrl: 'news.component.html',
     styleUrls: ['news.component.css']
 })
@@ -18,28 +18,28 @@ export class NewsComponent implements OnInit {
 
   maxElements = 4;
 
-  //Localization
+  // Localization
   i18n = <any>{};
 
 
     constructor(
-        private conf : ConfService,
+        private conf: ConfService,
         private dataService: ReadService,
-        private log : Log,
+        private log: Log,
         private orderbydesc: OrderbyDescPipe
     ) {
     }
     ngOnInit(): void {
-       
+
         this.dataService.getLocale( 'maincontent/news',
         this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
-                error => this.log.debug('Locale' + error),
+                error => this.log.debug('Locale'  +  error),
                 () => this.log.debug('Locale complete'));
 
         this.dataService.getAll('news')
-                                  .subscribe((data:any[]) => this.items = data,
-                                      error => this.log.debug('getNews'+error),
-                                      () => this.log.debug('getNews complete' + this.items.length));
+                                  .subscribe((data: any[]) => this.items = data,
+                                      error => this.log.debug('getNews' + error),
+                                      () => this.log.debug('getNews complete'  +  this.items.length));
 
 
 
@@ -47,5 +47,5 @@ export class NewsComponent implements OnInit {
     }
 
 
- 
+
 }

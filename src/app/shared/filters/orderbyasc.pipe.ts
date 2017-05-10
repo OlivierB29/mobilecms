@@ -2,7 +2,7 @@ import { Injectable, Pipe, PipeTransform } from '@angular/core';
 
 
 /*
-https://angular.io/docs/ts/latest/guide/pipes.html
+https: // angular.io/docs/ts/latest/guide/pipes.html
 
 */
 
@@ -15,7 +15,7 @@ export class OrderbyAscPipe implements PipeTransform {
 
         return items.sort(function(a,b) {
 
-          return (a[arg] > b[arg]) ? 1 : ((b[arg] > a[arg]) ? -1 : 0);
+          return (a[arg] > b[arg]) ? 1: ((b[arg] > a[arg]) ? -1: 0);
         } );
     }
 

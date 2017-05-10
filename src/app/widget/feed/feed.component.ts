@@ -4,9 +4,9 @@ import { Component, OnInit } from '@angular/core';
 import { ReadService } from '../../shared/services/read.service';
 
 import { ConfService } from '../../shared/services/conf.service';
-import { Event }        from '../../shared/model/event';
+import { Event } from '../../shared/model/event';
 
-import { Router }            from '@angular/router';
+import { Router } from '@angular/router';
 
 /**
 * same timing animations
@@ -33,20 +33,20 @@ export class FeedComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      //case : activity selected
+      // case: activity selected
 this.dataService.getAll('calendar')
                 .subscribe((data: Event[]) => this.items = data,
-                error => this.log.debug('getCalendarEvents ' + error),
-                () => this.log.debug('getCalendarEvents complete :'  + this.items.length));
+                error => this.log.debug('getCalendarEvents '  +  error),
+                () => this.log.debug('getCalendarEvents complete : '   +  this.items.length));
 
     }
 
     gotoDetail(item: Event): void {
-          console.log('gotoDetail...' + item.id);
+          console.log('gotoDetail...'  +  item.id);
 
-          //let link = ['/calendar/detail/', item.id];
-          let link = ['/calendar/detail/' + item.id];
-          console.log('navigate to ...' + link.toString());
+          // let link = ['/calendar/detail/', item.id];
+          let link = ['/calendar/detail/'  +  item.id];
+          console.log('navigate to ...'  +  link.toString());
 
           this.router.navigate(link);
 

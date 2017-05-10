@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Router }            from '@angular/router';
+import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
 import { ConfService } from '../../../shared/services/conf.service';
 import { Log } from '../../../shared/services/log.service';
 import { ReadService } from '../../../shared/services/read.service';
 
-import { Item }        from '../../../shared/model/item';
+import { Item } from '../../../shared/model/item';
 
 
 
@@ -24,8 +24,8 @@ export class StructureComponent implements OnInit {
   constructor(
 
     private dataservice: ReadService,
-    private conf : ConfService,
-    private log : Log
+    private conf: ConfService,
+    private log: Log
   ) {
 
   }
@@ -36,8 +36,8 @@ export class StructureComponent implements OnInit {
 
     this.dataservice.getAll('structure')
         .subscribe((data: Item[]) => this.items = data,
-        error => this.log.debug('StructureComponent ' + error),
-        () => this.log.debug('StructureComponent complete :' + this.items.length));
+        error => this.log.debug('StructureComponent '  +  error),
+        () => this.log.debug('StructureComponent complete : '  +  this.items.length));
 
 
 

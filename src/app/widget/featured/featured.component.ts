@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 
-import { Event }        from '../../shared/model/event';
+import { Event } from '../../shared/model/event';
 
 
 /**
@@ -23,7 +23,7 @@ export class FeaturedComponent implements OnInit {
 
     ngOnInit(): void {
 /*
-      var e : Event = new Event();
+      let e: Event = new Event();
       e.title = '';
 
       this.items.push(e);

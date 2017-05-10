@@ -26,30 +26,30 @@ import { PrettyUrlPipe } from './shared/filters/prettyurl.pipe';
 import { BrPipe } from './shared/filters/br.pipe';
 
 
-//Tools
-import { ConfService }          from './shared/services/conf.service';
-import { Log }          from './shared/services/log.service';
+// Tools
+import { ConfService }    from './shared/services/conf.service';
+import { Log }    from './shared/services/log.service';
 
 
 import { RouterModule } from '@angular/router';
 import { ReadService } from './shared/services/read.service';
 
-//Theme
+// Theme
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
 
 // maincontent
-import { NewsComponent }   from './maincontent/news/news.component';
-import { CalendarListComponent }   from './maincontent/calendarlist/calendarlist.component';
-import { CalendarEventComponent }  from './maincontent/calendarevent/calendarevent.component';
-import { ClubListComponent }   from './maincontent/clublist/clublist.component';
+import { NewsComponent } from './maincontent/news/news.component';
+import { CalendarListComponent } from './maincontent/calendarlist/calendarlist.component';
+import { CalendarEventComponent } from './maincontent/calendarevent/calendarevent.component';
+import { ClubListComponent } from './maincontent/clublist/clublist.component';
 
 
 
-import { StructureComponent }   from './maincontent/items/structure/structure.component';
-import { DocumentsComponent }   from './maincontent/items/documents/documents.component';
-import { LinksComponent }   from './maincontent/items/links/links.component';
+import { StructureComponent } from './maincontent/items/structure/structure.component';
+import { DocumentsComponent } from './maincontent/items/documents/documents.component';
+import { LinksComponent } from './maincontent/items/links/links.component';
 import { ReportsComponent } from './maincontent/items/reports/reports.component';
 import { NewsDetailComponent } from './maincontent/newsdetail/newsdetail.component';
 import { CalendarDetailComponent } from './maincontent/calendardetail/calendardetail.component';

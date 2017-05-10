@@ -1,7 +1,7 @@
 import { Injectable, Pipe, PipeTransform } from '@angular/core';
 
 /*
-https://angular.io/docs/ts/latest/guide/pipes.html
+https: // angular.io/docs/ts/latest/guide/pipes.html
 
 Filtre par regional code
 */

@@ -1,8 +1,9 @@
 
 import { Http, Response } from '@angular/http';
-import { Injectable }    from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
+import { environment } from '../../environment';
 
 
 
@@ -12,9 +13,7 @@ export class ConfService {
   private _config: any[];
 
 
-
- // private root = 'http://localhost';
-  private root = '';
+  private root = environment.server;
 
   constructor(private http: Http) {
   }
@@ -22,12 +21,12 @@ export class ConfService {
     load() {
       this.loadFile('conf.json')
           .subscribe((data: any[]) => this._config = data,
-          error => console.log('config' + error),
-          () => console.log('config complete' + this._config));
+          error => console.log('config'  +  error),
+          () => console.log('config complete'  +  this._config));
 
     }
 
-  public loadFile = (file : string): Observable<Object> => {
+  public loadFile = (file: string): Observable<Object> => {
 
          return this.http.get(file)
              .map((response: Response) => <Object>response.json())
@@ -36,7 +35,7 @@ export class ConfService {
 
   getLayout(): string {
 
-    var layout : string = 'desktop';
+    let layout: string = 'desktop';
 
 
 
@@ -55,13 +54,13 @@ export class ConfService {
 
   getJsonDataUrl(): string {
 
-    return this.root + '/json.php?file=';
+    return this.root  +  '/json.php?file=';
   }
 
 
     getHtmlDataUrl(): string {
 
-      return this.root + '/html.php?file=';
+      return this.root  +  '/html.php?file=';
     }
 
     getContext(): string {
@@ -71,19 +70,19 @@ export class ConfService {
 
     getImageService(): string {
 
-      return  this.root + '/services/image.service.php';
+      return  this.root  +  '/services/image.service.php';
     }
 
 
     getDefaultLocale(): string {
 
-      var locale : string = 'en';
-      var lang = navigator.language;
+      let locale: string = 'en';
+      let lang = navigator.language;
 
       if (lang === 'fr-FR' || lang === 'fr') {
         locale = 'fr';
       }
-      
+
       return locale;
     }
 
@@ -113,7 +112,7 @@ export class ConfService {
     private handleErrorObservable(error: Response) {
       console.error('conf.handleErrorObservable');
         if(error &&  error.statusText) {
-        console.error('handle conf ' + error.statusText);
+        console.error('handle conf '  +  error.statusText);
         }
 
          return Observable.throw('Server error');

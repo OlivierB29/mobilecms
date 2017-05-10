@@ -4,9 +4,9 @@
 
 
   <div class='article-list' *ngIf='items' >
-      <div *ngFor="let currentItem of (items | activityfilter:activity | orderbyasc:'id')" >
+      <div *ngFor="let currentItem of (items | activityfilter: activity | orderbyasc: 'id')" >
 
-        <my-calendardetail-component [id]="currentItem.id"></my-calendardetail-component>
+        <app-my-calendardetail-component [id]="currentItem.id"></app-my-calendardetail-component>
 
     </div>
   </div>

@@ -19,8 +19,8 @@ export class AppComponent {
  
 
 
-    /*width : number ;
-    height : number ;
+    /*width: number ;
+    height: number ;
   */
     layout: string = 'desktop';
 
@@ -31,7 +31,7 @@ export class AppComponent {
         window.onresize = (e) => {
             ngZone.run(() => {
                 this.layout = this.conf.getLayout();
-                this.log.debug('layout on onresize ' + this.layout);
+                this.log.debug('layout on onresize '  +  this.layout);
             });
         };
 */
@@ -40,7 +40,7 @@ export class AppComponent {
     ngAfterViewInit() {
 
         this.layout = this.conf.getLayout();
-        this.log.debug('layout on load ' + this.layout);
+        this.log.debug('layout on load '  +  this.layout);
 
     }
 

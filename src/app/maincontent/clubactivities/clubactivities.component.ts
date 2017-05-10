@@ -1,33 +1,32 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Router }            from '@angular/router';
+import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { Activity }        from '../../shared/model/activity';
+import { Activity } from '../../shared/model/activity';
 
 import { ConfService } from '../../shared/services/conf.service';
 import { Log } from '../../shared/services/log.service';
-import { ReadService } from "../../shared/services/read.service";
+import { ReadService } from '../../shared/services/read.service';
 
 
 
 @Component({
   moduleId: module.id,
-  selector: 'my-clubs-activities',
   templateUrl: 'clubactivities.component.html',
   styleUrls: ['clubactivities.component.css']
 })
 export class ClubActivitiesComponent implements OnInit {
 
 
-  //Localization
+  // Localization
   i18n = {};
 
-  //Server context
-  context : string = '';
+  // Server context
+  context = '';
 
 
-  activity : string;
+  activity: string;
 
 
   activityObjectList: Activity[] = [];
@@ -35,8 +34,8 @@ export class ClubActivitiesComponent implements OnInit {
   constructor(
     private router: Router,
     private dataService: ReadService,
-    private conf : ConfService,
-    private log : Log,
+    private conf: ConfService,
+    private log: Log,
     private route: ActivatedRoute
   ) {
   }
@@ -46,11 +45,11 @@ export class ClubActivitiesComponent implements OnInit {
 
   this.dataService.getLocale( 'maincontent/clublist',
   this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
-                error => this.log.debug('Locale' + error),
+                error => this.log.debug('Locale'  +  error),
                 () => this.log.debug('Locale complete'));
 
 
-    //path parameters
+    // path parameters
     this.route.params.forEach((params: Params) => {
       if (params['activity'] !== undefined) {
         this.activity = params['activity'];
@@ -63,9 +62,9 @@ export class ClubActivitiesComponent implements OnInit {
     this.context = this.conf.getContext();
 
     this.dataService.getAll('activities')
-                                  .subscribe((data:Activity[]) => this.activityObjectList = data,
-                                      error => this.log.debug('getActivities'+error),
-                                      () => this.log.debug('getActivities complete' + this.activityObjectList.length));
+                                  .subscribe((data: Activity[]) => this.activityObjectList = data,
+                                      error => this.log.debug('getActivities' + error),
+                                      () => this.log.debug('getActivities complete'  +  this.activityObjectList.length));
 
 
 
@@ -80,10 +79,10 @@ export class ClubActivitiesComponent implements OnInit {
 
 
 
-getLogoUrl(id : string, file : string) : string {
-  
+getLogoUrl(id: string, file: string): string {
 
-  return  'public/activities/'+id+'/'+file ;
+
+  return  'public/activities/' + id + '/' + file ;
 }
 
 }

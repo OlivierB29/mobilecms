@@ -4,9 +4,9 @@ import { ConfService } from '../../shared/services/conf.service';
 
 import { Item } from '../../shared/model/item';
 import { Component, OnInit } from '@angular/core';
-import { ReadService } from "../../shared/services/read.service";
+import { ReadService } from '../../shared/services/read.service';
 
-//import { MdIcon, MdIconRegistry } from '@angular/material/icon/icon';
+// import { MdIcon, MdIconRegistry } from '@angular/material/icon/icon';
 
 
 
@@ -29,8 +29,8 @@ export class FooterComponent implements OnInit {
 
 
     constructor(    private readService: ReadService,
-        private conf : ConfService,
-        private log : Log
+        private conf: ConfService,
+        private log: Log
 ) {
 
      }
@@ -40,7 +40,7 @@ export class FooterComponent implements OnInit {
 
             this.readService.getAllItems('about')
                 .subscribe((data: any[]) => this.items = data,
-                error => this.log.debug('getActivities' + error),
+                error => this.log.debug('getActivities'  +  error),
                 () => this.log.debug('getActivities complete'));
 
 

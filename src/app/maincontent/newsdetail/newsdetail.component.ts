@@ -7,7 +7,7 @@ import { ReadService } from '../../shared/services/read.service';
 
 @Component({
     moduleId: module.id,
-    selector: 'my-newsdetail-component',
+    selector: 'app-my-newsdetail-component',
     templateUrl: 'newsdetail.component.html',
     styleUrls: ['newsdetail.component.css']
 })
@@ -26,15 +26,15 @@ export class NewsDetailComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log('my-newsdetail-component ' + this.id);
+        console.log('app-my-newsdetail-component '  +  this.id);
         if (this.id) {
 
             this.readService.get('news', this.id)
                 .subscribe((data: any) => { this.item = data; this.item.state = this.active },
-                error => console.log('get' + error),
+                error => console.log('get'  +  error),
                 () => { console.log('get complete'); });
         } else {
-            console.error("my-newsdetail-component empty id");
+            console.error('app-my-newsdetail-component empty id');
         }
 
 

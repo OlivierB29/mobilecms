@@ -8,7 +8,6 @@ import { ReadService } from '../../shared/services/read.service';
 
 @Component({
     moduleId: module.id,
-    selector: 'my-home',
     templateUrl: 'home.component.html',
     styleUrls: ['home.component.css']
 })
@@ -37,7 +36,7 @@ export class HomeComponent implements OnInit {
 
         this.dataService.getLocale(  '/maincontent/home',
          this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
-            error => this.log.debug('Locale' + error),
+            error => this.log.debug('Locale'  +  error),
             () => this.log.debug('Locale complete'));
 
 

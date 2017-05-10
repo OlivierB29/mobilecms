@@ -1,7 +1,7 @@
 
 <div class='article-list'>
 <div *ngIf="activity">
-  <h3 [innerHTML]='i18n.title + ": " + (activity | uppercase)'></h3>
+  <h3 [innerHTML]='i18n.title  +  ": "  +  (activity | uppercase)'></h3>
 
 <md-button-toggle-group #group="mdButtonToggleGroup">
   
@@ -18,8 +18,8 @@
 
 <div *ngIf="activity  && department ">
   <div class='article-list'>
-    <div *ngFor="let club of (clubs | activityfilter:activity | departmentfilter:department)" class='club-content'>
-      <my-clubdetail-component [id]="club.id"></my-clubdetail-component>
+    <div *ngFor="let club of (clubs | activityfilter: activity | departmentfilter: department)" class='club-content'>
+      <app-my-clubdetail-component [id]="club.id"></app-my-clubdetail-component>
     </div>
   </div>
 </div>
