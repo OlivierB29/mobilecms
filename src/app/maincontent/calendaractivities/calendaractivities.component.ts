@@ -87,11 +87,5 @@ export class CalendarActivitiesComponent implements OnInit {
       error => this.log.debug('getActivities' + error),
       () => this.log.debug('getActivities complete' + this.activityObjectList.length));
 
-
-
-
   }
-
-
-
 }

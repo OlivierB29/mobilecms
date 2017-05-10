@@ -31,6 +31,15 @@ export class ClubActivitiesComponent implements OnInit {
 
   activityObjectList: Activity[] = [];
 
+  /**
+  * router link of the current page.
+  * Same value in this case, but could be different
+  * Explanation :
+  * - en: clubs
+  * - fr: clubs
+  */
+  mainRoute = 'clubs';
+
   constructor(
     private router: Router,
     private dataService: ReadService,
@@ -61,28 +70,31 @@ export class ClubActivitiesComponent implements OnInit {
 
     this.context = this.conf.getContext();
 
+    //
+    // Load activities and add link URL, logo URL
+    //
     this.dataService.getAll('activities')
-                                  .subscribe((data: Activity[]) => this.activityObjectList = data,
-                                      error => this.log.debug('getActivities' + error),
-                                      () => this.log.debug('getActivities complete'  +  this.activityObjectList.length));
-
-
+      .subscribe((data: Activity[]) => {
+        // all activities are displayed
+        this.activityObjectList = data;
+        this.activityObjectList.forEach((a: Activity) => {
+          a.link = '/' + this.mainRoute + '/' + a.name;
+          a.image = 'public/activities/' + a.name + '/' + a.logo;
+        });
+      },
+      error => this.log.debug('getActivities' + error),
+      () => this.log.debug('getActivities complete' + this.activityObjectList.length));
 
 
   }
 
 
   gotoActivity(activity: string): void {
-  let link = ['/clubs/' , activity];
-  this.router.navigate(link);
+
+  this.router.navigate(['/clubs/' , activity]);
   }
 
 
 
-getLogoUrl(id: string, file: string): string {
-
-
-  return  'public/activities/' + id + '/' + file ;
-}
 
 }
