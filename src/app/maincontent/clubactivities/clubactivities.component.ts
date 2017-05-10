@@ -22,10 +22,6 @@ export class ClubActivitiesComponent implements OnInit {
   // Localization
   i18n = {};
 
-  // Server context
-  context = '';
-
-
   activity: string;
 
 
@@ -67,8 +63,6 @@ export class ClubActivitiesComponent implements OnInit {
       }
 
     });
-
-    this.context = this.conf.getContext();
 
     //
     // Load activities and add link URL, logo URL
