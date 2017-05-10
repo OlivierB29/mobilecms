@@ -29,18 +29,20 @@ export class CalendarListComponent implements OnInit {
 
     i18n = {};
 
-    commonLocale = {};
 
 
     localregion = 'Bretagne';
 
     /**
     * router link of the current page
+    * Explanation :
+    * - en: calendar
+    * - fr: calendrier
     */
     routerLink = '';
 
 
-    logosUrl: string = '';
+    logosUrl  = '';
 
 
 
@@ -58,22 +60,20 @@ export class CalendarListComponent implements OnInit {
     ngOnInit(): void {
 
 
-        this.logosUrl = this.conf.getResources()  +  '/public/activities';
+        const currentDate = new Date();
 
-        let currentDate = new Date();
-
-        let currentYear = currentDate.getFullYear();
+        const currentYear = currentDate.getFullYear();
 
         if (currentDate.getMonth() > 6) {
 
             // 2016-2017
-            this.years.push(''  +  currentYear);
-            this.years.push(''  +  (currentYear  +  1));
+            this.years.push('' + currentYear);
+            this.years.push('' + (currentYear + 1));
 
         } else {
             // 2015-2016
-            this.years.push(''  +  (currentYear - 1));
-            this.years.push(''  +  currentYear);
+            this.years.push('' + (currentYear - 1));
+            this.years.push('' + currentYear);
 
         }
 
@@ -115,8 +115,7 @@ export class CalendarListComponent implements OnInit {
 
     gotoDetail(currentItem: Event): void {
 
-    let link = [this.routerLink + '/detail/' , currentItem.activity];
-    this.router.navigate(link);
+    this.router.navigate([this.routerLink + '/detail/' , currentItem.activity]);
   }
 
 

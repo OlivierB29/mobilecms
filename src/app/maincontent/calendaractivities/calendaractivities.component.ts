@@ -22,10 +22,21 @@ export class CalendarActivitiesComponent implements OnInit {
   // Localization
   i18n = {};
 
+
+
+
   activity: string;
 
 
   activityObjectList: Activity[] = [];
+
+  /**
+  * router link of the current page
+  * Explanation :
+  * - en: calendar
+  * - fr: calendrier
+  */
+  mainRoute = '';
 
   constructor(
     private router: Router,
@@ -38,30 +49,43 @@ export class CalendarActivitiesComponent implements OnInit {
 
   ngOnInit(): void {
 
+    // Explanation :
+    // if locale is en: calendar/:activity
+    // if locale is fr: calendrier/:activity
 
-  this.dataService.getLocale( 'maincontent/calendar',
-  this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
-                error => this.log.debug('Locale'  +  error),
-                () => this.log.debug('Locale complete'));
+
+    // TODO find better ?
+    const routerLink = this.route.routeConfig.path;
+    this.mainRoute = routerLink.split('/')[0];
+
+
+    this.dataService.getLocale('maincontent/calendar',
+      this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
+      error => this.log.debug('Locale' + error),
+      () => this.log.debug('Locale complete'));
 
 
     // path parameters
     this.route.params.forEach((params: Params) => {
       if (params['activity'] !== undefined) {
         this.activity = params['activity'];
-
-
       }
-
     });
 
 
+    //
+    // Load activities and add link URL, logo URL
+    //
     this.dataService.getAll('activities')
-                                  .subscribe((data: Activity[]) => this.activityObjectList = data.filter(function (el) {
-  return el.calendar === 'true';
-}),
-                                      error => this.log.debug('getActivities' + error),
-                                      () => this.log.debug('getActivities complete'  +  this.activityObjectList.length));
+      .subscribe((data: Activity[]) => {
+        this.activityObjectList = data.filter(function(el) { return el.calendar === 'true'; });
+        this.activityObjectList.forEach((a: Activity) => {
+          a.link = '/' + this.mainRoute + '/' + a.name;
+          a.image = 'public/activities/' + a.name + '/' + a.logo;
+        });
+      },
+      error => this.log.debug('getActivities' + error),
+      () => this.log.debug('getActivities complete' + this.activityObjectList.length));
 
 
 
@@ -69,16 +93,5 @@ export class CalendarActivitiesComponent implements OnInit {
   }
 
 
-  gotoActivity(activity: string): void {
-    this.router.navigate(['/calendrier/' , activity]);
-  }
-
-
-
-getLogoUrl(id: string, file: string): string {
-
-
-  return  'public/activities/' + id + '/' + file ;
-}
 
 }

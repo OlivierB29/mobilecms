@@ -23,7 +23,7 @@ export class CalendarEventComponent implements OnInit {
 
 
     current: Event = null;
-    id: string = '';
+    id= '';
 
 
     i18n = {};
