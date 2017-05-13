@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { OrderbyDescPipe } from '../../shared/filters/orderbydesc.pipe';
 import { Log } from '../../shared/services/log.service';
 import { ReadService } from '../../shared/services/read.service';
@@ -21,6 +21,8 @@ export class NewsComponent implements OnInit {
   // Localization
   i18n = <any>{};
 
+  @Input() max = 0;
+
 
     constructor(
         private conf: ConfService,
@@ -39,7 +41,13 @@ export class NewsComponent implements OnInit {
         this.dataService.getAll('news')
                                   .subscribe((data: any[]) => this.items = data,
                                       error => this.log.debug('getNews' + error),
-                                      () => this.log.debug('getNews complete'  +  this.items.length));
+                                      () =>  {
+
+                                        if (this.max > 0 && this.items.length > this.max) {
+                                           this.items = this.items.slice(this.items.length - this.max, this.items.length);
+                                        }
+                                        this.log.debug('getNews complete'  +  this.items.length);
+                                    });
 
 
 
