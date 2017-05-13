@@ -33,7 +33,7 @@ import { Log } from './shared/services/log.service';
 import { RouterModule } from '@angular/router';
 import { ReadService } from './shared/services/read.service';
 
-// Theme
+// Material Theme
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
