@@ -20,7 +20,7 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "mobile-cms-theme.scss"
+        "mobilecms-theme.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
