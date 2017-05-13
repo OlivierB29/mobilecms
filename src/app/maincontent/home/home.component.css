@@ -1,5 +1,15 @@
 /**/
 
+.expand-title{
+
+	font-weight: bold;
+}
+.expand-title:hover {
+
+	cursor: pointer;
+}
+/*----*/
+
 .flex {
   /* flexbox setup */
   display: flex;

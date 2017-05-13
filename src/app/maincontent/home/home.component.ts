@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
     date: string;
 
 
+
+
     constructor(
 
 
@@ -41,6 +43,7 @@ export class HomeComponent implements OnInit {
 
 
     }
+
 
 
 }
