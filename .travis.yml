@@ -3,7 +3,7 @@ node_js:
   - "6"
   - "7"
 install:
-   - npm install
+   - yarn
 before_script:
-  - npm install -g gulp
+  - npm install gulp
 script: gulp
