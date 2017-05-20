@@ -25,10 +25,18 @@
 
 
 .article-description {
-	margin-left: 0.5em;
+	margin: 0.5em;
 
 }
 
 .article-content img {
-  width: 100%;
+  width: 80%;
+	padding-top: 0.5em;
+}
+
+
+
+
+.images-container {
+	border-top: 1px solid #ddd;
 }

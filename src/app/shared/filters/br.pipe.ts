@@ -11,8 +11,7 @@ export class BrPipe implements PipeTransform {
     transform(value: string) {
         let result = '';
         if (value) {
-
-            result = value.replace('\n', '<br/>');
+            result = value.replace(/\n/g, '<br/>');
         }
         return result;
     }

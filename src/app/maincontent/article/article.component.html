@@ -10,17 +10,32 @@
 
 
 
-      <div *ngIf='active' >
-        <div [innerHTML]="item.description | br" class="article-description"></div>
+      <div *ngIf='active' class="article-description">
+        <div [innerHTML]="item.description | br"></div>
 
+        <div *ngIf="item.attachments && item.attachments.length > 0">
         <div *ngFor="let attachment of item.attachments">
           <a *ngIf="attachment.url" [href]="attachment.url" [innerHTML]="attachment.title"></a>
+
+        </div>
         </div>
 
-        <div *ngFor="let image of item.images">        
-          <img *ngIf="image.url" md-card-image [src]="image.url" [alt]="image.title">
+        <div *ngIf="item.images && item.images.length > 0" class="images-container">
+        <div *ngFor="let image of item.images">      
+          <a *ngIf="image.url && image.link" [href]="image.link">
+            <img [src]="image.url" [alt]="image.title">
+          </a> 
+
+          <img *ngIf="image.url && !image.link" [src]="image.url" [alt]="image.title">
         </div>
 
+
+        <div *ngFor="let image of item.images">      
+          <a *ngIf="image.link" [href]="image.link" [innerHTML]="image.link"></a> 
+
+        </div>
+
+        </div>
 
       </div>
 
