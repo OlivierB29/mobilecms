@@ -8,7 +8,7 @@
       <div [innerHTML]="currentItem.description"></div>
 
       <div *ngFor="let attachment of currentItem.attachments">
-        <a [href]="attachment.url" [innerHTML]="attachment.title"></a>
+        <a [href]="attachment.url" [innerHTML]="attachment.title"></a> <span [innerHTML]="attachment.description"></span>
       </div>
     </div>
   </div>

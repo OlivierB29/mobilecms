@@ -21,7 +21,7 @@ export class ReadService {
 
 
     public getMenu = (uri: string, locale: string): Observable<MenuItem[]> => {
-        const url = 'i18n/'  +  uri  +  '/menu.'  +  locale  +  '.json';
+        const url = this.root  + '/assets/i18n/'  +  uri  +  '/menu.'  +  locale  +  '.json';
           this.log.debug('getMenu ...'  +  url);
 
         return this.http.get(url)
@@ -31,7 +31,7 @@ export class ReadService {
     }
 
     public getLocale = (uri: string, locale: string): Observable<any> => {
-        const url = 'i18n/'  +  uri  +  '/'  +  locale  +  '.json';
+        const url = this.root  + '/assets/i18n/'  +  uri  +  '/'  +  locale  +  '.json';
         this.log.debug('getLocale '  +  url);
 
         return this.http.get(url)

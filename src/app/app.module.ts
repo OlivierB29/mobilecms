@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { APP_BASE_HREF } from '@angular/common';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -58,10 +58,28 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
 import { MainPageComponent } from './maincontent/mainpage/mainpage.component';
 
 
-
+// translate
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: Http) {
+    return new TranslateHttpLoader(http);
+}
 
 @NgModule({
-  imports: [BrowserModule, HttpModule, AppRoutingModule, MaterialModule,  SharedModule.forRoot()],
+    imports: [
+        BrowserModule,
+        HttpModule,
+        AppRoutingModule,
+        MaterialModule,
+        SharedModule.forRoot(),
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [Http]
+            }
+        })],
 
     declarations: [
 

@@ -17,7 +17,7 @@ import { MenuItem } from '../../shared/model/menuitem';
   templateUrl: 'mainpage.component.html',
   styleUrls: ['mainpage.component.css']
 })
-export class MainPageComponent {
+export class MainPageComponent  implements OnInit  {
 
 
   activityObjectList: Activity[] = [];

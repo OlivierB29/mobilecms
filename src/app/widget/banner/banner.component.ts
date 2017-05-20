@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 
 import { ConfService } from '../../shared/services/conf.service';
+import { environment } from '../../environment';
 
 /**
 * same timing animations
@@ -28,7 +29,7 @@ export  class BannerComponent implements OnInit {
 
 ngOnInit(): void {
 
-          this.bannerUrl =  'public/resources/banner.jpg';
+          this.bannerUrl = environment.server + '/public/resources/banner.jpg';
 }
 
 }
