@@ -1,9 +1,6 @@
 
 
 
-<md-progress-bar *ngIf="progressvalue < 100" mode="determinate" color="primary" [value]="progressvalue"></md-progress-bar>
-
-
   <div *ngIf="item" class='article-content'>
     			<md-card  (click)="showArticle()" class='article-title'>
             <span [innerHTML]="item.title"></span><span *ngIf='!active'>[...]</span>
