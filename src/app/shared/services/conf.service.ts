@@ -23,17 +23,6 @@ export class ConfService {
     return layout;
   }
 
-  /**
-   * @deprecated
-   */
-  getDefaultLocale(): string {
-    let locale = 'en';
-    const lang = navigator.language;
-    if (lang === 'fr-FR' || lang === 'fr') {
-      locale = 'fr';
-    }
-    return locale;
-  }
 
 
 

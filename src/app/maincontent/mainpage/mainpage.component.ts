@@ -68,7 +68,7 @@ export class MainPageComponent  implements OnInit  {
 
     // Load the menu items
     this.log.debug('loading menu ' + this.lang);
-    this.dataService.getMenu('menu', this.lang)
+    this.dataService.getMenu(this.lang)
       .subscribe((data: MenuItem[]) => this.menuItems = data,
       error => this.log.debug('getMenu ' + error),
       () => this.log.debug('getMenu complete'));

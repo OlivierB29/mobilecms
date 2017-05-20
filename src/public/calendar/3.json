@@ -1,0 +1,9 @@
+{
+        "id" : "3",
+        "date": "20161117",
+        "activity": "basketball",
+        "title": "another seminar of activity B",
+        "organization": "another org",
+        "description": "foo",
+        "url": "", "location" : "", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : ""
+    }

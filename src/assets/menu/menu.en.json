@@ -1,0 +1,70 @@
+[
+  {
+    "id" : "news",
+    "routerLink" : "/news",
+    "routerLinkActive" : "active",
+    "title" : "News",
+    "icon" : "list",
+    "order" : "1"
+  },
+  {
+    "id" : "clubs",
+    "routerLink" : "/clubs",
+    "routerLinkActive" : "active",
+    "title" : "Clubs",
+    "icon" : "place",
+    "order" : "2"
+  },
+  {
+    "id" : "calendar",
+    "routerLink" : "/calendar",
+    "routerLinkActive" : "active",
+    "title" : "Calendar",
+    "icon" : "event",
+    "order" : "3"
+  },
+
+  {
+    "id" : "structure",
+    "routerLink" : "/structure",
+    "routerLinkActive" : "active",
+    "title" : "Structure",
+    "icon" : "account circle",
+    "order" : "4"
+  },
+
+  {
+    "id" : "documents",
+    "routerLink" : "/documents",
+    "routerLinkActive" : "active",
+    "title" : "Documents",
+    "icon" : "attachment",
+    "order" : "5"
+  },
+
+  {
+      "id" : "reports",
+      "routerLink" : "/reports",
+      "routerLinkActive" : "active",
+      "title" : "Reports",
+      "icon" : "apps",
+      "order" : "6"
+    },
+  {
+    "id" : "links",
+    "routerLink" : "/links",
+    "routerLinkActive" : "active",
+    "title" : "Links",
+    "icon" : "bookmark",
+    "order" : "7"
+  },
+{
+  "id" : "contact",
+  "routerLink" : "/contact",
+  "routerLinkActive" : "active",
+  "title" : "Contact",
+  "icon" : "mail",
+  "order" : "8"
+}
+
+]

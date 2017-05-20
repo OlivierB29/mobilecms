@@ -1,0 +1,20 @@
+[
+    {
+        "id": "tennis",
+        "name": "tennis",
+        "logo": "tennis.png",
+        "calendar": "true"
+    },
+    {
+        "id": "golf",
+        "name": "golf",
+        "logo": "golf.jpg",
+        "calendar": "false"
+    },
+    {
+        "id": "basketball",
+        "name": "basketball",
+        "logo": "basketball.jpg",
+        "calendar": "true"
+    }
+]

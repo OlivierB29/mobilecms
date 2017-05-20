@@ -1,0 +1,47 @@
+[
+    {
+        "id" : "1",
+        "date": "201509",
+        "activity": "tennis",
+        "title": "tennis championship",
+        "organization": "Some org",
+        "description": "some infos",
+        "url": "", "location" : "", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : ""
+    },
+    {
+        "id" : "2",
+        "date": "201509",
+        "activity": "tennis",
+        "title": "a new tennis championship",
+        "organization": "Bretagne",
+        "description": "some infos",
+        "url": "", "location" : "", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : ""
+    },
+    {
+        "id" : "3",
+        "date": "20161117",
+        "activity": "basketball",
+        "title": "another basketball tournament",
+        "organization": "another org",
+        "description": "foo",
+        "url": "", "location" : "", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : ""
+    },
+    {
+        "id" : "4",
+        "date": "20161130",
+        "activity": "basketball",
+        "title": "yet another seminar of basketball",
+        "organization": "another org",
+        "description": "foo",
+        "url": "", "location" : "", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : ""
+    },
+    {
+        "id" : "5",
+        "date": "20161206",
+        "activity": "golf",
+        "title": "seminar of activity C animated by M. SAMPLE",
+        "organization": "another org",
+        "description": "foo",
+        "url": "", "location" : "", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : ""
+    }
+]

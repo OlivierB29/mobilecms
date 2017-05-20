@@ -25,12 +25,6 @@ export class CalendarEventComponent implements OnInit {
     current: Event = null;
     id= '';
 
-
-    i18n = {};
-
-    commonLocale = {};
-
-
     routerLink = '';
 
 
@@ -58,11 +52,6 @@ export class CalendarEventComponent implements OnInit {
 
         });
 
-
-        this.dataService.getLocale( 'maincontent/calendar/',
-         this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
-            error => this.log.debug('Locale'  +  error),
-            () => this.log.debug('Locale complete'));
 
 
 

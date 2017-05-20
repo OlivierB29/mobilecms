@@ -1,0 +1,12 @@
+[
+    {
+        "id" : "1",
+        "activity": "tennis",
+        "department": "01"
+    },
+    {
+        "id" : "2",
+        "activity": "basketball",
+        "department": "02"
+    }
+]
