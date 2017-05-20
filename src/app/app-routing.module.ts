@@ -7,17 +7,12 @@ import { HomeComponent } from './maincontent/home/home.component';
 import { CalendarEventComponent } from './maincontent/calendarevent/calendarevent.component';
 import { NewsComponent } from './maincontent/news/news.component';
 import { ClubListComponent } from './maincontent/clublist/clublist.component';
-import { ContactComponent } from './maincontent/contact/contact.component';
 
 
-import { StructureComponent } from './maincontent/items/structure/structure.component';
-import { DocumentsComponent } from './maincontent/items/documents/documents.component';
-import { LinksComponent } from './maincontent/items/links/links.component';
-import { ReportsComponent } from './maincontent/items/reports/reports.component';
 import { ClubActivitiesComponent } from './maincontent/clubactivities/clubactivities.component';
 import { CalendarActivitiesComponent } from './maincontent/calendaractivities/calendaractivities.component';
 
-
+import { ItemsComponent } from './maincontent/items/items.component';
 
 @NgModule({
   imports: [
@@ -28,11 +23,11 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
 
        {
          path: 'structure',
-         component: StructureComponent
+         component: ItemsComponent, data: { type: 'structure' }
        },
        {
          path: 'documents',
-         component: DocumentsComponent
+         component: ItemsComponent, data: { type: 'structure' }
        },
        {
        path: '',
@@ -46,42 +41,35 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
          path: 'clubs/:activity',
          component: ClubActivitiesComponent
        },
-       {
-           path: 'links',
-           component: LinksComponent
-       },
-       {
-           path: 'liens',
-           component: LinksComponent
-       },
+
        {
            path: 'contact',
-           component: ContactComponent
+           component: ItemsComponent, data: { type: 'contacts' }
        },
 
        {
          path: 'reports',
-         component: ReportsComponent
+         component: ItemsComponent, data: { type: 'reports' }
        },
        {
          path: 'comptesrendus',
-         component: ReportsComponent
+         component: ItemsComponent, data: { type: 'reports' }
        },
        {
            path: 'links',
-           component: LinksComponent
+           component: ItemsComponent, data: { type: 'links' }
        },
        {
            path: 'liens',
-           component: LinksComponent
+           component: ItemsComponent, data: { type: 'links' }
        },
        {
-         path: 'reports',
-         component: ReportsComponent
+         path: 'documents',
+         component: ItemsComponent, data: { type: 'documents' }
        },
        {
-         path: 'comptesrendus',
-         component: ReportsComponent
+         path: 'documents',
+         component: ItemsComponent, data: { type: 'documents' }
        },
        {
          path: 'calendrier',

@@ -12,19 +12,3 @@
 }
 
 
-
-/* element */
-.article-content {
-  /*additional border: add a thicker aspect*/
-  border-width: 1px;
-  border-style: solid;
-
-  /* spacing between article-content  */
-	margin-bottom: 1em;
-  /* small decorating border */
-	border-color: #ddd;
-	color: #333;
-
-}
-
-

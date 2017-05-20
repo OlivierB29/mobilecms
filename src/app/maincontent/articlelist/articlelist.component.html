@@ -1,0 +1,6 @@
+  <div *ngFor="let currentItem of (items | orderbydesc: 'date'); let i=index">
+   
+
+    <app-article [type]='"news" ' [id]='currentItem.id' [active]='i<maxElements'></app-article>
+
+  </div>

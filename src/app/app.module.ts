@@ -13,7 +13,7 @@ import { FeaturedComponent } from './widget/featured/featured.component';
 
 import { FeedComponent } from './widget/feed/feed.component';
 import { BannerComponent } from './widget/banner/banner.component';
-import { ContactComponent } from './maincontent/contact/contact.component';
+
 
 
 import { ActivityFilterPipe } from './shared/filters/activityfilter.pipe';
@@ -51,13 +51,6 @@ import { CalendarListComponent } from './maincontent/calendarlist/calendarlist.c
 import { CalendarEventComponent } from './maincontent/calendarevent/calendarevent.component';
 import { ClubListComponent } from './maincontent/clublist/clublist.component';
 
-
-
-import { StructureComponent } from './maincontent/items/structure/structure.component';
-import { DocumentsComponent } from './maincontent/items/documents/documents.component';
-import { LinksComponent } from './maincontent/items/links/links.component';
-import { ReportsComponent } from './maincontent/items/reports/reports.component';
-import { NewsDetailComponent } from './maincontent/newsdetail/newsdetail.component';
 import { CalendarDetailComponent } from './maincontent/calendardetail/calendardetail.component';
 import { ClubDetailComponent } from './maincontent/clubdetail/clubdetail.component';
 import { ClubActivitiesComponent } from './maincontent/clubactivities/clubactivities.component';
@@ -68,6 +61,9 @@ import { MainPageComponent } from './maincontent/mainpage/mainpage.component';
 
 import { ActivityButtonComponent } from './maincontent/activitybutton/activitybutton.component';
 import { ArticleComponent } from './maincontent/article/article.component';
+import { ArticlelistComponent } from './maincontent/articlelist/articlelist.component';
+import { ItemsComponent } from './maincontent/items/items.component';
+import { MenubuttonComponent } from './maincontent/menubutton/menubutton.component';
 
 
 @NgModule({
@@ -93,13 +89,11 @@ import { ArticleComponent } from './maincontent/article/article.component';
         DepartmentFilterPipe,
         PrettyUrlPipe,
         BrPipe,
-
         AppComponent,
         BannerComponent,
         FeedComponent,
         FeaturedComponent,
         FooterComponent,
-
         MainPageComponent,
         HomeComponent,
         CalendarListComponent,
@@ -107,17 +101,14 @@ import { ArticleComponent } from './maincontent/article/article.component';
         CalendarEventComponent,
         CalendarDetailComponent,
         NewsComponent,
-        NewsDetailComponent,
         ClubListComponent,
         ClubActivitiesComponent,
         ClubDetailComponent,
-        ReportsComponent,
-        StructureComponent,
-        DocumentsComponent,
-        LinksComponent,
-        ContactComponent,
         ActivityButtonComponent,
-        ArticleComponent
+        ArticleComponent,
+        ArticlelistComponent,
+        ItemsComponent,
+        MenubuttonComponent
     ],
     providers: [
         ConfService,

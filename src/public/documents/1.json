@@ -1,0 +1,11 @@
+    {
+
+        "id": "1",
+        "title": "Some documents",
+        "description": "document.pdf ",
+        "attachments":
+          [
+            {"url":"https://angular.io/resources/images/logos/angular/angular_solidBlack.svg","title":"angular SVG logo 1"}
+          ]
+
+    }

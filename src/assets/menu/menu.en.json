@@ -29,7 +29,7 @@
     "routerLink" : "/structure",
     "routerLinkActive" : "active",
     "title" : "Structure",
-    "icon" : "account circle",
+    "icon" : "person",
     "order" : "4"
   },
 

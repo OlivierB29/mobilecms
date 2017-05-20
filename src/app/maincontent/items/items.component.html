@@ -1,15 +1,12 @@
 <div class='article-list' >
 
 
-  <div >
+  <div *ngIf='items'>
 
-    <div *ngFor="let currentItem of (items | orderbyasc: 'id')" class='article-content' >
-			<md-card [innerHTML]='currentItem.title'></md-card>
-      <div [innerHTML]="currentItem.description"></div>
+    <div *ngFor="let currentItem of (items | orderbyasc: 'id')" >
+      
+      <app-article [type]='type' [id]='currentItem.id'></app-article>
 
-      <div *ngFor="let attachment of currentItem.attachments">
-        <a [href]="attachment.url" [innerHTML]="attachment.title"></a> <span [innerHTML]="attachment.description"></span>
-      </div>
     </div>
   </div>
 

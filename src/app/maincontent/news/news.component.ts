@@ -20,6 +20,8 @@ export class NewsComponent implements OnInit {
 
   @Input() max = 0;
 
+  type = 'news';
+
 
     constructor(
         private conf: ConfService,
@@ -30,15 +32,15 @@ export class NewsComponent implements OnInit {
     }
     ngOnInit(): void {
 
-        this.dataService.getAll('news')
+        this.dataService.getAll(this.type)
                                   .subscribe((data: any[]) => this.items = data,
-                                      error => this.log.debug('getNews' + error),
+                                      error => this.log.debug(this.type + ' ' + error),
                                       () =>  {
 
                                         if (this.max > 0 && this.items.length > this.max) {
                                            this.items = this.items.slice(this.items.length - this.max, this.items.length);
                                         }
-                                        this.log.debug('getNews complete'  +  this.items.length);
+                                        this.log.debug(this.type + ' '  +  this.items.length);
                                     });
 
 
