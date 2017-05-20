@@ -3,10 +3,7 @@
 
 
     <div *ngFor="let activityLink of activityObjectList">
-      <button md-button [routerLink]='activityLink.link' class='my-activity-button'>
-    <span [innerHTML]='activityLink.name | uppercase'></span>
-    <img class="fill-img" *ngIf="activityLink.logo" [src]='activityLink.image'   [alt]="activityLink.name" [title]="activityLink.name | uppercase">
-     </button>
+     <app-activitybutton [page]='mainRoute' [activity]='activityLink'></app-activitybutton>
     </div>
 
 

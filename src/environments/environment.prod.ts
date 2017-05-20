@@ -4,4 +4,5 @@ export const environment = {
   log: 'error',
   defaultlocale: 'en',
   title: 'MobileCMS',
+  public: 'public'
 };

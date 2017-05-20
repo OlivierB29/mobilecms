@@ -8,5 +8,6 @@ export const environment = {
   server: '',
   log: 'debug',
   title: 'MobileCMS developpment',
-  defaultlocale: 'en'
+  defaultlocale: 'en',
+  public: 'public'
 };

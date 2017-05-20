@@ -61,6 +61,8 @@ import { MainPageComponent } from './maincontent/mainpage/mainpage.component';
 // translate
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+import { ActivityButtonComponent } from './maincontent/activitybutton/activitybutton.component';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http);
@@ -111,7 +113,8 @@ export function HttpLoaderFactory(http: Http) {
         StructureComponent,
         DocumentsComponent,
         LinksComponent,
-        ContactComponent
+        ContactComponent,
+        ActivityButtonComponent
     ],
     providers: [
         ConfService,
