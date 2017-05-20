@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 
 import { ConfService } from '../../shared/services/conf.service';
@@ -9,7 +9,7 @@ import { environment } from '../../environment';
 */
 @Component({
   moduleId: module.id,
-  selector: 'my-banner',
+  selector: 'app-my-banner',
   templateUrl: 'banner.component.html',
   styleUrls: ['banner.component.css']
 
@@ -18,18 +18,17 @@ import { environment } from '../../environment';
 export  class BannerComponent implements OnInit {
 
 
-  bannerUrl= '';
+    bannerUrl= '';
 
 
-  layout= 'desktop';
 
 
-  constructor(private conf: ConfService) {
+  constructor() {
   }
 
 ngOnInit(): void {
 
-          this.bannerUrl = environment.server + '/public/resources/banner.jpg';
+       this.bannerUrl = environment.server + '/' + environment.public + '/resources/banner.jpg';
 }
 
 }
