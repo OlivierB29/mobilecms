@@ -44,6 +44,7 @@ import { ReadService } from './shared/services/read.service';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 // maincontent
 import { NewsComponent } from './maincontent/news/news.component';
@@ -72,6 +73,7 @@ import { MenubuttonComponent } from './maincontent/menubutton/menubutton.compone
         HttpModule,
         AppRoutingModule,
         MaterialModule,
+        LazyLoadImageModule,
         SharedModule.forRoot(),
         TranslateModule.forRoot({
             loader: {

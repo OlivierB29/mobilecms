@@ -22,6 +22,8 @@ export class NewsComponent implements OnInit {
 
   type = 'news';
 
+  progressvalue = 20;
+
 
     constructor(
         private conf: ConfService,
@@ -31,16 +33,17 @@ export class NewsComponent implements OnInit {
     ) {
     }
     ngOnInit(): void {
-
+        this.progressvalue = 40;
         this.dataService.getAll(this.type)
                                   .subscribe((data: any[]) => this.items = data,
                                       error => this.log.debug(this.type + ' ' + error),
                                       () =>  {
-
+                                        this.progressvalue = 60;
                                         if (this.max > 0 && this.items.length > this.max) {
                                            this.items = this.items.slice(this.items.length - this.max, this.items.length);
                                         }
                                         this.log.debug(this.type + ' '  +  this.items.length);
+                                        this.progressvalue = 100;
                                     });
 
 

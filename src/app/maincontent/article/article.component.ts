@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { ReadService } from '../../shared/services/read.service';
 import { Log } from '../../shared/services/log.service';
+import { environment } from '../../environment';
 
 
 @Component({
@@ -20,6 +21,10 @@ export class ArticleComponent implements OnInit {
 
   @Input() item: any;
 
+  offset = 100;
+
+  defaultImage = environment.server + '/' + environment.public +  '/resources/ring-alt-32.svg';
+
 
   constructor(private log: Log, private readService: ReadService) { }
 
@@ -37,9 +42,15 @@ export class ArticleComponent implements OnInit {
 
 
     this.readService.get(this.type, this.id)
-      .subscribe((data: any) => { this.item = data; this.item.state = this.active },
+      .subscribe((data: any) => {
+
+         this.item = data; this.item.state = this.active
+       },
       error => console.error('get ' + error),
-      () => { this.log.debug('get complete'); });
+      () => {
+         this.log.debug('get complete');
+
+       });
 
   }
 

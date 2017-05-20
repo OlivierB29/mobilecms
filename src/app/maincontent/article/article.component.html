@@ -1,6 +1,8 @@
 
 
 
+<md-progress-bar *ngIf="progressvalue < 100" mode="determinate" color="primary" [value]="progressvalue"></md-progress-bar>
+
 
   <div *ngIf="item" class='article-content'>
     			<md-card  (click)="showArticle()" class='article-title'>
@@ -26,7 +28,7 @@
             <img [src]="image.url" [alt]="image.title">
           </a> 
 
-          <img *ngIf="image.url && !image.link" [src]="image.url" [alt]="image.title">
+          <img [defaultImage]="defaultImage" [lazyLoad]="image.url" [offset]="offset" [alt]="image.title">
         </div>
 
 
