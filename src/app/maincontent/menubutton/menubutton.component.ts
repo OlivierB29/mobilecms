@@ -15,12 +15,9 @@ export class MenubuttonComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    console.log("!!!!!!!!!!!!!!!!!! ngOnInit " + this.item.routerLink);
   }
 
   open(): void {
-    console.log("!!!!!!!!!!!!!!!!!! open " + this.item.routerLink);
-
     this.router.navigate([this.item.routerLink]);
   }
 
