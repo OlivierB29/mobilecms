@@ -1,7 +1,14 @@
 .my-activity {
  text-align: center;
  padding-top: 0.5em;
+ width: 100%;
 }
 .my-activity-button {
+ width: 100%;
+}
 
+
+
+.logo {
+    max-width: 10em;
 }
