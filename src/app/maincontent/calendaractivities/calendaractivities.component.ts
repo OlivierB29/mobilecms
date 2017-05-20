@@ -25,14 +25,6 @@ export class CalendarActivitiesComponent implements OnInit {
 
   activityObjectList: Activity[] = [];
 
-  /**
-  * router link of the current page
-  * Explanation :
-  * - en: calendar
-  * - fr: calendrier
-  */
-  mainRoute = '';
-
   constructor(
     private router: Router,
     private dataService: ReadService,
@@ -43,15 +35,6 @@ export class CalendarActivitiesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    // Explanation :
-    // if locale is en: calendar/:activity
-    // if locale is fr: calendrier/:activity
-
-
-    // TODO find better ?
-    const routerLink = this.route.routeConfig.path;
-    this.mainRoute = routerLink.split('/')[0];
 
 
     // path parameters
@@ -68,10 +51,6 @@ export class CalendarActivitiesComponent implements OnInit {
     this.dataService.getAll('activities')
       .subscribe((data: Activity[]) => {
         this.activityObjectList = data.filter(function(el) { return el.calendar === 'true'; });
-        this.activityObjectList.forEach((a: Activity) => {
-          a.link = '/' + this.mainRoute + '/' + a.name;
-          a.image = 'public/activities/' + a.name + '/' + a.logo;
-        });
       },
       error => this.log.debug('getActivities' + error),
       () => this.log.debug('getActivities complete' + this.activityObjectList.length));

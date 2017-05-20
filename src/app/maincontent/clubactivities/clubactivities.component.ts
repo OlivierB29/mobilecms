@@ -24,14 +24,7 @@ export class ClubActivitiesComponent implements OnInit {
 
   activityObjectList: Activity[] = [];
 
-  /**
-  * router link of the current page.
-  * Same value in this case, but could be different
-  * Explanation :
-  * - en: clubs
-  * - fr: clubs
-  */
-  mainRoute = 'clubs';
+
 
   constructor(
     private router: Router,
@@ -63,10 +56,7 @@ export class ClubActivitiesComponent implements OnInit {
       .subscribe((data: Activity[]) => {
         // all activities are displayed
         this.activityObjectList = data;
-        this.activityObjectList.forEach((a: Activity) => {
-          a.link = '/' + this.mainRoute + '/' + a.name;
-          a.image = 'public/activities/' + a.name + '/' + a.logo;
-        });
+
       },
       error => this.log.debug('getActivities' + error),
       () => this.log.debug('getActivities complete' + this.activityObjectList.length));

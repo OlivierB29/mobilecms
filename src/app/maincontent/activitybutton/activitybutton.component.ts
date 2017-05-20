@@ -11,7 +11,6 @@ import { environment } from '../../environment';
 })
 export class ActivityButtonComponent implements OnInit {
 
-  @Input() page: string;
 
   @Input() activity: Activity = null;
 
@@ -22,11 +21,8 @@ export class ActivityButtonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if (this.activity && this.page) {
-      this.url = this.page;
-      if (!this.page.endsWith('/')) {
-        this.url += '/';
-      }
+    if (this.activity) {
+
       this.url += this.activity.name;
 
     }
