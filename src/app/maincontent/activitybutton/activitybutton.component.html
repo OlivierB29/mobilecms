@@ -1,6 +1,6 @@
  <div class='my-activity'>
-    <button md-button [routerLink]='url' class='my-activity-button'>
-    <span [innerHTML]='activity.name | uppercase'></span>
+    <button md-button [routerLink]='url' class='my-activity my-activity-button'>
+    <md-card-title [innerHTML]='activity.name | uppercase'></md-card-title>
     <img md-card-image *ngIf='activity.logo' [src]='logo'   [alt]='activity.name' [title]='activity.name | uppercase'>
     </button>
 
