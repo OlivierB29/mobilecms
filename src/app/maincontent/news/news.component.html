@@ -1,6 +1,6 @@
 <div class='article-list'>
 
-  <h3 [innerHTML]='i18n.title'></h3>
+  <h3 >{{ 'news.title' | translate }}</h3>
   <div *ngFor="let currentItem of (items | orderbydesc: 'date'); let i=index">
    
 

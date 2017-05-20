@@ -1,9 +1,6 @@
 <div class='article-list'>
 <div *ngIf='!activity'>
 
-  <h3 [innerHTML]='i18n.title'></h3>
-
-
 
   <div *ngFor='let activityLink of activityObjectList'>
     <button md-button [routerLink]='"/clubs/"  +  activityLink.name' class='my-activity-button'>

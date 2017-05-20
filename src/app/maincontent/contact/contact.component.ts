@@ -21,10 +21,6 @@ export class ContactComponent implements OnInit {
 
     items: Item[] = [];
 
-    i18n = {};
-
-
-
     constructor(
 
         private dataservice: ReadService,
@@ -45,12 +41,6 @@ export class ContactComponent implements OnInit {
           () => this.log.debug('DocumentsComponent complete : '  +  this.items.length));
 
 
-
-
-        this.dataservice.getLocale( 'maincontent/contact',
-        this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
-            error => this.log.debug('Locale'  +  error),
-            () => this.log.debug('Locale complete'));
 
     }
 

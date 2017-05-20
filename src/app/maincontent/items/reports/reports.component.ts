@@ -19,7 +19,6 @@ import { ReadService } from '../../../shared/services/read.service';
 })
 export class ReportsComponent implements OnInit {
 
-  i18n  = {};
 
   items: Item[] = [];
 

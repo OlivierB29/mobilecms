@@ -27,8 +27,6 @@ export class CalendarListComponent implements OnInit {
 
      @Input() activity: string;
 
-    i18n = {};
-
 
 
     localregion = 'Bretagne';
@@ -91,12 +89,6 @@ export class CalendarListComponent implements OnInit {
         // if locale is en: calendar
         // if locale is fr: calendrier
         this.routerLink = this.route.routeConfig.path;
-
-
-        this.dataservice.getLocale( 'maincontent/calendar/',
-         this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
-            error => this.log.debug('Locale'  +  error),
-            () => this.log.debug('Locale complete'));
 
 
         if (this.activity) {

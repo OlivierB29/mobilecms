@@ -26,9 +26,6 @@ export class ClubListComponent implements OnInit {
 
   department: string;
 
-  // Localization
-  i18n = {};
-
 
   clubs: Club[] = [];
 
@@ -47,14 +44,6 @@ export class ClubListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-
-  this.dataService.getLocale( 'maincontent/clublist',
-  this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
-                error => this.log.debug('Locale'  +  error),
-                () => this.log.debug('Locale complete'));
-
-
 
 
     this.dataService.getAll('departments')

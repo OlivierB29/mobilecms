@@ -19,11 +19,6 @@ import { ReadService } from '../../shared/services/read.service';
 export class CalendarActivitiesComponent implements OnInit {
 
 
-  // Localization
-  i18n = {};
-
-
-
 
   activity: string;
 
@@ -57,12 +52,6 @@ export class CalendarActivitiesComponent implements OnInit {
     // TODO find better ?
     const routerLink = this.route.routeConfig.path;
     this.mainRoute = routerLink.split('/')[0];
-
-
-    this.dataService.getLocale('maincontent/calendar',
-      this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
-      error => this.log.debug('Locale' + error),
-      () => this.log.debug('Locale complete'));
 
 
     // path parameters

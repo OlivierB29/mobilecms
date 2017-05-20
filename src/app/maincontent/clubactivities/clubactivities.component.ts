@@ -19,9 +19,6 @@ import { ReadService } from '../../shared/services/read.service';
 export class ClubActivitiesComponent implements OnInit {
 
 
-  // Localization
-  i18n = {};
-
   activity: string;
 
 
@@ -47,11 +44,6 @@ export class ClubActivitiesComponent implements OnInit {
 
   ngOnInit(): void {
 
-
-  this.dataService.getLocale( 'maincontent/clublist',
-  this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
-                error => this.log.debug('Locale'  +  error),
-                () => this.log.debug('Locale complete'));
 
 
     // path parameters

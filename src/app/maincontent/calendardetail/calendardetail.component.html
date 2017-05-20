@@ -6,7 +6,7 @@
   			<div class="article-title">
           <!-- conditional display of class -->
             <div *ngIf="item.organization" class='article-title-moreinfo'>
-            <span [innerHTML]='i18n.organizationlabel  +  ": "'></span>
+            <span >{{'calendar.organizationlabel' | translate}} : </span>
             <span *ngIf="item.organization.indexOf(localregion) == -1" class='alternate-title' >{{item.organization}}</span>
             <span *ngIf="item.organization.indexOf(localregion) > -1" > {{item.organization}}</span>
             </div>
@@ -14,7 +14,7 @@
 
         <div [innerHTML]="item.description | br" class="article-description"></div>
 
-        <div *ngIf="item.location" [innerHTML]='i18n.location  +  ": "  +  item.location'></div>
+        <div *ngIf="item.location" >{{'calendar.location' | translate}} : {{item.location}}</div>
 
         <div *ngFor="let attachment of item.attachments">
           <a [href]="attachment.url" [innerHTML]="attachment.title"></a> <span [innerHTML]="attachment.description"></span>

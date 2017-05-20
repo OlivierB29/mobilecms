@@ -30,6 +30,9 @@ export class ReadService {
 
     }
 
+    /**
+     * @deprecated
+     */
     public getLocale = (uri: string, locale: string): Observable<any> => {
         const url = this.root  + '/assets/i18n/'  +  uri  +  '/'  +  locale  +  '.json';
         this.log.debug('getLocale '  +  url);

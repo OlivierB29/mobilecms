@@ -18,9 +18,6 @@ export class NewsComponent implements OnInit {
 
   maxElements = 4;
 
-  // Localization
-  i18n = <any>{};
-
   @Input() max = 0;
 
 
@@ -32,11 +29,6 @@ export class NewsComponent implements OnInit {
     ) {
     }
     ngOnInit(): void {
-
-        this.dataService.getLocale( 'maincontent/news',
-        this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
-                error => this.log.debug('Locale'  +  error),
-                () => this.log.debug('Locale complete'));
 
         this.dataService.getAll('news')
                                   .subscribe((data: any[]) => this.items = data,

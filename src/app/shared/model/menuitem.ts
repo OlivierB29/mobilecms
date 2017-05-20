@@ -1,5 +1,5 @@
 export class MenuItem {
-  //           <a routerLink='/links' routerLinkActive='active'>{{i18n.links}}</a>
+  //           <a routerLink='/links' routerLinkActive='active'>example</a>
   routerLink: string; // /someMenu
   routerLinkActive: string; // active
   title: string; // Menu Title

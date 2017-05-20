@@ -1,7 +1,7 @@
 
 <div class='article-list'>
 <div *ngIf="activity">
-  <h3 [innerHTML]='i18n.title  +  ": "  +  (activity | uppercase)'></h3>
+ <h3><span>{{ 'clublist.title' | translate }}</span>: <span [innerHTML]='(activity | uppercase)'></span> </h3>
 
 <md-button-toggle-group #group="mdButtonToggleGroup">
   

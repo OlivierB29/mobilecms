@@ -6,5 +6,7 @@
 export const environment = {
   production: false,
   server: '',
-  log: 'debug'
+  log: 'debug',
+  title: 'MobileCMS developpment',
+  defaultlocale: 'en'
 };

@@ -23,7 +23,9 @@ export class ConfService {
     return layout;
   }
 
-
+  /**
+   * @deprecated
+   */
   getDefaultLocale(): string {
     let locale = 'en';
     const lang = navigator.language;

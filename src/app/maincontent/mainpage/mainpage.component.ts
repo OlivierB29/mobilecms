@@ -10,6 +10,8 @@ import { Activity } from '../../shared/model/activity';
 
 import { ReadService } from '../../shared/services/read.service';
 import { MenuItem } from '../../shared/model/menuitem';
+import { environment } from '../../environment';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   moduleId: module.id,
@@ -24,10 +26,7 @@ export class MainPageComponent  implements OnInit  {
 
   menuItems: MenuItem[] = [];
 
-  activity: string;
-
-  // Localization
-  i18n = <any>{};
+  title = '';
 
   lang: string;
 
@@ -46,7 +45,9 @@ export class MainPageComponent  implements OnInit  {
 
   mobileLayout: boolean;
 
-  constructor(private conf: ConfService,
+  constructor(
+    private translate: TranslateService,
+    private conf: ConfService,
     private dataService: ReadService,
     private log: Log) {
 
@@ -55,17 +56,19 @@ export class MainPageComponent  implements OnInit  {
 
   ngOnInit(): void {
 
-    this.lang = this.conf.getDefaultLocale();
+    this.title = environment.title;
 
-    this.dataService.getLocale('maincontent/mainpage',
-      this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
-      error => this.log.debug('Locale' + error),
-      () => this.log.debug('Locale complete'));
+    // this language will be used as a fallback when a translation isn't found in the current language
+    this.translate.setDefaultLang(environment.defaultlocale);
+    // the lang to use, if the lang isn't available, it will use the current loader to get them
+    this.translate.use(environment.defaultlocale);
+
+    this.lang = environment.defaultlocale;
 
 
     // Load the menu items
-    this.log.debug('loading menu ' + this.conf.getDefaultLocale());
-    this.dataService.getMenu('menu', this.conf.getDefaultLocale())
+    this.log.debug('loading menu ' + this.lang);
+    this.dataService.getMenu('menu', this.lang)
       .subscribe((data: MenuItem[]) => this.menuItems = data,
       error => this.log.debug('getMenu ' + error),
       () => this.log.debug('getMenu complete'));

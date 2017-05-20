@@ -21,8 +21,6 @@ export class CalendarDetailComponent implements OnInit {
     item: any = {};
 
 
-  // Localization
-  i18n = {};
 
     constructor(
         private readService: ReadService,
@@ -35,11 +33,6 @@ export class CalendarDetailComponent implements OnInit {
     ngOnInit(): void {
         this.log.debug('app-my-calendardetail-component '  +  this.id);
 
-
-  this.readService.getLocale( 'maincontent/calendar',
-  this.conf.getDefaultLocale()).subscribe((data: any) => this.i18n = data,
-                error => this.log.debug('Locale'  +  error),
-                () => this.log.debug('Locale complete'));
 
         if (this.id) {
 
