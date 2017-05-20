@@ -14,11 +14,11 @@
         <div [innerHTML]="item.description | br" class="article-description"></div>
 
         <div *ngFor="let attachment of item.attachments">
-          <a [href]="attachment.url" [innerHTML]="attachment.title"></a>
+          <a *ngIf="attachment.url" [href]="attachment.url" [innerHTML]="attachment.title"></a>
         </div>
 
-        <div *ngFor="let image of item.images">
-          <img [src]="image.url" [alt]="image.title">
+        <div *ngFor="let image of item.images">        
+          <img *ngIf="image.url" md-card-image [src]="image.url" [alt]="image.title">
         </div>
 
 

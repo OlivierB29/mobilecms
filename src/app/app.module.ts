@@ -24,6 +24,13 @@ import { OrderbyDescPipe } from './shared/filters/orderbydesc.pipe';
 import { PrettyUrlPipe } from './shared/filters/prettyurl.pipe';
 import { BrPipe } from './shared/filters/br.pipe';
 
+// translate
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: Http) {
+    return new TranslateHttpLoader(http);
+}
 
 // Tools
 import { ConfService } from './shared/services/conf.service';
@@ -58,15 +65,10 @@ import { CalendarActivitiesComponent } from './maincontent/calendaractivities/ca
 import { MainPageComponent } from './maincontent/mainpage/mainpage.component';
 
 
-// translate
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { ActivityButtonComponent } from './maincontent/activitybutton/activitybutton.component';
-// AoT requires an exported function for factories
-export function HttpLoaderFactory(http: Http) {
-    return new TranslateHttpLoader(http);
-}
+import { ArticleComponent } from './maincontent/article/article.component';
+
 
 @NgModule({
     imports: [
@@ -114,7 +116,8 @@ export function HttpLoaderFactory(http: Http) {
         DocumentsComponent,
         LinksComponent,
         ContactComponent,
-        ActivityButtonComponent
+        ActivityButtonComponent,
+        ArticleComponent
     ],
     providers: [
         ConfService,
