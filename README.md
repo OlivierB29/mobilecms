@@ -27,15 +27,3 @@ I prefer a domain name, instead of mysite.company.com
 Some entry level offers don't have any database, and <10MB of file storage, such as a domain name package.
 In future plans, with the growing data, the database may become useful.
 For now, we have 10-20 news per year, and roughly the same for calendar events.
-
-## FAQ
-- Why not using a true CMS on a web hosting package ?
-Value for money.
-
-- And a hosted CMS ?
-I prefer a domain name, instead of mysite.company.com
-
-- Why JSON files VS database ?
-Some entry level offers don't have any database, and <10MB of file storage, such as a domain name package.
-In future plans, with the growing data, the database may become useful.
-For now, we have 10-20 news per year, and roughly the same for calendar events.
