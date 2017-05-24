@@ -1,12 +1,12 @@
     {
         "id" : "1",
-        "date": "201509",
+        "date": "2015-09-01",
         "activity": "tennis",
         "title": "some seminar of tennis",
         "organization": "Some org",
         "description": "some infos",
         "url": "", "location" : "some place", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : "",
-        
+
         "images":[
             {"url":"https://angular.io/resources/images/logos/angular/angular.png","title":"angular logo 1"},
             {"url":"https://angular.io/resources/images/logos/angular/angular.png","title":"angular logo 2"},

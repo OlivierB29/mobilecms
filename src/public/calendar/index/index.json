@@ -1,7 +1,7 @@
 [
     {
         "id" : "1",
-        "date": "201509",
+        "date": "2015-09-01",
         "activity": "tennis",
         "title": "tennis championship",
         "organization": "Some org",
@@ -10,7 +10,7 @@
     },
     {
         "id" : "2",
-        "date": "201509",
+        "date": "2015-09-01",
         "activity": "tennis",
         "title": "a new tennis championship",
         "organization": "Bretagne",
@@ -19,7 +19,7 @@
     },
     {
         "id" : "3",
-        "date": "20161117",
+        "date": "2016-11-17",
         "activity": "basketball",
         "title": "another basketball tournament",
         "organization": "another org",
@@ -28,7 +28,7 @@
     },
     {
         "id" : "4",
-        "date": "20161130",
+        "date": "2016-11-30",
         "activity": "basketball",
         "title": "yet another seminar of basketball",
         "organization": "another org",
