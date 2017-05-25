@@ -1,8 +1,8 @@
 export const environment = {
-  production: true,
+  production: false,
   server: '',
-  log: 'error',
-  defaultlocale: 'fr',
-  title: 'CRKDR Bretagne',
+  log: 'debug',
+  title: 'MobileCMS development',
+  defaultlocale: 'en',
   public: 'public'
 };

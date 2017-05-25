@@ -3,6 +3,6 @@ export const environment = {
   server: '',
   log: 'error',
   defaultlocale: 'fr',
-  title: 'CRKDR Bretagne',
+  title: 'MobileCMS',
   public: 'public'
 };

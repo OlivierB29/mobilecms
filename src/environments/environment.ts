@@ -9,5 +9,5 @@ export const environment = {
   log: 'debug',
   title: 'MobileCMS development',
   defaultlocale: 'en',
-  public: 'public-prod'
+  public: 'public'
 };
