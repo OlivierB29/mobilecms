@@ -13,17 +13,14 @@ import { environment } from '../../environment';
 })
 export class ArticlePreviewComponent implements OnInit {
 
-  @Input() active = true;
-
   @Input() type: string;
 
-  @Input() mainroute: string;
 
   @Input() id: string;
 
   @Input() item: any;
 
-  maxPreviewLength = 50;
+  maxPreviewLength = 240;
 
   offset = 100;
 
@@ -55,14 +52,14 @@ export class ArticlePreviewComponent implements OnInit {
     this.readService.get(this.type, this.id)
       .subscribe((data: any) => {
 
-         this.item = data; this.item.state = this.active
+         this.item = data;
 
          if (this.item.images && this.item.images.length > 0) {
            this.image = this.item.images[0];
          }
 
-
-         this.url = this.mainroute + '/' + this.item.id;
+          // news/1
+         this.url =  this.item.id;
 
 
        },

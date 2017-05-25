@@ -1,24 +1,19 @@
-<md-card *ngIf="item">
-  <md-card-header>
-
-
-    <md-card-title [innerHTML]="item.title"></md-card-title>
-    <md-card-subtitle >{{item.activity}} - {{item.date}}</md-card-subtitle>
-    <md-card-title>
-        <img *ngIf="image" class="thumbnail" [defaultImage]="defaultImage" [lazyLoad]="image.url" [offset]="offset" [alt]="image.title">
-    </md-card-title>
+<div *ngIf="item" class='article-content'>
+  <md-card class='article-title'>
+    <span [innerHTML]="item.title"></span>
+  </md-card>
 
 
 
-  </md-card-header>
 
-  <md-card-content [innerHTML]="getPreviewDescription()">
-  </md-card-content>
+  <div class="article-description">
+    <div [innerHTML]="item.description | br"></div>
+
+    <div class="thumbnail-container">
+      <img *ngIf="image" [defaultImage]="defaultImage" [lazyLoad]="image.url" [offset]="offset" [alt]="image.title">
+    </div>
+
+  </div>
 
 
-
-  <md-card-actions>
-    <button md-button [routerLink]='url'>OPEN</button>
-    <button md-button>SHARE</button>
-  </md-card-actions>
-</md-card>
+</div>

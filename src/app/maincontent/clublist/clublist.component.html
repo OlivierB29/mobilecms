@@ -4,10 +4,12 @@
  <h3><span>{{ 'clublist.title' | translate }}</span>: <span [innerHTML]='(activity | uppercase)'></span> </h3>
 
 <md-button-toggle-group #group="mdButtonToggleGroup">
-  
+
   <md-button-toggle *ngFor='let dep of departmentObjectList' [value]='dep.code' (click)='displayClubs(dep.code)'>
     <div [innerHTML]='dep.name'></div>
+    
   </md-button-toggle>
+
 
 
 </md-button-toggle-group>

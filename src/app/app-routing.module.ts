@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomeComponent } from './maincontent/home/home.component';
 import { ArticleComponent } from './maincontent/article/article.component';
-import { NewsComponent, NewsDetailsComponent } from './maincontent/news';
+import { NewsComponent, NewsDetailsComponent, NewsPreviewComponent } from './maincontent/news';
 import { ClubListComponent } from './maincontent/clublist/clublist.component';
 
 
@@ -86,7 +86,7 @@ import { ItemsComponent } from './maincontent/items/items.component';
        // EN
        {
          path: 'news',
-         component: NewsComponent
+         component: NewsPreviewComponent
        },
        {
          path: 'news/:id',
@@ -95,7 +95,7 @@ import { ItemsComponent } from './maincontent/items/items.component';
        // FR
        {
          path: 'actualites',
-         component: NewsComponent
+         component: NewsPreviewComponent
        },
        {
          path: 'actualites/:id',

@@ -1,15 +1,12 @@
-
-
-
-  <div *ngIf="item" class='article-content'>
-    			<md-card  (click)="showArticle()" class='article-title'>
-            <span [innerHTML]="item.title"></span><span *ngIf='!active'>[...]</span>
+<div *ngIf="item" class='article-content'>
+    			<md-card  class='article-title'>
+            <span [innerHTML]="item.title"></span>
           </md-card>
 
 
 
 
-      <div *ngIf='active' class="article-description">
+      <div class="article-description">
         <div [innerHTML]="item.description | br"></div>
 
         <div *ngIf="item.attachments && item.attachments.length > 0">
@@ -20,17 +17,17 @@
         </div>
 
         <div *ngIf="item.images && item.images.length > 0" class="images-container">
-        <div *ngFor="let image of item.images">      
+        <div *ngFor="let image of item.images">
           <a *ngIf="image.url && image.link" [href]="image.link">
             <img [defaultImage]="defaultImage" [lazyLoad]="image.url" [offset]="offset" [alt]="image.title">
-          </a> 
+          </a>
 
           <img [defaultImage]="defaultImage" [lazyLoad]="image.url" [offset]="offset" [alt]="image.title">
         </div>
 
 
-        <div *ngFor="let image of item.images">      
-          <a *ngIf="image.link" [href]="image.link" [innerHTML]="image.link"></a> 
+        <div *ngFor="let image of item.images">
+          <a *ngIf="image.link" [href]="image.link" [innerHTML]="image.link"></a>
 
         </div>
 

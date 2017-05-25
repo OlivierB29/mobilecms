@@ -13,7 +13,6 @@ import { environment } from '../../environment';
 })
 export class ArticleComponent implements OnInit {
 
-  @Input() active = true;
 
   @Input() type: string;
 
@@ -44,7 +43,7 @@ export class ArticleComponent implements OnInit {
     this.readService.get(this.type, this.id)
       .subscribe((data: any) => {
 
-         this.item = data; this.item.state = this.active
+         this.item = data;
        },
       error => console.error('get ' + error),
       () => {
@@ -54,8 +53,6 @@ export class ArticleComponent implements OnInit {
 
   }
 
-  showArticle(): void {
-    this.active = !this.active;
-  }
+
 
 }

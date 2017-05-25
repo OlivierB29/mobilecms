@@ -21,55 +21,27 @@ import { Event } from '../../shared/model/event';
 })
 export class NewsDetailsComponent implements OnInit {
 
-
-    item: any = null;
     id= '';
 
     type= 'news';
 
-    routerLink = '';
 
 
     constructor(
-        private router: Router,
-        private conf: ConfService,
+
         private log: Log,
         private dataService: ReadService,
         private route: ActivatedRoute
     ) {
-
-
-
     }
 
     ngOnInit(): void {
-      console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!") ;
-
-
-
-
         this.route.params.forEach((params: Params) => {
             if (params['id'] !== undefined) {
                 this.id = params['id'];
             }
 
         });
-
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!" + this.id) ;
-
-
-        if (this.id) {
-
-            this.dataService.get(this.type, this.id)
-                .subscribe((data: any) => this.item = data,
-                error => this.log.error('get'  +  error),
-                () => { this.log.debug('get complete'); });
-        } else {
-            console.error('app-my-newsdetail-component empty id');
-        }
-
-
-
     }
 
 }

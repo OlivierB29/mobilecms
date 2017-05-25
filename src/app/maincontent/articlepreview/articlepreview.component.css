@@ -1,3 +1,14 @@
+.thumbnail-container {
+  width: 10em;
+}
+
+.thumbnail-container img {
+  height: auto;
+}
+
+
+
+/* ------------------------------------------------------ */
 
 /* element */
 .article-content {
@@ -18,11 +29,6 @@
 	background-color: #e9e9e9;
 	font-weight: bold;
 }
-.article-title:hover {
-	background-color: #E0E0E0;
-	cursor: pointer;
-}
-
 
 .article-description {
 	margin: 0.5em;
@@ -39,25 +45,4 @@
 
 .images-container {
 	border-top: 1px solid #ddd;
-}
-
-.example-header-image1 {
-  background-image: url('https://material.angular.io/shiba1.d84e1a8ed94377452dbf.jpg');
-  background-size: cover;
-}
-
-.example-header-image {
-
-  background-size: cover;
-}
-
-.thumb {
-  background-color: yellow;
-}
-
-.thumbnail {
-  float:right;
-
-  width:auto;
-  height:100%;
 }
