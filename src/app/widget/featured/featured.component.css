@@ -1,3 +1,9 @@
+.feed-content {
+  border-color: yellow;
+  border-width: 1px;
+  border-style: solid;
+}
+
 .feed-article {
   border-color: #eee;
   border-width: 1px;

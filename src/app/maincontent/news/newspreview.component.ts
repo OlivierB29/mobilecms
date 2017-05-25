@@ -5,13 +5,16 @@ import { Log } from '../../shared/services/log.service';
 import { ReadService } from '../../shared/services/read.service';
 import { ConfService } from '../../shared/services/conf.service';
 
+
+
 @Component({
-  moduleId: module.id,
-  selector: 'app-my-news-component',
-  templateUrl: 'news.component.html',
-  styleUrls: ['news.component.css']
+    moduleId: module.id,
+    selector: 'app-newspreview-component',
+    templateUrl: 'newspreview.component.html',
+    styleUrls: ['newspreview.component.css']
 })
-export class NewsComponent implements OnInit {
+export class NewsPreviewComponent implements OnInit {
+
 
   items: any[] = [];
 

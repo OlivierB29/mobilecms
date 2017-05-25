@@ -29,7 +29,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: Http) {
-    return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http);
 }
 
 // Tools
@@ -47,77 +47,86 @@ import 'hammerjs';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 // maincontent
-import { NewsComponent } from './maincontent/news/news.component';
-import { CalendarListComponent } from './maincontent/calendarlist/calendarlist.component';
-import { CalendarEventComponent } from './maincontent/calendarevent/calendarevent.component';
+import { NewsComponent, NewsPreviewComponent, NewsDetailsComponent } from './maincontent/news';
+import {
+  CalendarListComponent,
+  CalendarEventComponent,
+  CalendarDetailComponent,
+  CalendarActivitiesComponent
+} from './maincontent/calendar';
+
 import { ClubListComponent } from './maincontent/clublist/clublist.component';
 
-import { CalendarDetailComponent } from './maincontent/calendardetail/calendardetail.component';
+
 import { ClubDetailComponent } from './maincontent/clubdetail/clubdetail.component';
 import { ClubActivitiesComponent } from './maincontent/clubactivities/clubactivities.component';
-import { CalendarActivitiesComponent } from './maincontent/calendaractivities/calendaractivities.component';
+
 import { MainPageComponent } from './maincontent/mainpage/mainpage.component';
 
 
 
 import { ActivityButtonComponent } from './maincontent/activitybutton/activitybutton.component';
 import { ArticleComponent } from './maincontent/article/article.component';
+import { ArticlePreviewComponent } from './maincontent/articlepreview/articlepreview.component';
 import { ArticlelistComponent } from './maincontent/articlelist/articlelist.component';
 import { ItemsComponent } from './maincontent/items/items.component';
 import { MenubuttonComponent } from './maincontent/menubutton/menubutton.component';
 
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        HttpModule,
-        AppRoutingModule,
-        MaterialModule,
-        LazyLoadImageModule,
-        SharedModule.forRoot(),
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: HttpLoaderFactory,
-                deps: [Http]
-            }
-        })],
+  imports: [
+    BrowserModule,
+    HttpModule,
+    AppRoutingModule,
+    MaterialModule,
+    LazyLoadImageModule,
+    SharedModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [Http]
+      }
+    })],
 
-    declarations: [
+  declarations: [
 
-        ActivityFilterPipe,
-        OrderbyAscPipe,
-        OrderbyDescPipe,
-        DepartmentFilterPipe,
-        PrettyUrlPipe,
-        BrPipe,
-        AppComponent,
-        BannerComponent,
-        FeedComponent,
-        FeaturedComponent,
-        FooterComponent,
-        MainPageComponent,
-        HomeComponent,
-        CalendarListComponent,
-        CalendarActivitiesComponent,
-        CalendarEventComponent,
-        CalendarDetailComponent,
-        NewsComponent,
-        ClubListComponent,
-        ClubActivitiesComponent,
-        ClubDetailComponent,
-        ActivityButtonComponent,
-        ArticleComponent,
-        ArticlelistComponent,
-        ItemsComponent,
-        MenubuttonComponent
-    ],
-    providers: [
-        ConfService,
-        Log,
-        ReadService,
-        OrderbyDescPipe
-    ],
-    bootstrap: [AppComponent]
+    ActivityFilterPipe,
+    OrderbyAscPipe,
+    OrderbyDescPipe,
+    DepartmentFilterPipe,
+    PrettyUrlPipe,
+    BrPipe,
+    AppComponent,
+    BannerComponent,
+    FeedComponent,
+    FeaturedComponent,
+    FooterComponent,
+    MainPageComponent,
+    HomeComponent,
+    CalendarListComponent,
+    CalendarActivitiesComponent,
+    CalendarEventComponent,
+    CalendarDetailComponent,
+    NewsComponent,
+    NewsPreviewComponent,
+    NewsDetailsComponent,
+    ClubListComponent,
+    ClubActivitiesComponent,
+    ClubDetailComponent,
+    ActivityButtonComponent,
+    ArticleComponent,
+    ArticlePreviewComponent,
+    ArticlelistComponent,
+    ItemsComponent,
+    MenubuttonComponent
+  ],
+  providers: [
+    ConfService,
+    Log,
+    ReadService,
+    OrderbyDescPipe
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

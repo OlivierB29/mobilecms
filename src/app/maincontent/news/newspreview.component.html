@@ -1,0 +1,18 @@
+
+<md-progress-bar *ngIf="progressvalue < 100" mode="determinate" color="primary" [value]="progressvalue"></md-progress-bar>
+
+<h3 class="newstitle">{{ 'news.title' | translate }}</h3>
+
+<div class='article-list'>
+
+
+  <div *ngFor="let currentItem of (items | orderbydesc: 'date'); let i=index"  class="news-preview-container">
+
+
+    <app-articlepreview [type]='"news"' [mainroute]='"news"' [id]='currentItem.id' [active]='i<maxElements'></app-articlepreview>
+
+  </div>
+
+
+
+</div>

@@ -50,10 +50,7 @@
   .maincontent {
     width: 100%;
   }
-  .articlebody {}
-  .feedmenu {
-    width: 100%;
-  }
+
   .featuredmenu {
     width: 100%;
   }
@@ -63,10 +60,7 @@
   .maincontent {
     width: 100%;
   }
-  .articlebody {}
-  .feedmenu {
-    width: 100%;
-  }
+
   .featuredmenu {
     width: 33%;
   }
@@ -87,5 +81,5 @@
     width: 15%;
     float: right;
   }
-  .articlebody {}
+
 }

@@ -1,15 +1,21 @@
 <div class="maincontent">
 
-    <!-- display banner only on home page 
+    <!-- display banner only on home page
      -->
     <app-my-banner></app-my-banner>
+
+<!--
+        <div class="featuredmenu">
+            <app-my-featured-widget></app-my-featured-widget>
+        </div>
+ -->
 
     <div class="feedmenu">
         <!-- <app-my-feed-widget></app-my-feed-widget> -->
     </div>
 
     <div class="articlebody">
-        <app-my-news-component [max]="4"></app-my-news-component>
+        <app-newspreview-component></app-newspreview-component>
 
 
         <md-toolbar [routerLink]='"news"' class='expand-title' color="warn">
@@ -19,9 +25,5 @@
 
     </div>
 
-
-    <div class="featuredmenu">
-      <!--  <app-my-featured-widget></app-my-featured-widget> -->
-    </div>
 
 </div>

@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { HomeComponent } from './maincontent/home/home.component';
-
-
-import { CalendarEventComponent } from './maincontent/calendarevent/calendarevent.component';
-import { NewsComponent } from './maincontent/news/news.component';
+import { ArticleComponent } from './maincontent/article/article.component';
+import { NewsComponent, NewsDetailsComponent } from './maincontent/news';
 import { ClubListComponent } from './maincontent/clublist/clublist.component';
 
 
 import { ClubActivitiesComponent } from './maincontent/clubactivities/clubactivities.component';
-import { CalendarActivitiesComponent } from './maincontent/calendaractivities/calendaractivities.component';
+import { CalendarEventComponent, CalendarActivitiesComponent } from './maincontent/calendar';
+
+
 
 import { ItemsComponent } from './maincontent/items/items.component';
 
@@ -89,12 +89,8 @@ import { ItemsComponent } from './maincontent/items/items.component';
          component: NewsComponent
        },
        {
-         path: 'news/:activity',
-         component: NewsComponent
-       },
-       {
-         path: 'news/:activity/:date',
-         component: NewsComponent
+         path: 'news/:id',
+         component: NewsDetailsComponent
        },
        // FR
        {
@@ -102,12 +98,8 @@ import { ItemsComponent } from './maincontent/items/items.component';
          component: NewsComponent
        },
        {
-         path: 'actualites/:activity',
-         component: NewsComponent
-       },
-       {
-         path: 'actualites/:activity/:date',
-         component: NewsComponent
+         path: 'actualites/:id',
+         component: NewsDetailsComponent
        },
        {
          path: 'calendar',
