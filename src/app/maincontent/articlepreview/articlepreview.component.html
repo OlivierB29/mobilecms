@@ -1,13 +1,14 @@
 <div *ngIf="item" class='article-content'>
-  <md-card class='article-title'>
-    <span [innerHTML]="item.title"></span>
+  <md-card class='article-title'   [routerLink]='url'>
+    <span [innerHTML]="item.title"></span> <button md-button > <md-icon>open_in_new</md-icon></button>
   </md-card>
 
 
 
 
   <div class="article-description">
-    <div [innerHTML]="item.description | br"></div>
+    <div class="article-preview-subtitle">{{item.activity}} - {{item.date}}</div>
+      <div [innerHTML]="getPreviewDescription()"  class="article-previewdescription"></div>
 
     <div class="thumbnail-container">
       <img *ngIf="image" [defaultImage]="defaultImage" [lazyLoad]="image.url" [offset]="offset" [alt]="image.title">
