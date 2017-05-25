@@ -7,6 +7,8 @@
 
 
       <div class="article-description">
+       <div *ngIf="item.activity && item.date" class="article-subtitle">{{item.activity}} - {{item.date}}</div>
+
         <div [innerHTML]="item.description | br"></div>
 
         <div *ngIf="item.attachments && item.attachments.length > 0">

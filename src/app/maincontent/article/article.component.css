@@ -37,3 +37,8 @@
 .images-container {
 	border-top: 1px solid #ddd;
 }
+
+.article-subtitle {
+  font-size: 0.7em;
+  color: #999;
+}
