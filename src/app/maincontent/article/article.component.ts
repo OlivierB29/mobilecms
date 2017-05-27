@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { ReadService } from '../../shared/services/read.service';
 import { Log } from '../../shared/services/log.service';
-import { environment } from '../../environment';
+import { environment } from '../../../environments/environment';
 
 
 @Component({

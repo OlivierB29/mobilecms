@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Activity } from '../../shared/model/activity';
-import { environment } from '../../environment';
+import { environment } from '../../../environments/environment';
 
 @Component({
   moduleId: module.id,

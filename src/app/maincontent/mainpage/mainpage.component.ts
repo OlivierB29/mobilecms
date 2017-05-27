@@ -10,7 +10,7 @@ import { Activity } from '../../shared/model/activity';
 
 import { ReadService } from '../../shared/services/read.service';
 import { MenuItem } from '../../shared/model/menuitem';
-import { environment } from '../../environment';
+import { environment } from '../../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({

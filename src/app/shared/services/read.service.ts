@@ -5,7 +5,7 @@ import { MenuItem } from '../model/menuitem';
 
 import { Observable } from 'rxjs/Observable';
 
-import { environment } from '../../environment';
+import { environment } from '../../../environments/environment';
 
 import { Log } from '../../shared/services/log.service';
 
