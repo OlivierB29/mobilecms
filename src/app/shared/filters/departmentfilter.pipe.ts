@@ -12,6 +12,6 @@ Filtre par regional code
 export class DepartmentFilterPipe implements PipeTransform {
     transform(items: any[], arg: string): any {
 
-        return items.filter(item => item.department.indexOf(arg) !== -1);
+        return items.filter(item => (item.department && item.department.indexOf(arg) !== -1));
     }
 }

@@ -13,9 +13,9 @@ https://angular.io/docs/ts/latest/guide/pipes.html
 export class OrderbyAscPipe implements PipeTransform {
     transform(items: any[], arg: string): any {
 
-        return items.sort(function(a,b) {
+        return items.sort(function(a, b) {
 
-          return (a[arg] > b[arg]) ? 1: ((b[arg] > a[arg]) ? -1: 0);
+          return (a[arg] > b[arg]) ? 1 : ((b[arg] > a[arg]) ? -1 : 0);
         } );
     }
 

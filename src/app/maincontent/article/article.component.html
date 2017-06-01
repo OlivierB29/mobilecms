@@ -24,7 +24,7 @@
             <img [defaultImage]="defaultImage" [lazyLoad]="image.url" [offset]="offset" [alt]="image.title">
           </a>
 
-          <img [defaultImage]="defaultImage" [lazyLoad]="image.url" [offset]="offset" [alt]="image.title">
+          <img *ngIf="image.url && !image.link" [defaultImage]="defaultImage" [lazyLoad]="image.url" [offset]="offset" [alt]="image.title">
         </div>
 
 
