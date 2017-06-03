@@ -11,7 +11,7 @@ import { Log } from '../../shared/services/log.service';
 
 import { Event } from '../../shared/model/event';
 import { Activity } from '../../shared/model/activity';
-
+import { OrderbyPipe } from '../../shared/filters';
 
 @Component({
     moduleId: module.id,
@@ -47,34 +47,14 @@ export class CalendarListComponent implements OnInit {
     constructor(
         private router: Router,
         private dataservice: ReadService,
-
-
         private conf: ConfService,
         private log: Log,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private orderby: OrderbyPipe
     ) {
     }
 
     ngOnInit(): void {
-
-
-        const currentDate = new Date();
-
-        const currentYear = currentDate.getFullYear();
-
-        if (currentDate.getMonth() > 6) {
-
-            // 2016-2017
-            this.years.push('' + currentYear);
-            this.years.push('' + (currentYear + 1));
-
-        } else {
-            // 2015-2016
-            this.years.push('' + (currentYear - 1));
-            this.years.push('' + currentYear);
-
-        }
-
 
         this.route.params.forEach((params: Params) => {
             if (params['activity'] !== undefined) {
@@ -82,6 +62,7 @@ export class CalendarListComponent implements OnInit {
                 this.activity = params['activity'];
 
                 this.log.debug('activity selected '  +  this.activity);
+
             }
         });
 
@@ -96,7 +77,15 @@ export class CalendarListComponent implements OnInit {
             this.dataservice.getAll('calendar')
                 .subscribe((data: Event[]) => this.items = data,
                 error => this.log.debug('getCalendarEvents '  +  error),
-                () => this.log.debug('getCalendarEvents complete : '  +  this.activity  +  ' '  +  this.items.length));
+                () => {
+                  this.log.debug('getCalendarEvents complete : '  +  this.activity  +  ' '  +  this.items.length);
+                  // filter by activity
+                  this.items = this.items.filter(item => item.activity.indexOf(this.activity) !== -1);
+
+                  // next events
+                  this.orderby.transform(this.items, 'date', 'asc');
+
+              });
         }
 
     }
@@ -109,8 +98,6 @@ export class CalendarListComponent implements OnInit {
 
     this.router.navigate([this.routerLink + '/detail/' , currentItem.activity]);
   }
-
-
 
 
 
