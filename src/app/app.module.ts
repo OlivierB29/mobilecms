@@ -19,10 +19,8 @@ import { BannerComponent } from './widget/banner/banner.component';
 import { ActivityFilterPipe } from './shared/filters/activityfilter.pipe';
 import { DepartmentFilterPipe } from './shared/filters/departmentfilter.pipe';
 
-import { OrderbyAscPipe } from './shared/filters/orderbyasc.pipe';
-import { OrderbyDescPipe } from './shared/filters/orderbydesc.pipe';
-import { PrettyUrlPipe } from './shared/filters/prettyurl.pipe';
-import { BrPipe } from './shared/filters/br.pipe';
+
+import { BrPipe, OrderbyPipe, PrettyUrlPipe } from './shared/filters';
 
 // translate
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -92,8 +90,7 @@ import { MenubuttonComponent } from './maincontent/menubutton/menubutton.compone
   declarations: [
 
     ActivityFilterPipe,
-    OrderbyAscPipe,
-    OrderbyDescPipe,
+    OrderbyPipe,
     DepartmentFilterPipe,
     PrettyUrlPipe,
     BrPipe,
@@ -125,7 +122,7 @@ import { MenubuttonComponent } from './maincontent/menubutton/menubutton.compone
     ConfService,
     Log,
     ReadService,
-    OrderbyDescPipe
+    OrderbyPipe
   ],
   bootstrap: [AppComponent]
 })

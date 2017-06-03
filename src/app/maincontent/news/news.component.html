@@ -6,7 +6,7 @@
 <div class='article-list'>
 
 
-  <div *ngFor="let currentItem of (items | orderbydesc: 'date')">
+  <div *ngFor="let currentItem of items">
 
 
     <app-article [type]='"news"' [id]='currentItem.id'></app-article>

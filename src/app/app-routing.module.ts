@@ -23,11 +23,11 @@ import { ItemsComponent } from './maincontent/items/items.component';
 
        {
          path: 'structure',
-         component: ItemsComponent, data: { type: 'structure' }
+         component: ItemsComponent, data: { type: 'structure', orderby: 'id' }
        },
        {
          path: 'documents',
-         component: ItemsComponent, data: { type: 'structure' }
+         component: ItemsComponent, data: { type: 'structure', orderby: 'id' }
        },
        {
        path: '',
@@ -44,32 +44,32 @@ import { ItemsComponent } from './maincontent/items/items.component';
 
        {
            path: 'contact',
-           component: ItemsComponent, data: { type: 'contacts' }
+           component: ItemsComponent, data: { type: 'contacts', orderby: 'id' }
        },
 
        {
          path: 'reports',
-         component: ItemsComponent, data: { type: 'reports' }
+         component: ItemsComponent, data: { type: 'reports', orderby: 'id' }
        },
        {
          path: 'comptesrendus',
-         component: ItemsComponent, data: { type: 'reports' }
+         component: ItemsComponent, data: { type: 'reports', orderby: 'id' }
        },
        {
            path: 'links',
-           component: ItemsComponent, data: { type: 'links' }
+           component: ItemsComponent, data: { type: 'links', orderby: 'id' }
        },
        {
            path: 'liens',
-           component: ItemsComponent, data: { type: 'links' }
+           component: ItemsComponent, data: { type: 'links', orderby: 'id' }
        },
        {
          path: 'documents',
-         component: ItemsComponent, data: { type: 'documents' }
+         component: ItemsComponent, data: { type: 'documents', orderby: 'id' }
        },
        {
          path: 'documents',
-         component: ItemsComponent, data: { type: 'documents' }
+         component: ItemsComponent, data: { type: 'documents', orderby: 'id' }
        },
        {
          path: 'calendrier',

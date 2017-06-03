@@ -1,6 +1,6 @@
 
 import { Component, OnInit, Input } from '@angular/core';
-import { OrderbyDescPipe } from '../../shared/filters/orderbydesc.pipe';
+import { OrderbyPipe } from '../../shared/filters';
 import { Log } from '../../shared/services/log.service';
 import { ReadService } from '../../shared/services/read.service';
 import { ConfService } from '../../shared/services/conf.service';
@@ -31,7 +31,7 @@ export class NewsPreviewComponent implements OnInit {
         private conf: ConfService,
         private dataService: ReadService,
         private log: Log,
-        private orderbydesc: OrderbyDescPipe
+        private orderby: OrderbyPipe
     ) {
     }
     ngOnInit(): void {
@@ -45,6 +45,8 @@ export class NewsPreviewComponent implements OnInit {
                                            this.items = this.items.slice(this.items.length - this.max, this.items.length);
                                         }
                                         this.log.debug(this.type + ' '  +  this.items.length);
+                                        this.progressvalue = 80;
+                                        this.orderby.transform(this.items, 'date', 'desc');
                                         this.progressvalue = 100;
                                     });
 
