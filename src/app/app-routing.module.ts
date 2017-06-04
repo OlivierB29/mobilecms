@@ -26,7 +26,7 @@ import { ItemsComponent } from './maincontent/items/items.component';
          component: ItemsComponent, data: { type: 'structure', orderby: 'id' }
        },
        {
-         path: 'documents',
+         path: 'organisation',
          component: ItemsComponent, data: { type: 'structure', orderby: 'id' }
        },
        {
@@ -62,10 +62,6 @@ import { ItemsComponent } from './maincontent/items/items.component';
        {
            path: 'liens',
            component: ItemsComponent, data: { type: 'links', orderby: 'id' }
-       },
-       {
-         path: 'documents',
-         component: ItemsComponent, data: { type: 'documents', orderby: 'id' }
        },
        {
          path: 'documents',
