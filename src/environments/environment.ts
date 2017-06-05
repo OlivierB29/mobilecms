@@ -8,6 +8,7 @@ export const environment = {
   server: '',
   log: 'debug',
   title: 'MobileCMS development',
+  fulltitle: 'MobileCMS development build with Angular.io',
   defaultlocale: 'en',
   public: 'public'
 };

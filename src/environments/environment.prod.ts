@@ -4,5 +4,6 @@ export const environment = {
   log: 'error',
   defaultlocale: 'fr',
   title: 'CRKDR Bretagne',
+  fulltitle: 'Commission Régionale Kendo et Disciplines Rattachées Bretagne',
   public: 'public'
 };

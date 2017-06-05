@@ -56,7 +56,6 @@ export class MainPageComponent  implements OnInit  {
 
   ngOnInit(): void {
 
-    this.title = environment.title;
 
     // this language will be used as a fallback when a translation isn't found in the current language
     this.translate.setDefaultLang(environment.defaultlocale);
@@ -87,6 +86,12 @@ export class MainPageComponent  implements OnInit  {
         this.menuMode = 'over';
         this.menuOpened = false;
 
+    }
+
+    if (this.mobileLayout) {
+      this.title = environment.title;
+    } else {
+      this.title = environment.fulltitle;
     }
 
 
