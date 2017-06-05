@@ -5,8 +5,9 @@
   <md-sidenav #sidenav [mode]='this.menuMode' [opened]='menuOpened' class='slidemenu'>
     <nav>
       <div *ngFor="let menu of menuItems">
-        <app-menubutton [item]='menu' ></app-menubutton>
+        <app-menubutton [item]='menu' (click)='sidenav.close()'></app-menubutton>
       </div>
+
     </nav>
   </md-sidenav>
 
@@ -21,8 +22,9 @@
     <md-icon >menu</md-icon>
     </button>
 
-      <button md-button class='top-menu-title' [routerLink]='"/"'>{{title}}
+      <button md-button class='top-menu-title' [routerLink]='"/"' >{{title}}
     </button>
+
 
     </md-toolbar>
 
