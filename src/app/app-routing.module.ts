@@ -49,11 +49,11 @@ import { ItemsComponent } from './maincontent/items/items.component';
 
        {
          path: 'reports',
-         component: ItemsComponent, data: { type: 'reports', orderby: 'id' }
+         component: ItemsComponent, data: { type: 'reports', orderby: 'id', direction: 'desc' }
        },
        {
          path: 'comptesrendus',
-         component: ItemsComponent, data: { type: 'reports', orderby: 'id' }
+         component: ItemsComponent, data: { type: 'reports', orderby: 'id', direction: 'desc' }
        },
        {
            path: 'links',
