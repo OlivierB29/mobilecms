@@ -1,6 +1,7 @@
 {
     "news.title" : "Actualités",
     "calendar.title" : "Calendrier",
+    "feed.title" : "Prochains événements",
     "calendar.organizationlabel" : "Org.",
     "calendar.location" : "Lieu",
     "clublist.title": "Clubs"

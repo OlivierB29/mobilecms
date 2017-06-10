@@ -1,9 +1,9 @@
 import { Log } from '../../shared/services/log.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { ReadService } from '../../shared/services/read.service';
+import { OrderbyPipe } from '../../shared/filters';
 
-import { ConfService } from '../../shared/services/conf.service';
 import { Event } from '../../shared/model/event';
 
 import { Router } from '@angular/router';
@@ -23,33 +23,38 @@ export class FeedComponent implements OnInit {
 
   imageservice = '';
 
+  @Input() max = 2;
 
-  items: Event[] = [];
+  items: any[] = [];
+
+  type = 'calendar';
 
   constructor(private dataService: ReadService,
-    private conf: ConfService,
     private router: Router,
-    private log: Log) {
+    private log: Log,
+    private orderby: OrderbyPipe) {
   }
 
   ngOnInit(): void {
-    // case: activity selected
-    this.dataService.getAll('calendar')
-      .subscribe((data: Event[]) => this.items = data,
-      error => console.error('getCalendarEvents ' + error),
-      () => this.log.debug('getCalendarEvents complete : ' + this.items.length));
+
+    this.dataService.getAll(this.type)
+                              .subscribe((data: any[]) => this.items = data,
+                                  error => this.log.debug(this.type + ' ' + error),
+                                  () =>  {
+
+                                    if (this.max > 0 && this.items.length > this.max) {
+                                       this.items = this.items.slice(this.items.length - this.max, this.items.length);
+                                    }
+                                    this.log.debug(this.type + ' '  +  this.items.length);
+
+                                    this.orderby.transform(this.items, 'date', 'desc');
+
+                                });
 
   }
 
-  gotoDetail(item: Event): void {
-    this.log.debug('gotoDetail...' + item.id);
-
-
-    const link = ['/calendar/detail/' + item.id];
-    this.log.debug('navigate to ...' + link.toString());
-
-    this.router.navigate(['/calendar/detail/' + item.id]);
-
+  getUrl(item): string {
+    return 'calendar/' + item.activity;
   }
 
 

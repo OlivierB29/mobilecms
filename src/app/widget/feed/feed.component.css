@@ -1,5 +1,25 @@
+.feed-title {
+  padding-left: 0.2em;
+  display: block;
+
+}
+
 .feed-article {
-  border-color: #eee;
-  border-width: 1px;
-  border-style: dotted;
+  background-color: white;
+  box-shadow: 5px 5px 10px 0   #656565;
+  display: block;
+  margin-bottom: 0.5em;
+}
+.feed-article:hover {
+  cursor: pointer;
+}
+
+.feed-subtitle {
+  font-size: 0.7em;
+  color: #999;
+}
+
+
+.feed-container {
+  padding: 0.7em 0.7em;
 }

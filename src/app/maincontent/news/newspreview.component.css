@@ -1,6 +1,6 @@
 
 .newstitle {
-   padding: .7em 0.7em;
+   padding: 0.7em 0.7em;
 }
 
 /* list */
@@ -11,6 +11,7 @@
   border-style: solid;
   /* spacing between article-list and border */
   padding: .7em 0.7em;
+  display: block;
 }
 
 .news-preview-container {
