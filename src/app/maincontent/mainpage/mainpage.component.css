@@ -1,35 +1,31 @@
-
-
 .slidemenu {
-padding-top: 5em;
-background-color: #5e7987;
-box-shadow: 5px 5px 10px 0px #656565;
-z-index: 90;
+  padding-top: 5em;
+  background-color: #5e7987;
+  box-shadow: 5px 5px 10px 0 #656565;
+  z-index: 90;
 }
 
-
 .top-menu-bar {
-  box-shadow: 5px 5px 10px 0px #656565;
+  box-shadow: 5px 5px 10px 0 #656565;
   z-index: 100;
 }
 
 .top-menu-icon {
-  font-size: 1em;  
+  font-size: 1em;
 }
 
 .top-menu-title {
-  font-size: 1em; 
+  font-weight: normal;
+  font-size: 2em;
 }
 
 .appcomponent {
-    background-color: #F2F2F2;
+  background-color: #F2F2F2;
 }
-
 
 .my-content {
   margin: 0;
   width: 100%;
   height: 100%;
   min-height: 500px;
-
 }
