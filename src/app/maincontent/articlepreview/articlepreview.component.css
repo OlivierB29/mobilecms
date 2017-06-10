@@ -13,11 +13,13 @@
   -webkit-text-fill-color: transparent;
 }
 
+.article-content:hover {
+	cursor: pointer;
+}
 
 /* ------------------------------------------------------ */
 .article-title:hover {
 	background-color: #E0E0E0;
-	cursor: pointer;
 }
 /* ------------------------------------------------------ */
 
@@ -33,12 +35,14 @@
 	border-color: #ddd;
 	color: #333;
 	background: white;
-
+  /*box-shadow: 5px 5px 10px 0   #656565;*/
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 
 .article-title {
 	background-color: #e9e9e9;
 	font-weight: bold;
+  padding: 1.5em;
 }
 
 

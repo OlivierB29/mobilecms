@@ -2,8 +2,8 @@
       <div *ngIf="item" class='article-content'>
 
 
-        <md-card class="article-title" [innerHTML]='item.title'></md-card>
-  			<div class="article-title">
+        <div class="article-title" [innerHTML]='item.title'></div>
+  			<div class="article-subtitle">
           <!-- conditional display of class -->
             <div *ngIf="item.organization" class='article-title-moreinfo'>
             <span >{{'calendar.organizationlabel' | translate}} : </span>
@@ -11,8 +11,8 @@
 
             </div>
   			</div>
-
-        <div [innerHTML]="item.description | br" class="article-description"></div>
+        <div class="article-description">
+        <div [innerHTML]="item.description | br" ></div>
 
         <div *ngIf="item.location" >{{'calendar.location' | translate}} : {{item.location}}</div>
 
@@ -23,7 +23,7 @@
         <div *ngFor="let image of item.images">
           <img [src]="image.url" [alt]="image.title">
         </div>
-
+      </div>
 
 
     </div>
