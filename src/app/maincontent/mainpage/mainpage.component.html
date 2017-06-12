@@ -4,10 +4,11 @@
 
   <md-sidenav #sidenav [mode]='this.menuMode' [opened]='menuOpened' class='slidemenu'>
     <nav>
+      <div class='buttonseparator'></div>
       <div *ngFor="let menu of menuItems">
         <app-menubutton *ngIf='menuMode !== "over"' [item]='menu'></app-menubutton>
         <app-menubutton *ngIf='menuMode === "over"' [item]='menu' (click)='sidenav.close()'></app-menubutton>
-
+        <div class='buttonseparator'></div>
       </div>
 
     </nav>
