@@ -19,7 +19,7 @@
   <div class="my-content">
 
 
-    <md-toolbar color="primary" class='top-menu-bar'>
+    <div class='top-menu-bar'>
 
     <button *ngIf='!menuOpened' md-button (click)='sidenav.open()' class='top-menu-icon'>
     <i class="material-icons">menu</i>
@@ -28,7 +28,7 @@
 
       <button md-button [routerLink]='"/"' ><h1 class='top-menu-title'>{{title}}</h1></button>
 
-    </md-toolbar>
+    </div>
 
 
 
