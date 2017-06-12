@@ -3,16 +3,16 @@
 <div *ngIf="activity">
  <h3><span>{{ 'clublist.title' | translate }}</span>: <span [innerHTML]='(activity | uppercase)'></span> </h3>
 
-<md-button-toggle-group #group="mdButtonToggleGroup">
+<div>
 
-  <md-button-toggle *ngFor='let dep of departmentObjectList' [value]='dep.code' (click)='displayClubs(dep.code)'>
+  <button *ngFor='let dep of departmentObjectList' [value]='dep.code' (click)='displayClubs(dep.code)' class='department-button'>
     <div [innerHTML]='dep.name'></div>
 
-  </md-button-toggle>
+  </button>
 
 
 
-</md-button-toggle-group>
+</div>
 
 </div>
 

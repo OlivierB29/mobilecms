@@ -1,3 +1,9 @@
+
+.appcomponent {
+  font-family : Roboto, "Helvetica Neue", sans-serif;
+  background-color: #F2F2F2;
+}
+
 .slidemenu {
   padding-top: 5em;
   background-color: #5e7987;
@@ -19,9 +25,8 @@
   font-size: 2em;
 }
 
-.appcomponent {
-  background-color: #F2F2F2;
-}
+
+
 
 .my-content {
   margin: 0;
