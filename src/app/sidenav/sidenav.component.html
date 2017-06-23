@@ -1,0 +1,11 @@
+<div *ngIf='opened' [class]="getCssClass()">
+  <div class='buttonseparator'></div>
+
+
+
+  <div *ngFor="let menu of menuItems">
+    <app-menubutton *ngIf='mode !== "over"' [item]='menu'></app-menubutton>
+    <app-menubutton *ngIf='mode === "over"' [item]='menu' (click)='close()'></app-menubutton>
+    <div class='buttonseparator'></div>
+  </div>
+</div>

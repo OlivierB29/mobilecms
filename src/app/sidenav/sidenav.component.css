@@ -1,0 +1,26 @@
+
+.slidemenu {
+
+  background-color: #5e7987;
+  box-shadow: 5px 5px 10px 0 #656565;
+  z-index: 90;
+}
+
+.menu-over {
+  position: absolute;
+  z-index: 1000;
+  top: 0.5em;
+  left: 0;
+  min-width: 20%;
+
+}
+
+.menu-side {
+  padding-top: 3em;
+  position: relative;
+}
+.buttonseparator {
+  border-width: 0.01em 0 0 0;
+  border-style: solid;
+  border-color: white;
+}

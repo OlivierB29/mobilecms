@@ -38,9 +38,7 @@ import { Log } from './shared/services/log.service';
 import { RouterModule } from '@angular/router';
 import { ReadService } from './shared/services/read.service';
 
-// Material Theme
-import { MaterialModule } from '@angular/material';
-import 'hammerjs';
+
 
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 
@@ -69,6 +67,8 @@ import { ArticlePreviewComponent } from './maincontent/articlepreview/articlepre
 import { ArticlelistComponent } from './maincontent/articlelist/articlelist.component';
 import { ItemsComponent } from './maincontent/items/items.component';
 import { MenubuttonComponent } from './maincontent/menubutton/menubutton.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { SidenavcontainerComponent } from './sidenavcontainer/sidenavcontainer.component';
 
 
 @NgModule({
@@ -76,7 +76,7 @@ import { MenubuttonComponent } from './maincontent/menubutton/menubutton.compone
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    MaterialModule,
+
     LazyLoadImageModule,
     SharedModule.forRoot(),
     TranslateModule.forRoot({
@@ -116,7 +116,9 @@ import { MenubuttonComponent } from './maincontent/menubutton/menubutton.compone
     ArticlePreviewComponent,
     ArticlelistComponent,
     ItemsComponent,
-    MenubuttonComponent
+    MenubuttonComponent,
+    SidenavComponent,
+    SidenavcontainerComponent
   ],
   providers: [
     ConfService,
