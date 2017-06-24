@@ -4,6 +4,9 @@
   background-color: #5e7987;
   box-shadow: 5px 5px 10px 0 #656565;
   z-index: 90;
+  /* TODO better ? */
+  height: 30em;
+
 }
 
 .menu-over {
@@ -12,7 +15,7 @@
   top: 0.5em;
   left: 0;
   min-width: 20%;
-
+  padding-top: 5em;
 }
 
 .menu-side {

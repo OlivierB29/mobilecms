@@ -35,6 +35,10 @@ export class SidenavComponent implements OnInit {
       this.opened = !this.opened;
   }
 
+  isOpened() {
+      return this.opened;
+  }
+
   close() {
     if (this.opened) {
       this.opened = false;

@@ -1,11 +1,12 @@
+<div *ngIf='sidenav.isOpened()'  class='my-mat-sidenav-backdrop my-mat-sidenav-shown' (click)='sidenav.open()'></div>
 <div class='top-menu-bar'>
 
-<div *ngIf='!menuOpened' class='top-menu-icon-container'  (click)='sidenav.open()'>
+<div *ngIf='!menuOpened' class='top-menu-icon-container my-mat-button'  (click)='sidenav.open()'>
   <span  class='top-menu-icon'>
     <i class="material-icons">menu</i>
   </span>
 </div><!--
---><div class='top-menu-title-container' [routerLink]='"/"'>
+--><div class='top-menu-title-container my-mat-button' [routerLink]='"/"'>
   <span  class='top-menu-title'>{{title}}</span>
 </div>
 </div>
