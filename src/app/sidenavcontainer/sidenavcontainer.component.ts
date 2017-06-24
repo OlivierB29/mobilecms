@@ -59,6 +59,29 @@ export class SidenavcontainerComponent implements OnInit {
   }
 
 
+  getTopMenuTitleCss(): string {
+    let result = ' ';
+    if (this.mobileLayout) {
+      result += 'top-menu-title-mobile';
+    } else {
+      result += 'top-menu-title-desktop';
+    }
+
+    return result;
+  }
+
+  /**
+  * conditionnal CSS for displaying backdrop
+  */
+    getBackdropCss(mobileMenuOpened: boolean): string {
+      let result = ' ';
+      if (mobileMenuOpened) {
+        result += 'my-mat-sidenav-shown';
+      }
+
+      return result;
+    }
+
 
 
 }

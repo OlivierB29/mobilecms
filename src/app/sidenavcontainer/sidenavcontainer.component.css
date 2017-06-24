@@ -1,15 +1,4 @@
-.top-menu-bar {
-  color: white;
-  box-shadow: 5px 5px 10px 0 #656565;
-  z-index: 100;
-  background-color: #5e7987;
-  font-size: 1.7em;
-}
-
-.top-menu-title-container {
-  display: inline-block;
-  padding: 0.5em;
-}
+/* global CSS */
 
 .my-mat-button:hover {
   cursor: pointer;
@@ -17,45 +6,35 @@
   background-color: #546E7A;
 }
 
+/* top menu bar CSS */
+.top-menu-bar {
+
+  box-shadow: 5px 5px 10px 0 #656565;
+  z-index: 90;
+  background-color: #5e7987;
+  font-size: 1.7em;
+}
+
+/* web site title */
+.top-menu-title-container {
+  display: inline-block;
+  text-align: center;
+}
+
+.top-menu-title-desktop {
+  width: 100%;
+}
+.top-menu-title-mobile {
+  width: 80%;
+}
+
+
+
 .top-menu-icon-container {
   display: inline-block;
-  padding: 0.5em;
+  padding: 0.5em 1em 0.5em 1em;
 }
 
-.my-body {
-  display: flex;
-}
-
-.my-content {
-  flex: 1 1 auto;
-  width: 50%;
-  position: relative;
-}
-
-
-/**/
-
-.my-mat-sidenav-backdrop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: block;
-  z-index: 2;
-  visibility: hidden;
-  /* TODO better ? */
-  height: 300em;
-}
-
-
-/**/
-
-.my-mat-sidenav-shown {
-  background-color: rgba(0, 0, 0, 0.6);
-  transition: background-color .4s cubic-bezier(.25, .8, .25, 1);
-  visibility: visible;
-}
 
 .top-menu-icon {
   color: white;
@@ -68,6 +47,46 @@
   font-weight: normal;
   color: white;
 }
+
+
+
+/* content CSS */
+.my-body {
+  display: flex;
+}
+
+.my-content {
+  flex: 1 1 auto;
+  width: 50%;
+  position: relative;
+}
+
+
+/* backdrop when displaying mobile menu */
+
+.my-mat-sidenav-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  z-index: 80;
+  transition: background-color .4s cubic-bezier(.25, .8, .25, 1);
+  visibility: hidden;
+  /* TODO better ? */
+  height: 300em;
+}
+
+
+/* backdrop */
+
+.my-mat-sidenav-shown {
+  background-color: rgba(0, 0, 0, 0.6);
+
+  visibility: visible;
+}
+
 
 
 /* TODO */
