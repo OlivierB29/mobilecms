@@ -60,4 +60,24 @@ export class SidenavComponent implements OnInit {
     return result;
   }
 
+  getCssClass2(): string {
+    let result = 'slidemenu ';
+
+
+    if (this.mode === 'over') {
+      result += 'menu-over ';
+
+      if (this.opened) {
+        result += 'menu-over-opened';
+      }
+
+
+    } else if (this.mode === 'side') {
+      result += 'menu-side';
+    }
+
+
+    return result;
+  }
+
 }

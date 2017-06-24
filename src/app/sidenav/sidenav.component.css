@@ -4,9 +4,12 @@
   background-color: #5e7987;
   box-shadow: 5px 5px 10px 0 #656565;
   z-index: 90;
-  /* TODO better ? */
-  height: 30em;
 
+  transition-duration: .4s;
+   transition-timing-function: cubic-bezier(.25, .8, .25, 1);
+   transition-property: transform, height;
+  height: 0;
+  overflow: hidden;
 }
 
 .menu-over {
@@ -15,13 +18,19 @@
   top: 0.5em;
   left: 0;
   min-width: 20%;
-  padding-top: 5em;
+}
+
+.menu-over-opened {
+    height: 30em;
 }
 
 .menu-side {
+  min-height: 30em;
   padding-top: 3em;
   position: relative;
 }
+
+
 .buttonseparator {
   border-width: 0.01em 0 0 0;
   border-style: solid;
