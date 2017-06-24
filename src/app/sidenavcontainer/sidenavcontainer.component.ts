@@ -58,9 +58,7 @@ export class SidenavcontainerComponent implements OnInit {
 
   }
 
-  getBackDropCss(): string {
-    return 'my-mat-sidenav-backdrop my-mat-sidenav-shown';
-  }
+
 
 
 }

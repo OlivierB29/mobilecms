@@ -13,11 +13,12 @@
 <div class="my-body">
 
   <app-sidenav #sidenav [mode]='menuMode' [opened]='menuOpened'>
-
   </app-sidenav>
 
   <!-- container -->
   <div class="my-content">
+    <!-- display banner only on home page  -->
+    <app-my-banner></app-my-banner>
 
     <!-- content -->
     <router-outlet></router-outlet>
