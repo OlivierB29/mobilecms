@@ -20,7 +20,7 @@ import { ActivityFilterPipe } from './shared/filters/activityfilter.pipe';
 import { DepartmentFilterPipe } from './shared/filters/departmentfilter.pipe';
 
 
-import { BrPipe, OrderbyPipe, PrettyUrlPipe } from './shared/filters';
+import { BrPipe, OrderbyPipe } from './shared/filters';
 
 
 
@@ -72,7 +72,7 @@ import { SidenavcontainerComponent } from './sidenavcontainer/sidenavcontainer.c
     ActivityFilterPipe,
     OrderbyPipe,
     DepartmentFilterPipe,
-    PrettyUrlPipe,
+
     BrPipe,
     AppComponent,
     BannerComponent,

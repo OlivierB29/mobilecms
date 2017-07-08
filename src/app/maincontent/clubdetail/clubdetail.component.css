@@ -10,6 +10,10 @@
 	font-weight: bold;
 }
 
+.club-title:hover {
+  cursor: pointer;
+}
+
 /* element */
 .club-content {
   /*additional border: add a thicker aspect*/
@@ -22,4 +26,8 @@
 	border-color: #ddd;
 	color: #333;
 
+}
+
+.club-website {
+  font-size: 1em;
 }
