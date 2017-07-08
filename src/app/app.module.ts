@@ -48,10 +48,6 @@ import { ClubListComponent } from './maincontent/clublist/clublist.component';
 import { ClubDetailComponent } from './maincontent/clubdetail/clubdetail.component';
 import { ClubActivitiesComponent } from './maincontent/clubactivities/clubactivities.component';
 
-import { MainPageComponent } from './maincontent/mainpage/mainpage.component';
-
-
-
 import { ActivityButtonComponent } from './maincontent/activitybutton/activitybutton.component';
 import { ArticleComponent } from './maincontent/article/article.component';
 import { ArticlePreviewComponent } from './maincontent/articlepreview/articlepreview.component';
@@ -83,7 +79,7 @@ import { SidenavcontainerComponent } from './sidenavcontainer/sidenavcontainer.c
     FeedComponent,
     FeaturedComponent,
     FooterComponent,
-    MainPageComponent,
+
     HomeComponent,
     CalendarListComponent,
     CalendarActivitiesComponent,
