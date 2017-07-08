@@ -6,7 +6,7 @@
   			<div class="article-subtitle">
           <!-- conditional display of class -->
             <div *ngIf="item.organization" class='article-title-moreinfo'>
-            <span >{{'calendar.organizationlabel' }} : </span>
+
             <span > {{item.organization}}</span>
 
             </div>
@@ -14,7 +14,7 @@
         <div class="article-description">
         <div [innerHTML]="item.description | br" ></div>
 
-        <div *ngIf="item.location" >{{'calendar.location' }} : {{item.location}}</div>
+        <div *ngIf="item.location" ><i class='material-icons'>place</i> {{item.location}}</div>
 
         <div *ngFor="let attachment of item.attachments">
           <a [href]="attachment.url" [innerHTML]="attachment.title"></a> <span [innerHTML]="attachment.description"></span>
