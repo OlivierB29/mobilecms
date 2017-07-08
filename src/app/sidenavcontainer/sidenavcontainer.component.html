@@ -2,7 +2,7 @@
 <div class='top-menu-bar'>
 
 <div >
-  <span  class='top-menu-icon'>
+  <span *ngIf='menuMode === "over"' class='top-menu-icon'>
     <i class="material-icons" (click)='sidenav.open()'>menu</i>
   </span>
 </div><!--
@@ -11,10 +11,10 @@
 </div>
 </div>
 
-<app-sidenav #sidenav [mode]='this.menuMode' [opened]='menuOpened'></app-sidenav>
-
 
 <div class="my-body">
+
+  <app-sidenav #sidenav [mode]='menuMode' [opened]='menuOpened'></app-sidenav>
 
 
 
