@@ -99,12 +99,3 @@
 
   visibility: visible;
 }
-
-
-
-/* TODO */
-
-.side {
-  transform: translate3d(0, 0, 0);
-  display: block;
-}

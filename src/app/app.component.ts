@@ -4,8 +4,6 @@ import { Component, OnInit } from '@angular/core';
 import './rxjs-extensions';
 
 
-import { Log } from './shared/services/log.service';
-
 
 import { environment } from '../environments/environment';
 
@@ -13,20 +11,15 @@ import { environment } from '../environments/environment';
   moduleId: module.id,
   selector: 'app-root',
   templateUrl: 'app.component.html',
-    styleUrls: ['app.component.css']
+  styleUrls: ['app.component.css']
 })
-export class AppComponent implements OnInit  {
+export class AppComponent implements OnInit {
 
+  constructor() {
+  }
 
+  ngOnInit(): void {
 
-    constructor( 
-       private log: Log) {
-
-    }
-
-
-      ngOnInit(): void {
-
-      }
+  }
 
 }

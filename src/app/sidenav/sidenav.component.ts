@@ -35,7 +35,7 @@ export class SidenavComponent implements OnInit {
 
       this.opened = !this.opened;
   }
-  
+
 
   isOpen() {
       return this.opened;
@@ -61,10 +61,6 @@ export class SidenavComponent implements OnInit {
     if (this.mode === 'over') {
       // mobile mode : menu is over content
       result += 'menu-over ';
-      // menu is opened
-      if (this.opened) {
-        result += 'menu-over-opened';
-      }
 
     } else if (this.mode === 'side') {
       // desktop mode

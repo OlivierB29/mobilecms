@@ -1,16 +1,15 @@
 
 <div class='article-list'>
-<div *ngIf="activity">
- <h3><span>{{ 'clublist.title'  }}</span>: <span [innerHTML]='(activity | uppercase)'></span> </h3>
+  <h3><span>{{ 'clublist.title'  }}</span>: <span [innerHTML]='(activity | uppercase)'></span> </h3>
+<div *ngIf="activity" class='department-list'>
 
-<div>
 
-  <button *ngFor='let dep of departmentObjectList' [value]='dep.code' (click)='displayClubs(dep.code)' class='department-button'>
+<div *ngFor='let dep of departmentObjectList' class="department">
+
+  <button  [value]='dep.code' (click)='displayClubs(dep.code)' class='department-button'>
     <div [innerHTML]='dep.name'></div>
 
   </button>
-
-
 
 </div>
 

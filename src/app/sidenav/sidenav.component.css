@@ -5,10 +5,11 @@
   box-shadow: 5px 5px 10px 0 #656565;
   z-index: 90;
 
-  transition-duration: .4s;
+  transition-duration: .5s;
    transition-timing-function: cubic-bezier(.25, .8, .25, 1);
    transition-property: transform, height;
-  height: 0;
+  height: 40em;
+
   overflow: hidden;
 }
 
@@ -20,12 +21,10 @@
   min-width: 20%;
 }
 
-.menu-over-opened {
-    height: 30em;
-}
+
 
 .menu-side {
-  min-height: 30em;
+
   padding-top: 3em;
   position: relative;
 }

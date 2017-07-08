@@ -1,8 +1,11 @@
+.department-list {
+  display: flex;
+	flex-wrap: wrap;
+}
+
 
 .department {
- text-align: center;
- padding-top: 0.5em;
- width: 100%;
+
 }
 .department-button {
  min-height: 3em;
@@ -20,15 +23,9 @@
 /* list */
 .article-list {
   /* global border around article-list */
-  border-width: 0px 0px 0px 1px;
+  border-width:  1px;
   border-color: #ddd;
   border-style: solid;
   /* spacing between article-list and border */
   padding: .7em 0.7em;
-}
-
-
-
-.department-list {
-  display: block;
 }
