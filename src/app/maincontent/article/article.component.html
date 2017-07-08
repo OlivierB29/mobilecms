@@ -21,10 +21,10 @@
         <div *ngIf="item.images && item.images.length > 0" class="images-container">
         <div *ngFor="let image of item.images">
           <a *ngIf="image.url && image.link" [href]="image.link">
-            <img [defaultImage]="defaultImage" [lazyLoad]="image.url" [offset]="offset" [alt]="image.title">
+            <img [src]="image.url"  [alt]="image.title">
           </a>
 
-          <img *ngIf="image.url && !image.link" [defaultImage]="defaultImage" [lazyLoad]="image.url" [offset]="offset" [alt]="image.title">
+          <img *ngIf="image.url && !image.link" [src]="image.url"  [alt]="image.title">
         </div>
 
 

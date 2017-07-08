@@ -36,6 +36,8 @@ export class SidenavcontainerComponent implements OnInit {
 
         const layout = this.conf.getLayout();
 
+        console.log('!!!!!!!!!!!!!!!!!!' + layout);
+
         this.mobileLayout = layout !== 'desktop';
 
         switch (layout) {

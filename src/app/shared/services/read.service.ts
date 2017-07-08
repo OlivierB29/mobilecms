@@ -30,7 +30,34 @@ export class ReadService {
 
     }
 
+    getAllPromise(type: string): Promise<any[]> {
 
+      const url = this.root  +  '/' + environment.public + '/'  +  type  +  '/index/index.json';
+
+      if (this.http) {
+          console.log("!!!! getAllPromise 2" );
+      }
+
+          return this.http.get(url)
+              .toPromise()
+              .then(this.extractPromiseData)
+              .catch(this.handleErrorPromise);
+      }
+
+      private extractPromiseData(res: Response) {
+          console.log("!!!! getAllPromise 3" );
+          const body = res.json();
+          return body || [];
+      }
+
+      private handleErrorPromise(error: any) {
+          console.log("!!!! getAllPromise 4" );
+          // In a real world app, we might use a remote logging infrastructure
+          // We'd also dig deeper into the error to get a better message
+          const errMsg = (error.message) ? error.message : error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+          console.error(errMsg); // log to console instead
+          return Promise.reject(errMsg);
+      }
 
     public getAll = (type: string): Observable<any[]> => {
         const url = this.root  +  '/' + environment.public + '/'  +  type  +  '/index/index.json';

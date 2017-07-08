@@ -11,7 +11,7 @@
       <div [innerHTML]="getPreviewDescription()"  class="article-previewdescription"></div>
 
     <div class="thumbnail-container">
-      <img *ngIf="image" [defaultImage]="defaultImage" [lazyLoad]="image.url" [offset]="offset" [alt]="image.title">
+      <img *ngIf="image" [src]="image.url"  [alt]="image.title">
     </div>
 
   </div>

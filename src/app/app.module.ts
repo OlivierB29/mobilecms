@@ -22,25 +22,16 @@ import { DepartmentFilterPipe } from './shared/filters/departmentfilter.pipe';
 
 import { BrPipe, OrderbyPipe, PrettyUrlPipe } from './shared/filters';
 
-// translate
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-// AoT requires an exported function for factories
-export function HttpLoaderFactory(http: Http) {
-  return new TranslateHttpLoader(http);
-}
+
 
 // Tools
 import { ConfService } from './shared/services/conf.service';
 import { Log } from './shared/services/log.service';
 
 
-import { RouterModule } from '@angular/router';
 import { ReadService } from './shared/services/read.service';
+import { ReadService2 } from './shared/services/read.service2';
 
-
-
-import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 // maincontent
 import { NewsComponent, NewsPreviewComponent, NewsDetailsComponent } from './maincontent/news';
@@ -77,15 +68,8 @@ import { SidenavcontainerComponent } from './sidenavcontainer/sidenavcontainer.c
     HttpModule,
     AppRoutingModule,
 
-    LazyLoadImageModule,
     SharedModule.forRoot(),
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [Http]
-      }
-    })],
+],
 
   declarations: [
 
@@ -124,6 +108,7 @@ import { SidenavcontainerComponent } from './sidenavcontainer/sidenavcontainer.c
     ConfService,
     Log,
     ReadService,
+    ReadService2,
     OrderbyPipe
   ],
   bootstrap: [AppComponent]

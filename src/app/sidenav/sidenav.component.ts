@@ -24,7 +24,7 @@ export class SidenavComponent implements OnInit {
   ngOnInit() {
     // Load the menu items
     this.lang = environment.defaultlocale;
-    console.log('loading menu ' + this.lang);
+    console.log('loading menu mode:' + this.mode + ' ' + this.opened);
     this.dataService.getMenu(this.lang)
       .subscribe((data: MenuItem[]) => this.menuItems = data,
       error => console.log('getMenu ' + error),
@@ -32,6 +32,7 @@ export class SidenavComponent implements OnInit {
   }
 
   open() {
+
       this.opened = !this.opened;
   }
 
