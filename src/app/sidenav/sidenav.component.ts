@@ -35,8 +35,9 @@ export class SidenavComponent implements OnInit {
 
       this.opened = !this.opened;
   }
+  
 
-  isOpened() {
+  isOpen() {
       return this.opened;
   }
 

@@ -1,20 +1,24 @@
 
 <div class='top-menu-bar'>
 
-<div >
-  <span *ngIf='menuMode === "over"' class='top-menu-icon'>
-    <i class="material-icons" (click)='sidenav.open()'>menu</i>
-  </span>
-</div><!--
---><div [class]='"top-menu-title-container my-mat-button" + getTopMenuTitleCss()' [routerLink]='"/"'>
-  <span  class='top-menu-title'>{{title}}</span>
-</div>
+  <div *ngIf='menuMode === "over"' (click)='sidenav.open()'>
+    <span class='top-menu-icon-container top-menu-icon my-mat-button' >
+      <i class="material-icons">menu</i>
+    </span>
+  </div>
+
+  <div class='top-menu-title-container my-mat-button' routerLink='/'>
+    <span  class='top-menu-title'>{{title}}</span>
+  </div>
 </div>
 
 
 <div class="my-body">
 
+
   <app-sidenav #sidenav [mode]='menuMode' [opened]='menuOpened'></app-sidenav>
+
+  <div *ngIf='menuMode === "over"'  [class]='"my-mat-sidenav-backdrop" + getBackdropCss(sidenav.isOpen())' (click)='sidenav.open()'></div>
 
 
 

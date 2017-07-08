@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConfService } from '../shared/services/conf.service';
+
 import { environment } from '../../environments/environment';
 @Component({
   moduleId: module.id,
@@ -26,17 +26,12 @@ export class SidenavcontainerComponent implements OnInit {
 
       mobileLayout: boolean;
 
-  constructor(private conf: ConfService) { }
+  constructor() { }
 
   ngOnInit() {
 
+        const layout = this.getLayout();
 
-
-
-
-        const layout = this.conf.getLayout();
-
-        console.log('!!!!!!!!!!!!!!!!!!' + layout);
 
         this.mobileLayout = layout !== 'desktop';
 
@@ -61,16 +56,6 @@ export class SidenavcontainerComponent implements OnInit {
   }
 
 
-  getTopMenuTitleCss(): string {
-    let result = ' ';
-    if (this.mobileLayout) {
-      result += 'top-menu-title-mobile';
-    } else {
-      result += 'top-menu-title-desktop';
-    }
-
-    return result;
-  }
 
   /**
   * conditionnal CSS for displaying backdrop
@@ -84,6 +69,19 @@ export class SidenavcontainerComponent implements OnInit {
       return result;
     }
 
+    getLayout(): string {
+      let layout = 'desktop';
+
+      if (window.matchMedia('(min-width: 55em)').matches) {
+        layout = 'desktop';
+      } else if (window.matchMedia('(min-width: 29em)').matches) {
+        layout = 'medium';
+      } else {
+        layout = 'mobile';
+      }
+
+      return layout;
+    }
 
 
 }
