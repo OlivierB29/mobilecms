@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 
-import { ConfService } from '../../shared/services/conf.service';
+
 import { environment } from '../../../environments/environment';
 
 /**

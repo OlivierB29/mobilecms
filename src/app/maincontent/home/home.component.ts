@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 
-import { ConfService } from '../../shared/services/conf.service';
+
 
 import { Log } from '../../shared/services/log.service';
 import { ReadService } from '../../shared/services/read.service';

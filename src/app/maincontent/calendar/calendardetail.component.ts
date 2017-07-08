@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 
 import { ReadService } from '../../shared/services/read.service';
-import { ConfService } from '../../shared/services/conf.service';
+
 
 import { Log } from '../../shared/services/log.service';
 
@@ -25,7 +25,7 @@ export class CalendarDetailComponent implements OnInit {
     constructor(
         private readService: ReadService,
 
-        private conf: ConfService,
+        
         private log: Log
     ) {
     }

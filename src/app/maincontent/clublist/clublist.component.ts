@@ -8,7 +8,7 @@ import { Club } from '../../shared/model/club';
 
 import { Department } from '../../shared/model/department';
 
-import { ConfService } from '../../shared/services/conf.service';
+
 import { Log } from '../../shared/services/log.service';
 import { ReadService } from '../../shared/services/read.service';
 
@@ -37,7 +37,7 @@ export class ClubListComponent implements OnInit {
   constructor(
     private router: Router,
     private dataService: ReadService,
-    private conf: ConfService,
+    
     private log: Log,
     private route: ActivatedRoute
   ) {

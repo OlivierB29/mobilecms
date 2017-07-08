@@ -25,7 +25,7 @@ import { BrPipe, OrderbyPipe, PrettyUrlPipe } from './shared/filters';
 
 
 // Tools
-import { ConfService } from './shared/services/conf.service';
+
 import { Log } from './shared/services/log.service';
 
 
@@ -105,7 +105,7 @@ import { SidenavcontainerComponent } from './sidenavcontainer/sidenavcontainer.c
     SidenavcontainerComponent
   ],
   providers: [
-    ConfService,
+
     Log,
     ReadService,
     ReadService2,

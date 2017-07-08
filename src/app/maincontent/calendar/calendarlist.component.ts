@@ -4,7 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 
 import { ReadService } from '../../shared/services/read.service';
-import { ConfService } from '../../shared/services/conf.service';
+
 
 import { Log } from '../../shared/services/log.service';
 
@@ -47,7 +47,7 @@ export class CalendarListComponent implements OnInit {
     constructor(
         private router: Router,
         private dataservice: ReadService,
-        private conf: ConfService,
+        
         private log: Log,
         private route: ActivatedRoute,
         private orderby: OrderbyPipe

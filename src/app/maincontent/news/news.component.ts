@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { OrderbyPipe } from '../../shared/filters';
 import { Log } from '../../shared/services/log.service';
 import { ReadService2 } from '../../shared/services/read.service2';
-import { ConfService } from '../../shared/services/conf.service';
+
 
 @Component({
   moduleId: module.id,
@@ -25,7 +25,7 @@ export class NewsComponent implements OnInit {
 
 
     constructor(
-        private conf: ConfService,
+        
         private dataService: ReadService2,
         private log: Log,
         private orderby: OrderbyPipe

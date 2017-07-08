@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
 
 
-import { ConfService } from '../../shared/services/conf.service';
+
 import { ReadService } from '../../shared/services/read.service';
 import { Log } from '../../shared/services/log.service';
 

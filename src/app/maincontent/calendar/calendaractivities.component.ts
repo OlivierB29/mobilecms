@@ -5,7 +5,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { Activity } from '../../shared/model/activity';
 
-import { ConfService } from '../../shared/services/conf.service';
+
 import { Log } from '../../shared/services/log.service';
 import { ReadService } from '../../shared/services/read.service';
 
@@ -28,7 +28,7 @@ export class CalendarActivitiesComponent implements OnInit {
   constructor(
     private router: Router,
     private dataService: ReadService,
-    private conf: ConfService,
+    
     private log: Log,
     private route: ActivatedRoute
   ) {

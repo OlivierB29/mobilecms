@@ -1,6 +1,6 @@
 
 import { Log } from '../../shared/services/log.service';
-import { ConfService } from '../../shared/services/conf.service';
+
 
 import { Item } from '../../shared/model/item';
 import { Component, OnInit } from '@angular/core';
@@ -29,7 +29,7 @@ export class FooterComponent implements OnInit {
 
 
     constructor(    private readService: ReadService,
-        private conf: ConfService,
+        
         private log: Log
 ) {
 

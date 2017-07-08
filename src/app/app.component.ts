@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import './rxjs-extensions';
 
-import { ConfService } from './shared/services/conf.service';
+
 import { Log } from './shared/services/log.service';
 
 
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit  {
 
 
 
-    constructor( private conf: ConfService,
+    constructor( 
        private log: Log) {
 
     }

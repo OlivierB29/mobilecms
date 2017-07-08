@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
 
 
-import { ConfService } from '../../shared/services/conf.service';
+
 import { ReadService } from '../../shared/services/read.service';
 import { Log } from '../../shared/services/log.service';
 
@@ -30,7 +30,7 @@ export class CalendarEventComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private conf: ConfService,
+        
         private log: Log,
         private dataService: ReadService,
         private route: ActivatedRoute
