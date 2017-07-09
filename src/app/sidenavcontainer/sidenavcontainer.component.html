@@ -1,19 +1,19 @@
 
-<div class='top-menu-bar'>
+<div [class]='"top-menu-bar"'>
 
   <div *ngIf='menuMode === "over"' (click)='sidenav.open()'>
-    <span class='top-menu-icon-container top-menu-icon my-mat-button' >
-      <i class="material-icons">menu</i>
+    <span [class]='"top-menu-icon-container top-menu-icon my-mat-button"' >
+      <i [class]='"material-icons"'>menu</i>
     </span>
   </div>
 
-  <div class='top-menu-title-container my-mat-button' routerLink='/'>
-    <span  class='top-menu-title'>{{title}}</span>
+  <div [class]='"top-menu-title-container my-mat-button"' [routerLink]='"/"'>
+    <span [class]='"top-menu-title"' [innerHTML]='title'></span>
   </div>
 </div>
 
 
-<div class="my-body">
+<div [class]='"my-body"'>
 
 
   <app-sidenav #sidenav [mode]='menuMode' [opened]='menuOpened'></app-sidenav>
@@ -23,7 +23,7 @@
 
 
   <!-- container -->
-  <div class="my-content">
+  <div [class]='"my-content"'>
     <!-- display banner only on home page  -->
     <app-my-banner></app-my-banner>
 
