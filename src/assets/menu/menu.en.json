@@ -38,7 +38,7 @@
     "routerLink" : "/documents",
     "routerLinkActive" : "active",
     "title" : "Documents",
-    "icon" : "attachment",
+    "icon" : "folder",
     "order" : "5"
   },
 
@@ -47,7 +47,7 @@
       "routerLink" : "/reports",
       "routerLinkActive" : "active",
       "title" : "Reports",
-      "icon" : "apps",
+      "icon" : "folder",
       "order" : "6"
     },
   {

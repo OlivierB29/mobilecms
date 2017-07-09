@@ -8,14 +8,12 @@
         "url": "", "location" : "some place", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : "",
 
         "images":[
-            {"url":"https://angular.io/resources/images/logos/angular/angular.png","title":"angular logo 1"},
-            {"url":"https://angular.io/resources/images/logos/angular/angular.png","title":"angular logo 2"},
-            {"url":"https://angular.io/resources/images/logos/angular/angular.png","title":"angular logo 3"}
+            {"url":"public/calendar/attachments/athletes-1866487_640.jpg","title":"tennis"},
+            {"url":"public/calendar/attachments/tennis-178696_640.jpg","title":"tennis"},
+            {"url":"public/calendar/attachments/tennis-2290639_640.jpg","title":"tennis"}
           ],
         "attachments":
           [
-            {"url":"https://angular.io/resources/images/logos/angular/angular_solidBlack.svg","title":"angular SVG logo 1"},
-            {"url":"https://angular.io/resources/images/logos/angular/angular_solidBlack.svg","title":"angular SVG logo 2"},
-            {"url":"https://angular.io/resources/images/logos/angular/angular_solidBlack.svg","title":"angular SVG logo 3"}
+            {"url":"https://pixabay.com/fr/service/terms/#usage","title":"licence"}
           ]
     }

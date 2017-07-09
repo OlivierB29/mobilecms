@@ -1,7 +1,7 @@
  <div class='my-activity'>
     <button [routerLink]='url' class='my-activity-button'>
     <div [innerHTML]='activity.name | uppercase'></div>
-    <img *ngIf='activity.logo' [src]='logo'   [alt]='activity.name' [title]='activity.name | uppercase' class='logo'>
+    <img *ngIf='activity.logo' [defaultImage]="defaultImage" [lazyLoad]="logo" [offset]="offset"  [alt]='activity.name' class='logo'>
     </button>
 
  </div>

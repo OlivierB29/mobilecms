@@ -23,14 +23,10 @@ export class ArticlePreviewComponent implements OnInit {
   maxPreviewLength = 240;
 
   offset = 100;
-
-  image: any ;
-
-  url = '';
-
   defaultImage = environment.server + '/' + environment.public +  '/resources/ring-alt-32.svg';
 
-
+  image: any ;
+  url = '';
 
   constructor(private log: Log, private readService: ReadService) { }
 

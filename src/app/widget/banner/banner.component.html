@@ -1,5 +1,4 @@
   <div *ngIf='bannerUrl' >
 
-    <img [src]="bannerUrl" class='banner'>
-
+    <img [defaultImage]="defaultImage" [lazyLoad]="bannerUrl" [offset]="offset" class='banner'>
   </div>

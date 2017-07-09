@@ -24,8 +24,6 @@ export class CalendarDetailComponent implements OnInit {
 
     constructor(
         private readService: ReadService,
-
-        
         private log: Log
     ) {
     }

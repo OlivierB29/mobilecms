@@ -30,8 +30,6 @@ import { Log } from './shared/services/log.service';
 
 
 import { ReadService } from './shared/services/read.service';
-import { ReadService2 } from './shared/services/read.service2';
-
 
 // maincontent
 import { NewsComponent, NewsPreviewComponent, NewsDetailsComponent } from './maincontent/news';
@@ -57,13 +55,14 @@ import { MenubuttonComponent } from './maincontent/menubutton/menubutton.compone
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { SidenavcontainerComponent } from './sidenavcontainer/sidenavcontainer.component';
 
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-
+    LazyLoadImageModule,
     SharedModule.forRoot(),
 ],
 
@@ -101,10 +100,8 @@ import { SidenavcontainerComponent } from './sidenavcontainer/sidenavcontainer.c
     SidenavcontainerComponent
   ],
   providers: [
-
     Log,
     ReadService,
-    ReadService2,
     OrderbyPipe
   ],
   bootstrap: [AppComponent]

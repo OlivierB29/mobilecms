@@ -20,6 +20,8 @@ export  class BannerComponent implements OnInit {
 
     bannerUrl= '';
 
+    offset = 100;
+    defaultImage = environment.server + '/' + environment.public +  '/resources/ring-alt-32.svg';
 
 
 

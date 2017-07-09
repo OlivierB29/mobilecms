@@ -18,6 +18,12 @@ export class ActivityButtonComponent implements OnInit {
 
   logo = '';
 
+
+  offset = 100;
+  defaultImage = environment.server + '/' + environment.public +  '/resources/ring-alt-32.svg';
+
+
+
   constructor() { }
 
   ngOnInit() {

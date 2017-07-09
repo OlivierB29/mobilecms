@@ -1,6 +1,6 @@
 <div *ngIf="item" class='article-content'   [routerLink]='url'>
   <div class='article-title' >
-    <span [innerHTML]="item.title"></span> 
+    <span [innerHTML]="item.title"></span>
   </div>
 
 
@@ -11,7 +11,7 @@
       <div [innerHTML]="getPreviewDescription()"  class="article-previewdescription"></div>
 
     <div class="thumbnail-container">
-      <img *ngIf="image" [src]="image.url"  [alt]="image.title">
+      <img *ngIf="image" [defaultImage]="defaultImage" [lazyLoad]="image.url" [offset]="offset"   [alt]="image.title">
     </div>
 
   </div>
