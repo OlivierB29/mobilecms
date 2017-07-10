@@ -1,6 +1,7 @@
 
 import { Component, AfterViewInit, Input } from '@angular/core';
 
+import { OrderbyPipe } from '../../shared/filters';
 import { Log } from '../../shared/services/log.service';
 import { ReadService } from '../../shared/services/read.service';
 
@@ -29,7 +30,8 @@ export class NewsComponent implements AfterViewInit {
 
     constructor(
         private dataService: ReadService,
-        private log: Log
+        private log: Log,
+        private orderby: OrderbyPipe
     ) {
     }
 
@@ -45,7 +47,7 @@ export class NewsComponent implements AfterViewInit {
                                                  this.items = this.items.slice(this.items.length - this.max, this.items.length);
 
                                               }
-
+                                              this.orderby.transform(this.items, 'date', 'desc');
                                               this.log.debug(this.type + ' '  +  this.items.length);
 
 
