@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { APP_BASE_HREF } from '@angular/common';
-import { HttpModule, Http } from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -15,12 +15,7 @@ import { FeedComponent } from './widget/feed/feed.component';
 import { BannerComponent } from './widget/banner/banner.component';
 
 
-
-import { ActivityFilterPipe } from './shared/filters/activityfilter.pipe';
-import { DepartmentFilterPipe } from './shared/filters/departmentfilter.pipe';
-
-
-import { BrPipe, OrderbyPipe } from './shared/filters';
+import { BrPipe, OrderbyPipe,  ActivityFilterPipe, DepartmentFilterPipe } from './shared/filters';
 
 
 
@@ -73,6 +68,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     DepartmentFilterPipe,
 
     BrPipe,
+
     AppComponent,
     BannerComponent,
     FeedComponent,

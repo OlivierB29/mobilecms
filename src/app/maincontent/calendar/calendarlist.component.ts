@@ -47,7 +47,6 @@ export class CalendarListComponent implements OnInit {
     constructor(
         private router: Router,
         private dataservice: ReadService,
-        
         private log: Log,
         private route: ActivatedRoute,
         private orderby: OrderbyPipe

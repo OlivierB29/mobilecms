@@ -1,3 +1,12 @@
+<div *ngIf="!item" [class]='"article-content"'>
+  <div  [class]='"article-title"'>
+    <span [innerHTML]="'...... .... ...........'"></span>
+  </div>
+
+  <div [innerHTML]="'...... .... ........... .. .... .. ..... ...... .... ....... ............ ....... .....'" [class]='"article-description"'></div>
+
+</div>
+
 <div *ngIf="item" [class]='"article-content"'>
     			<div  [class]='"article-title"'>
             <span [innerHTML]="item.title"></span>

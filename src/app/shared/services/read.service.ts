@@ -30,13 +30,23 @@ export class ReadService {
 
     }
 
+    getPromise(type: string, id: string): Promise<any> {
+
+      const url = this.root  +  '/' + environment.public + '/'  +  type  +  '/'  +  id  +  '.json';
+      this.log.debug('get '  +  url);
+
+
+          return this.http.get(url)
+          .map((response: any) =>
+                response.json()
+            ).toPromise();
+      }
+
     getAllPromise(type: string): Promise<any[]> {
 
       const url = this.root  +  '/' + environment.public + '/'  +  type  +  '/index/index.json';
 
-      if (this.http) {
-          console.log("!!!! getAllPromise 2" );
-      }
+
 
           return this.http.get(url)
               .toPromise()
@@ -45,13 +55,13 @@ export class ReadService {
       }
 
       private extractPromiseData(res: Response) {
-          console.log("!!!! getAllPromise 3" );
+
           const body = res.json();
           return body || [];
       }
 
       private handleErrorPromise(error: any) {
-          console.log("!!!! getAllPromise 4" );
+
           // In a real world app, we might use a remote logging infrastructure
           // We'd also dig deeper into the error to get a better message
           const errMsg = (error.message) ? error.message : error.status ? `${error.status} - ${error.statusText}` : 'Server error';
@@ -81,10 +91,15 @@ export class ReadService {
     }
 
 
+    public getUrl = (type: string, id: string): string => {
+      return this.root  +  '/' + environment.public + '/'  +  type  +  '/'  +  id  +  '.json';
+    }
+
+
     public get = (type: string, id: string): Observable<any[]> => {
 
         const url = this.root  +  '/' + environment.public + '/'  +  type  +  '/'  +  id  +  '.json';
-        this.log.debug('getAll '  +  url);
+        this.log.debug('get '  +  url);
 
 
         return this.http.get(url)
