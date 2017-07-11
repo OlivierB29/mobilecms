@@ -6,7 +6,9 @@ import { OrderbyPipe } from '../../shared/filters';
 
 import { Event } from '../../shared/model/event';
 
-import { Router } from '@angular/router';
+
+import { environment } from '../../../environments/environment';
+
 
 /**
 * same timing animations
@@ -23,14 +25,13 @@ export class CalendarFeedComponent implements OnInit {
 
   imageservice = '';
 
-  @Input() max = 2;
+  @Input() max = 4;
 
   items: any[] = [];
 
   type = 'calendar';
 
   constructor(private dataService: ReadService,
-    private router: Router,
     private log: Log,
     private orderby: OrderbyPipe) {
   }
@@ -41,20 +42,33 @@ export class CalendarFeedComponent implements OnInit {
                               .subscribe((data: any[]) => this.items = data,
                                   error => this.log.debug(this.type + ' ' + error),
                                   () =>  {
-
+                                    // About 10-20 events per season.
+                                    // https://angular.io/guide/pipes#!#no-filter-pipe
+                                    this.orderby.transform(this.items, 'date', 'asc');
                                     if (this.max > 0 && this.items.length > this.max) {
-                                       this.items = this.items.slice(this.items.length - this.max, this.items.length);
+                                       this.items = this.items.slice(0, this.max);
                                     }
                                     this.log.debug(this.type + ' '  +  this.items.length);
 
-                                    this.orderby.transform(this.items, 'date', 'desc');
+
 
                                 });
 
   }
 
+  /**
+  * get URL for current locale.
+  */
   getUrl(item): string {
-    return 'calendar/detail/' + item.id;
+    let result = '';
+    if ('fr' === environment.defaultlocale) {
+      result += 'calendrier/detail/';
+    } else {
+      result += 'calendar/detail/';
+    }
+    result += item.id;
+
+    return result ;
   }
 
 

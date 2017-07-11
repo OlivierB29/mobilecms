@@ -1,9 +1,10 @@
 import { Injectable, Pipe, PipeTransform } from '@angular/core';
 
-
 /*
 https://angular.io/docs/ts/latest/guide/pipes.html
 
+Production target : This pipe filter about 10-20 items.
+cf https://angular.io/guide/pipes#!#no-filter-pipe
 */
 
 @Pipe({
