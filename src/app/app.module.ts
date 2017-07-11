@@ -11,7 +11,7 @@ import { FooterComponent } from './widget/footer/footer.component';
 import { HomeComponent } from './maincontent/home/home.component';
 import { FeaturedComponent } from './widget/featured/featured.component';
 
-import { FeedComponent } from './widget/feed/feed.component';
+
 import { BannerComponent } from './widget/banner/banner.component';
 
 
@@ -32,7 +32,8 @@ import {
   CalendarListComponent,
   CalendarEventComponent,
   CalendarDetailComponent,
-  CalendarActivitiesComponent
+  CalendarActivitiesComponent,
+  CalendarFeedComponent
 } from './maincontent/calendar';
 
 import { ClubListComponent } from './maincontent/clublist/clublist.component';
@@ -71,7 +72,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 
     AppComponent,
     BannerComponent,
-    FeedComponent,
+    CalendarFeedComponent,
     FeaturedComponent,
     FooterComponent,
 

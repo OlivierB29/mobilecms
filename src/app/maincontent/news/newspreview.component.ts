@@ -28,7 +28,6 @@ export class NewsPreviewComponent implements OnInit {
 
 
     constructor(
-        
         private dataService: ReadService,
         private log: Log,
         private orderby: OrderbyPipe

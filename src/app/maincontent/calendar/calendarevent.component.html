@@ -1,11 +1,29 @@
-<!-- ########################################################################################### -->
 
-<div *ngIf="current">
+      <div *ngIf='item' class='article-content'>
 
-<h1 [innerHTML]='current.title'></h1>
 
-<div [innerHTML]='current.description | br'></div>
+        <div class='article-title' [innerHTML]='item.title'></div>
+  			<div class='article-subtitle'>
+          <!-- conditional display of class -->
+            <div *ngIf='item.organization' class='article-title-moreinfo'>
 
-<div *ngIf="current.location"> <span >{{'calendar.location' }}</span> <span [innerHTML]='current.location'></span></div>
+            <span > {{item.organization}}</span>
 
-</div>
+            </div>
+  			</div>
+        <div class='article-description'>
+        <div [innerHTML]='item.description | br' ></div>
+
+        <div *ngIf='item.location' ><i class='material-icons'>pin_drop</i> {{item.location}}</div>
+
+        <div *ngFor='let attachment of item.attachments'>
+          <a [href]='attachment.url' [innerHTML]='attachment.title'></a> <span [innerHTML]='attachment.description'></span>
+        </div>
+
+        <div *ngFor='let image of item.images'>
+          <img [defaultImage]='defaultImage' [lazyLoad]='image.url' [offset]='offset'   [alt]='image.title'>
+        </div>
+      </div>
+
+
+    </div>

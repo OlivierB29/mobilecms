@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
 
+import { environment } from '../../../environments/environment';
 
 
 import { ReadService } from '../../shared/services/read.service';
@@ -22,15 +23,23 @@ import { Event } from '../../shared/model/event';
 export class CalendarEventComponent implements OnInit {
 
 
-    current: Event = null;
+    item: Event = null;
     id= '';
 
     routerLink = '';
 
+    /**
+    * offset for LazyLoadImageModule
+    */
+    offset = 100;
+
+    /**
+    * default image displayed by  for LazyLoadImageModule
+    */
+    defaultImage = environment.server + '/' + environment.public + '/resources/ring-alt-32.svg';
 
     constructor(
         private router: Router,
-        
         private log: Log,
         private dataService: ReadService,
         private route: ActivatedRoute
@@ -58,7 +67,7 @@ export class CalendarEventComponent implements OnInit {
         if (this.id) {
 
             this.dataService.get('calendar', this.id)
-                .subscribe((data: any) => this.current = data,
+                .subscribe((data: any) => this.item = data,
                 error => this.log.error('calendar get'  +  error),
                 () => { this.log.debug('get complete'); });
         } else {

@@ -5,7 +5,6 @@
   z-index: 90;
   background-color: #5e7987;
   font-size: 1.7em;
-  height: 2.7em;
 
   display:table;
   width: 100%;
@@ -33,12 +32,6 @@
 
 }
 
-.top-menu-title-desktop {
-  width: 100%;
-}
-.top-menu-title-mobile {
-  width: 95%;
-}
 
 
 
