@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-import { MenuItem } from '../model/menuitem';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -16,18 +15,6 @@ export class ReadService {
   private root = environment.server;
 
     constructor(private log: Log, private http: Http) {
-    }
-
-
-
-    public getMenu = (locale: string): Observable<MenuItem[]> => {
-        const url = this.root  + '/assets/menu/menu.'  +  locale  +  '.json';
-          this.log.debug('getMenu ...'  +  url);
-
-        return this.http.get(url)
-            .map((response: Response) => <MenuItem[]>response.json())
-            .catch(this.handleError);
-
     }
 
     getPromise(type: string, id: string): Promise<any> {
