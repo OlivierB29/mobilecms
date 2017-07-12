@@ -1,5 +1,5 @@
 
-.slidemenu {
+.menu-container {
 
   background-color: #5e7987;
   box-shadow: 5px 5px 10px 0 #656565;
@@ -13,20 +13,21 @@
   overflow: hidden;
 }
 
-.menu-over {
-  position: absolute;
-  z-index: 100;
-  top: 0.5em;
-  left: 0;
-  min-width: 20%;
+@media all and (max-width: 54.999999em) {
+  .menu-container {
+    position: absolute;
+    z-index: 100;
+    top: 0.5em;
+    left: 0;
+    min-width: 20%;
+  }
 }
 
-
-
-.menu-side {
-
-  padding-top: 3em;
-  position: relative;
+@media all and (min-width: 55em) {
+  .menu-container {
+    padding-top: 3em;
+    position: relative;
+  }
 }
 
 

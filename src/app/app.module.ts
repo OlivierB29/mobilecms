@@ -21,10 +21,10 @@ import { BrPipe, OrderbyPipe,  ActivityFilterPipe, DepartmentFilterPipe } from '
 
 // Tools
 
-import { Log } from './shared/services/log.service';
+import { Log, ReadService } from 'app/shared/services';
 
+import { MenuService } from 'app/sidenav/menu.service';
 
-import { ReadService } from './shared/services/read.service';
 
 // maincontent
 import { NewsComponent, NewsPreviewComponent, NewsDetailsComponent } from './maincontent/news';
@@ -99,6 +99,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
   providers: [
     Log,
     ReadService,
+    MenuService,
     OrderbyPipe
   ],
   bootstrap: [AppComponent]

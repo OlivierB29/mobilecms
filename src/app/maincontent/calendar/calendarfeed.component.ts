@@ -1,5 +1,5 @@
 import { Log } from '../../shared/services/log.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, AfterViewInit, Input } from '@angular/core';
 
 import { ReadService } from '../../shared/services/read.service';
 import { OrderbyPipe } from '../../shared/filters';
@@ -21,7 +21,7 @@ import { environment } from '../../../environments/environment';
 
 })
 
-export class CalendarFeedComponent implements OnInit {
+export class CalendarFeedComponent implements AfterViewInit {
 
   imageservice = '';
 
@@ -34,27 +34,41 @@ export class CalendarFeedComponent implements OnInit {
   constructor(private dataService: ReadService,
     private log: Log,
     private orderby: OrderbyPipe) {
+    // Add an empty item in order to display something.
+    // Considering that IO operations are slow, it constructs a raw frame for the end user.
+    this.items.push({ id: '', title: '.... .... ........', date: '..-..-....' });
   }
 
-  ngOnInit(): void {
-
+  ngAfterViewInit(): void {
+    let localItems = null;
     this.dataService.getAll(this.type)
-                              .subscribe((data: any[]) => this.items = data,
-                                  error => this.log.debug(this.type + ' ' + error),
-                                  () =>  {
-                                    // About 10-20 events per season.
-                                    // https://angular.io/guide/pipes#!#no-filter-pipe
-                                    this.orderby.transform(this.items, 'date', 'asc');
-                                    if (this.max > 0 && this.items.length > this.max) {
-                                       this.items = this.items.slice(0, this.max);
-                                    }
-                                    this.log.debug(this.type + ' '  +  this.items.length);
+      .subscribe((data: any[]) => localItems = data,
+      error => this.log.debug(this.type + ' ' + error),
+      () => {
+        // About 10-20 events per season.
+        // https://angular.io/guide/pipes#!#no-filter-pipe
 
+        // filter the next upcoming events
+        this.orderby.transform(localItems, 'date', 'asc');
+        if (this.max > 0 && localItems.length > this.max) {
+          localItems = localItems.slice(0, this.max);
+        }
+        this.log.debug(this.type + ' ' + localItems.length);
 
+        // replace or add new items
+        for (let i = 0; i < localItems.length; i++) {
+          if (this.items.length > i) {
+            this.items[i] = localItems[i];
+          } else {
+            this.items.push(localItems[i]);
+          }
+        }
 
-                                });
+      });
 
   }
+
+
 
   /**
   * get URL for current locale.
@@ -68,7 +82,7 @@ export class CalendarFeedComponent implements OnInit {
     }
     result += item.id;
 
-    return result ;
+    return result;
   }
 
 

@@ -16,7 +16,7 @@
   }
 }
 
-@media all and (min-width: 29em) {
+
 	.homepagecontainer {
 		display: flex;
 		flex-direction: column;
@@ -29,10 +29,7 @@
   .feedcontainer {
 		width: 100%;
   }
-}
 
-
-/* Second breakpoint at 55em */
 
 @media all and (min-width: 55em) {
 	.homepagecontainer {

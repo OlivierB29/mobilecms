@@ -39,34 +39,41 @@ export class ArticleComponent implements AfterViewInit {
   defaultImage = environment.server + '/' + environment.public + '/resources/ring-alt-32.svg';
 
 
-  constructor(private log: Log, private readService: ReadService) { }
+  constructor(private log: Log, private readService: ReadService) {
+    this.item = {
+      id: '', title: '...... .... ...........',
+      description: '...... .... ........... .. .... .. ..... ...... .... ....... ............ ....... .....'
+    };
+
+   }
 
 
   ngAfterViewInit() {
     this.log.debug('ArticleComponent ' + this.id);
-
-    // if input item is empty, fetch data from id
-    if (!this.item) {
-      this.fetchData();
-    }
-
+    this.fetchData();
   }
 
 
   fetchData() {
-    if (!this.type) {
-      throw new Error('empty type');
+
+    // const itemid = this.id != null ? this.id : this.item.id;
+    const itemid = this.id;
+    if (this.type && itemid) {
+      this.readService.get(this.type, itemid)
+        .subscribe((data: any) => {
+          this.item = data;
+        },
+        error => console.error('get ' + error));
+    } else {
+      if (!this.type) {
+        this.log.debug('ArticleComponent empty type');
+      }
+
+      if (!this.id) {
+        this.log.debug('ArticleComponent empty id');
+      }
     }
 
-    if (!this.id) {
-      throw new Error('empty id');
-    }
-
-    this.readService.get(this.type, this.id)
-      .subscribe((data: any) => {
-        this.item = data;
-      },
-      error => console.error('get ' + error));
 
   }
 

@@ -9,49 +9,44 @@ import { environment } from '../../environments/environment';
 })
 export class SidenavcontainerComponent implements OnInit {
 
-    title = '';
+  title = '';
 
-      /*
+  /**
+  * desktop | mobile
+  */
+  layout: string;
 
-      https://material.angular.io/components/component/sidenav
-      */
-      menuMode: string;
+  /*
 
-      /*
-      opened
-      https://www.npmjs.com/package/@angular2-material/sidenav
-      */
-      menuOpened: boolean;
+  https://material.angular.io/components/component/sidenav
+  */
+  menuMode: string;
+
+  /*
+  opened
+  https://www.npmjs.com/package/@angular2-material/sidenav
+  */
+  menuOpened: boolean;
 
 
-      mobileLayout: boolean;
+  mobileLayout: boolean;
 
   constructor() { }
 
   ngOnInit() {
 
-        const layout = this.getLayout();
+    this.layout = this.getLayout();
 
+    if (this.layout === 'desktop') {
+      this.title = environment.fulltitle;
+      this.menuMode = 'side';
+      this.menuOpened = true;
 
-        this.mobileLayout = layout !== 'desktop';
-
-        switch (layout) {
-          case 'desktop':
-            this.menuMode = 'side';
-            this.menuOpened = true;
-
-            break;
-          default:
-            this.menuMode = 'over';
-            this.menuOpened = false;
-
-        }
-
-        if (this.mobileLayout) {
-          this.title = environment.title;
-        } else {
-          this.title = environment.fulltitle;
-        }
+    } else {
+      this.title = environment.title;
+      this.menuMode = 'over';
+      this.menuOpened = false;
+    }
 
   }
 
@@ -60,28 +55,26 @@ export class SidenavcontainerComponent implements OnInit {
   /**
   * conditionnal CSS for displaying backdrop
   */
-    getBackdropCss(mobileMenuOpened: boolean): string {
-      let result = ' ';
-      if (mobileMenuOpened) {
-        result += 'my-mat-sidenav-shown';
-      }
-
-      return result;
+  getBackdropCss(mobileMenuOpened: boolean): string {
+    let result = ' ';
+    if (mobileMenuOpened) {
+      result += 'my-mat-sidenav-shown';
     }
 
-    getLayout(): string {
-      let layout = 'desktop';
+    return result;
+  }
 
-      if (window.matchMedia('(min-width: 55em)').matches) {
-        layout = 'desktop';
-      } else if (window.matchMedia('(min-width: 29em)').matches) {
-        layout = 'medium';
-      } else {
-        layout = 'mobile';
-      }
+  getLayout(): string {
+    let layout = 'desktop';
 
-      return layout;
+    if (window.matchMedia('(min-width: 55em)').matches) {
+      layout = 'desktop';
+    } else {
+      layout = 'mobile';
     }
+
+    return layout;
+  }
 
 
 }

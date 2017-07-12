@@ -1,7 +1,7 @@
 
 <div [class]='"top-menu-bar"'>
 
-  <div *ngIf='menuMode === "over"' (click)='sidenav.open()'>
+  <div (click)='sidenav.open()'>
     <span [class]='"top-menu-icon-container top-menu-icon my-mat-button"' >
       <i [class]='"material-icons"'>menu</i>
     </span>
@@ -24,7 +24,7 @@
 
   <!-- container -->
   <div [class]='"my-content"'>
-    <app-my-banner></app-my-banner>
+    <app-my-banner [layout]='layout'></app-my-banner>
 
     <!-- content -->
     <router-outlet></router-outlet>
