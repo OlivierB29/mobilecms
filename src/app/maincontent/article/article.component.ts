@@ -42,11 +42,20 @@ export class ArticleComponent implements AfterViewInit {
   constructor(private log: Log, private readService: ReadService) {
     this.item = {
       id: '', title: '...... .... ...........',
-      description: '...... .... ........... .. .... .. ..... ...... .... ....... ............ ....... .....'
+      description: this.getEmptyDescription()
     };
 
    }
 
+   private getEmptyDescription(): string {
+     let result = '';
+     for (let i = 0;  i < 5; i++) {
+       result += '...... .... ........... .. .... .. ..... ...... .... ....... ............ ....... .....';
+       result += '... .. ............ .... ..... .... ..... ..... ... .......... ........... .......... \n';
+     }
+
+     return result;
+   }
 
   ngAfterViewInit() {
     this.log.debug('ArticleComponent ' + this.id);

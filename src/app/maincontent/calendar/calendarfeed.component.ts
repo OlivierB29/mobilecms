@@ -36,7 +36,7 @@ export class CalendarFeedComponent implements AfterViewInit {
     private orderby: OrderbyPipe) {
     // Add an empty item in order to display something.
     // Considering that IO operations are slow, it constructs a raw frame for the end user.
-    this.items.push({ id: '', title: '.... .... ........', date: '..-..-....' });
+    this.items.push({ id: '', activity: '.....', title: '.... .... ........', date: '..-..-....' });
   }
 
   ngAfterViewInit(): void {
@@ -49,7 +49,7 @@ export class CalendarFeedComponent implements AfterViewInit {
         // https://angular.io/guide/pipes#!#no-filter-pipe
 
         // filter the next upcoming events
-        this.orderby.transform(localItems, 'date', 'asc');
+        localItems = this.orderby.transform(localItems, 'date', 'asc');
         if (this.max > 0 && localItems.length > this.max) {
           localItems = localItems.slice(0, this.max);
         }

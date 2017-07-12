@@ -1,5 +1,5 @@
 
-import { Component, AfterViewInit, Input } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 import { OrderbyPipe } from '../../shared/filters';
 import { Log } from '../../shared/services/log.service';
@@ -21,7 +21,7 @@ export class NewsComponent implements AfterViewInit {
 
   errorMessage: any;
 
-  @Input() max = 3;
+  max = 4;
 
   type = 'news';
 
@@ -52,18 +52,12 @@ export class NewsComponent implements AfterViewInit {
       () => {
         // About 20 news per season.
         // https://angular.io/guide/pipes#!#no-filter-pipe
-        //  this.orderby.transform(localItems, 'date', 'desc');
 
-        /*
-                if (this.max > 0 && localItems.length > this.max) {
-                  this.items = this.items.slice(localItems.length - this.max, localItems.length);
-
-                }
-        */
-
+        // in case of an unsorted index
+          localItems = this.orderby.transform(localItems, 'date', 'desc');
 
         if (this.max > 0 && localItems.length > this.max) {
-          localItems = localItems.slice(localItems.length - this.max, localItems.length);
+          localItems = localItems.slice(0, this.max);
 
         }
 
@@ -78,9 +72,6 @@ export class NewsComponent implements AfterViewInit {
             this.items.push(localItems[i]);
           }
         }
-
-
-  //    this.items = localItems;
 
       });
 
