@@ -12,13 +12,11 @@
 
 .my-mat-button {
   cursor: pointer;
-  /*transition: background-color .4s cubic-bezier(.25,.8,.25,1);*/
-
+  transition: background-color .7s cubic-bezier(.25,.8,.25,1);
 }
 
 .my-mat-button:hover {
   cursor: pointer;
-  /*transition: background-color .4s cubic-bezier(.25,.8,.25,1);*/
   background-color: #546E7A;
 }
 
@@ -65,11 +63,6 @@
   display: flex;
 }
 
-.my-content {
-  flex: 1 1 auto;
-  width: 50%;
-  position: relative;
-}
 
 
 /* backdrop when displaying mobile menu */
@@ -80,19 +73,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  display: block;
   z-index: 80;
   transition: background-color .5s cubic-bezier(.25, .8, .25, 1);
+  height: 100%;
   visibility: hidden;
-  /* TODO better ? */
-  height: 300em;
+  display: block;
 }
-
-
-/* backdrop */
-
 .my-mat-sidenav-shown {
   background-color: rgba(0, 0, 0, 0.6);
-
   visibility: visible;
 }

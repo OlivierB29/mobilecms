@@ -23,7 +23,7 @@
   <div *ngIf='menuMode === "over"'  [class]='"my-mat-sidenav-backdrop" + getBackdropCss(sidenav.isOpen())' (click)='sidenav.open()'></div>
 
   <!-- container -->
-  <div [class]='"my-content"'>
+  <div >
     <app-my-banner [layout]='layout'></app-my-banner>
 
     <!-- content -->

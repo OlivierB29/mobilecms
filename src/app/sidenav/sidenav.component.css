@@ -8,7 +8,8 @@
   transition-duration: .5s;
    transition-timing-function: cubic-bezier(.25, .8, .25, 1);
    transition-property: transform, height;
-  height: 50em;
+  height: 100%;
+  width: 13em;
 
   overflow: hidden;
 }
@@ -27,6 +28,7 @@
   .menu-container {
     padding-top: 3em;
     position: relative;
+    min-height: 60em;
   }
 }
 
