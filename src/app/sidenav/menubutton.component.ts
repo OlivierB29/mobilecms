@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MenuItem } from '../../shared/model/menuitem';
+import { MenuItem } from './menuitem';
 import { Router } from '@angular/router';
 
 @Component({
