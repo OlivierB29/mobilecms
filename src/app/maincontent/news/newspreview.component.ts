@@ -8,10 +8,10 @@ import { ReadService } from '../../shared/services/read.service';
 
 
 @Component({
-    moduleId: module.id,
-    selector: 'app-newspreview-component',
-    templateUrl: 'newspreview.component.html',
-    styleUrls: ['newspreview.component.css']
+  moduleId: module.id,
+  selector: 'app-newspreview-component',
+  templateUrl: 'newspreview.component.html',
+  styleUrls: ['newspreview.component.css']
 })
 export class NewsPreviewComponent implements OnInit {
 
@@ -24,35 +24,35 @@ export class NewsPreviewComponent implements OnInit {
 
   type = 'news';
 
-  progressvalue = 20;
+
+  constructor(
+    private dataService: ReadService,
+    private log: Log,
+    private orderby: OrderbyPipe
+  ) {
+  }
+  ngOnInit(): void {
+    let dbItems = null;
+    this.dataService.getAll(this.type)
+      .subscribe((data: any[]) => dbItems = data,
+      error => this.log.debug(this.type + ' ' + error),
+      () => {
+        dbItems = this.orderby.transform(dbItems, 'date', 'desc');
+
+        if (this.max > 0 && dbItems.length > this.max) {
+          dbItems = dbItems.slice(dbItems.length - this.max, dbItems.length);
+        }
+        this.log.debug(this.type + ' ' + dbItems.length);
+
+        this.items = dbItems;
 
 
-    constructor(
-        private dataService: ReadService,
-        private log: Log,
-        private orderby: OrderbyPipe
-    ) {
-    }
-    ngOnInit(): void {
-        this.progressvalue = 40;
-        this.dataService.getAll(this.type)
-                                  .subscribe((data: any[]) => this.items = data,
-                                      error => this.log.debug(this.type + ' ' + error),
-                                      () =>  {
-                                        this.progressvalue = 60;
-                                        if (this.max > 0 && this.items.length > this.max) {
-                                           this.items = this.items.slice(this.items.length - this.max, this.items.length);
-                                        }
-                                        this.log.debug(this.type + ' '  +  this.items.length);
-                                        this.progressvalue = 80;
-                                        this.orderby.transform(this.items, 'date', 'desc');
-                                        this.progressvalue = 100;
-                                    });
+      });
 
 
 
 
-    }
+  }
 
 
 

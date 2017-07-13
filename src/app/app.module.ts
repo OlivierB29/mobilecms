@@ -36,20 +36,14 @@ import {
   CalendarFeedComponent
 } from './maincontent/calendar';
 
-import { ClubListComponent } from './maincontent/clublist/clublist.component';
-
-
-import { ClubDetailComponent } from './maincontent/clubdetail/clubdetail.component';
-import { ClubActivitiesComponent } from './maincontent/clubactivities/clubactivities.component';
+import { ClubListComponent, ClubDetailComponent, ClubActivitiesComponent } from './maincontent/club';
 
 import { ActivityButtonComponent } from './maincontent/activitybutton/activitybutton.component';
-import { ArticleComponent } from './maincontent/article/article.component';
-import { ArticlePreviewComponent } from './maincontent/articlepreview/articlepreview.component';
-import { ArticlelistComponent } from './maincontent/articlelist/articlelist.component';
+import { ArticleComponent, ArticlePreviewComponent, ArticlelistComponent } from './maincontent/article';
 import { ItemsComponent } from './maincontent/items/items.component';
-import { MenubuttonComponent } from './maincontent/menubutton/menubutton.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { SidenavcontainerComponent } from './sidenavcontainer/sidenavcontainer.component';
+
+import { SidenavcontainerComponent, SidenavComponent, MenubuttonComponent } from './sidenav';
+
 
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 

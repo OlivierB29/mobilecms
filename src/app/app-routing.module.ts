@@ -4,10 +4,8 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './maincontent/home/home.component';
 import { ArticleComponent } from './maincontent/article/article.component';
 import { NewsComponent, NewsDetailsComponent, NewsPreviewComponent } from './maincontent/news';
-import { ClubListComponent } from './maincontent/clublist/clublist.component';
+import { ClubListComponent, ClubActivitiesComponent } from './maincontent/club';
 
-
-import { ClubActivitiesComponent } from './maincontent/clubactivities/clubactivities.component';
 import { CalendarEventComponent, CalendarActivitiesComponent } from './maincontent/calendar';
 
 

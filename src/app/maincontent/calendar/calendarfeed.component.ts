@@ -49,6 +49,8 @@ export class CalendarFeedComponent implements AfterViewInit {
         // https://angular.io/guide/pipes#!#no-filter-pipe
 
         // filter the next upcoming events
+        const now = new Date();
+        localItems = localItems.filter(obj => this.dateAfter(new Date(obj.date), now));
         localItems = this.orderby.transform(localItems, 'date', 'asc');
         if (this.max > 0 && localItems.length > this.max) {
           localItems = localItems.slice(0, this.max);
@@ -68,7 +70,18 @@ export class CalendarFeedComponent implements AfterViewInit {
 
   }
 
+ dateAfter(date: Date, from: Date): boolean {
+   let result = false;
 
+   if (date && from) {
+     if (date.getTime() - from.getTime() > 0 ) {
+       result = true;
+     }
+   }
+
+   return result;
+
+ }
 
   /**
   * get URL for current locale.

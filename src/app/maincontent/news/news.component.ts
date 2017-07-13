@@ -31,12 +31,11 @@ export class NewsComponent implements AfterViewInit {
     private log: Log,
     private orderby: OrderbyPipe
   ) {
-    // at this time 'max' has its default value
+    // initialize the component with empty values.
+    // When using a low bandwith network, the goal is to display something during load.
     if (this.max > 0) {
       const emptyItem = { id: '' };
-
       while (this.items.length < this.max) {
-
         this.items.push(emptyItem);
       }
 
@@ -45,38 +44,34 @@ export class NewsComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
 
-    let localItems = null;
+    let dbItems = null;
     this.dataService.getAll(this.type)
-      .subscribe((data: any[]) => localItems = data,
+      .subscribe((data: any[]) => dbItems = data,
       error => this.log.debug(this.type + ' ' + error),
       () => {
-        // About 20 news per season.
-        // https://angular.io/guide/pipes#!#no-filter-pipe
-
         // in case of an unsorted index
-          localItems = this.orderby.transform(localItems, 'date', 'desc');
+        // About 20 news per season, unless cf to https://angular.io/guide/pipes#!#no-filter-pipe
+        dbItems = this.orderby.transform(dbItems, 'date', 'desc');
 
-        if (this.max > 0 && localItems.length > this.max) {
-          localItems = localItems.slice(0, this.max);
-
+        if (this.max > 0 && dbItems.length > this.max) {
+          dbItems = dbItems.slice(0, this.max);
         }
 
-        this.log.debug(this.type + ' ' + localItems.length);
+        // purge unnecessary empty items
+        if (this.items.length > dbItems.length) {
+              this.items = this.items.filter(it => it.id !== '' );
+        }
 
         // replace or add new items
-
-        for (let i = 0; i < localItems.length; i++) {
+        for (let i = 0; i < dbItems.length; i++) {
           if (this.items.length > i) {
-            this.items[i] = localItems[i];
+            this.items[i] = dbItems[i];
           } else {
-            this.items.push(localItems[i]);
+            this.items.push(dbItems[i]);
           }
         }
 
       });
-
-
-
 
     this.log.debug('NewsComponent ' + this.type + ' ' + this.items.length);
 
