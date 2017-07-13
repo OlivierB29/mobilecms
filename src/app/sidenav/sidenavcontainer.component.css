@@ -4,7 +4,7 @@
   box-shadow: 5px 5px 10px 0 #656565;
   z-index: 90;
   background-color: #5e7987;
-  font-size: 1.7em;
+  font-size: 1.25em;
 
   display:table;
   width: 100%;
@@ -23,7 +23,7 @@
 
 /* web site title */
 .top-menu-title-container {
-  padding: 0.7em ;
+  padding: 0.5em ;
   width: 100%;
   display: table-cell;
   text-align: center;
@@ -35,7 +35,7 @@
 
 .top-menu-icon-container {
   display: table-cell;
-  padding: 0.7em ;
+  padding: 0.5em ;
 }
 
 @media all and (min-width: 55em) {
