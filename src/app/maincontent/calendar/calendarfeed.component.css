@@ -6,6 +6,7 @@
 }
 .feed-article:hover {
   cursor: pointer;
+  background-color: #E0E0E0;
 }
 
 .feed-subtitle {
