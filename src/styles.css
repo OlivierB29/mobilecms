@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+.defaultbody {
+   margin: 0;
+}
+
+@media all and (min-width: 55em) {
+	.defaultbody {
+		margin: 0.2em;
+	}
+}
+
+.mainloading-icon {
+  display: block;
+  margin: 0 auto;
+}
