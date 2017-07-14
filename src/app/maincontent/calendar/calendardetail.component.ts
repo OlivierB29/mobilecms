@@ -1,11 +1,8 @@
 
 import { Component, OnInit, Input } from '@angular/core';
-
-
+import { environment } from '../../../environments/environment';
 
 import { ReadService } from '../../shared/services/read.service';
-
-
 import { Log } from '../../shared/services/log.service';
 
 @Component({
@@ -20,6 +17,15 @@ export class CalendarDetailComponent implements OnInit {
 
     item: any = {};
 
+    /**
+    * offset for LazyLoadImageModule
+    */
+    offset = 100;
+
+    /**
+    * default image displayed by  for LazyLoadImageModule
+    */
+    defaultImage = environment.server + '/' + environment.public + '/resources/ring-alt-32.svg';
 
 
     constructor(

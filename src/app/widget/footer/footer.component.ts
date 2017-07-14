@@ -1,14 +1,8 @@
+import { Component, OnInit } from '@angular/core';
 
 import { Log } from '../../shared/services/log.service';
-
-
 import { Item } from '../../shared/model/item';
-import { Component, OnInit } from '@angular/core';
 import { ReadService } from '../../shared/services/read.service';
-
-// import { MdIcon, MdIconRegistry } from '@angular/material/icon/icon';
-
-
 
 
 
@@ -17,7 +11,7 @@ import { ReadService } from '../../shared/services/read.service';
 */
 @Component({
     moduleId: module.id,
-    selector: 'my-footer-widget',
+    selector: 'app-my-footer-widget',
     templateUrl: 'footer.component.html',
     styleUrls: ['footer.component.css']
  })
@@ -29,14 +23,13 @@ export class FooterComponent implements OnInit {
 
 
     constructor(    private readService: ReadService,
-        
+
         private log: Log
 ) {
 
      }
 
     ngOnInit(): void {
-
 
             this.readService.getAllItems('about')
                 .subscribe((data: any[]) => this.items = data,

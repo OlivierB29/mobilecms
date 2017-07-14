@@ -10,7 +10,11 @@ import { Log } from '../../shared/services/log.service';
 import { ReadService } from '../../shared/services/read.service';
 
 
-
+/**
+* Display a list of club activities, which have calendar events :
+* - Each button open a list of clubs
+* - When clicked, display a list of events for the current activity
+*/
 @Component({
   moduleId: module.id,
   templateUrl: 'calendaractivities.component.html',
@@ -18,24 +22,25 @@ import { ReadService } from '../../shared/services/read.service';
 })
 export class CalendarActivitiesComponent implements OnInit {
 
+    /**
+    * selected activity name (tennis, basketball, ...)
+    */
+    activity: string;
 
-
-  activity: string;
-
-
-  activityObjectList: Activity[] = [];
+    /**
+    * list of activities objects
+    */
+    activityObjectList: Activity[] = [];
 
   constructor(
     private router: Router,
     private dataService: ReadService,
-    
     private log: Log,
     private route: ActivatedRoute
   ) {
   }
 
   ngOnInit(): void {
-
 
     // path parameters
     this.route.params.forEach((params: Params) => {
@@ -44,10 +49,7 @@ export class CalendarActivitiesComponent implements OnInit {
       }
     });
 
-
-    //
     // Load activities and add link URL, logo URL
-    //
     this.dataService.getAll('activities')
       .subscribe((data: Activity[]) => {
         this.activityObjectList = data.filter(function(el) { return el.calendar === 'true'; });
