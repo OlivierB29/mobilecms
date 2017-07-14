@@ -2,18 +2,24 @@
 This project is a frontend for reading content stored in JSON files.
 It is initially intended to read content from a sport organization, with such content : News, calendar events, public pages, documents, ...
 
-- Angular.io
+Briefly :
+- Angular 4
+- [ng-lazyload-image](https://github.com/tjoskar/ng-lazyload-image)
 - Hosted on a cheap server, with no database available (see explanation in FAQ)
 - All the data is public, by default.
 
 ## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Install Node JS 6+
+- `npm install -g @angular/cli`
+- `npm install` or `yarn`
+- Run `ng serve` for a dev server.
+- Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `ng build --prod` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-ng build --prod
-
+## Deploy
+Transfer files in `dist` directory to your server (such as `/var/www/html/`).
 
 ## FAQ
 - Why not using a true CMS on a web hosting package ?
