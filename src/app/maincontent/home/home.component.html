@@ -1,23 +1,18 @@
-<div class="maincontent">
+<div [class]='"homepagecontainer"'>
+
+  <div [class]='"feedcontainer"'>
+       <app-my-calendar-feed></app-my-calendar-feed>
+  </div>
 
 
-<!--
-        <div class="featuredmenu">
-            <app-my-featured-widget></app-my-featured-widget>
-        </div>
- -->
 
-    <div >
-         <app-my-feed-widget></app-my-feed-widget>
-    </div>
+    <div [class]='"maincontent"'>
 
-    <div class="articlebody">
-
-      <app-my-news-component [max]="4"></app-my-news-component>
+      <app-my-news-component></app-my-news-component>
 
 
-        <div [routerLink]='"news"' class='expand-title'>
-            <i class="material-icons">expand_more</i>
+        <div [routerLink]='"news"' [class]='"expand-title"'>
+            <i [class]='"material-icons"'>expand_more</i>
         </div>
 
 

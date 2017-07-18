@@ -1,11 +1,3 @@
-<!-- ########################################################################################### -->
-
-<div *ngIf="current">
-
-<h1 [innerHTML]='current.title'></h1>
-
-<div [innerHTML]='current.description | br'></div>
-
-<div *ngIf="current.location"> <span >{{'calendar.location' | translate}}</span> <span [innerHTML]='current.location'></span></div>
-
-</div>
+<div class='calendarevent-container'>
+  <app-my-calendardetail-component [id]='id'></app-my-calendardetail-component>
+<div>

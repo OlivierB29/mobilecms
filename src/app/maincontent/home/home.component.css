@@ -1,3 +1,54 @@
+
+
+@media all and (max-width: 28.999999em) {
+	.homepagecontainer {
+		display: flex;
+		flex-direction: column;
+	}
+
+  .maincontent {
+		width: 100%;
+
+  }
+	.feedcontainer {
+		width: 100%;
+
+  }
+}
+
+
+	.homepagecontainer {
+		display: flex;
+		flex-direction: column;
+	}
+
+  .maincontent {
+		width: 100%;
+  }
+
+  .feedcontainer {
+		width: 100%;
+  }
+
+
+@media all and (min-width: 55em) {
+	.homepagecontainer {
+		display: flex;
+		flex-direction: row;
+	}
+
+  .maincontent {
+	width: 80%;
+	order:1;
+  }
+  .feedcontainer {
+		width: 20%;
+		order:2;
+  }
+
+}
+
+
 /**/
 
 .expand-title{
@@ -11,81 +62,4 @@
 .expand-title:hover {
 background-color: #E0E0E0;
 	cursor: pointer;
-}
-
-
-/*----*/
-
-.flex {
-  /* flexbox setup */
-  display: flex;
-  flex-direction: row;
-}
-
-.flex>div {
-  flex: 1 1 auto;
-  width: 30px;
-  /* To make the transition work nicely. (Transitions to/from
-                        "width: auto" are buggy in Gecko and Webkit, at least.
-                        See http: // bugzil.la/731886 for more info.) */
-  transition: width 0.7s ease-out;
-}
-
-
-/* colors */
-
-.flex>div:nth-child(1) {
-  background: #009246;
-}
-
-.flex>div:nth-child(2) {
-  background: #F1F2F1;
-}
-
-.flex>div:nth-child(3) {
-  background: #CE2B37;
-}
-
-.flex>div:hover {
-  border-color: #eee;
-  border-style: dotted;
-  border-width: 1px;
-}
-
-@media all and (max-width: 28.999999em) {
-  .maincontent {
-    width: 100%;
-  }
-
-  .featuredmenu {
-    width: 100%;
-  }
-}
-
-@media all and (min-width: 29em) {
-  .maincontent {
-    width: 100%;
-  }
-
-  .featuredmenu {
-    width: 33%;
-  }
-}
-
-
-/* Second breakpoint at 55em */
-
-@media all and (min-width: 55em) {
-  .maincontent {
-    width: 100%;
-  }
-  .feedmenu {
-    width: 15%;
-    float: left;
-  }
-  .featuredmenu {
-    width: 15%;
-    float: right;
-  }
-
 }

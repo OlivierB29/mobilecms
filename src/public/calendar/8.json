@@ -1,0 +1,19 @@
+    {
+        "id" : "8",
+        "date": "2018-06-01",
+        "activity": "tennis",
+        "title": "tennis tournament",
+        "organization": "Some org",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "url": "", "location" : "some place", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : "",
+
+        "images":[
+            {"url":"public/calendar/attachments/athletes-1866487_640.jpg","title":"tennis"},
+            {"url":"public/calendar/attachments/tennis-178696_640.jpg","title":"tennis"},
+            {"url":"public/calendar/attachments/tennis-2290639_640.jpg","title":"tennis"}
+          ],
+        "attachments":
+          [
+            {"url":"https://pixabay.com/fr/service/terms/#usage","title":"licence"}
+          ]
+    }

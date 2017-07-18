@@ -1,0 +1,34 @@
+
+<div [class]='"top-menu-bar"'>
+
+  <!-- burger menu icon -->
+  <div (click)='sidenav.open()' >
+    <span [class]='"top-menu-icon-container top-menu-icon my-mat-button"' >
+      <i [class]='"material-icons"'>menu</i>
+    </span>
+  </div>
+
+  <!-- title -->
+  <div [class]='"top-menu-title-container my-mat-button"' [routerLink]='"/"'>
+    <span [class]='"top-menu-title"' [innerHTML]='title'></span>
+  </div>
+</div>
+
+
+<div [class]='"my-body"'>
+
+  <app-sidenav #sidenav [mode]='menuMode' [opened]='menuOpened'></app-sidenav>
+
+  <!-- fading backdrop : close menu on click -->
+  <div *ngIf='menuMode === "over"'  [class]='"my-mat-sidenav-backdrop" + getBackdropCss(sidenav.isOpen())' (click)='sidenav.open()'></div>
+
+  <!-- container -->
+  <div >
+    <app-my-banner [layout]='layout'></app-my-banner>
+
+    <!-- content -->
+    <router-outlet></router-outlet>
+
+  </div>
+
+</div>

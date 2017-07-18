@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { APP_BASE_HREF } from '@angular/common';
-import { HttpModule, Http } from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -11,36 +11,20 @@ import { FooterComponent } from './widget/footer/footer.component';
 import { HomeComponent } from './maincontent/home/home.component';
 import { FeaturedComponent } from './widget/featured/featured.component';
 
-import { FeedComponent } from './widget/feed/feed.component';
+
 import { BannerComponent } from './widget/banner/banner.component';
 
 
-
-import { ActivityFilterPipe } from './shared/filters/activityfilter.pipe';
-import { DepartmentFilterPipe } from './shared/filters/departmentfilter.pipe';
+import { BrPipe, OrderbyPipe,  ActivityFilterPipe, DepartmentFilterPipe } from './shared/filters';
 
 
-import { BrPipe, OrderbyPipe, PrettyUrlPipe } from './shared/filters';
-
-// translate
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-// AoT requires an exported function for factories
-export function HttpLoaderFactory(http: Http) {
-  return new TranslateHttpLoader(http);
-}
 
 // Tools
-import { ConfService } from './shared/services/conf.service';
-import { Log } from './shared/services/log.service';
 
+import { Log, ReadService } from 'app/shared/services';
 
-import { RouterModule } from '@angular/router';
-import { ReadService } from './shared/services/read.service';
+import { MenuService } from 'app/sidenav/menu.service';
 
-
-
-import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 // maincontent
 import { NewsComponent, NewsPreviewComponent, NewsDetailsComponent } from './maincontent/news';
@@ -48,58 +32,44 @@ import {
   CalendarListComponent,
   CalendarEventComponent,
   CalendarDetailComponent,
-  CalendarActivitiesComponent
+  CalendarActivitiesComponent,
+  CalendarFeedComponent
 } from './maincontent/calendar';
 
-import { ClubListComponent } from './maincontent/clublist/clublist.component';
-
-
-import { ClubDetailComponent } from './maincontent/clubdetail/clubdetail.component';
-import { ClubActivitiesComponent } from './maincontent/clubactivities/clubactivities.component';
-
-import { MainPageComponent } from './maincontent/mainpage/mainpage.component';
-
-
+import { ClubListComponent, ClubDetailComponent, ClubActivitiesComponent } from './maincontent/club';
 
 import { ActivityButtonComponent } from './maincontent/activitybutton/activitybutton.component';
-import { ArticleComponent } from './maincontent/article/article.component';
-import { ArticlePreviewComponent } from './maincontent/articlepreview/articlepreview.component';
-import { ArticlelistComponent } from './maincontent/articlelist/articlelist.component';
+import { ArticleComponent, ArticlePreviewComponent, ArticlelistComponent } from './maincontent/article';
 import { ItemsComponent } from './maincontent/items/items.component';
-import { MenubuttonComponent } from './maincontent/menubutton/menubutton.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { SidenavcontainerComponent } from './sidenavcontainer/sidenavcontainer.component';
 
+import { SidenavcontainerComponent, SidenavComponent, MenubuttonComponent } from './sidenav';
+
+
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-
     LazyLoadImageModule,
     SharedModule.forRoot(),
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [Http]
-      }
-    })],
+],
 
   declarations: [
 
     ActivityFilterPipe,
     OrderbyPipe,
     DepartmentFilterPipe,
-    PrettyUrlPipe,
+
     BrPipe,
+
     AppComponent,
     BannerComponent,
-    FeedComponent,
+    CalendarFeedComponent,
     FeaturedComponent,
     FooterComponent,
-    MainPageComponent,
+
     HomeComponent,
     CalendarListComponent,
     CalendarActivitiesComponent,
@@ -121,9 +91,9 @@ import { SidenavcontainerComponent } from './sidenavcontainer/sidenavcontainer.c
     SidenavcontainerComponent
   ],
   providers: [
-    ConfService,
     Log,
     ReadService,
+    MenuService,
     OrderbyPipe
   ],
   bootstrap: [AppComponent]

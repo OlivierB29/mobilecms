@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-import { MenuItem } from '../model/menuitem';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -18,19 +17,44 @@ export class ReadService {
     constructor(private log: Log, private http: Http) {
     }
 
+    getPromise(type: string, id: string): Promise<any> {
+
+      const url = this.root  +  '/' + environment.public + '/'  +  type  +  '/'  +  id  +  '.json';
+      this.log.debug('get '  +  url);
 
 
-    public getMenu = (locale: string): Observable<MenuItem[]> => {
-        const url = this.root  + '/assets/menu/menu.'  +  locale  +  '.json';
-          this.log.debug('getMenu ...'  +  url);
+          return this.http.get(url)
+          .map((response: any) =>
+                response.json()
+            ).toPromise();
+      }
 
-        return this.http.get(url)
-            .map((response: Response) => <MenuItem[]>response.json())
-            .catch(this.handleError);
+    getAllPromise(type: string): Promise<any[]> {
 
-    }
+      const url = this.root  +  '/' + environment.public + '/'  +  type  +  '/index/index.json';
 
 
+
+          return this.http.get(url)
+              .toPromise()
+              .then(this.extractPromiseData)
+              .catch(this.handleErrorPromise);
+      }
+
+      private extractPromiseData(res: Response) {
+
+          const body = res.json();
+          return body || [];
+      }
+
+      private handleErrorPromise(error: any) {
+
+          // In a real world app, we might use a remote logging infrastructure
+          // We'd also dig deeper into the error to get a better message
+          const errMsg = (error.message) ? error.message : error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+          console.error(errMsg); // log to console instead
+          return Promise.reject(errMsg);
+      }
 
     public getAll = (type: string): Observable<any[]> => {
         const url = this.root  +  '/' + environment.public + '/'  +  type  +  '/index/index.json';
@@ -54,10 +78,15 @@ export class ReadService {
     }
 
 
+    public getUrl = (type: string, id: string): string => {
+      return this.root  +  '/' + environment.public + '/'  +  type  +  '/'  +  id  +  '.json';
+    }
+
+
     public get = (type: string, id: string): Observable<any[]> => {
 
         const url = this.root  +  '/' + environment.public + '/'  +  type  +  '/'  +  id  +  '.json';
-        this.log.debug('getAll '  +  url);
+        this.log.debug('get '  +  url);
 
 
         return this.http.get(url)

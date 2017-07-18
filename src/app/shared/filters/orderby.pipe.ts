@@ -1,9 +1,10 @@
 import { Injectable, Pipe, PipeTransform } from '@angular/core';
 
-
 /*
 https://angular.io/docs/ts/latest/guide/pipes.html
 
+Production target : This pipe filter about 10-20 items.
+cf https://angular.io/guide/pipes#!#no-filter-pipe
 */
 
 @Pipe({
@@ -19,16 +20,28 @@ export class OrderbyPipe implements PipeTransform {
 
         return items.sort(function(a, b) {
           if (a[arg] && b[arg]) {
+            const valueA =  Number(a[arg].replace(/[^\w\s]/gi, ''));
+            const valueB =  Number(b[arg].replace(/[^\w\s]/gi, ''));
+
+            if (valueA === valueB) {
+              return 0;
+            }
+
             if (direction === 'asc') {
-              return (a[arg] > b[arg]) ? 1 : ((b[arg] > a[arg]) ? -1 : 0);
+              return (valueA > valueB) ? 1 : -1;
             } else {
-              return (a[arg] < b[arg]) ? 1 : ((b[arg] < a[arg]) ? -1 : 0);
+              return (valueB > valueA) ? 1 : -1;
             }
           } else {
             return 0;
           }
 
         } );
+    }
+
+
+    private toNumber(str: string) {
+      return Number(str.replace(/[^\w\s]/gi, ''));
     }
 
 }

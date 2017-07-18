@@ -1,0 +1,28 @@
+
+<div class='article-list'>
+  <h3><span [innerHTML]='(activity | uppercase)'></span> </h3>
+<div *ngIf="activity" class='department-list'>
+
+
+<div *ngFor='let dep of departmentObjectList' class="department">
+
+  <button  [value]='dep.code' (click)='displayClubs(dep.code)' class='department-button'>
+    <div [innerHTML]='dep.name'></div>
+
+  </button>
+
+</div>
+
+</div>
+
+
+
+<div *ngIf="activity  && department ">
+  <div class='article-list'>
+    <div *ngFor="let club of (clubs | activityfilter: activity | departmentfilter: department)" class='club-content'>
+      <app-my-clubdetail-component [id]="club.id"></app-my-clubdetail-component>
+    </div>
+  </div>
+</div>
+
+</div>

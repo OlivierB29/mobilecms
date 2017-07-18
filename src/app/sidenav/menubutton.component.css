@@ -1,0 +1,56 @@
+
+.slidemenu-button {
+width: 100%;
+text-align: left;
+border: none;
+color: white;
+background-color: #5e7987;
+padding: 0.6em;
+transition: background-color .7s cubic-bezier(.25,.8,.25,1);
+}
+
+
+
+
+.slidemenu-button:hover {
+  cursor: pointer;
+  background-color: #546E7A;
+}
+
+
+.slidemenu-button:hover {
+  cursor: pointer;
+}
+
+
+.slidemenu-button-icon {
+font-size: 1em;
+float: left;
+padding-right: 0.2em;
+}
+
+
+
+.slidemenu-button-text {
+font-size: 1em;
+font-weight: 500;
+float: left;
+
+}
+
+@media all and (min-width: 55em) {
+.slidemenu-button {
+  padding: 0.7em;
+}
+
+.slidemenu-button-icon {
+font-size: 1.25em;
+}
+
+
+
+.slidemenu-button-text {
+font-size: 1.25em;
+}
+
+}

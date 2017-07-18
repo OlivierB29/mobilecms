@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { ReadService } from '../shared/services/read.service';
-import { MenuItem } from '../shared/model/menuitem';
+import { MenuService } from './menu.service';
 
 @Component({
   moduleId: module.id,
@@ -16,31 +15,29 @@ export class SidenavComponent implements OnInit {
 
   lang: string;
 
-  menuItems: MenuItem[] = [];
+  menuItems: any[] = [];
 
-
-  constructor(private dataService: ReadService) { }
+  constructor(private menuService: MenuService) { }
 
   ngOnInit() {
     // Load the menu items
     this.lang = environment.defaultlocale;
-    console.log('loading menu ' + this.lang);
-    this.dataService.getMenu(this.lang)
-      .subscribe((data: MenuItem[]) => this.menuItems = data,
-      error => console.log('getMenu ' + error),
-      () => console.log('getMenu complete'));
+
+    this.menuItems = this.menuService.getMenuData(this.lang);
   }
 
   open() {
-      this.opened = !this.opened;
+
+    this.opened = !this.opened;
   }
 
-  isOpened() {
-      return this.opened;
+
+  isOpen() {
+    return this.opened;
   }
 
   isOverMenuOpened() {
-      return this.mode === 'over' && this.opened;
+    return this.mode === 'over' && this.opened;
   }
 
 
@@ -50,27 +47,6 @@ export class SidenavComponent implements OnInit {
 
     }
 
-  }
-
-
-  getCssClass(): string {
-    let result = 'slidemenu ';
-
-    if (this.mode === 'over') {
-      // mobile mode : menu is over content
-      result += 'menu-over ';
-      // menu is opened
-      if (this.opened) {
-        result += 'menu-over-opened';
-      }
-
-    } else if (this.mode === 'side') {
-      // desktop mode
-      result += 'menu-side';
-    }
-
-
-    return result;
   }
 
 }

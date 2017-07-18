@@ -3,14 +3,19 @@
 */
 export class Activity {
 
-
+/**
+* tennis, golf, ...
+*/
 name: string;
 
+/**
+* basketball.jpg
+*/
 logo: string;
 
+/**
+* 'true'|'false'
+*/
 calendar: string;
 
-link: string; //navigation URL
-
-image: string; //image URL
 }

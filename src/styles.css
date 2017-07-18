@@ -2,3 +2,14 @@
 body {
   margin: 0;
 }
+
+@media all and (min-width: 55em) {
+	.body {
+		margin: 0.2em;
+	}
+}
+
+.mainloading-icon {
+  display: block;
+  margin: 0 auto;
+}

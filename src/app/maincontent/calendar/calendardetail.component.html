@@ -6,7 +6,7 @@
   			<div class="article-subtitle">
           <!-- conditional display of class -->
             <div *ngIf="item.organization" class='article-title-moreinfo'>
-            <span >{{'calendar.organizationlabel' | translate}} : </span>
+
             <span > {{item.organization}}</span>
 
             </div>
@@ -14,14 +14,14 @@
         <div class="article-description">
         <div [innerHTML]="item.description | br" ></div>
 
-        <div *ngIf="item.location" >{{'calendar.location' | translate}} : {{item.location}}</div>
+        <div *ngIf="item.location" ><i class='material-icons'>pin_drop</i> {{item.location}}</div>
 
         <div *ngFor="let attachment of item.attachments">
           <a [href]="attachment.url" [innerHTML]="attachment.title"></a> <span [innerHTML]="attachment.description"></span>
         </div>
 
         <div *ngFor="let image of item.images">
-          <img [src]="image.url" [alt]="image.title">
+          <img [defaultImage]="defaultImage" [lazyLoad]="image.url" [offset]="offset"   [alt]="image.title">
         </div>
       </div>
 

@@ -1,9 +1,11 @@
 
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
+
 import { OrderbyPipe } from '../../shared/filters';
 import { Log } from '../../shared/services/log.service';
 import { ReadService } from '../../shared/services/read.service';
-import { ConfService } from '../../shared/services/conf.service';
+
+
 
 @Component({
   moduleId: module.id,
@@ -11,46 +13,70 @@ import { ConfService } from '../../shared/services/conf.service';
   templateUrl: 'news.component.html',
   styleUrls: ['news.component.css']
 })
-export class NewsComponent implements OnInit {
+export class NewsComponent implements AfterViewInit {
+
+  index: any[] = [];
 
   items: any[] = [];
 
-  maxElements = 4;
+  errorMessage: any;
 
-  @Input() max = 0;
+  max = 4;
 
   type = 'news';
 
 
-    constructor(
-        private conf: ConfService,
-        private dataService: ReadService,
-        private log: Log,
-        private orderby: OrderbyPipe
-    ) {
-    }
-    ngOnInit(): void {
-
-        this.dataService.getAll(this.type)
-                                  .subscribe((data: any[]) => this.items = data,
-                                      error => this.log.debug(this.type + ' ' + error),
-                                      () =>  {
-
-                                        if (this.max > 0 && this.items.length > this.max) {
-                                           this.items = this.items.slice(this.items.length - this.max, this.items.length);
-
-                                        }
-                                        this.log.debug(this.type + ' '  +  this.items.length);
-
-                                        this.orderby.transform(this.items, 'date', 'desc');
-
-                                    });
-
-
-
+  constructor(
+    private dataService: ReadService,
+    private log: Log,
+    private orderby: OrderbyPipe
+  ) {
+    // initialize the component with empty values.
+    // When using a low bandwith network, the goal is to display something during load.
+    if (this.max > 0) {
+      const emptyItem = { id: '' };
+      while (this.items.length < this.max) {
+        this.items.push(emptyItem);
+      }
 
     }
+  }
 
+  ngAfterViewInit(): void {
+
+    let dbItems = null;
+    this.dataService.getAll(this.type)
+      .subscribe((data: any[]) => dbItems = data,
+      error => this.log.debug(this.type + ' ' + error),
+      () => {
+        // in case of an unsorted index
+        // About 20 news per season, unless cf to https://angular.io/guide/pipes#!#no-filter-pipe
+        dbItems = this.orderby.transform(dbItems, 'date', 'desc');
+
+        if (this.max > 0 && dbItems.length > this.max) {
+          dbItems = dbItems.slice(0, this.max);
+        }
+
+        // purge unnecessary empty items
+        if (this.items.length > dbItems.length) {
+              this.items = this.items.filter(it => it.id !== '' );
+        }
+
+        // replace or add new items
+        for (let i = 0; i < dbItems.length; i++) {
+          if (this.items.length > i) {
+            this.items[i] = dbItems[i];
+          } else {
+            this.items.push(dbItems[i]);
+          }
+        }
+
+      });
+
+    this.log.debug('NewsComponent ' + this.type + ' ' + this.items.length);
+
+
+  }
 
 
 }
