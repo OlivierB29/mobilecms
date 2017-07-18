@@ -4,7 +4,7 @@ body {
 }
 
 @media all and (min-width: 55em) {
-	.body {
+	body {
 		margin: 0.2em;
 	}
 }
