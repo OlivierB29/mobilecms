@@ -1,14 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-
 body {
-}
-
-.defaultbody {
-   margin: 0;
+  margin: 0;
 }
 
 @media all and (min-width: 55em) {
-	.defaultbody {
+	.body {
 		margin: 0.2em;
 	}
 }
