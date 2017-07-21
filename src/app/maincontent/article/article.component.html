@@ -14,7 +14,7 @@
 
         <div *ngIf='item.attachments && item.attachments.length > 0'>
         <div *ngFor='let attachment of item.attachments'>
-          <a *ngIf='attachment.url' [href]='attachment.url' [innerHTML]='attachment.title'></a>
+          <a *ngIf='attachment.url' [href]='attachment.url' [innerHTML]='attachment.title' target='_blank'></a>
 
         </div>
         </div>
