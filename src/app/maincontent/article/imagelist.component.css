@@ -1,0 +1,9 @@
+.images-container {
+	border-top: 1px solid #ddd;
+	padding-top: 0.5em;
+}
+
+.images-container img {
+	padding-top: 0.5em;
+  width: 100%;
+}

@@ -39,7 +39,8 @@ import {
 import { ClubListComponent, ClubDetailComponent, ClubActivitiesComponent } from './maincontent/club';
 
 import { ActivityButtonComponent } from './maincontent/activitybutton/activitybutton.component';
-import { ArticleComponent, ArticlePreviewComponent, ArticlelistComponent } from './maincontent/article';
+import { ArticleComponent, ArticlePreviewComponent, ArticlelistComponent,
+   AttachmentsComponent, ImageListComponent } from './maincontent/article';
 import { ItemsComponent } from './maincontent/items/items.component';
 
 import { SidenavcontainerComponent, SidenavComponent, MenubuttonComponent } from './sidenav';
@@ -85,6 +86,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     ArticleComponent,
     ArticlePreviewComponent,
     ArticlelistComponent,
+    AttachmentsComponent,
+    ImageListComponent,
     ItemsComponent,
     MenubuttonComponent,
     SidenavComponent,

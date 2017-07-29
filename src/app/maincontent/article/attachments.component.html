@@ -1,0 +1,6 @@
+<!-- attachments -->
+<div *ngIf='attachments && attachments.length > 0'>
+<div *ngFor='let attachment of attachments'>
+  <a *ngIf='attachment.url' [href]='attachment.url' [innerHTML]='attachment.title' target='_blank'></a>
+</div>
+</div>

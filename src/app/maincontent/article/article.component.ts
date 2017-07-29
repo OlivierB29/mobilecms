@@ -28,16 +28,6 @@ export class ArticleComponent implements AfterViewInit {
   */
   @Input() item: any;
 
-  /**
-  * offset for LazyLoadImageModule
-  */
-  offset = 100;
-
-  /**
-  * default image displayed by  for LazyLoadImageModule
-  */
-  defaultImage = environment.server + '/' + environment.public + '/resources/ring-alt-32.svg';
-
 
   constructor(private log: Log, private readService: ReadService) {
     this.item = {
@@ -84,6 +74,38 @@ export class ArticleComponent implements AfterViewInit {
     }
 
 
+  }
+
+  isImage(element: any): boolean {
+    return element.mimetype && element.mimetype.indexOf('image') > -1;
+  }
+
+  getImages(): any[] {
+    let result = [];
+
+    if (this.item.images) {
+      result = result.concat(this.item.images);
+    }
+
+    if (this.item.media) {
+      result = result.concat(this.item.media.filter(element => this.isImage(element)));
+    }
+
+    return result;
+  }
+
+  getAttachments(): any[] {
+    let result = [];
+
+    if (this.item && this.item.attachments) {
+      result = result.concat(this.item.attachments);
+    }
+
+    if (this.item && this.item.media) {
+      result = result.concat(this.item.media.filter(element => !this.isImage(element)));
+    }
+
+    return result;
   }
 
 

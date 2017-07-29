@@ -1,3 +1,5 @@
+export * from './attachments.component';
+export * from './imagelist.component';
 export * from './article.component';
 export * from './articlepreview.component';
 export * from './articlelist.component';
