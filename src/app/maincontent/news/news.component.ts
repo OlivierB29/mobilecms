@@ -1,5 +1,5 @@
 
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, Input } from '@angular/core';
 
 import { OrderbyPipe } from '../../shared/filters';
 import { Log } from '../../shared/services/log.service';
@@ -21,7 +21,7 @@ export class NewsComponent implements AfterViewInit {
 
   errorMessage: any;
 
-  max = 4;
+  @Input() max = 1;
 
   type = 'news';
 
