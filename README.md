@@ -10,6 +10,9 @@ Briefly :
 - Hosted on a cheap server, with no database available (see explanation in FAQ)
 - All the data is public, by default.
 
+## Admin App
+Since this project is the site frontend, check the [admin interface](https://github.com/OlivierB29/mobilecms-admin) for writing posts and uploading content.
+
 ## Development server
 - Install Node JS 6+
 - `npm install -g @angular/cli`
