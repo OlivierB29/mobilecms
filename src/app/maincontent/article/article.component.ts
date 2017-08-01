@@ -28,6 +28,8 @@ export class ArticleComponent implements AfterViewInit {
   */
   @Input() item: any;
 
+  @Input() media = 'media';
+
 
   constructor(private log: Log, private readService: ReadService) {
     this.item = {
@@ -61,6 +63,9 @@ export class ArticleComponent implements AfterViewInit {
       this.readService.get(this.type, itemid)
         .subscribe((data: any) => {
           this.item = data;
+          this.initMediaUrl();
+
+
         },
         error => console.error('get ' + error));
     } else {
@@ -76,6 +81,14 @@ export class ArticleComponent implements AfterViewInit {
 
   }
 
+  private initMediaUrl() {
+    if (this.item.media) {
+      this.item.media.forEach((media: any) => {
+        media.url = this.media + '/' + this.type + '/' + this.id + '/' + media.url;
+      });
+    }
+  }
+
   isImage(element: any): boolean {
     return element.mimetype && element.mimetype.indexOf('image') > -1;
   }
@@ -88,6 +101,7 @@ export class ArticleComponent implements AfterViewInit {
     }
 
     if (this.item.media) {
+
       result = result.concat(this.item.media.filter(element => this.isImage(element)));
     }
 
