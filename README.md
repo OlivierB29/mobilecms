@@ -2,7 +2,7 @@
 This project is a frontend for reading content stored in JSON files.
 It is initially intended to read content from a sport organization, with such content : News, calendar events, public pages, documents, ...
 
-View the [demo](https://olivierb29.github.io/mobilecms-demo/) on github pages
+Visit the [demo](https://olivierb29.github.io/mobilecms-demo/) on github pages
 
 Briefly :
 - Angular 4
@@ -12,6 +12,8 @@ Briefly :
 
 ## Admin App
 Since this project is the site frontend, check the [admin interface](https://github.com/OlivierB29/mobilecms-admin) for writing posts and uploading content.
+
+Visit the [admin demo](https://olivierb29.github.io/mobilecms-demo/admin) on github pages
 
 ## Development server
 - Install Node JS 6+
