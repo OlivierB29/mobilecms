@@ -11,10 +11,11 @@ Briefly :
 - All the data is public, by default.
 
 ## Admin App
-Since this project is the site frontend, check the [admin interface](https://github.com/OlivierB29/mobilecms-admin) for writing posts and uploading content.
+Since this project is the frontend, an admin app is necessary :
+- visit the [admin demo](https://olivierb29.github.io/mobilecms-demo/admin).
+- source code : [mobilecms-admin](https://github.com/OlivierB29/mobilecms-admin)
 
-Visit the [admin demo](https://olivierb29.github.io/mobilecms-demo/admin) on github pages
-
+Visit the
 ## Development server
 - Install Node JS 6+
 - `npm install -g @angular/cli`
