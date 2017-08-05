@@ -4,6 +4,7 @@ import { environment } from '../../../environments/environment';
 
 import { ReadService } from '../../shared/services/read.service';
 import { Log } from '../../shared/services/log.service';
+import { MediaComponent } from '../article';
 
 @Component({
     moduleId: module.id,
@@ -11,9 +12,13 @@ import { Log } from '../../shared/services/log.service';
     templateUrl: 'calendardetail.component.html',
     styleUrls: ['calendardetail.component.css']
 })
-export class CalendarDetailComponent implements OnInit {
+export class CalendarDetailComponent extends MediaComponent implements OnInit {
 
     @Input() id: string;
+
+    @Input() media = 'media';
+
+    @Input() type = 'calendar';
 
     item: any = {};
 
@@ -32,6 +37,7 @@ export class CalendarDetailComponent implements OnInit {
         private readService: ReadService,
         private log: Log
     ) {
+      super();
     }
 
     ngOnInit(): void {
@@ -41,7 +47,10 @@ export class CalendarDetailComponent implements OnInit {
         if (this.id) {
 
             this.readService.get('calendar', this.id)
-                .subscribe((data: any) => this.item = data,
+                .subscribe((data: any) => {
+                  this.item = data;
+                  this.item.media = this.initMediaUrl(this.type, this.id, this.item.media, this.media);
+                },
                 error => this.log.debug('get'  +  error),
                 () => { this.log.debug('get complete'); });
         } else {
@@ -52,5 +61,16 @@ export class CalendarDetailComponent implements OnInit {
     }
 
 
+    getItem(): any {
+      return this.item;
+    }
+
+    getImages(): any[] {
+      return super.getImages();
+    }
+
+    getAttachments(): any[] {
+      return super.getAttachments();
+    }
 
 }

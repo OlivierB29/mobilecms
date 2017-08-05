@@ -15,19 +15,19 @@
         "media": [
                   {
                       "title": "tennis-2290639_640.jpg",
-                      "file": "tennis-2290639_640.jpg",
+                      "url": "tennis-2290639_640.jpg",
                       "size": 106894,
                       "mimetype": "image\/jpeg"
                   },
                   {
                       "title": "tennis-178696_640.jpg",
-                      "file": "tennis-178696_640.jpg",
+                      "url": "tennis-178696_640.jpg",
                       "size": 146955,
                       "mimetype": "image\/jpeg"
                   },
                   {
                       "title": "lorem ipsum.pdf",
-                      "file": "lorem ipsum.pdf",
+                      "url": "lorem ipsum.pdf",
                       "size": 24612,
                       "mimetype": "application\/pdf"
                   }

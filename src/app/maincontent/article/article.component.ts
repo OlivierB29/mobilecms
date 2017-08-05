@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, Input } from '@angular/core';
-
+import { MediaComponent } from './media.component';
 import { ReadService } from '../../shared/services/read.service';
 import { Log } from '../../shared/services/log.service';
 import { environment } from '../../../environments/environment';
@@ -11,7 +11,7 @@ import { environment } from '../../../environments/environment';
   templateUrl: 'article.component.html',
   styleUrls: ['article.component.css']
 })
-export class ArticleComponent implements AfterViewInit {
+export class ArticleComponent extends MediaComponent implements AfterViewInit {
 
   /**
   * type data
@@ -32,6 +32,7 @@ export class ArticleComponent implements AfterViewInit {
 
 
   constructor(private log: Log, private readService: ReadService) {
+    super();
     this.item = {
       id: '', title: '...... .... ...........',
       description: this.getEmptyDescription()
@@ -63,9 +64,7 @@ export class ArticleComponent implements AfterViewInit {
       this.readService.get(this.type, itemid)
         .subscribe((data: any) => {
           this.item = data;
-          this.initMediaUrl();
-
-
+          this.item.media = this.initMediaUrl(this.type, this.id, this.item.media, this.media);
         },
         error => console.error('get ' + error));
     } else {
@@ -79,49 +78,19 @@ export class ArticleComponent implements AfterViewInit {
     }
 
 
+
   }
 
-  private initMediaUrl() {
-    if (this.item.media) {
-      this.item.media.forEach((media: any) => {
-        media.url = this.media + '/' + this.type + '/' + this.id + '/' + media.url;
-      });
-    }
-  }
-
-  isImage(element: any): boolean {
-    return element.mimetype && element.mimetype.indexOf('image') > -1;
+  getItem(): any {
+    return this.item;
   }
 
   getImages(): any[] {
-    let result = [];
-
-    if (this.item.images) {
-      result = result.concat(this.item.images);
-    }
-
-    if (this.item.media) {
-
-      result = result.concat(this.item.media.filter(element => this.isImage(element)));
-    }
-
-    return result;
+    return super.getImages();
   }
 
   getAttachments(): any[] {
-    let result = [];
-
-    if (this.item && this.item.attachments) {
-      result = result.concat(this.item.attachments);
-    }
-
-    if (this.item && this.item.media) {
-      result = result.concat(this.item.media.filter(element => !this.isImage(element)));
-    }
-
-    return result;
+    return super.getAttachments();
   }
-
-
 
 }

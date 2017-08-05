@@ -16,11 +16,11 @@
 
         <div *ngIf="item.location" ><i class='material-icons'>pin_drop</i> {{item.location}}</div>
 
-        <div *ngFor="let attachment of item.attachments">
+        <div *ngFor="let attachment of getAttachments()">
           <a [href]="attachment.url" [innerHTML]="attachment.title"></a> <span [innerHTML]="attachment.description"></span>
         </div>
 
-        <div *ngFor="let image of item.images">
+        <div *ngFor="let image of getImages()">
           <img [defaultImage]="defaultImage" [lazyLoad]="image.url" [offset]="offset"   [alt]="image.title">
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { MediaComponent } from './media.component';
 import { ReadService } from '../../shared/services/read.service';
 import { Log } from '../../shared/services/log.service';
 import { environment } from '../../../environments/environment';
@@ -11,7 +11,7 @@ import { environment } from '../../../environments/environment';
   templateUrl: 'articlepreview.component.html',
   styleUrls: ['articlepreview.component.css']
 })
-export class ArticlePreviewComponent implements OnInit {
+export class ArticlePreviewComponent  extends MediaComponent implements OnInit {
 
   @Input() type: string;
 
@@ -19,6 +19,8 @@ export class ArticlePreviewComponent implements OnInit {
   @Input() id: string;
 
   @Input() item: any;
+
+  @Input() media = 'media';
 
   maxPreviewLength = 240;
 
@@ -28,7 +30,9 @@ export class ArticlePreviewComponent implements OnInit {
   image: any ;
   url = '';
 
-  constructor(private log: Log, private readService: ReadService) { }
+  constructor(private log: Log, private readService: ReadService) {
+  super();
+ }
 
 
   ngOnInit() {
@@ -48,10 +52,11 @@ export class ArticlePreviewComponent implements OnInit {
     this.readService.get(this.type, this.id)
       .subscribe((data: any) => {
 
-         this.item = data;
+        this.item = data;
+        this.item.media = this.initMediaUrl(this.type, this.id, this.item.media, this.media);
 
-         if (this.item.images && this.item.images.length > 0) {
-           this.image = this.item.images[0];
+         if (this.getImages() && this.getImages().length > 0) {
+           this.image = this.getImages()[0];
          }
 
           // news/1
@@ -65,6 +70,10 @@ export class ArticlePreviewComponent implements OnInit {
 
        });
 
+  }
+
+  getItem(): any {
+    return this.item;
   }
 
   getPreviewDescription(): string {
