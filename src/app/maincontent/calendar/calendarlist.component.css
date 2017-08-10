@@ -1,16 +1,1 @@
 
-
-
-/* liste */
-.article-list {
-
-  /* global border around article-list */
-  border-width: 0px 0px 0px 1px;
-  border-color: #ddd;
-  border-style: solid;
-  /* spacing between article-list and border */
-  padding: .7em 0.7em;
-}
-
-
-

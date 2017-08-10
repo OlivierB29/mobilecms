@@ -31,7 +31,6 @@ import { NewsComponent, NewsPreviewComponent, NewsDetailsComponent } from './mai
 import {
   CalendarListComponent,
   CalendarEventComponent,
-  CalendarDetailComponent,
   CalendarActivitiesComponent,
   CalendarFeedComponent
 } from './maincontent/calendar';
@@ -75,7 +74,6 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     CalendarListComponent,
     CalendarActivitiesComponent,
     CalendarEventComponent,
-    CalendarDetailComponent,
     NewsComponent,
     NewsPreviewComponent,
     NewsDetailsComponent,

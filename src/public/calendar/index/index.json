@@ -3,47 +3,5 @@
     "date": "2018-09-01",
     "activity": "tennis",
     "title": "tennis championship"
-  },
-  {
-    "id": "2",
-    "date": "2017-09-01",
-    "activity": "tennis",
-    "title": "a new tennis championship"
-  },
-  {
-    "id": "3",
-    "date": "2016-11-17",
-    "activity": "basketball",
-    "title": "another basketball tournament"
-  },
-  {
-    "id": "4",
-    "date": "2016-11-30",
-    "activity": "basketball",
-    "title": "yet another seminar of basketball"
-  },
-  {
-    "id": "5",
-    "date": "2016-12-06",
-    "activity": "golf",
-    "title": "seminar of activity C animated by M. SAMPLE"
-  },
-  {
-    "id": "6",
-    "date": "2017-09-01",
-    "activity": "tennis",
-    "title": "some seminar of tennis"
-  },
-  {
-    "id": "7",
-    "date": "2017-12-01",
-    "activity": "tennis",
-    "title": "seminar of tennis"
-  },
-  {
-    "id": "8",
-    "date": "2018-06-01",
-    "activity": "tennis",
-    "title": "tennis tournament"
   }
 ]

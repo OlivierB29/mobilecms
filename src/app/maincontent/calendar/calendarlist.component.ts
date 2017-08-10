@@ -42,6 +42,8 @@ export class CalendarListComponent implements OnInit {
 
     logosUrl  = '';
 
+    type = 'calendar';
+
 
 
     constructor(

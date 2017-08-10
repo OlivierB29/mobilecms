@@ -3,10 +3,27 @@ body {
   margin: 0;
 }
 
+/* list */
+.article-list {
+  /* global border around article-list */
+  border-width: 0 0 0 1px;
+  border-color: #ddd;
+  border-style: solid;
+  /* spacing between article-list and border */
+  padding: 0;
+}
+
+
 @media all and (min-width: 55em) {
 	body {
 		margin: 0.2em;
 	}
+
+  /* list */
+  .article-list {
+    padding: .7em 0.7em;
+  }
+
 }
 
 .mainloading-icon {

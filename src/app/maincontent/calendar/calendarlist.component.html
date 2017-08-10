@@ -5,7 +5,7 @@
   <div class='article-list' *ngIf='items' >
       <div *ngFor="let currentItem of items" >
 
-        <app-my-calendardetail-component [id]="currentItem.id"></app-my-calendardetail-component>
+        <app-article [type]='type' [id]="currentItem.id"></app-article>
 
     </div>
   </div>

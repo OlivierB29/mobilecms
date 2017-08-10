@@ -23,7 +23,6 @@
 
 .article-description {
 	margin: 0.5em;
-
 }
 
 
@@ -31,4 +30,8 @@
 .article-subtitle {
   font-size: 0.7em;
   color: #999;
+}
+
+.article-title-moreinfo {
+  text-align: right;
 }
