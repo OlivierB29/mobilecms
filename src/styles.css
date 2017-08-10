@@ -10,7 +10,7 @@ body {
   border-color: #ddd;
   border-style: solid;
   /* spacing between article-list and border */
-  padding: 0;
+  padding: .7em 0;
 }
 
 
@@ -21,7 +21,7 @@ body {
 
   /* list */
   .article-list {
-    padding: .7em 0.7em;
+    padding: .7em .7em;
   }
 
 }

@@ -12,6 +12,8 @@ export class CalendarEventComponent implements OnInit {
 
     id= '';
 
+    type = 'calendar';
+
     constructor(
         private route: ActivatedRoute
     ) {
