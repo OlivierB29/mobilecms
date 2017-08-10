@@ -10,19 +10,33 @@
 	border-color: #ddd;
 	color: #333;
 	background: white;
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+
 }
+
 
 .article-title {
 	background-color: #e9e9e9;
 	font-weight: bold;
   padding: 1.5em;
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+@media all and (min-width: 55em) {
+  .article-title {
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  }
+
+  .article-content {
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  }
+}
+
+.article-description-container {
+  padding: 0.2em;
 }
 
 
 .article-description {
-	margin: 0.5em;
+  padding: 0.2em;
 }
 
 
@@ -34,4 +48,5 @@
 
 .article-title-moreinfo {
   text-align: right;
+  padding-right: 1em;
 }
