@@ -4,9 +4,9 @@
 <div *ngIf="activity" class='department-list'>
 
 
-<div *ngFor='let dep of departmentObjectList' class="department">
+<div *ngFor='let dep of departmentObjectList'>
 
-  <button  [value]='dep.code' (click)='displayClubs(dep.code)' class='department-button'>
+  <button  [value]='dep.code' (click)='displayClubs(dep.code)' class='department-button my-mat-button-lighter'>
     <div [innerHTML]='dep.name'></div>
 
   </button>

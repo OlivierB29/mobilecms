@@ -1,40 +1,20 @@
 
 .slidemenu-button {
-width: 100%;
-text-align: left;
-border: none;
-color: white;
-background-color: #5e7987;
-padding: 0.7em;
-transition: background-color .7s cubic-bezier(.25,.8,.25,1);
+  text-decoration: none;
+  width: 100%;
 }
 
-
-
-
-.slidemenu-button:hover {
-  cursor: pointer;
-  background-color: #546E7A;
-}
-
-
-.slidemenu-button:hover {
-  cursor: pointer;
-}
 
 
 .slidemenu-button-icon {
-font-size: 1.1em;
-float: left;
 padding-right: 0.2em;
 }
 
 
 
 .slidemenu-button-text {
-font-size: 1.1em;
 font-weight: 500;
-float: left;
+font-size: 1.1em;
 
 }
 

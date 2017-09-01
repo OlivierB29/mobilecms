@@ -7,15 +7,11 @@
  width: 90%;
  min-height: 8em;
  border: none;
- background-color: white;
  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
  margin: 0.5em;
 }
 
-.my-activity-button:hover {
-  cursor: pointer;
-  background-color: #D5D5D5;
-}
+
 
 .logo {
     max-width: 3em;

@@ -1,9 +1,22 @@
 
+.slidemenu-button-container {
+  text-align: left;
+  border: none;
+  min-height: 2em;
+  text-decoration:none;
+  padding: 0.4em;
+  width: 100%;
+}
+
+
+.menu-button {
+
+}
+
 .menu-container {
 
-  background-color: #5e7987;
   box-shadow: 5px 5px 10px 0 #656565;
-  z-index: 90;
+
 
   transition-duration: .5s;
    transition-timing-function: cubic-bezier(.25, .8, .25, 1);
@@ -12,6 +25,7 @@
   width: 13em;
 
   overflow: hidden;
+  z-index: 90;
 }
 
 @media all and (max-width: 54.999999em) {
