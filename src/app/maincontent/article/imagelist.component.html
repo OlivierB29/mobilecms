@@ -1,5 +1,6 @@
 <!-- images -->
 <div *ngIf='images && images.length > 0' [class]='"images-container"'>
 <div *ngFor='let image of images'>
-  <img *ngIf='image.url' [defaultImage]='defaultImage' [lazyLoad]='image.url' [offset]='offset'   [alt]='image.title'>
+  <img *ngIf='image.url && lazyload' [defaultImage]='defaultImage' [lazyLoad]='image.url' [offset]='offset'   [alt]='image.title'>
+  <img *ngIf='image.url && !lazyload'  [src]='image.url'  [alt]='image.title'>
 </div>

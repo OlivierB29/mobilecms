@@ -31,6 +31,9 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
   @Input() media = 'media';
 
 
+  @Input() lazyload = true;
+
+
   constructor(private log: Log, private readService: ReadService) {
     super();
     this.item = {

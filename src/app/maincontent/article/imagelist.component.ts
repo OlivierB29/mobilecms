@@ -20,4 +20,7 @@ export class ImageListComponent  {
 
 
   @Input() images: any[];
+
+
+  @Input() lazyload = true;
 }
