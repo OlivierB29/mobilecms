@@ -1,5 +1,5 @@
  <div class='my-activity'>
-    <button [routerLink]='url' class='my-activity-button my-mat-button-lighter'>
+    <button [routerLink]='url' class='my-activity-button my-mat-button-lighter shadow'>
     <div [innerHTML]='activity.name | uppercase'></div>
     <img *ngIf='activity.logo' [defaultImage]="defaultImage" [lazyLoad]="logo" [offset]="offset"  [alt]='activity.name' class='logo'>
     </button>

@@ -1,19 +1,18 @@
 .my-activity {
- text-align: center;
  padding-top: 0.5em;
+ text-align: center;
  width: 100%;
 }
 .my-activity-button {
- width: 90%;
- min-height: 8em;
  border: none;
- box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
  margin: 0.5em;
+ min-height: 8em;
+ width: 90%;
 }
 
 
 
 .logo {
-    max-width: 3em;
     margin-bottom: 0.5em;
+    max-width: 3em;
 }

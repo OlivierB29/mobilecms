@@ -6,7 +6,7 @@
 
 <div *ngFor='let dep of departmentObjectList'>
 
-  <button  [value]='dep.code' (click)='displayClubs(dep.code)' class='department-button my-mat-button-lighter'>
+  <button  [value]='dep.code' (click)='displayClubs(dep.code)' class='department-button my-mat-button-lighter shadow'>
     <div [innerHTML]='dep.name'></div>
 
   </button>
