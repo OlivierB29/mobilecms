@@ -5,8 +5,6 @@ import './rxjs-extensions';
 
 
 
-import { environment } from '../environments/environment';
-
 @Component({
   moduleId: module.id,
   selector: 'app-root',
@@ -15,9 +13,6 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent {
 
-  constructor() {
-  }
-
-
+  constructor() {}
 
 }

@@ -1,8 +1,16 @@
 <div *ngIf='opened' [class]='"menu-container theme-primary"'>
-
+  
+<div  *ngIf='mode !== "over"'>
   <div *ngFor="let menu of menuItems"  [routerLink]="menu.routerLink"  routerLinkActive="active"    [class]='"slidemenu-button-container my-mat-button-dark buttonseparator"'>
-    <app-menubutton *ngIf='mode !== "over"' [item]='menu' [class]='"menu-button"'></app-menubutton>
-    <app-menubutton *ngIf='mode === "over"' [item]='menu' (click)='close()' [class]='"menu-button"'></app-menubutton>
+    <app-menubutton [item]='menu' ></app-menubutton>
   </div>
   <div [class]='"buttonseparator"'></div>
+</div>
+
+<div *ngIf='mode === "over" && opened'>
+  <div *ngFor="let menu of menuItems"  (click)='close()' [routerLink]="menu.routerLink"  routerLinkActive="active"    [class]='"slidemenu-button-container my-mat-button-dark buttonseparator"'>
+    <app-menubutton [item]='menu' ></app-menubutton>
+  </div>
+  <div [class]='"buttonseparator"'></div>
+</div>
 </div>

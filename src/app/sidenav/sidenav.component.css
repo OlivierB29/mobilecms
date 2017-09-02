@@ -1,54 +1,40 @@
+.menu-container {
+  box-shadow: 5px 5px 10px 0 #656565;
+  height: 100%;
+  overflow: hidden;
+  transition-duration: .5s;
+  transition-property: transform, height;
+  transition-timing-function: cubic-bezier(.25, .8, .25, 1);
+  width: 13em;
+  z-index: 90;
+}
 
 .slidemenu-button-container {
-  text-align: left;
-  border: none;
-  min-height: 2em;
-  text-decoration:none;
-  padding: 0.4em;
+  padding: 0.5em;
+  text-decoration: none;
   width: 100%;
-}
-
-
-.menu-button {
-
-}
-
-.menu-container {
-
-  box-shadow: 5px 5px 10px 0 #656565;
-
-
-  transition-duration: .5s;
-   transition-timing-function: cubic-bezier(.25, .8, .25, 1);
-   transition-property: transform, height;
-  height: 100%;
-  width: 13em;
-
-  overflow: hidden;
-  z-index: 90;
 }
 
 @media all and (max-width: 54.999999em) {
   .menu-container {
-    position: absolute;
-    z-index: 100;
-    top: 0.5em;
     left: 0;
     min-width: 20%;
+    position: absolute;
+    top: 0.5em;
+    z-index: 100;
   }
 }
 
 @media all and (min-width: 55em) {
   .menu-container {
+    min-height: 60em;
     padding-top: 3em;
     position: relative;
-    min-height: 60em;
   }
 }
 
-
 .buttonseparator {
-  border-width: 0.07em 0 0 0;
-  border-style: solid;
   border-color: white;
+  border-style: solid;
+  border-width: 0.07em 0 0 0;
 }
