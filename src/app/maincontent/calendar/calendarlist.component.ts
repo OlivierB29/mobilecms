@@ -12,6 +12,7 @@ import { Log } from '../../shared/services/log.service';
 import { Event } from '../../shared/model/event';
 import { Activity } from '../../shared/model/activity';
 import { OrderbyPipe } from '../../shared/filters';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     moduleId: module.id,
@@ -51,7 +52,8 @@ export class CalendarListComponent implements OnInit {
         private dataservice: ReadService,
         private log: Log,
         private route: ActivatedRoute,
-        private orderby: OrderbyPipe
+        private orderby: OrderbyPipe,
+        private http: HttpClient
     ) {
     }
 
@@ -74,19 +76,18 @@ export class CalendarListComponent implements OnInit {
 
 
         if (this.activity) {
-          // case: activity selected
-            this.dataservice.getAll('calendar')
-                .subscribe((data: Event[]) => this.items = data,
-                error => this.log.debug('getCalendarEvents '  +  error),
-                () => {
-                  this.log.debug('getCalendarEvents complete : '  +  this.activity  +  ' '  +  this.items.length);
-                  // filter by activity
-                  this.items = this.items.filter(item => item.activity.indexOf(this.activity) !== -1);
+          this.http.get<any>(this.dataservice.getIndexUrl(this.type))
+              .subscribe((data: Event[]) => {
+                this.items = data;
+                this.log.debug('getCalendarEvents complete : '  +  this.activity  +  ' '  +  this.items.length);
+                // filter by activity
+                this.items = this.items.filter(item => item.activity.indexOf(this.activity) !== -1);
 
-                  // next events
-                  this.orderby.transform(this.items, 'date', 'asc');
-
+                // next events
+                this.orderby.transform(this.items, 'date', 'asc');
               });
+
+
         }
 
     }

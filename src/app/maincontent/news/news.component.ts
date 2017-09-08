@@ -5,7 +5,7 @@ import { OrderbyPipe } from '../../shared/filters';
 import { Log } from '../../shared/services/log.service';
 import { ReadService } from '../../shared/services/read.service';
 
-
+import { HttpClient, HttpResponse } from '@angular/common/http';
 
 @Component({
   moduleId: module.id,
@@ -29,7 +29,8 @@ export class NewsComponent implements AfterViewInit {
   constructor(
     private dataService: ReadService,
     private log: Log,
-    private orderby: OrderbyPipe
+    private orderby: OrderbyPipe,
+    private http: HttpClient
   ) {
     // initialize the component with empty values.
     // When using a low bandwith network, the goal is to display something during load.
@@ -45,33 +46,34 @@ export class NewsComponent implements AfterViewInit {
   ngAfterViewInit(): void {
 
     let dbItems = null;
-    this.dataService.getAll(this.type)
-      .subscribe((data: any[]) => dbItems = data,
-      error => this.log.debug(this.type + ' ' + error),
-      () => {
-        // in case of an unsorted index
-        // About 20 news per season, unless cf to https://angular.io/guide/pipes#!#no-filter-pipe
-        dbItems = this.orderby.transform(dbItems, 'date', 'desc');
+    this.http.get<any>(this.dataService.getIndexUrl(this.type))
+          .subscribe((data: any[]) => {
+            dbItems = data;
 
-        if (this.max > 0 && dbItems.length > this.max) {
-          dbItems = dbItems.slice(0, this.max);
-        }
+            // in case of an unsorted index
+            // About 20 news per season, unless cf to https://angular.io/guide/pipes#!#no-filter-pipe
+            dbItems = this.orderby.transform(dbItems, 'date', 'desc');
 
-        // purge unnecessary empty items
-        if (this.items.length > dbItems.length) {
-              this.items = this.items.filter(it => it.id !== '' );
-        }
+            if (this.max > 0 && dbItems.length > this.max) {
+              dbItems = dbItems.slice(0, this.max);
+            }
 
-        // replace or add new items
-        for (let i = 0; i < dbItems.length; i++) {
-          if (this.items.length > i) {
-            this.items[i] = dbItems[i];
-          } else {
-            this.items.push(dbItems[i]);
-          }
-        }
+            // purge unnecessary empty items
+            if (this.items.length > dbItems.length) {
+                  this.items = this.items.filter(it => it.id !== '' );
+            }
 
-      });
+            // replace or add new items
+            for (let i = 0; i < dbItems.length; i++) {
+              if (this.items.length > i) {
+                this.items[i] = dbItems[i];
+              } else {
+                this.items.push(dbItems[i]);
+              }
+            }
+          });
+
+
 
     this.log.debug('NewsComponent ' + this.type + ' ' + this.items.length);
 

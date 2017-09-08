@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Log } from '../../shared/services/log.service';
 import { Item } from '../../shared/model/item';
 import { ReadService } from '../../shared/services/read.service';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -24,17 +25,17 @@ export class FooterComponent implements OnInit {
 
     constructor(    private readService: ReadService,
 
-        private log: Log
+        private log: Log, private http: HttpClient
 ) {
 
      }
 
     ngOnInit(): void {
 
-            this.readService.getAllItems('about')
-                .subscribe((data: any[]) => this.items = data,
-                error => this.log.debug('getActivities'  +  error),
-                () => this.log.debug('getActivities complete'));
+
+    this.http.get<any>(this.readService.getIndexUrl('about'))
+    .subscribe((data: any[]) => this.items = data);
+
 
 
      }

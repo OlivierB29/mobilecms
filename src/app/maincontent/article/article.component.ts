@@ -4,6 +4,8 @@ import { ReadService } from '../../shared/services/read.service';
 import { Log } from '../../shared/services/log.service';
 import { environment } from '../../../environments/environment';
 
+import { HttpClient, HttpResponse } from '@angular/common/http';
+// import 'rxjs/add/operator/toPromise';
 
 @Component({
   moduleId: module.id,
@@ -34,7 +36,7 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
   @Input() lazyload = true;
 
 
-  constructor(private log: Log, private readService: ReadService) {
+  constructor(private log: Log, private readService: ReadService, private http: HttpClient) {
     super();
     this.item = {
       id: '', title: '...... .... ...........',
@@ -64,12 +66,13 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
     // const itemid = this.id != null ? this.id : this.item.id;
     const itemid = this.id;
     if (this.type && itemid) {
-      this.readService.get(this.type, itemid)
-        .subscribe((data: any) => {
-          this.item = data;
-          this.item.media = this.initMediaUrl(this.type, this.id, this.item.media, this.media);
-        },
-        error => console.error('get ' + error));
+
+      this.http.get<any>(this.readService.getUrl(this.type, itemid))
+          .subscribe((data: any) => {
+            this.item = data;
+            this.item.media = this.initMediaUrl(this.type, this.id, this.item.media, this.media);
+          });
+
     } else {
       if (!this.type) {
         this.log.debug('ArticleComponent empty type');

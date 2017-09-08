@@ -8,6 +8,7 @@ import { Activity } from '../../shared/model/activity';
 
 import { Log } from '../../shared/services/log.service';
 import { ReadService } from '../../shared/services/read.service';
+import { HttpClient } from '@angular/common/http';
 
 
 /**
@@ -35,6 +36,7 @@ export class CalendarActivitiesComponent implements OnInit {
   constructor(
     private router: Router,
     private dataService: ReadService,
+    private http: HttpClient,
     private log: Log,
     private route: ActivatedRoute
   ) {
@@ -50,12 +52,12 @@ export class CalendarActivitiesComponent implements OnInit {
     });
 
     // Load activities and add link URL, logo URL
-    this.dataService.getAll('activities')
-      .subscribe((data: Activity[]) => {
-        this.activityObjectList = data.filter(function(el) { return el.calendar === 'true'; });
-      },
-      error => this.log.debug('getActivities' + error),
-      () => this.log.debug('getActivities complete' + this.activityObjectList.length));
+    this.http.get<any>(this.dataService.getIndexUrl('activities'))
+.subscribe((data: Activity[]) => {
+this.activityObjectList = data.filter(function(el) { return el.calendar === 'true'; });
+});
+
+
 
   }
 }

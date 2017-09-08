@@ -4,7 +4,7 @@ import { OrderbyPipe } from '../../shared/filters';
 import { Log } from '../../shared/services/log.service';
 import { ReadService } from '../../shared/services/read.service';
 
-
+import { HttpClient, HttpResponse } from '@angular/common/http';
 
 
 @Component({
@@ -28,15 +28,16 @@ export class NewsPreviewComponent implements OnInit {
   constructor(
     private dataService: ReadService,
     private log: Log,
-    private orderby: OrderbyPipe
+    private orderby: OrderbyPipe,
+    private http: HttpClient
   ) {
   }
   ngOnInit(): void {
     let dbItems = null;
-    this.dataService.getAll(this.type)
-      .subscribe((data: any[]) => dbItems = data,
-      error => this.log.debug(this.type + ' ' + error),
-      () => {
+    this.http.get<any>(this.dataService.getIndexUrl(this.type))
+      .subscribe((data: any[]) => {
+        dbItems = data;
+
         dbItems = this.orderby.transform(dbItems, 'date', 'desc');
 
         if (this.max > 0 && dbItems.length > this.max) {

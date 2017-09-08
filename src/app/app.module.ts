@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { APP_BASE_HREF } from '@angular/common';
-import { HttpModule } from '@angular/http';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -46,13 +46,16 @@ import { SidenavcontainerComponent, SidenavComponent, MenubuttonComponent } from
 
 
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     AppRoutingModule,
     LazyLoadImageModule,
+
     SharedModule.forRoot(),
 ],
 
@@ -95,6 +98,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     Log,
     ReadService,
     MenuService,
+    HttpClient,
     OrderbyPipe
   ],
   bootstrap: [AppComponent]

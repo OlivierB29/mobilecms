@@ -5,6 +5,7 @@ import { ReadService } from '../../shared/services/read.service';
 import { Log } from '../../shared/services/log.service';
 import { Item } from '../../shared/model/item';
 import { OrderbyPipe } from '../../shared/filters';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class ItemsComponent implements OnInit {
   direction = 'asc';
 
 
-  constructor(private log: Log, private dataService: ReadService,
+  constructor(private log: Log, private dataService: ReadService, private http: HttpClient,
     private route: ActivatedRoute, private orderbyPipe: OrderbyPipe) {
   }
 
@@ -51,21 +52,17 @@ export class ItemsComponent implements OnInit {
 
     });
 
+    this.http.get<any>(this.dataService.getIndexUrl(this.type))
+    .subscribe((data: any[]) => {
+      this.items = data;
+      this.log.debug(this.type + ' ' + this.items.length);
+      if (this.orderby) {
+        // this.orderbyPipe.transform(this.items, this.orderby, this.direction);
+        this.orderbyPipe.transform(this.items, this.orderby, this.direction);
+      }
+    });
 
-    this.dataService.getAll(this.type)
-      .subscribe((data: any[]) => this.items = data,
-      error => this.log.debug(this.type + ' ' + error),
-      () => {
-        this.log.debug(this.type + ' ' + this.items.length);
-        if (this.orderby) {
-          // this.orderbyPipe.transform(this.items, this.orderby, this.direction);
-          this.orderbyPipe.transform(this.items, this.orderby, this.direction);
-        }
 
-
-      });
-
-    this.type = this.type;
   }
 
 

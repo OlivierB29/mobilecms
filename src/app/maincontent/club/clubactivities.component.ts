@@ -8,6 +8,7 @@ import { Activity } from '../../shared/model/activity';
 
 import { Log } from '../../shared/services/log.service';
 import { ReadService } from '../../shared/services/read.service';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 
 /**
 * Display a list of club activities :
@@ -37,7 +38,8 @@ export class ClubActivitiesComponent implements OnInit {
     private dataService: ReadService,
 
     private log: Log,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private http: HttpClient
   ) {
   }
 
@@ -52,13 +54,12 @@ export class ClubActivitiesComponent implements OnInit {
     //
     // Load activities and add link URL, logo URL
     //
-    this.dataService.getAll('activities')
-      .subscribe((data: Activity[]) => {
-        // all activities are displayed
-        this.activityObjectList = data;
-      },
-      error => this.log.debug('getActivities' + error),
-      () => this.log.debug('getActivities complete' + this.activityObjectList.length));
+    this.http.get<any>(this.dataService.getIndexUrl('activities'))
+    .subscribe((data: Activity[]) => {
+      // all activities are displayed
+      this.activityObjectList = data;
+    });
+
 
   }
 

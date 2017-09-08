@@ -8,6 +8,7 @@ import { Event } from '../../shared/model/event';
 
 
 import { environment } from '../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 
 /**
@@ -32,6 +33,7 @@ export class CalendarFeedComponent implements AfterViewInit {
   type = 'calendar';
 
   constructor(private dataService: ReadService,
+    private http: HttpClient,
     private log: Log,
     private orderby: OrderbyPipe) {
     // Add an empty item in order to display something.
@@ -41,32 +43,32 @@ export class CalendarFeedComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     let localItems = null;
-    this.dataService.getAll(this.type)
-      .subscribe((data: any[]) => localItems = data,
-      error => this.log.debug(this.type + ' ' + error),
-      () => {
-        // About 10-20 events per season.
-        // https://angular.io/guide/pipes#!#no-filter-pipe
+    // Load activities and add link URL, logo URL
+    this.http.get<any>(this.dataService.getIndexUrl(this.type))
+.subscribe((data: any[]) => {
+localItems = data;
+// About 10-20 events per season.
+// https://angular.io/guide/pipes#!#no-filter-pipe
 
-        // filter the next upcoming events
-        const now = new Date();
-        localItems = localItems.filter(obj => this.dateAfter(new Date(obj.date), now));
-        localItems = this.orderby.transform(localItems, 'date', 'asc');
-        if (this.max > 0 && localItems.length > this.max) {
-          localItems = localItems.slice(0, this.max);
-        }
-        this.log.debug(this.type + ' ' + localItems.length);
+// filter the next upcoming events
+const now = new Date();
+localItems = localItems.filter(obj => this.dateAfter(new Date(obj.date), now));
+localItems = this.orderby.transform(localItems, 'date', 'asc');
+if (this.max > 0 && localItems.length > this.max) {
+  localItems = localItems.slice(0, this.max);
+}
+this.log.debug(this.type + ' ' + localItems.length);
 
-        // replace or add new items
-        for (let i = 0; i < localItems.length; i++) {
-          if (this.items.length > i) {
-            this.items[i] = localItems[i];
-          } else {
-            this.items.push(localItems[i]);
-          }
-        }
+// replace or add new items
+for (let i = 0; i < localItems.length; i++) {
+  if (this.items.length > i) {
+    this.items[i] = localItems[i];
+  } else {
+    this.items.push(localItems[i]);
+  }
+}
+});
 
-      });
 
   }
 

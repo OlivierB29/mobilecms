@@ -2,6 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { environment } from '../../environments/environment';
 import { ReadService } from 'app/shared/services';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   moduleId: module.id,
@@ -28,7 +29,7 @@ export class SidenavcontainerComponent implements AfterViewInit {
   */
   menuOpened = false;
 
-  constructor(private titleService: Title, private meta: Meta, private readService: ReadService) {
+  constructor(private titleService: Title, private meta: Meta, private readService: ReadService, private http: HttpClient) {
 
     this.initLayout();
 
@@ -43,22 +44,22 @@ export class SidenavcontainerComponent implements AfterViewInit {
 
   fetchData() {
 
-    this.readService.get('description', 'head')
-      .subscribe((data: any) => {
-        const item = data;
-        this.titleService.setTitle(item.title);
+    this.http.get<any>(this.readService.getUrl('description', 'head'))
+              .subscribe((data: any) => {
+                const item = data;
+                this.titleService.setTitle(item.title);
 
-        if (this.layout === 'desktop') {
-          this.title = item.fulltitle;
-        } else {
-          this.title = item.title;
-        }
+                if (this.layout === 'desktop') {
+                  this.title = item.fulltitle;
+                } else {
+                  this.title = item.title;
+                }
 
-        this.meta.addTag({ name: 'keywords', content: item.keywords });
-        this.meta.addTag({ name: 'description', content: item.description });
+                this.meta.addTag({ name: 'keywords', content: item.keywords });
+                this.meta.addTag({ name: 'description', content: item.description });
 
-      },
-      error => console.error('get ' + error));
+              });
+
 
   }
 

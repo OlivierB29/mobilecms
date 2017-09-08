@@ -3,6 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ReadService } from '../../shared/services/read.service';
 
 import { Log } from '../../shared/services/log.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class ClubDetailComponent implements OnInit {
 
     constructor(
         private readService: ReadService,
+        private http: HttpClient,
         private log: Log
     ) {
     }
@@ -28,10 +30,10 @@ export class ClubDetailComponent implements OnInit {
 
         if (this.id) {
 
-            this.readService.get('clubs', this.id)
-                .subscribe((data: any) => this.item = data,
-                error => console.error('get'  +  error),
-                () => { this.log.debug('get clubs complete'); });
+            this.http.get<any>(this.readService.getUrl('clubs', this.id))
+                .subscribe((data: any) => {
+                  this.item = data;
+            });
         } else {
             console.error('app-my-clubdetail-component empty id');
         }
