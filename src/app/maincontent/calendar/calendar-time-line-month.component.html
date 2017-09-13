@@ -1,0 +1,31 @@
+<div class='divTable'>
+<div class='divTableRow'>
+<div class='divTableCell monthtable' *ngFor='let month of months'>
+
+<div class="divTable">
+  <div class='divTableHeading'>
+    <div class='divTableHead dayCell'>{{month.name}}</div>
+  </div><!-- divTableHeading -->
+<div class="divTableBody">
+<div class='divTableRow' *ngFor='let day of month.days'>
+  <div class='divTableCell monthdaycell' >
+        <div [class]='"cellBody "  + getDayOfMonthStyle(day.date.getDay())'>
+        <span [innerHTML]='day.number'></span>
+        <span [innerHTML]='day.name'></span>
+
+        <span *ngIf='day.items.length > 0' >
+    <div *ngFor="let currentItem of day.items" class='feed-article my-mat-button-dark shadow' [routerLink]='getUrl(currentItem)'>
+      <span class='calendar-icon' [innerHTML]='getItemTitleMonthFormat(currentItem)'></span>
+    </div>
+
+  </span>
+    </div>
+  </div><!-- divTableCell -->
+</div><!-- divTableRow -->
+</div><!-- body -->
+</div><!-- table -->
+
+
+</div><!-- divTableCell -->
+</div><!-- divTableRow -->
+</div><!-- table -->

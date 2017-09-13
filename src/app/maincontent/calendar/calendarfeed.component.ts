@@ -1,15 +1,12 @@
-import { Log } from '../../shared/services/log.service';
+
 import { Component, AfterViewInit, Input } from '@angular/core';
 
 import { ReadService } from '../../shared/services/read.service';
 import { OrderbyPipe } from '../../shared/filters';
-
 import { Event } from '../../shared/model/event';
-
-
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-
+import { Log } from '../../shared/services/log.service';
 
 /**
 * same timing animations

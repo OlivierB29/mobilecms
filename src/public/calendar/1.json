@@ -1,6 +1,7 @@
     {
         "id" : "1",
-        "date": "2018-09-01",
+        "date": "2018-01-11",
+        "enddate": "2018-01-14",
         "activity": "tennis",
         "title": "some seminar of tennis with media",
         "organization": "Some org",

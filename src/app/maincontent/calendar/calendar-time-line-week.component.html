@@ -1,0 +1,31 @@
+
+<div class="divTable">
+  <div class='divTableHeading'>
+    <div class='divTableHead dayCell'>L</div>
+    <div class='divTableHead dayCell'>M</div>
+    <div class='divTableHead dayCell'>M</div>
+    <div class='divTableHead dayCell'>J</div>
+    <div class='divTableHead dayCell'>V</div>
+    <div class='divTableHead dayCell'>S</div>
+    <div class='divTableHead dayCell'>D</div>
+
+  </div><!-- divTableHeading -->
+<div class="divTableBody">
+
+<div class='divTableRow' *ngFor='let week of weeks'>
+  <div class='divTableCell dayCell' *ngFor='let day of week.days'>
+        <div [class]='"cellBody "  + getCellStyle(day.date.getMonth())'>
+        <span [innerHTML]='day.number'></span>
+        <span *ngIf='day.number === 1' class='monthline' [innerHTML]='day.monthname' ></span>
+        <span *ngIf='day.items.length > 0' >
+    <div *ngFor="let currentItem of day.items" class='feed-article my-mat-button-dark shadow' [routerLink]='getUrl(currentItem)'>
+      <span class='calendar-icon' [innerHTML]='getShortTitle(currentItem)'></span>
+    </div>
+
+  </span>
+    </div>
+  </div><!-- divTableCell -->
+
+</div><!-- divTableRow -->
+</div><!-- body -->
+</div><!-- table -->

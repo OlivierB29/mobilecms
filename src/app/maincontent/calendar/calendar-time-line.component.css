@@ -1,0 +1,71 @@
+.feed-article {
+
+  margin: 0.2em;
+  padding: 0.2em;
+
+}
+
+.calendar-time-line-container {
+  display: block;
+}
+
+.calendar-time-line-event {
+    float: left;
+
+}
+.clearBoth { clear:both; }
+
+.feed-subtitle {
+  font-size: 0.7em;
+}
+.calendar-icon {
+  font-size: 1em;
+}
+
+
+.yearline {
+  background-color: #E0E0E0;
+}
+
+
+.monthline {
+  background-color: #E9E9E9;
+  text-align: center;
+}
+
+.dayline {
+  font-size: 0.8em;
+}
+.endofweekline {
+  border-bottom: 1px solid #ddd;
+  font-size: 0.8em;
+
+}
+
+
+
+/*
+* custom styles for table
+*/
+
+.cellBody {
+  height: 100%;
+  width: 100%;
+}
+
+.dayCell {
+  font-size: 0.75em;
+  height: 3em;
+  width: 14.2857%;
+
+}
+
+
+
+.monthCell1 {
+  background-color: pink;
+}
+
+.monthCell2 {
+  background-color: yellow;
+}
