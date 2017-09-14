@@ -61,13 +61,11 @@ export class DateUtil {
   }
 
   public isWeekEndDay(d: number): boolean {
-    //  should work ???  return d === 0 || d === 6;
-    return d === 0 || d === 1;
+    return d === 0 || d === 6;
   }
 
   public isWeekEndDate(date: Date): boolean {
-      // should work ??? return date.getDay() === 0 || date.getDay() === 6;
-      return date.getDay() === 0 || date.getDay() === 1 ;
+    return date.getDay() === 0 || date.getDay() === 6;
   }
 
 

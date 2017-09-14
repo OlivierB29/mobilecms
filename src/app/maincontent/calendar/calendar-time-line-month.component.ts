@@ -12,7 +12,9 @@ import { CalendarTimeLineComponent } from './calendar-time-line.component';
 })
 export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  implements AfterViewInit {
 
-  months: any[] = [];
+  years: any[] = [];
+
+//  months: any[] = [];
 
 
     ngAfterViewInit(): void {
@@ -63,6 +65,7 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
 */
     // list by months
     date = this.dateutil.getFirstDayOfMonth(current);
+
     while (this.dateutil.dateBefore(date, end)) {
       const lastday = this.dateutil.getLastDayOfMonth(date);
 
@@ -75,7 +78,7 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
       }
 
 
-      this.months.push({date: date, number: date.getMonth(),
+      this.getYearByNumber(date.getFullYear()).months.push({date: date, number: date.getMonth(),
          name: this.dateutil.getMonthName(date.getMonth()),
          days: days});
 
@@ -89,16 +92,27 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
 
     }
 
+    getYearByNumber(year: number) {
+      let result = null;
+      const match =  this.years.filter(obj =>  obj.number === year);
+      if (match.length > 0) {
+        result = match[0]
+      } else {
+        result = { number: year, months: [] };
+        this.years.push(result);
+
+      }
+      return result;
+    }
 
     getDayOfMonthStyle(day: number) {
       return this.dateutil.isWeekEndDay(day) ? 'weekend' : '';
     }
 
-
     getItemTitleMonthFormat(item: any): string {
       let result = '';
       const activitysize = 3;
-      const size = 30;
+      const size = 45;
 
       if (item.activity) {
         result += item.activity.toUpperCase() + ': ';
@@ -106,10 +120,8 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
       if (item.title) {
       result += item.title;
       if ( result.length > size) {
-        result += result.substring(0, size);
+        result = result.substring(0, size);
         result += '...';
-      } else {
-        result = result;
       }
       }
       return result;

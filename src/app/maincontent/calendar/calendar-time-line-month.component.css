@@ -1,9 +1,7 @@
 .monthdaycell {
   font-size: 0.75em;
 }
-.monthtable {
-  width: 10%;
-}
+
 
 .weekend {
   background-color: #E8E8FF;
@@ -19,4 +17,21 @@
 
 .activitycolor3 {
   background-color: #9A3820;
+}
+
+.monthtable {
+ display: flex;
+  width: 100%;
+}
+
+.yearheading {
+  width: 100%;
+  text-align: center;
+}
+
+@media all and (min-width: 55em) {
+	.monthtable {
+  display: table-cell;
+		width: 10em;
+	}
 }

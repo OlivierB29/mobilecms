@@ -1,6 +1,13 @@
+<div  *ngFor='let year of years'>
+  <div class='yearheading'>
+    {{year.number}}
+  </div>
+
 <div class='divTable'>
+
+
 <div class='divTableRow'>
-<div class='divTableCell monthtable' *ngFor='let month of months'>
+<div class='divTableCell monthtable' *ngFor='let month of year.months'>
 
 <div class="divTable">
   <div class='divTableHeading'>
@@ -29,3 +36,4 @@
 </div><!-- divTableCell -->
 </div><!-- divTableRow -->
 </div><!-- table -->
+</div><!-- global div -->
