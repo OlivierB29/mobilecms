@@ -5,6 +5,8 @@ It is initially intended to display content for a sport organization : News, cal
 Visit the [demo](https://olivierb29.github.io/mobilecms-demo/) on github pages
 
 [![Build Status](https://travis-ci.org/OlivierB29/mobilecms.svg?branch=master)](https://travis-ci.org/OlivierB29/mobilecms)
+[![Dependency Status][david-badge]][david-badge-url]
+[![devDependency Status][david-dev-badge]][david-dev-badge-url]
 
 Briefly :
 - Angular 4
