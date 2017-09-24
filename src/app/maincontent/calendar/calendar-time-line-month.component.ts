@@ -12,9 +12,9 @@ import { CalendarTimeLineComponent } from './calendar-time-line.component';
 })
 export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  implements AfterViewInit {
 
-  years: any[] = [];
+//  years: any[] = [];
 
-//  months: any[] = [];
+  months: any[] = [];
 
 
     ngAfterViewInit(): void {
@@ -78,7 +78,9 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
       }
 
 
-      this.getYearByNumber(date.getFullYear()).months.push({date: date, number: date.getMonth(),
+      this.months.push({date: date,
+         number: date.getMonth(),
+         year: date.getFullYear(),
          name: this.dateutil.getMonthName(date.getMonth()),
          days: days});
 
@@ -92,18 +94,7 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
 
     }
 
-    getYearByNumber(year: number) {
-      let result = null;
-      const match =  this.years.filter(obj =>  obj.number === year);
-      if (match.length > 0) {
-        result = match[0]
-      } else {
-        result = { number: year, months: [] };
-        this.years.push(result);
 
-      }
-      return result;
-    }
 
     getDayOfMonthStyle(day: number) {
       return this.dateutil.isWeekEndDay(day) ? 'weekend' : '';
@@ -125,5 +116,19 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
       }
       }
       return result;
+    }
+
+    /**
+    * Maximum 10 colors.
+    */
+    getCssColor(activity: string): string {
+      let color = 0;
+      if (activity && activity.length > 0) {
+        color = activity.charCodeAt(0);
+      }
+
+      color = color % 10;
+
+      return 'activitycolor' + color.toString();
     }
 }

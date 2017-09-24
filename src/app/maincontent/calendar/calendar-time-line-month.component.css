@@ -7,31 +7,73 @@
   background-color: #E8E8FF;
 }
 
+
+
+.monthtable {
+
+
+  width: 100%;
+}
+
+.flexcontainer {
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ }
+
+.yearheading {
+  text-align: center;
+}
+
+@media all and (min-width: 55em) {
+	.monthtable {
+
+		width: 20em;
+	}
+}
+
+
+
+/*
+* different colors by activity
+*/
+
+.activitycolor0 {
+  background-color: #BF360C;
+}
+
 .activitycolor1 {
-  background-color: #52302C;
+  background-color: #880E4F;
 }
 
 .activitycolor2 {
-  background-color: #F0F1F1;
+  background-color: #4A148C;
 }
 
 .activitycolor3 {
   background-color: #9A3820;
 }
 
-.monthtable {
- display: flex;
-  width: 100%;
+.activitycolor4 {
+  background-color: #9C27B0;
 }
 
-.yearheading {
-  width: 100%;
-  text-align: center;
+.activitycolor5 {
+  background-color: #673AB7;
 }
 
-@media all and (min-width: 55em) {
-	.monthtable {
-  display: table-cell;
-		width: 10em;
-	}
+.activitycolor6 {
+  background-color: #01579B;
+}
+
+.activitycolor7 {
+  background-color: #006064;
+}
+
+.activitycolor8 {
+  background-color: #004D40;
+}
+
+.activitycolor9 {
+  background-color: #212121;
 }

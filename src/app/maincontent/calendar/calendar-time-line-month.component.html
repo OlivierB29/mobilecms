@@ -1,17 +1,12 @@
-<div  *ngFor='let year of years'>
-  <div class='yearheading'>
-    {{year.number}}
-  </div>
+<div class='flexcontainer'>
 
-<div class='divTable'>
-
-
-<div class='divTableRow'>
-<div class='divTableCell monthtable' *ngFor='let month of year.months'>
+<div class='monthtable' *ngFor='let month of months; let i=index'>
 
 <div class="divTable">
+
   <div class='divTableHeading'>
-    <div class='divTableHead dayCell'>{{month.name}}</div>
+    <div class='divTableHead dayCell'>{{month.name}} <span *ngIf='month.number === 0 || i === 0'>{{month.year}}</span></div>
+
   </div><!-- divTableHeading -->
 <div class="divTableBody">
 <div class='divTableRow' *ngFor='let day of month.days'>
@@ -21,7 +16,7 @@
         <span [innerHTML]='day.name'></span>
 
         <span *ngIf='day.items.length > 0' >
-    <div *ngFor="let currentItem of day.items" class='feed-article my-mat-button-dark shadow' [routerLink]='getUrl(currentItem)'>
+    <div *ngFor="let currentItem of day.items" [class]='"feed-article shadow " + getCssColor(currentItem.activity)' [routerLink]='getUrl(currentItem)'>
       <span class='calendar-icon' [innerHTML]='getItemTitleMonthFormat(currentItem)'></span>
     </div>
 
@@ -33,7 +28,5 @@
 </div><!-- table -->
 
 
-</div><!-- divTableCell -->
-</div><!-- divTableRow -->
-</div><!-- table -->
-</div><!-- global div -->
+</div>
+</div>
