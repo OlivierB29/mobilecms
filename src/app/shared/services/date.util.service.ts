@@ -118,21 +118,7 @@ export class DateUtilService {
 
     }
 
-    dateEqualsDebug(date: Date, from: Date): boolean {
-      let result = false;
 
-      if (date && from) {
-        console.log(this.printDateYYYYMMDD(date) + ' / ' + this.printDateYYYYMMDD(from) );
-        if ( date.getMonth() === from.getMonth()
-            && date.getFullYear() === from.getFullYear()
-            && date.getDate() === from.getDate()) {
-          result = true;
-        }
-      }
-
-      return result;
-
-    }
 
     getLastDayOfMonth(d: Date) {
       let date = new Date(d);

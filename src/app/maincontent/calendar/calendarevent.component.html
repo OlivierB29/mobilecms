@@ -1,6 +1,11 @@
 
 <div class='calendarevent-container'>
-  <h3><a [routerLink]='parentUrl' [innerHTML]='activity | uppercase'></a></h3>
+  <h3>
+    <div class='my-mat-button-dark shadow' [routerLink]='parentUrl'>
+      <i [class]='"material-icons calendar-icon"'>date_range</i>
+       <span [innerHTML]='activity | uppercase'></span>
+    </div>
+  </h3>
 
   <app-article [item]='item' [lazyload]='false'></app-article>
 <div>
