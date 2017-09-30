@@ -1,13 +1,14 @@
 import { Component, AfterViewInit, Input } from '@angular/core';
 
 
-import { ReadService } from '../../shared/services/read.service';
-import { OrderbyPipe } from '../../shared/filters';
-import { Event } from '../../shared/model/event';
-import { environment } from '../../../environments/environment';
+import { ReadService } from 'app/shared/services/read.service';
+import { OrderbyPipe } from 'app/shared/filters';
+import { Event } from 'app/shared/model/event';
+import { environment } from 'environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Log } from '../../shared/services/log.service';
+import { Log } from 'app/shared/services/log.service';
 import { DateUtil } from 'app/shared/utils/date.util';
+import { RouteUtilService } from 'app/shared/services';
 
 
 @Component({
@@ -30,7 +31,8 @@ export class CalendarTimeLineComponent {
   constructor(protected dataService: ReadService,
     protected http: HttpClient,
     protected log: Log,
-    protected orderby: OrderbyPipe) {
+    protected orderby: OrderbyPipe,
+    private routeUtil: RouteUtilService) {
     // Add an empty item in order to display something.
     // Considering that IO operations are slow, it constructs a raw frame for the end user.
   //  this.items.push({ id: '', activity: '.....', title: '.... .... ........', date: '..-..-....' });
@@ -62,20 +64,13 @@ export class CalendarTimeLineComponent {
   }
 
 
-  /**
-  * get URL for current locale.
-  */
-  getUrl(item): string {
-    let result = '';
-    if ('fr' === environment.defaultlocale) {
-      result += '/calendrier/detail/';
-    } else {
-      result += '/calendar/detail/';
-    }
-    result += item.id;
 
-    return result;
-  }
+    /**
+    * get URL for current locale.
+    */
+    getUrl(item): string {
+      return this.routeUtil.getCalendarRoute(environment.defaultlocale) + '/detail/' + item.id;
+    }
 
 
   dateMatch(obj: any, from: Date): boolean {

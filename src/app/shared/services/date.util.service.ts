@@ -1,5 +1,5 @@
 
-export class DateUtil {
+export class DateUtilService {
   // TODO find true library for i18n date format
   private lang = 'en';
 
@@ -122,7 +122,7 @@ export class DateUtil {
       let result = false;
 
       if (date && from) {
-
+        console.log(this.printDateYYYYMMDD(date) + ' / ' + this.printDateYYYYMMDD(from) );
         if ( date.getMonth() === from.getMonth()
             && date.getFullYear() === from.getFullYear()
             && date.getDate() === from.getDate()) {

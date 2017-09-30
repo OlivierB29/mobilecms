@@ -1,6 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { environment } from '../../environments/environment';
+import { environment } from 'environments/environment';
 import { ReadService } from 'app/shared/services';
 import { HttpClient } from '@angular/common/http';
 

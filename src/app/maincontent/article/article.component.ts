@@ -2,7 +2,7 @@ import { Component, AfterViewInit, Input } from '@angular/core';
 import { MediaComponent } from './media.component';
 import { ReadService } from '../../shared/services/read.service';
 import { Log } from '../../shared/services/log.service';
-import { environment } from '../../../environments/environment';
+import { environment } from 'environments/environment';
 
 import { HttpClient, HttpResponse } from '@angular/common/http';
 // import 'rxjs/add/operator/toPromise';
@@ -38,10 +38,13 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
 
   constructor(private log: Log, private readService: ReadService, private http: HttpClient) {
     super();
-    this.item = {
-      id: '', title: '...... .... ...........',
-      description: this.getEmptyDescription()
-    };
+    if (!this.item) {
+      this.item = {
+        id: '', title: '...... .... ...........',
+        description: this.getEmptyDescription()
+      };
+    }
+
 
    }
 
@@ -56,18 +59,22 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
    }
 
   ngAfterViewInit() {
-    this.log.debug('ArticleComponent ' + this.id);
-    this.fetchData();
+
+    if (this.item && this.item.id) {
+      this.log.debug('ArticleComponent ' + this.item.id);
+    } else {
+      this.log.debug('ArticleComponent ' + this.id);
+      this.fetchData();
+    }
+
   }
 
 
   fetchData() {
 
-    // const itemid = this.id != null ? this.id : this.item.id;
-    const itemid = this.id;
-    if (this.type && itemid) {
+    if (this.type && this.id) {
 
-      this.http.get<any>(this.readService.getUrl(this.type, itemid))
+      this.http.get<any>(this.readService.getUrl(this.type, this.id))
           .subscribe((data: any) => {
             this.item = data;
             this.item.media = this.initMediaUrl(this.type, this.id, this.item.media, this.media);

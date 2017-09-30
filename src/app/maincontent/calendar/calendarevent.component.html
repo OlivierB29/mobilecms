@@ -1,3 +1,6 @@
+
 <div class='calendarevent-container'>
-  <app-article [type]='type' [id]='id' [lazyload]='false'></app-article>
+  <h3><a [routerLink]='parentUrl' [innerHTML]='activity | uppercase'></a></h3>
+
+  <app-article [item]='item' [lazyload]='false'></app-article>
 <div>

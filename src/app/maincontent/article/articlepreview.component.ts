@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MediaComponent } from './media.component';
 import { ReadService } from '../../shared/services/read.service';
 import { Log } from '../../shared/services/log.service';
-import { environment } from '../../../environments/environment';
+import { environment } from 'environments/environment';
 import { HttpClient } from '@angular/common/http';
 
 

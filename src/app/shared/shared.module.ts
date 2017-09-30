@@ -1,17 +1,33 @@
 
-// TODO create a module for shared classes and utilities
 
 import { NgModule, ModuleWithProviders } from '@angular/core';
+import { ActivityFilterPipe, BrPipe, DepartmentFilterPipe, OrderbyPipe } from './filters';
+import { Log, ReadService, RouteUtilService } from './services';
 
+@NgModule({
+    imports: [
 
-// Do not specify providers for modules that might be imported by a lazy loaded module.
+    ],
+    declarations: [
+      ActivityFilterPipe,
+      BrPipe,
+      DepartmentFilterPipe,
+      OrderbyPipe,
+    ],
+    providers: [
+      Log,
+      ReadService,
+      RouteUtilService
+    ],
+    entryComponents: [
+    ],
+    exports: [
+      ActivityFilterPipe,
+      OrderbyPipe,
+      DepartmentFilterPipe,
+      BrPipe,
+    ],
 
-
-@NgModule()
+})
 export class SharedModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: SharedModule
-    };
-  }
 }

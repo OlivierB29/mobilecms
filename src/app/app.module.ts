@@ -58,17 +58,11 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule,
     LazyLoadImageModule,
-
-    SharedModule.forRoot(),
+    SharedModule,
 ],
 
   declarations: [
 
-    ActivityFilterPipe,
-    OrderbyPipe,
-    DepartmentFilterPipe,
-
-    BrPipe,
 
     AppComponent,
     BannerComponent,

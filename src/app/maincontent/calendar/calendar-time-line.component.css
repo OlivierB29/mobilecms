@@ -4,6 +4,9 @@
   padding: 0.2em;
 
 }
+.feed-article:hover {
+  cursor: pointer;
+}
 
 .calendar-time-line-container {
   display: block;

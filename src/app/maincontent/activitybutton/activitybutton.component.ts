@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Activity } from '../../shared/model/activity';
-import { environment } from '../../../environments/environment';
+import { environment } from 'environments/environment';
 
 @Component({
   moduleId: module.id,
@@ -14,7 +14,7 @@ export class ActivityButtonComponent implements OnInit {
 
   @Input() activity: Activity = null;
 
-  url = '';
+  @Input() url = '';
 
   logo = '';
 
@@ -24,15 +24,21 @@ export class ActivityButtonComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() {
+
     if (this.activity) {
+      this.logo =  environment.public + '/activities/'  +  this.activity.name  +  '/'  +  this.activity.logo;
 
-      this.url += this.activity.name;
-
+      if (!this.url) {
+        // if the current page is /clubs/, then add 'tennis'
+        // The resulting button will open /clubs/tennis
+        this.url += this.activity.name;
+      }
     }
-    this.logo =  environment.public + '/activities/'  +  this.activity.name  +  '/'  +  this.activity.logo;
   }
 
 }
