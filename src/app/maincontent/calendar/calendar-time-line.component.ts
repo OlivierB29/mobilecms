@@ -69,7 +69,7 @@ export class CalendarTimeLineComponent {
     * get URL for current locale.
     */
     getUrl(item): string {
-      return this.routeUtil.getCalendarRoute(environment.defaultlocale) + '/detail/' + item.id;
+      return  'detail/' + item.id;
     }
 
 
