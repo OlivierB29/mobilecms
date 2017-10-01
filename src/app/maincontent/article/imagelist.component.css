@@ -4,6 +4,19 @@
 }
 
 .images-container img {
-	padding-top: 0.5em;
+	padding-top: 0.2em;
   width: 100%;
+}
+
+
+@media all and (min-width: 55em) {
+	.images-container img {
+		display: block;
+		margin: 0 auto;
+		max-height: 50em;
+	  max-width: 50em;
+		padding-top: 0.5em;
+
+	}
+
 }
