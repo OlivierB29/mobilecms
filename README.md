@@ -27,6 +27,8 @@ Since this project is the frontend, an admin app is necessary :
 ## Build
 Run `ng build --prod --build-optimizer` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+Demo build for github pages : `ng build --env=demo --base-href /mobilecms-demo/ --aot --build-optimizer`
+
 ## Deploy
 Transfer files in `dist` directory to your server (such as `/var/www/html/`).
 
