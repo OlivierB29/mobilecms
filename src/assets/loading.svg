@@ -1,1 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><svg width='198px' height='198px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-reload"><rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect><g><path d="M50 15A35 35 0 1 0 74.787 25.213" fill="none" stroke="#2299dd" stroke-width="12px"></path><path d="M50 0L50 30L66 15L50 0" fill="#2299dd"></path><animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="1s" repeatCount="indefinite"></animateTransform></g></svg>
+<svg width="200px"  height="200px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-dual-ring" style="background: none;">
+    <circle cx="50" cy="50" ng-attr-r="{{config.radius}}" ng-attr-stroke-width="{{config.width}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-dasharray="{{config.dasharray}}" fill="none" stroke-linecap="round" r="40" stroke-width="4" stroke="#394E5B" stroke-dasharray="62.83185307179586 62.83185307179586" transform="rotate(258 50 50)">
+      <animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform>
+    </circle>
+  </svg>
