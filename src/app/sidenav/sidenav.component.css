@@ -15,21 +15,27 @@
   width: 100%;
 }
 
-@media all and (max-width: 54.999999em) {
-  .menu-container {
+
+.menu-container {
     left: 0;
+    height: 100%;
     min-width: 20%;
     position: absolute;
     top: 0.5em;
-    z-index: 100;
-  }
+    z-index: 110;
 }
+
 
 @media all and (min-width: 55em) {
   .menu-container {
+    left:auto;
     min-height: 60em;
+    height: 100%;
+    min-width: inherit;
     padding-top: 3em;
     position: relative;
+    top:auto;
+    z-index: 80;
   }
 }
 

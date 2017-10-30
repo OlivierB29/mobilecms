@@ -1,5 +1,10 @@
 <div *ngFor="let currentItem of items" class='feed-article my-mat-button-dark shadow' [routerLink]='getUrl(currentItem)'>
-  <i [class]='"material-icons calendar-icon"'>event</i>
-  <span [innerHTML]='currentItem.date'>: </span> <span class='feed-subtitle' [innerHTML]='(currentItem.activity | uppercase)'></span> <span [innerHTML]='currentItem.title'></span>
+
+  <div>
+    <i [class]='"material-icons calendar-icon"'>event</i>
+    <span [innerHTML]='currentItem.date'>: </span> <span class='feed-subtitle' [innerHTML]='(currentItem.activity | uppercase)'></span>
+  </div>
+  <div [innerHTML]='currentItem.title'>  
+  </div>
 
 </div>

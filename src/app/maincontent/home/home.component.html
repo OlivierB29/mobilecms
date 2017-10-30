@@ -1,22 +1,13 @@
-<div [class]='"homepagecontainer"'>
+<div [class]='"flexcontainer"'>
 
-  <div [class]='"feedcontainer"'>
-       <app-my-calendar-feed></app-my-calendar-feed>
+  <div [class]='"flexfeedcontainer"'>
+    <app-my-calendar-feed></app-my-calendar-feed>
   </div>
 
-
-
-    <div [class]='"maincontent"'>
-
-      <app-my-news-component [max]='4'></app-my-news-component>
-
-
-        <div [routerLink]='"news"' [class]='"expand-title shadow"'>
-            <i [class]='"material-icons"'>expand_more</i>
-        </div>
-
-
+  <div [class]='"flexmaincontent"'>
+    <app-my-news-component [max]='4'></app-my-news-component>
+    <div [routerLink]='"news"' [class]='"expand-title shadow"'>
+      <i [class]='"material-icons"'>expand_more</i>
     </div>
-
-
+  </div>
 </div>

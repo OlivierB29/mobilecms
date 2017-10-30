@@ -9,12 +9,12 @@
 
 /* Image CSS Fit */
 .banner-container > img {
-  width: 100%;
+  max-width:100%;
   height: auto;
 }
 
 @media all and (min-width: 55em) {
-	.banner-container {
+	/*.banner-container {
 		min-height: 100px;
-	}
+	}*/
 }

@@ -10,9 +10,7 @@
 
 
 .monthtable {
-
-
-  width: 100%;
+flex: 1 1 100%;
 }
 
 .flexcontainer {
@@ -28,11 +26,35 @@
 @media all and (min-width: 55em) {
 	.monthtable {
 
-		width: 20em;
+		flex: 1 1 20em;
 	}
 }
 
 
+/* https://stackoverflow.com/questions/3839809/detect-iphone-ipad-purely-by-css#3839896 */
+@media screen and (max-device-width: 480px) and (orientation:portrait) {
+  .flexcontainer {
+    flex:none;
+    display: table;
+    width: 20em;
+  }
+  .monthtable {
+    flex:none;
+    width: 20em;
+  }
+}
+
+@media screen and (max-device-width: 480px) and (orientation:landscape) {
+  .flexcontainer {
+   flex:none;
+   display: table;
+    width: 20em;
+  }
+  .monthtable {
+    flex:none;
+    width: 20em;
+  }
+}
 
 /*
 * different colors by activity

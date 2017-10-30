@@ -1,23 +1,20 @@
 
 
-<div class='article-list'>
-  <div *ngIf="!activity">
+<div *ngIf="!activity" >
 
-
+  <div class='flexcontainer'>
+  <div class='flexfeedcontainer'>
     <div *ngFor="let activityLink of activityObjectList">
      <app-activitybutton [activity]='activityLink'></app-activitybutton>
     </div>
-
-
-
   </div>
-
-
-  <div *ngIf="activity">
-
-    <app-my-calendar-list [activity]='activity'></app-my-calendar-list>
+  <div class='flexmaincontent'>
+    <app-calendar-time-line-month></app-calendar-time-line-month>
   </div>
 </div>
 
+</div>
 
-<app-calendar-time-line-month *ngIf="!activity"></app-calendar-time-line-month>
+<div  *ngIf="activity" class='article-list'>
+    <app-my-calendar-list [activity]='activity'></app-my-calendar-list>
+</div>
