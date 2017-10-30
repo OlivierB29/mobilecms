@@ -3,9 +3,12 @@
   box-shadow: 5px 5px 10px 0 #656565;
   display:table;
   font-size: 1.25em;
+  left:0;
+  position: fixed;
   text-decoration: none;
+  top: 0;
   width: 100%;
-  z-index: 90;
+  z-index: 100;
 }
 
 
