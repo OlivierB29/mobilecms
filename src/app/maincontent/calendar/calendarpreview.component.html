@@ -1,0 +1,24 @@
+<div *ngIf='item' class='article-content'   [routerLink]='getUrl()'>
+  <div class='article-title my-mat-button-dark' >
+    <div>
+      <i [class]='"material-icons calendar-icon"'>event</i>
+      <span [innerHTML]='item.date'>: </span> <span class='feed-subtitle' [innerHTML]='(item.activity | uppercase)'></span>
+    </div>
+    <div [innerHTML]='item.title'></div>
+  </div>
+
+
+
+
+  <div *ngIf='show === "description"' class='article-description'>
+
+      <div [innerHTML]='getPreviewDescription()'  class='article-previewdescription'></div>
+
+    <div class='thumbnail-container'>
+      <img *ngIf='image' [defaultImage]='defaultImage' [lazyLoad]='image.url' [offset]='offset'   [alt]='image.title'>
+    </div>
+
+  </div>
+
+
+</div>

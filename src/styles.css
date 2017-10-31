@@ -7,10 +7,6 @@ body {
 /* list */
 
 .article-list {
-  /* global border around article-list */
-  border-color: #ddd;
-  border-style: solid;
-  border-width: 0 0 0 1px;
   /* spacing between article-list and border */
   padding: .7em 0;
 }
@@ -116,8 +112,7 @@ body {
   }
   /* display feed items on the right*/
   .flexfeedcontainer {
-    background-color: #f2f2f2;
-    flex: 1 1 30em;
+    flex: 1 1 auto;
     order: 2;
   }
 }
@@ -126,14 +121,17 @@ body {
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .flexcontainer {
-    flex-direction: column;
-    width: 60em;
+    flex:none;
+    display: table;
+    width: 70em;
   }
   .flexfeedcontainer {
-    order: 1;
+    flex:none;
+    display: table-cell;
   }
   .flexmaincontent {
-    order: 2;
+    flex:none;
+    display: table-cell;
   }
 }
 
@@ -142,7 +140,7 @@ body {
 /* https://stackoverflow.com/questions/3839809/detect-iphone-ipad-purely-by-css#3839896 */
 @media screen and (max-device-width: 480px) and (orientation:portrait) {
   .flexcontainer {
-    
+
     width: 20em;
   }
 }

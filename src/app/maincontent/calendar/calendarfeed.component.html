@@ -1,10 +1,11 @@
-<div *ngFor="let currentItem of items" class='feed-article my-mat-button-dark shadow' [routerLink]='getUrl(currentItem)'>
+<div *ngFor="let currentItem of items; let i=index" class='shadow'>
+<div *ngIf='i<preview && currentItem.id'>
+  <app-calendarpreview [type]='"calendar"' [id]='currentItem.id' [show]='"description"'></app-calendarpreview>
 
-  <div>
-    <i [class]='"material-icons calendar-icon"'>event</i>
-    <span [innerHTML]='currentItem.date'>: </span> <span class='feed-subtitle' [innerHTML]='(currentItem.activity | uppercase)'></span>
-  </div>
-  <div [innerHTML]='currentItem.title'>  
-  </div>
+</div>
+<div *ngIf='i>=preview'>
+  <app-calendarpreview [type]='"calendar"' [item]='currentItem'></app-calendarpreview>
+</div>
+
 
 </div>

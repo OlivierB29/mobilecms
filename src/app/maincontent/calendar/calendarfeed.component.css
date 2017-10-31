@@ -1,13 +1,12 @@
 .feed-article {
-  
-  margin: 0.2em;
-  padding: 0.2em;
+  font-weight: bold;
+  padding: 1.5em;
 }
-
 
 .feed-subtitle {
   font-size: 0.7em;
 }
+
 .calendar-icon {
   font-size: 1em;
 }

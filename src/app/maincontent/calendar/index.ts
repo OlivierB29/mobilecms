@@ -5,3 +5,4 @@ export * from './calendarfeed.component';
 export * from './calendar-time-line.component';
 export * from './calendar-time-line-week.component';
 export * from './calendar-time-line-month.component';
+export * from './calendarpreview.component';

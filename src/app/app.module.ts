@@ -35,6 +35,7 @@ import {
   CalendarTimeLineComponent,
   CalendarTimeLineWeekComponent,
   CalendarTimeLineMonthComponent,
+  CalendarPreviewComponent,
   CalendarFeedComponent
 } from './maincontent/calendar';
 
@@ -77,6 +78,7 @@ import { HttpClientModule } from '@angular/common/http';
     CalendarTimeLineComponent,
     CalendarTimeLineWeekComponent,
     CalendarTimeLineMonthComponent,
+    CalendarPreviewComponent,
     NewsComponent,
     NewsPreviewComponent,
     NewsDetailsComponent,

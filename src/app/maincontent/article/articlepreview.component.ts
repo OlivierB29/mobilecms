@@ -58,8 +58,12 @@ export class ArticlePreviewComponent  extends MediaComponent implements OnInit {
                    this.image = this.getImages()[0];
                  }
 
-                  // news/1
-                 this.url =  this.item.id;
+                  // TODO : news/1 vs calendar/detail/1
+                  if ('calendar' === this.type) {
+                    this.url = '/' + this.type + '/detail/' + this.item.id;
+                    } else {
+                    this.url = '/' + this.type + '/' + this.item.id;
+                  }
 
               });
 

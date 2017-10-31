@@ -7,7 +7,7 @@ import { Event } from 'app/shared//model/event';
 import { environment } from 'environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Log } from 'app/shared//services/log.service';
-import { RouteUtilService } from 'app/shared/services';
+
 
 /**
 * same timing animations
@@ -30,11 +30,12 @@ export class CalendarFeedComponent implements AfterViewInit {
 
   type = 'calendar';
 
+  @Input() preview = 2;
+
   constructor(private dataService: ReadService,
     private http: HttpClient,
     private log: Log,
-    private orderby: OrderbyPipe,
-    private routeUtil: RouteUtilService) {
+    private orderby: OrderbyPipe) {
     // Add an empty item in order to display something.
     // Considering that IO operations are slow, it constructs a raw frame for the end user.
     this.items.push({ id: '', activity: '.....', title: '.... .... ........', date: '..-..-....' });
@@ -84,12 +85,6 @@ for (let i = 0; i < localItems.length; i++) {
 
  }
 
-  /**
-  * get URL for current locale.
-  */
-  getUrl(item): string {
-    return this.routeUtil.getCalendarRoute(environment.defaultlocale) + '/detail/' + item.id;
-  }
 
 
 }
