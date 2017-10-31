@@ -73,7 +73,7 @@ export class CalendarPreviewComponent  extends MediaComponent implements OnInit 
 
 
   getUrl(): string {
-    return this.routeUtil.getCalendarRoute(environment.defaultlocale) + '/detail/' + this.item.id;
+    return '/' + this.routeUtil.getCalendarRoute(environment.defaultlocale) + '/detail/' + this.item.id;
   }
 
   getItem(): any {

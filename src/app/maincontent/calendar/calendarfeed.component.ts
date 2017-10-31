@@ -51,8 +51,9 @@ localItems = data;
 // https://angular.io/guide/pipes#!#no-filter-pipe
 
 // filter the next upcoming events
-const now = new Date();
-localItems = localItems.filter(obj => this.dateAfter(new Date(obj.date), now));
+const begin = new Date();
+begin.setDate(begin.getDate() - 7);
+localItems = localItems.filter(obj => this.dateAfter(new Date(obj.date), begin));
 localItems = this.orderby.transform(localItems, 'date', 'asc');
 if (this.max > 0 && localItems.length > this.max) {
   localItems = localItems.slice(0, this.max);
