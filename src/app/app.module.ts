@@ -97,6 +97,7 @@ import { HttpClientModule } from '@angular/common/http';
     SidenavcontainerComponent
   ],
   providers: [
+    {provide: APP_BASE_HREF, useValue: '/'},
     Log,
     ReadService,
     MenuService,
