@@ -6,7 +6,8 @@ import { SharedModule } from 'app/shared/shared.module';
 import { CalendarModule } from 'app/maincontent/calendar/calendar.module';
 import { NewsModule } from 'app/maincontent/news/news.module';
 import { SidenavcontainerComponent, SidenavComponent, MenubuttonComponent, HomeComponent, BannerComponent  } from './';
-
+import { FooterComponent } from './footer/footer.component';
+import { FeaturedComponent } from './featured/featured.component';
 import { MenuService } from './menu.service';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { mainRoutes } from './main.route';
@@ -26,7 +27,9 @@ import { mainRoutes } from './main.route';
       HomeComponent,
       MenubuttonComponent,
       SidenavComponent,
-      SidenavcontainerComponent
+      SidenavcontainerComponent,
+      FooterComponent,
+      FeaturedComponent,
     ],
     providers: [
     MenuService,
