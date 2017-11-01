@@ -7,7 +7,7 @@ Visit the [demo](https://olivierb29.github.io/mobilecms-demo/) on github pages
 [![Build Status](https://travis-ci.org/OlivierB29/mobilecms.svg?branch=master)](https://travis-ci.org/OlivierB29/mobilecms)
 
 Briefly :
-- Angular 4
+- Angular 5
 - [ng-lazyload-image](https://github.com/tjoskar/ng-lazyload-image)
 - Hosted on a cheap server, with no database available (see explanation in FAQ)
 - All the data is public, by default.
