@@ -1,0 +1,38 @@
+
+.article-content {
+  /*additional border: add a thicker aspect*/
+  border-width: 1px 1px 1px 1px ;
+  border-style: solid;
+
+  /* spacing between article-content  */
+	margin-bottom: 1em;
+  /* small decorating border */
+	border-color: #ddd;
+	color: #333;
+	background: white;
+
+}
+
+.article-description {
+  padding: 0.2em;
+}
+
+.article-description-container {
+  padding: 0.2em;
+}
+
+.article-subtitle {
+  font-size: 0.7em;
+  color: #999;
+}
+
+.article-title {
+  /*TODO*/
+	font-weight: bold;
+  padding: 1.5em;
+}
+
+.article-title-moreinfo {
+  text-align: right;
+  padding-right: 1em;
+}
