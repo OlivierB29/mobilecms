@@ -1,0 +1,20 @@
+/*
+* Initialize some space in page during image load.
+* min-height should not exceed banner height
+*/
+.banner-container {
+ padding-top: 0.5em;
+ min-height: 20px;
+}
+
+/* Image CSS Fit */
+.banner-container > img {
+  max-width:100%;
+  height: auto;
+}
+
+@media all and (min-width: 55em) {
+	/*.banner-container {
+		min-height: 100px;
+	}*/
+}

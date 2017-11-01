@@ -10,6 +10,9 @@ import { SharedModule } from 'app/shared/shared.module';
 import { ActivityModule } from 'app/maincontent/activity/activity.module';
 import { ArticleModule } from 'app/maincontent/article/article.module';
 
+import { calendarRoutes } from './calendar.route';
+
+
 import {
   CalendarListComponent,
   CalendarEventComponent,
@@ -30,6 +33,7 @@ import {
       SharedModule,
       ArticleModule,
       ActivityModule,
+      RouterModule.forRoot(calendarRoutes, { useHash: true })
     ],
     declarations: [
       CalendarListComponent,

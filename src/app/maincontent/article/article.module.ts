@@ -9,6 +9,7 @@ import { ArticleComponent, ArticlePreviewComponent, ArticlelistComponent,
 
 
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { articleRoutes } from './article.route';
 
 @NgModule({
     imports: [
@@ -16,7 +17,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
       BrowserModule,
       RouterModule,
       LazyLoadImageModule,
-      SharedModule
+      SharedModule,
+      RouterModule.forRoot(articleRoutes, { useHash: true })
     ],
     declarations: [
       ArticleComponent,

@@ -1,14 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { HomeComponent } from './maincontent/home/home.component';
-import { ArticleComponent } from './maincontent/article/article.component';
-import { NewsComponent, NewsDetailsComponent, NewsPreviewComponent } from './maincontent/news';
 import { ClubListComponent, ClubActivitiesComponent } from './maincontent/club';
-
-import { CalendarEventComponent, CalendarActivitiesComponent } from './maincontent/calendar';
-
-import { ItemsComponent } from 'app/maincontent/article';
 
 @NgModule({
   imports: [
@@ -18,18 +11,6 @@ import { ItemsComponent } from 'app/maincontent/article';
        */
 
        {
-         path: 'structure',
-         component: ItemsComponent, data: { type: 'structure', orderby: 'id' }
-       },
-       {
-         path: 'organisation',
-         component: ItemsComponent, data: { type: 'structure', orderby: 'id' }
-       },
-       {
-       path: '',
-       component: HomeComponent
-       },
-       {
          path: 'clubs',
          component: ClubActivitiesComponent
        },
@@ -38,73 +19,8 @@ import { ItemsComponent } from 'app/maincontent/article';
          component: ClubActivitiesComponent
        },
 
-       {
-           path: 'contact',
-           component: ItemsComponent, data: { type: 'contacts', orderby: 'id' }
-       },
 
-       {
-         path: 'reports',
-         component: ItemsComponent, data: { type: 'reports', orderby: 'id', direction: 'desc' }
-       },
-       {
-         path: 'comptesrendus',
-         component: ItemsComponent, data: { type: 'reports', orderby: 'id', direction: 'desc' }
-       },
-       {
-           path: 'links',
-           component: ItemsComponent, data: { type: 'links', orderby: 'id' }
-       },
-       {
-           path: 'liens',
-           component: ItemsComponent, data: { type: 'links', orderby: 'id' }
-       },
-       {
-         path: 'documents',
-         component: ItemsComponent, data: { type: 'documents', orderby: 'id' }
-       },
-       {
-         path: 'calendrier',
-         component: CalendarActivitiesComponent
-       },
-       {
-         path: 'calendrier/:activity',
-         component: CalendarActivitiesComponent
-       },
-       {
-         path: 'calendrier/detail/:id',
-         component: CalendarEventComponent
-       },
-       // EN
-       {
-         path: 'news',
-         component: NewsPreviewComponent
-       },
-       {
-         path: 'news/:id',
-         component: NewsDetailsComponent
-       },
-       // FR
-       {
-         path: 'actualites',
-         component: NewsPreviewComponent
-       },
-       {
-         path: 'actualites/:id',
-         component: NewsDetailsComponent
-       },
-       {
-         path: 'calendar',
-         component: CalendarActivitiesComponent
-       },
-       {
-         path: 'calendar/:activity',
-         component: CalendarActivitiesComponent
-       },
-       {
-         path: 'calendar/detail/:id',
-         component: CalendarEventComponent
-       }
+
 
     ], { useHash: true })
   ],
