@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   moduleId: module.id,
   selector: 'app-articlepreview',
   templateUrl: 'articlepreview.component.html',
-  styleUrls: ['articlepreview.component.css']
+  styleUrls: ['article.css', 'articlepreview.css', 'articlepreview.component.css']
 })
 export class ArticlePreviewComponent  extends MediaComponent implements OnInit {
 

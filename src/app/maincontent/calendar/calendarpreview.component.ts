@@ -12,7 +12,7 @@ import { RouteUtilService } from 'app/shared/services';
   moduleId: module.id,
   selector: 'app-calendarpreview',
   templateUrl: 'calendarpreview.component.html',
-  styleUrls: ['calendarpreview.component.css']
+  styleUrls: ['calendarpreview.component.css', '../article/article.css', '../article/articlepreview.css']
 })
 export class CalendarPreviewComponent  extends MediaComponent implements OnInit {
 
@@ -76,7 +76,8 @@ export class CalendarPreviewComponent  extends MediaComponent implements OnInit 
 
 
   getUrl(): string {
-    return this.baseHref + '/' + this.routeUtil.getCalendarRoute(environment.defaultlocale) + '/detail/' + this.item.id;
+    // TODO issue with baseHref
+    return '/#/' + this.routeUtil.getCalendarRoute(environment.defaultlocale) + '/detail/' + this.item.id;
   }
 
   getItem(): any {

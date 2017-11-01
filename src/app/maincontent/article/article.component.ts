@@ -11,7 +11,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
   moduleId: module.id,
   selector: 'app-article',
   templateUrl: 'article.component.html',
-  styleUrls: ['article.component.css']
+  styleUrls: ['article.css', 'article.component.css']
 })
 export class ArticleComponent extends MediaComponent implements AfterViewInit {
 

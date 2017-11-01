@@ -1,44 +1,4 @@
 
-.article-content {
-  /*additional border: add a thicker aspect*/
-  border-width: 1px 1px 1px 1px ;
-  border-style: solid;
-
-  /* spacing between article-content  */
-	margin-bottom: 1em;
-  /* small decorating border */
-	border-color: #ddd;
-	color: #333;
-	background: white;
-
-}
-
-
-.article-title {
+.article-title-decoration {
 	background-color: #e9e9e9;
-	font-weight: bold;
-  padding: 1.5em;
-}
-
-
-
-.article-description-container {
-  padding: 0.2em;
-}
-
-
-.article-description {
-  padding: 0.2em;
-}
-
-
-
-.article-subtitle {
-  font-size: 0.7em;
-  color: #999;
-}
-
-.article-title-moreinfo {
-  text-align: right;
-  padding-right: 1em;
 }
