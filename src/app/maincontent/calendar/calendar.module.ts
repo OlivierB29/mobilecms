@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
+
 import { RouterModule } from '@angular/router';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
@@ -27,7 +27,6 @@ import {
 @NgModule({
     imports: [
       CommonModule,
-      //BrowserModule,
       RouterModule,
       LazyLoadImageModule,
       SharedModule,
@@ -51,13 +50,6 @@ import {
     entryComponents: [
     ],
     exports: [
-      CalendarListComponent,
-      CalendarActivitiesComponent,
-      CalendarEventComponent,
-      CalendarTimeLineComponent,
-      CalendarTimeLineWeekComponent,
-      CalendarTimeLineMonthComponent,
-      CalendarPreviewComponent,
       CalendarFeedComponent,
     ],
 

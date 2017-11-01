@@ -134,17 +134,17 @@ body {
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .flexcontainer {
-    flex:none;
     display: table;
+    flex:none;
     width: 70em;
   }
   .flexfeedcontainer {
-    flex:none;
     display: table-cell;
+    flex:none;
   }
   .flexmaincontent {
-    flex:none;
     display: table-cell;
+    flex:none;
   }
 }
 
@@ -153,7 +153,6 @@ body {
 /* https://stackoverflow.com/questions/3839809/detect-iphone-ipad-purely-by-css#3839896 */
 @media screen and (max-device-width: 480px) and (orientation:portrait) {
   .flexcontainer {
-
     width: 20em;
   }
 }
