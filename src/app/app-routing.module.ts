@@ -8,9 +8,7 @@ import { ClubListComponent, ClubActivitiesComponent } from './maincontent/club';
 
 import { CalendarEventComponent, CalendarActivitiesComponent } from './maincontent/calendar';
 
-
-
-import { ItemsComponent } from './maincontent/items/items.component';
+import { ItemsComponent } from 'app/maincontent/article';
 
 @NgModule({
   imports: [

@@ -6,49 +6,22 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { SharedModule } from './shared/shared.module';
-
 import { FooterComponent } from './widget/footer/footer.component';
 import { HomeComponent } from './maincontent/home/home.component';
 import { FeaturedComponent } from './widget/featured/featured.component';
-
-
 import { BannerComponent } from './widget/banner/banner.component';
-
-
 import { BrPipe, OrderbyPipe,  ActivityFilterPipe, DepartmentFilterPipe } from './shared/filters';
 
-
-
 // Tools
-
 import { Log, ReadService } from 'app/shared/services';
-
 import { MenuService } from 'app/sidenav/menu.service';
-
-
+import { ActivityModule } from 'app/maincontent/activity/activity.module';
+import { ArticleModule } from 'app/maincontent/article/article.module';
+import { CalendarModule } from 'app/maincontent/calendar/calendar.module';
 // maincontent
 import { NewsComponent, NewsPreviewComponent, NewsDetailsComponent } from './maincontent/news';
-import {
-  CalendarListComponent,
-  CalendarEventComponent,
-  CalendarActivitiesComponent,
-  CalendarTimeLineComponent,
-  CalendarTimeLineWeekComponent,
-  CalendarTimeLineMonthComponent,
-  CalendarPreviewComponent,
-  CalendarFeedComponent
-} from './maincontent/calendar';
-
 import { ClubListComponent, ClubDetailComponent, ClubActivitiesComponent } from './maincontent/club';
-
-import { ActivityButtonComponent } from './maincontent/activitybutton/activitybutton.component';
-import { ArticleComponent, ArticlePreviewComponent, ArticlelistComponent,
-   AttachmentsComponent, ImageListComponent } from './maincontent/article';
-import { ItemsComponent } from './maincontent/items/items.component';
-
 import { SidenavcontainerComponent, SidenavComponent, MenubuttonComponent } from './sidenav';
-
-
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -59,50 +32,32 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule,
     LazyLoadImageModule,
+
     SharedModule,
+    ActivityModule,
+    ArticleModule,
+    CalendarModule,
 ],
-
   declarations: [
-
-
     AppComponent,
     BannerComponent,
-    CalendarFeedComponent,
     FeaturedComponent,
     FooterComponent,
-
     HomeComponent,
-    CalendarListComponent,
-    CalendarActivitiesComponent,
-    CalendarEventComponent,
-    CalendarTimeLineComponent,
-    CalendarTimeLineWeekComponent,
-    CalendarTimeLineMonthComponent,
-    CalendarPreviewComponent,
     NewsComponent,
     NewsPreviewComponent,
     NewsDetailsComponent,
     ClubListComponent,
     ClubActivitiesComponent,
     ClubDetailComponent,
-    ActivityButtonComponent,
-    ArticleComponent,
-    ArticlePreviewComponent,
-    ArticlelistComponent,
-    AttachmentsComponent,
-    ImageListComponent,
-    ItemsComponent,
     MenubuttonComponent,
     SidenavComponent,
     SidenavcontainerComponent
   ],
   providers: [
     {provide: APP_BASE_HREF, useValue: '/'},
-    Log,
-    ReadService,
     MenuService,
     HttpClient,
-    OrderbyPipe
   ],
   bootstrap: [AppComponent]
 })

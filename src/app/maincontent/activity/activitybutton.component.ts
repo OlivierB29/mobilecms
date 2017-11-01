@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Activity } from '../../shared/model/activity';
+import { Activity } from 'app/shared/model/activity';
 import { environment } from 'environments/environment';
 
 @Component({
@@ -12,9 +12,9 @@ import { environment } from 'environments/environment';
 export class ActivityButtonComponent implements OnInit {
 
 
-  @Input() activity: Activity = null;
+  @Input() public activity: Activity = null;
 
-  @Input() url = '';
+  @Input() public url = '';
 
   logo = '';
 

@@ -17,7 +17,8 @@ import { Log, ReadService, RouteUtilService } from './services';
     providers: [
       Log,
       ReadService,
-      RouteUtilService
+      RouteUtilService,
+      OrderbyPipe
     ],
     entryComponents: [
     ],

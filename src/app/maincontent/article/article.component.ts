@@ -18,29 +18,29 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
   /**
   * type data
   */
-  @Input() type: string;
+  @Input() public type: string;
 
   /**
   * item id
   */
-  @Input() id: string;
+  @Input() public id: string;
 
   /**
   * if data is preloaded
   */
-  @Input() item: any;
+  @Input() public item: any;
 
-  @Input() media = 'media';
+  @Input() public media = 'media';
 
 
-  @Input() lazyload = true;
+  @Input() public lazyload = true;
 
 
   constructor(private log: Log, private readService: ReadService, private http: HttpClient) {
     super();
     if (!this.item) {
       this.item = {
-        id: '', title: '...... .... ...........',
+        id: '', title: '...... .... ............',
         description: this.getEmptyDescription()
       };
     }
