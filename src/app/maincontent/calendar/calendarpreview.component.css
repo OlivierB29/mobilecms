@@ -63,3 +63,7 @@
   font-size: 0.7em;
   color: #999;
 }
+
+.hidelink {
+  text-decoration: none;
+}

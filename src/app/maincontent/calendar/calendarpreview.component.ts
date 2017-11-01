@@ -1,10 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
+import { APP_BASE_HREF } from '@angular/common';
 import { MediaComponent } from '../article/media.component';
 import { ReadService } from '../../shared/services/read.service';
 import { Log } from '../../shared/services/log.service';
 import { environment } from 'environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { RouteUtilService } from 'app/shared/services';
+
 
 @Component({
   moduleId: module.id,
@@ -34,12 +36,13 @@ export class CalendarPreviewComponent  extends MediaComponent implements OnInit 
   url = '';
 
   constructor(private log: Log, private readService: ReadService, private http: HttpClient,
-  private routeUtil: RouteUtilService) {
+  private routeUtil: RouteUtilService, @Inject(APP_BASE_HREF) private baseHref: string) {
   super();
  }
 
 
   ngOnInit() {
+
     if (!this.type) {
       throw new Error('Empty type');
     }
@@ -73,7 +76,7 @@ export class CalendarPreviewComponent  extends MediaComponent implements OnInit 
 
 
   getUrl(): string {
-    return '/' + this.routeUtil.getCalendarRoute(environment.defaultlocale) + '/detail/' + this.item.id;
+    return this.baseHref + '/' + this.routeUtil.getCalendarRoute(environment.defaultlocale) + '/detail/' + this.item.id;
   }
 
   getItem(): any {

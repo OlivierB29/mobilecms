@@ -1,4 +1,7 @@
-<div *ngIf='item' class='article-content'   [routerLink]='getUrl()'>
+<a *ngIf='item' class='hidelink'   [href]='getUrl()'>
+  <div class='article-content'>
+
+
   <div class='article-title my-mat-button-dark' >
     <div>
       <i [class]='"material-icons calendar-icon"'>event</i>
@@ -20,5 +23,5 @@
 
   </div>
 
-
 </div>
+</a>

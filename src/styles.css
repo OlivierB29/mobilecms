@@ -48,6 +48,10 @@ body {
 .my-mat-button-lighter:active {
   background-color: #8ca8b7;
 }
+.my-mat-button-lighter:hover {
+  background-color: #8ca8b7;
+}
+
 
 .my-mat-button-light {
   background-color: #8ca8b7;
@@ -57,6 +61,9 @@ body {
 }
 
 .my-mat-button-light:active {
+  background-color: #334d5a;
+}
+.my-mat-button-light:hover {
   background-color: #334d5a;
 }
 
@@ -70,6 +77,9 @@ body {
 .my-mat-button-dark:active {
   background-color: #8ca8b7;
 }
+.my-mat-button-dark:hover {
+  background-color: #8ca8b7;
+}
 
 .my-mat-button-darker {
   background-color: #334d5a;
@@ -79,6 +89,9 @@ body {
 }
 
 .my-mat-button-darker:active {
+  background-color: #5e7987;
+}
+.my-mat-button-darker:hover {
   background-color: #5e7987;
 }
 

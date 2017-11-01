@@ -25,7 +25,7 @@ Since this project is the frontend, an admin app is necessary :
 - Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
-Run `ng build --prod --build-optimizer` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `npm run dist` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 Demo build for github pages : `ng build --env=demo --base-href /mobilecms-demo/ --aot --build-optimizer`
 
