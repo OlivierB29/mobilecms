@@ -10,14 +10,6 @@ import { ClubListComponent, ClubActivitiesComponent } from './maincontent/club';
          (do not place feature module routes here, use an own -routing.module.ts in the feature instead)
        */
 
-       {
-         path: 'clubs',
-         component: ClubActivitiesComponent
-       },
-       {
-         path: 'clubs/:activity',
-         component: ClubActivitiesComponent
-       },
 
 
 

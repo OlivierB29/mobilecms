@@ -7,7 +7,7 @@ import { CalendarModule } from 'app/maincontent/calendar/calendar.module';
 import { NewsModule } from 'app/maincontent/news/news.module';
 import { SidenavcontainerComponent, SidenavComponent, MenubuttonComponent, HomeComponent, BannerComponent  } from './';
 
-
+import { MenuService } from './menu.service';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { mainRoutes } from './main.route';
 
@@ -30,7 +30,7 @@ import { mainRoutes } from './main.route';
       SidenavcontainerComponent
     ],
     providers: [
-
+    MenuService,
     ],
     entryComponents: [
     ],

@@ -12,7 +12,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 @NgModule({
     imports: [
       CommonModule,
-      BrowserModule,
+      //BrowserModule,
       RouterModule,
       LazyLoadImageModule,
       SharedModule,

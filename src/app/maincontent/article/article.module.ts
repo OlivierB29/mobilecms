@@ -14,7 +14,7 @@ import { articleRoutes } from './article.route';
 @NgModule({
     imports: [
       CommonModule,
-      BrowserModule,
+      // //BrowserModule,
       RouterModule,
       LazyLoadImageModule,
       SharedModule,

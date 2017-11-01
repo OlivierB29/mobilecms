@@ -27,7 +27,7 @@ import {
 @NgModule({
     imports: [
       CommonModule,
-      BrowserModule,
+      //BrowserModule,
       RouterModule,
       LazyLoadImageModule,
       SharedModule,

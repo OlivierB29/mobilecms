@@ -3,17 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { SharedModule } from 'app/shared/shared.module';
-import { ArticleModule } from 'app/maincontent/article/article.module';
 
-import {
-  NewsComponent,
-  NewsPreviewComponent,
-  NewsDetailsComponent
-} from './';
-
+import { ClubListComponent, ClubDetailComponent, ClubActivitiesComponent } from './';
+import { ActivityModule } from 'app/maincontent/activity/activity.module';
 
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { newsRoutes } from './news.route';
+import { clubRoutes } from './club.route';
 
 @NgModule({
   imports: [
@@ -22,13 +17,13 @@ import { newsRoutes } from './news.route';
     RouterModule,
     LazyLoadImageModule,
     SharedModule,
-    ArticleModule,
-    RouterModule.forRoot(newsRoutes, { useHash: true })
+    ActivityModule,
+    RouterModule.forRoot(clubRoutes, { useHash: true })
   ],
   declarations: [
-    NewsComponent,
-    NewsPreviewComponent,
-    NewsDetailsComponent,
+    ClubListComponent,
+    ClubActivitiesComponent,
+    ClubDetailComponent,
   ],
   providers: [
 
@@ -36,11 +31,11 @@ import { newsRoutes } from './news.route';
   entryComponents: [
   ],
   exports: [
-    NewsComponent,
-    NewsPreviewComponent,
-    NewsDetailsComponent,
+    ClubListComponent,
+    ClubActivitiesComponent,
+    ClubDetailComponent,
   ],
 
 })
-export class NewsModule {
+export class ClubModule {
 }
