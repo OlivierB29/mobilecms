@@ -14,7 +14,7 @@ import { CalendarModule } from 'app/maincontent/calendar/calendar.module';
 import { NewsModule } from 'app/maincontent/news/news.module';
 import { MainModule } from 'app/sidenav/main.module';
 import { ClubModule } from 'app/maincontent/club/club.module';
-
+import { ImageModule } from 'app/maincontent/image/image.module';
 
 @NgModule({
   imports: [
@@ -33,7 +33,7 @@ import { ClubModule } from 'app/maincontent/club/club.module';
     AppComponent,
   ],
   providers: [
-    {provide: APP_BASE_HREF, useValue: '/'},
+//    {provide: APP_BASE_HREF, useValue: '/'},
     HttpClient,
   ],
   bootstrap: [AppComponent]

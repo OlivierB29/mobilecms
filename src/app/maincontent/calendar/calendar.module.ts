@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 
-import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { ImageModule } from 'app/maincontent/image/image.module';
 
 import { SharedModule } from 'app/shared/shared.module';
 import { ActivityModule } from 'app/maincontent/activity/activity.module';
@@ -28,7 +28,7 @@ import {
     imports: [
       CommonModule,
       RouterModule,
-      LazyLoadImageModule,
+      ImageModule,
       SharedModule,
       ArticleModule,
       ActivityModule,

@@ -5,17 +5,17 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { SharedModule } from 'app/shared/shared.module';
 
 import { ArticleComponent, ArticlePreviewComponent, ArticlelistComponent,
-   AttachmentsComponent, ImageListComponent, ItemsComponent } from './';
+   AttachmentsComponent, ItemsComponent } from './';
 
 
-import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { ImageModule } from 'app/maincontent/image/image.module';
 import { articleRoutes } from './article.route';
 
 @NgModule({
     imports: [
       CommonModule,
       RouterModule,
-      LazyLoadImageModule,
+      ImageModule,
       SharedModule,
       RouterModule.forRoot(articleRoutes, { useHash: true })
     ],
@@ -24,7 +24,7 @@ import { articleRoutes } from './article.route';
       ArticlePreviewComponent,
       ArticlelistComponent,
       AttachmentsComponent,
-      ImageListComponent,
+
       ItemsComponent,
     ],
     providers: [

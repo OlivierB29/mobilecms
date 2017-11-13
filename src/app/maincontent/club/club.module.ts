@@ -7,7 +7,7 @@ import { SharedModule } from 'app/shared/shared.module';
 import { ClubListComponent, ClubDetailComponent, ClubActivitiesComponent } from './';
 import { ActivityModule } from 'app/maincontent/activity/activity.module';
 
-import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { ImageModule } from 'app/maincontent/image/image.module';
 import { clubRoutes } from './club.route';
 
 @NgModule({
@@ -15,7 +15,7 @@ import { clubRoutes } from './club.route';
     CommonModule,
 
     RouterModule,
-    LazyLoadImageModule,
+    ImageModule,
     SharedModule,
     ActivityModule,
     RouterModule.forRoot(clubRoutes, { useHash: true })

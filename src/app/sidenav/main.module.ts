@@ -9,14 +9,14 @@ import { SidenavcontainerComponent, SidenavComponent, MenubuttonComponent, HomeC
 import { FooterComponent } from './footer/footer.component';
 import { FeaturedComponent } from './featured/featured.component';
 import { MenuService } from './menu.service';
-import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { ImageModule } from 'app/maincontent/image/image.module';
 import { mainRoutes } from './main.route';
 
 @NgModule({
     imports: [
           CommonModule,
           RouterModule,
-          LazyLoadImageModule,
+          ImageModule,
           SharedModule,
           CalendarModule,
           NewsModule,

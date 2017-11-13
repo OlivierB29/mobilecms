@@ -1,0 +1,20 @@
+.images-container {
+	border-top: 1px solid #ddd;
+	padding-top: 0.5em;
+}
+
+.images-container img {
+	padding-top: 0.2em;
+  width: 100%;
+}
+
+
+@media all and (min-width: 55em) {
+	.images-container img {
+		display: block;
+		margin: 0 auto;
+	  max-width: 40em;
+		padding-top: 0.5em;
+	}
+
+}

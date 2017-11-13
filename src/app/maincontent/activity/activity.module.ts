@@ -7,14 +7,14 @@ import { SharedModule } from 'app/shared/shared.module';
 import { ActivityButtonComponent } from './';
 
 
-import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { ImageModule } from 'app/maincontent/image/image.module';
 
 @NgModule({
     imports: [
       CommonModule,
 
       RouterModule,
-      LazyLoadImageModule,
+      ImageModule,
       SharedModule,
     ],
     declarations: [

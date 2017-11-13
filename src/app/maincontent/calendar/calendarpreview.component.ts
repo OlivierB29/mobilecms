@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
-import { APP_BASE_HREF } from '@angular/common';
+//import { APP_BASE_HREF } from '@angular/common';
 import { MediaComponent } from '../article/media.component';
 import { ReadService } from '../../shared/services/read.service';
 import { Log } from '../../shared/services/log.service';
@@ -36,7 +36,9 @@ export class CalendarPreviewComponent  extends MediaComponent implements OnInit 
   url = '';
 
   constructor(private log: Log, private readService: ReadService, private http: HttpClient,
-  private routeUtil: RouteUtilService, @Inject(APP_BASE_HREF) private baseHref: string) {
+  private routeUtil: RouteUtilService,
+//   @Inject(APP_BASE_HREF) private baseHref: string
+ ) {
   super();
  }
 

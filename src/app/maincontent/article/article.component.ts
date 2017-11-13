@@ -106,4 +106,11 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
     return super.getAttachments();
   }
 
+  /**
+  * eg media/news/3/thumbnails
+  */
+  getThumbnailsUri(): string {
+    return 'media/' + this.type + '/' + this.id + '/thumbnails';
+  }
+
 }

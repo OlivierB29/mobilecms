@@ -12,14 +12,14 @@ import {
 } from './';
 
 
-import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { ImageModule } from 'app/maincontent/image/image.module';
 import { newsRoutes } from './news.route';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    LazyLoadImageModule,
+    ImageModule,
     SharedModule,
     ArticleModule,
     RouterModule.forRoot(newsRoutes, { useHash: true })
