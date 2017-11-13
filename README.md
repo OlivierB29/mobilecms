@@ -18,7 +18,7 @@ Since this project is the frontend, an admin app is necessary :
 - source code : [mobilecms-admin](https://github.com/OlivierB29/mobilecms-admin)
 
 ## Development server
-- Node JS 6+
+- Node JS
 - `npm install -g @angular/cli`
 - `npm install` or `yarn`
 - Run `ng serve` for a dev server.
