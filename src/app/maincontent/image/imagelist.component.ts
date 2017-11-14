@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { environment } from 'environments/environment';
+import { ImageUtils } from './image.utils';
 
 @Component({
   moduleId: module.id,
@@ -31,39 +32,13 @@ export class ImageListComponent  {
 
   public getDefaultImage(picture: any): string {
 
-    // default full size
-    let result =  picture.url;
-
-    if (picture && picture.thumbnails && picture.thumbnails.length > 0) {
-      // set the highest thumbnail resolution, if the browser doesn't support srcset
-      const index = picture.thumbnails.length - 1 ;
-      if (picture.thumbnails[index].url) {
-        result = environment.server + '/media/' + this.recorduri + '/thumbnails/' + picture.thumbnails[index].url;
-
-      }
-    }
-
-    return result;
+    return new ImageUtils().getDefaultImage(environment.server, this.recorduri, picture);
   }
 
   /**
   * https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/
   */
   public getThumbnailSrcSet(picture: any): string {
-
-    let result = '';
-    if (picture && picture.thumbnails) {
-
-      picture.thumbnails.forEach( th => {
-        if (th.url && th.width) {
-          result += environment.server + '/media/' + this.recorduri + '/thumbnails/' + th.url + ' ' + th.width + 'w,';
-
-        }
-
-      });
-      result = result.substring(0, result.length - 1);
-    }
-
-    return result;
+    return new ImageUtils().getThumbnailSrcSet(environment.server, this.recorduri, picture);
   }
 }

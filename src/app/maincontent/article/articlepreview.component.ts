@@ -5,6 +5,8 @@ import { Log } from '../../shared/services/log.service';
 import { environment } from 'environments/environment';
 import { HttpClient } from '@angular/common/http';
 
+import { ImageUtils } from 'app/maincontent/image';
+
 
 @Component({
   moduleId: module.id,
@@ -85,6 +87,9 @@ export class ArticlePreviewComponent  extends MediaComponent implements OnInit {
 
   }
 
+  public getThumbnail(picture: any): string {
 
+    return new ImageUtils().getThumbnail(environment.server, this.type + '/' + this.item.id, picture);
+  }
 
 }

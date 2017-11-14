@@ -11,8 +11,9 @@
     <div class='article-subtitle'>{{item.activity}} - {{item.date}}</div>
       <div [innerHTML]='getPreviewDescription()'  class='article-previewdescription'></div>
 
-    <div class='thumbnail-container'>
-      <img *ngIf='image' [defaultImage]='defaultImage' [lazyLoad]='image.url' [offset]='offset'   [alt]='image.title'>
+    <div class='thumbnail-container' *ngIf='image'>
+      <img *ngIf='!image.thumbnails' [defaultImage]='defaultImage' [lazyLoad]='image.url' [offset]='offset'   [alt]='image.title'>
+      <img *ngIf='image.thumbnails'  [src]='getThumbnail(image)' [alt]='image.title' >
     </div>
 
   </div>
