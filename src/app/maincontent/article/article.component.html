@@ -19,7 +19,7 @@
         <!-- media -->
 
         <app-attachments *ngIf='item.media || item.attachments' [attachments]='getAttachments()'></app-attachments>
-        <app-imagelist *ngIf='item.media || item.images' [thumbnailsuri]='getThumbnailsUri()' [images]='getImages()' [lazyload]='lazyload'></app-imagelist>
+        <app-imagelist *ngIf='item.media || item.images' [recorduri]='getRecordUri()' [images]='getImages()' [lazyload]='lazyload'></app-imagelist>
 
 
 

@@ -21,7 +21,7 @@ export class ImageListComponent  {
   /**
   * eg: media/news/3/thumbnails
   */
-  @Input() thumbnailsuri: string;
+  @Input() recorduri: string;
 
 
   @Input() images: any[];
@@ -30,15 +30,17 @@ export class ImageListComponent  {
   @Input() lazyload = false;
 
   public getDefaultImage(picture: any): string {
+
     // default full size
-    let result = picture.url;
+    let result =  picture.url;
 
     if (picture && picture.thumbnails && picture.thumbnails.length > 0) {
-      // TODO sort by size
-      if (picture.thumbnails[0].url) {
-        result = picture.thumbnails[0];
-      }
+      // set the highest thumbnail resolution, if the browser doesn't support srcset
+      const index = picture.thumbnails.length - 1 ;
+      if (picture.thumbnails[index].url) {
+        result = environment.server + '/media/' + this.recorduri + '/thumbnails/' + picture.thumbnails[index].url;
 
+      }
     }
 
     return result;
@@ -48,10 +50,16 @@ export class ImageListComponent  {
   * https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/
   */
   public getThumbnailSrcSet(picture: any): string {
+
     let result = '';
     if (picture && picture.thumbnails) {
+
       picture.thumbnails.forEach( th => {
-        result += this.thumbnailsuri + '/' + th.url + ' ' + th.width + 'w,';
+        if (th.url && th.width) {
+          result += environment.server + '/media/' + this.recorduri + '/thumbnails/' + th.url + ' ' + th.width + 'w,';
+
+        }
+
       });
       result = result.substring(0, result.length - 1);
     }

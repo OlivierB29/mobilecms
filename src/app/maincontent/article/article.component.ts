@@ -109,8 +109,8 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
   /**
   * eg media/news/3/thumbnails
   */
-  getThumbnailsUri(): string {
-    return 'media/' + this.type + '/' + this.id + '/thumbnails';
+  getRecordUri(): string {
+    return  this.type + '/' + this.id ;
   }
 
 }
