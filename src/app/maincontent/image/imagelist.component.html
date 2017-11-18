@@ -2,7 +2,7 @@
 <div *ngIf='images && images.length > 0' [class]='"images-container"'>
 <div *ngFor='let image of images'>
   <a [href]='image.url' [title]='image.title'>
-  <img *ngIf='!image.thumbnails'  [defaultImage]='defaultImage' [lazyLoad]='image.url' [alt]='image.title' >  
-  <img *ngIf='image.thumbnails'  [src]='getDefaultImage(image)' [srcset]='getThumbnailSrcSet(image)' [alt]='image.title' sizes='(min-width: 55em) 60vw, 100vw'>
+  <img *ngIf='!image.thumbnails' [src]='image.url' [alt]='image.title' >
+  <img *ngIf='image.thumbnails'  [src]='image.url' [srcset]='getThumbnailSrcSet(image)' [alt]='image.title' sizes='(min-width: 55em) 60vw, 100vw'>
   </a>
 </div>

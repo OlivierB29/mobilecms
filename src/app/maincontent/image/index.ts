@@ -1,2 +1,2 @@
 export * from './imagelist.component';
-export * from './image.utils';
+export * from './image.service';

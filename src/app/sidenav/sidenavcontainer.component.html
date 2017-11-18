@@ -25,7 +25,7 @@
 
   <!-- container -->
   <div >
-    <app-my-banner [layout]='layout'></app-my-banner>
+  <img [src]='bannerurl' [srcset]='getBannerSrcSet()' alt='' sizes='(min-width: 55em) 100vw' [class]='"image-auto-width"'>
 
     <!-- content -->
     <router-outlet></router-outlet>

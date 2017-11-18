@@ -3,6 +3,7 @@ import { Title, Meta } from '@angular/platform-browser';
 import { environment } from 'environments/environment';
 import { ReadService } from 'app/shared/services';
 import { HttpClient } from '@angular/common/http';
+import { ImageService } from 'app/maincontent/image';
 
 @Component({
   moduleId: module.id,
@@ -29,16 +30,41 @@ export class SidenavcontainerComponent implements AfterViewInit {
   */
   menuOpened = false;
 
-  constructor(private titleService: Title, private meta: Meta, private readService: ReadService, private http: HttpClient) {
+  bannerurl = '';
+
+  bannerpicture = null;
+
+  constructor(private titleService: Title,
+     private meta: Meta,
+     private readService: ReadService,
+     private http: HttpClient,
+     private imageService: ImageService) {
 
     this.initLayout();
 
+    this.bannerurl = environment.server + '/assets/banner.jpg';
+
+
+    this.bannerpicture = {};
+    this.bannerpicture.thumbnails = [];
+    this.bannerpicture.thumbnails.push({url : 'banner-672.jpg', width : '672'});
+    this.bannerpicture.thumbnails.push({url : 'banner-768.jpg', width : '768'});
+    this.bannerpicture.thumbnails.push({url : 'banner-1024.jpg', width : '1024'});
+    this.bannerpicture.thumbnails.push({url : 'banner-1200.jpg', width : '1200'});
+    this.bannerpicture.thumbnails.push({url : 'banner-1600.jpg', width : '1600'});
+    this.bannerpicture.thumbnails.push({url : 'banner-1600.jpg', width : '1900'});
   }
 
 
   ngAfterViewInit() {
     this.fetchData();
 
+  }
+
+
+
+  getBannerSrcSet() {
+    return this.imageService.getSrcSet(environment.server + '/assets/', this.bannerpicture);
   }
 
 

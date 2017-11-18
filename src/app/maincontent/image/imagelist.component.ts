@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { environment } from 'environments/environment';
-import { ImageUtils } from './image.utils';
+import { ImageService } from './image.service';
 
 @Component({
   moduleId: module.id,
@@ -30,15 +30,18 @@ export class ImageListComponent  {
 
   @Input() lazyload = false;
 
+  constructor(private imageService: ImageService) {
+ }
+
   public getDefaultImage(picture: any): string {
 
-    return new ImageUtils().getDefaultImage(environment.server, this.recorduri, picture);
+    return this.imageService.getDefaultImage(environment.server, this.recorduri, picture);
   }
 
   /**
   * https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/
   */
   public getThumbnailSrcSet(picture: any): string {
-    return new ImageUtils().getThumbnailSrcSet(environment.server, this.recorduri, picture);
+    return this.imageService.getThumbnailSrcSet(environment.server, this.recorduri, picture);
   }
 }

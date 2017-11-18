@@ -3,7 +3,7 @@
     <h3 [innerHTML]='activity.name | uppercase'></h3>
 
 
-    <img *ngIf='activity.logo' [defaultImage]="defaultImage" [lazyLoad]="logo" [offset]="offset"  [alt]='activity.name' class='logo'>
+    <img *ngIf='activity.logo' [src]="logo"  [alt]='activity.name' class='logo'>
 
     </button>
 

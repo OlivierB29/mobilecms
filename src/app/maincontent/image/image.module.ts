@@ -5,27 +5,26 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { SharedModule } from 'app/shared/shared.module';
 
 import { ImageListComponent } from './';
-import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { ImageService } from 'app/maincontent/image/image.service';
+
 
 @NgModule({
     imports: [
       CommonModule,
       RouterModule,
       SharedModule,
-      LazyLoadImageModule
     ],
     declarations: [
       ImageListComponent,
 
     ],
     providers: [
-
+      ImageService
     ],
     entryComponents: [
     ],
     exports: [
-      ImageListComponent,
-      LazyLoadImageModule
+      ImageListComponent
     ],
 
 })

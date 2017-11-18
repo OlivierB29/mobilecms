@@ -5,7 +5,7 @@ import { Log } from '../../shared/services/log.service';
 import { environment } from 'environments/environment';
 import { HttpClient } from '@angular/common/http';
 
-import { ImageUtils } from 'app/maincontent/image';
+import { ImageService } from 'app/maincontent/image';
 
 
 @Component({
@@ -33,10 +33,10 @@ export class ArticlePreviewComponent  extends MediaComponent implements OnInit {
   image: any ;
   url = '';
 
-  constructor(private log: Log, private readService: ReadService, private http: HttpClient) {
+  constructor(private log: Log, private readService: ReadService, private http: HttpClient,
+  private imageService: ImageService) {
   super();
  }
-
 
   ngOnInit() {
     this.log.debug('ArticlePreviewComponent ' + this.id);
@@ -89,7 +89,7 @@ export class ArticlePreviewComponent  extends MediaComponent implements OnInit {
 
   public getThumbnail(picture: any): string {
 
-    return new ImageUtils().getThumbnail(environment.server, this.type + '/' + this.item.id, picture);
+    return this.imageService.getThumbnail(environment.server, this.type + '/' + this.item.id, picture);
   }
 
 }
