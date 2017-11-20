@@ -34,7 +34,6 @@ export class ImageListComponent  {
  }
 
   public getDefaultImage(picture: any): string {
-
     return this.imageService.getDefaultImage(environment.server, this.recorduri, picture);
   }
 

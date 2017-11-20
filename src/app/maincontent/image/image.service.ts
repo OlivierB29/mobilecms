@@ -7,12 +7,11 @@ export class ImageService {
 
     // default full size
     let result =  picture.url;
-    console.log("!!!!!!!!!!!!!!!!!!" + JSON.stringify(picture));
+
     if (picture && picture.thumbnails && picture.thumbnails.length > 0) {
       const index = 0 ;
       if (picture.thumbnails[index].url) {
         result = server + '/media/' + recorduri + '/thumbnails/' + picture.thumbnails[index].url;
-        console.log("!!!!!!!!!!!!!!!!!! --> " + result);
       }
     }
 

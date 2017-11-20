@@ -35,17 +35,26 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
 
   @Input() public lazyload = true;
 
+  fetched = false;
+
+
+
 
   constructor(private log: Log, private readService: ReadService, private http: HttpClient) {
     super();
     if (!this.item) {
       this.item = {
-        id: '', title: '...... .... ............',
+        id: '', title: this.getEmptyTitle(),
         description: this.getEmptyDescription()
       };
+
     }
+   }
 
-
+   private getEmptyTitle(): string {
+     const result = '............ ...... .... ............';
+     // return this.convertToEmptyCharacters(result);
+     return result;
    }
 
    private getEmptyDescription(): string {
@@ -54,17 +63,25 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
        result += '...... .... ........... .. .... .. ..... ...... .... ....... ............ ....... .....';
        result += '... .. ............ .... ..... .... ..... ..... ... .......... ........... .......... \n';
      }
-
+     // return this.convertToEmptyCharacters(result);
      return result;
    }
 
+   // private convertToEmptyCharacters(str: string): string {
+   //   return str.replace(/\./g, '&nbsp;');
+   // }
+
+
   ngAfterViewInit() {
 
-    if (this.item && this.item.id) {
-      this.log.debug('ArticleComponent ' + this.item.id);
-    } else {
-      this.log.debug('ArticleComponent ' + this.id);
+
+
+    if (this.isRouteInit()) {
+      this.log.debug('ArticleComponent init ' + this.type + ' ' + this.id);
       this.fetchData();
+    } else if (this.isItemInit()) {
+      this.log.debug('ArticleComponent item ' + this.item.id);
+      this.fetched = true;
     }
 
   }
@@ -72,12 +89,13 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
 
   fetchData() {
 
-    if (this.type && this.id) {
+    if (this.isRouteInit()) {
 
       this.http.get<any>(this.readService.getUrl(this.type, this.id))
           .subscribe((data: any) => {
             this.item = data;
             this.item.media = this.initMediaUrl(this.type, this.id, this.item.media, this.media);
+            this.fetched = true;
           });
 
     } else {
@@ -92,6 +110,24 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
 
 
 
+  }
+
+  private isItemInit() {
+    return this.item && this.item.id;
+  }
+
+  private isRouteInit() {
+    return this.type && this.id;
+  }
+
+  public getId() {
+      let result = null;
+        if (this.type && this.id) {
+          result = this.id;
+        } else if (this.isItemInit()) {
+            result = this.item.id;
+        }
+    return result;
   }
 
   getItem(): any {
@@ -110,7 +146,7 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
   * eg media/news/3/thumbnails
   */
   getRecordUri(): string {
-    return  this.type + '/' + this.id ;
+    return  this.type + '/' + this.getId() ;
   }
 
 }

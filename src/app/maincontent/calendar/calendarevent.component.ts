@@ -66,11 +66,11 @@ export class CalendarEventComponent extends MediaComponent implements OnInit {
 
       } else {
         if (!this.type) {
-          this.log.error('empty type');
+          this.log.error('CalendarEventComponent empty type');
         }
 
         if (!this.id) {
-          this.log.error('empty id');
+          this.log.error('CalendarEventComponent empty id');
         }
       }
 
