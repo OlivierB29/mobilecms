@@ -8,9 +8,9 @@ Visit the [demo](https://olivierb29.github.io/mobilecms-demo/) on github pages
 
 Briefly :
 - Angular 5
-- [ng-lazyload-image](https://github.com/tjoskar/ng-lazyload-image)
+- HTML 5 images with srcset attribute
 - Hosted on a cheap server, with no database available (see explanation in FAQ)
-- All the data is public, by default.
+- All data is public
 
 ## Admin App
 Since this project is the frontend, an admin app is necessary :
@@ -19,6 +19,7 @@ Since this project is the frontend, an admin app is necessary :
 
 ## Development server
 - Node JS
+- yarn (optional)
 - `npm install -g @angular/cli`
 - `npm install` or `yarn`
 - Run `ng serve` for a dev server.

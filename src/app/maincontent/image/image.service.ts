@@ -7,13 +7,12 @@ export class ImageService {
 
     // default full size
     let result =  picture.url;
-
+    console.log("!!!!!!!!!!!!!!!!!!" + JSON.stringify(picture));
     if (picture && picture.thumbnails && picture.thumbnails.length > 0) {
-      // set the highest thumbnail resolution, if the browser doesn't support srcset
       const index = 0 ;
       if (picture.thumbnails[index].url) {
         result = server + '/media/' + recorduri + '/thumbnails/' + picture.thumbnails[index].url;
-
+        console.log("!!!!!!!!!!!!!!!!!! --> " + result);
       }
     }
 

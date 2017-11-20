@@ -9,23 +9,31 @@
         "url": "", "location" : "some place", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : "",
 
         "images":[
-            {"url":"public/calendar/attachments/athletes-1866487_640.jpg","title":"tennis"}
+            
           ],
         "attachments":
           [
 
           ],
         "media": [
-                  {
-                      "title": "tennis-2290639_640.jpg",
-                      "url": "tennis-2290639_640.jpg",
-                      "size": 106894,
-                      "mimetype": "image\/jpeg"
-                  },
+
                   {
                       "title": "tennis-178696_640.jpg",
                       "url": "tennis-178696_640.jpg",
                       "size": 146955,
+                      "mimetype": "image\/jpeg",
+                      "thumbnails": [
+                        {
+                            "width": "320",
+                            "height": "",
+                            "url": "tennis-178696_320.jpg"
+                        }
+            ]
+                  },
+                  {
+                      "title": "tennis-2290639_640.jpg",
+                      "url": "tennis-2290639_640.jpg",
+                      "size": 106894,
                       "mimetype": "image\/jpeg"
                   },
                   {

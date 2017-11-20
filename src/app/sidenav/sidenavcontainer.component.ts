@@ -42,7 +42,7 @@ export class SidenavcontainerComponent implements AfterViewInit {
 
     this.initLayout();
 
-    this.bannerurl = environment.server + '/assets/banner.jpg';
+    this.bannerurl = environment.server + '/assets/banner-1900.jpg';
 
 
     this.bannerpicture = {};

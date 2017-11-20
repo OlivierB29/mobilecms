@@ -169,16 +169,4 @@ body {
 }
 
 
-
 /* https://stackoverflow.com/questions/3839809/detect-iphone-ipad-purely-by-css#3839896 */
-@media screen and (max-device-width: 480px) and (orientation:portrait) {
-  .flexcontainer {
-    width: 20em;
-  }
-}
-
-@media screen and (max-device-width: 480px) and (orientation:landscape) {
-  .flexcontainer {
-    width: 20em;
-  }
-}

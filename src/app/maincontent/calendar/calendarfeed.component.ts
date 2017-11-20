@@ -52,7 +52,7 @@ localItems = data;
 
 // filter the next upcoming events
 const begin = new Date();
-begin.setDate(begin.getDate() - 7);
+begin.setDate(begin.getDate() - 1);
 localItems = localItems.filter(obj => this.dateAfter(new Date(obj.date), begin));
 localItems = this.orderby.transform(localItems, 'date', 'asc');
 if (this.max > 0 && localItems.length > this.max) {

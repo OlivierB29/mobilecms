@@ -12,8 +12,7 @@
       <div [innerHTML]='getPreviewDescription()'  class='article-previewdescription'></div>
 
     <div class='thumbnail-container' *ngIf='image'>
-      <img *ngIf='!image.thumbnails' [src]='image.url'    [alt]='image.title'>
-      <img *ngIf='image.thumbnails'  [src]='getThumbnail(image)' [alt]='image.title' >
+      <img [src]='getThumbnail(image)' [alt]='image.title' >
     </div>
 
   </div>

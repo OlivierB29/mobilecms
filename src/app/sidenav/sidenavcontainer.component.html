@@ -24,7 +24,7 @@
   <div *ngIf='menuMode === "over"'  [class]='"my-mat-sidenav-backdrop" + getBackdropCss(sidenav.isOpen())' (click)='sidenav.open()'></div>
 
   <!-- container -->
-  <div >
+  <div class='router-container'>
   <img [src]='bannerurl' [srcset]='getBannerSrcSet()' alt='' sizes='(min-width: 55em) 100vw' [class]='"image-auto-width"'>
 
     <!-- content -->

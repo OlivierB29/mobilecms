@@ -6,6 +6,7 @@ import { Log } from '../../shared/services/log.service';
 import { environment } from 'environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { RouteUtilService } from 'app/shared/services';
+import { ImageService } from 'app/maincontent/image';
 
 
 @Component({
@@ -37,7 +38,7 @@ export class CalendarPreviewComponent  extends MediaComponent implements OnInit 
 
   constructor(private log: Log, private readService: ReadService, private http: HttpClient,
   private routeUtil: RouteUtilService,
-//   @Inject(APP_BASE_HREF) private baseHref: string
+  private imageService: ImageService
  ) {
   super();
  }
@@ -97,6 +98,9 @@ export class CalendarPreviewComponent  extends MediaComponent implements OnInit 
 
   }
 
+  public getThumbnail(picture: any): string {
 
+    return this.imageService.getThumbnail(environment.server, this.type + '/' + this.item.id, picture);
+  }
 
 }

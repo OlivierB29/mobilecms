@@ -18,7 +18,9 @@
   width: 100%;
 }
 
-
+.router-container {
+  width:100%;
+}
 
 
 .top-menu-icon-container {
@@ -27,7 +29,7 @@
 }
 
 .image-auto-width {
-  max-width:100%;
+  width:100%;
   height: auto;
 }
 
