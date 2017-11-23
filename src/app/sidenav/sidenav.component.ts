@@ -17,13 +17,15 @@ export class SidenavComponent implements OnInit {
 
   menuItems: any[] = [];
 
-  constructor(private menuService: MenuService) { }
-
-  ngOnInit() {
+  constructor(private menuService: MenuService) {
     // Load the menu items
     this.lang = environment.defaultlocale;
 
     this.menuItems = this.menuService.getMenuData(this.lang);
+   }
+
+  ngOnInit() {
+
   }
 
   open() {

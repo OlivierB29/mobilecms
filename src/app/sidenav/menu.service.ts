@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-
+// import issue
+// const menufr = require('./menu.fr.json');
+// const menuen = require('./menu.en.json');
 @Injectable()
 export class MenuService {
 

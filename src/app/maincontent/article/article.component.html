@@ -12,7 +12,7 @@
       <div [class]='"article-description-container"'>
        <div *ngIf='item.activity && item.date' [class]='"article-subtitle"' [innerHTML]='item.activity + " - " + item.date'></div>
 
-        <div [innerHTML]='item.description | br' [class]='"article-description"' [ngClass]="{'emptytext': !fetched}"></div>
+        <div [innerHTML]='item.description | br' [class]='"article-description"'></div>
 
         <div *ngIf='item.location'><i class='material-icons'>pin_drop</i> {{item.location}}</div>
 

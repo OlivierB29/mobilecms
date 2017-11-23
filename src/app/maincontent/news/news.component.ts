@@ -21,7 +21,7 @@ export class NewsComponent implements AfterViewInit {
 
   errorMessage: any;
 
-  @Input() max = 1;
+  @Input() max = 3;
 
   type = 'news';
 

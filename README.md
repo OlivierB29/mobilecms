@@ -8,7 +8,7 @@ Visit the [demo](https://olivierb29.github.io/mobilecms-demo/) on github pages
 
 Briefly :
 - Angular 5
-- HTML 5 images with srcset attribute
+- HTML 5 images
 - Hosted on a cheap server, with no database available (see explanation in FAQ)
 - All data is public
 
@@ -34,6 +34,9 @@ Demo build for github pages : `ng build --env=demo --base-href /mobilecms-demo/ 
 Transfer files in `dist` directory to your server (such as `/var/www/html/`).
 
 ## FAQ
+- Browser compatibility
+Same as [Angular](https://angular.io/guide/browser-support) with polyfills. I tried some third party components, but it broke IE 11 and iOS 7 support.
+
 - Why not using a true CMS on a web hosting package ?
 Value for money.
 

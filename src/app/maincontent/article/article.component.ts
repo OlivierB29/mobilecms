@@ -49,6 +49,8 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
       };
 
     }
+
+    // TODO  [ngClass]='{"emptytext": !fetched}'
    }
 
    private getEmptyTitle(): string {
@@ -67,6 +69,7 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
      return result;
    }
 
+
    // private convertToEmptyCharacters(str: string): string {
    //   return str.replace(/\./g, '&nbsp;');
    // }
@@ -74,15 +77,7 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
 
   ngAfterViewInit() {
 
-
-
-    if (this.isRouteInit()) {
-      this.log.debug('ArticleComponent init ' + this.type + ' ' + this.id);
-      this.fetchData();
-    } else if (this.isItemInit()) {
-      this.log.debug('ArticleComponent item ' + this.item.id);
-      this.fetched = true;
-    }
+    this.fetchData();
 
   }
 
@@ -90,6 +85,7 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
   fetchData() {
 
     if (this.isRouteInit()) {
+      this.log.debug('ArticleComponent init ' + this.type + ' ' + this.id);
 
       this.http.get<any>(this.readService.getUrl(this.type, this.id))
           .subscribe((data: any) => {
@@ -98,6 +94,9 @@ export class ArticleComponent extends MediaComponent implements AfterViewInit {
             this.fetched = true;
           });
 
+    } else if (this.isItemInit()) {
+      this.log.debug('ArticleComponent item ' + this.item.id);
+      this.fetched = true;
     } else {
       if (!this.type) {
         this.log.debug('ArticleComponent empty type');
