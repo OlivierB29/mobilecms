@@ -1,3 +1,10 @@
+.slidemenu-button-container {
+  display: block;
+  line-height: 2.25em;
+  width: 100%;
+}
+
+
 .slidemenu-button {
   color: white;
   text-decoration: none;
@@ -5,23 +12,16 @@
 }
 
 .slidemenu-button-icon {
-  font-size: 0.9em;
+  font-size: 0.94em;
 }
 
 .icon-container {
-  padding: 0 0.5em 0 0.5em;
-  text-align: center;
+  margin: 0 0 0 1em;
+
 }
 
 .slidemenu-button-text {
-  font-size: 0.9em;
+  font-size: 0.94em;
   font-weight: 500;
   text-decoration: none;
-}
-
-.slidemenu-button-container {
-  padding: 0.5em;
-  width: 100%;
-  display: block;
-  
 }

@@ -1,23 +1,14 @@
 .menu-container {
   box-shadow: 5px 5px 10px 0 #656565;
   height: 100%;
-  overflow: hidden;
+  left: 0;
+  position: absolute;
+  top: 0.5em;
   transition-duration: .5s;
   transition-property: transform, height;
   transition-timing-function: cubic-bezier(.25, .8, .25, 1);
-
-  z-index: 90;
   width: 2.8em;
-}
-
-
-
-.menu-container {
-    left: 0;
-    height: 100%;
-    position: absolute;
-    top: 0.5em;
-    z-index: 110;
+  z-index: 110;
 }
 
 
@@ -28,9 +19,9 @@
 
 @media all and (min-width: 55em) {
   .menu-container {
+    height: 100%;
     left:auto;
     min-height: 60em;
-    height: 100%;
     min-width: inherit;
     padding-top: 3em;
     position: relative;
