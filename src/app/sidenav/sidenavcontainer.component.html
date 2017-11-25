@@ -21,7 +21,7 @@
   <app-sidenav #sidenav [mode]='menuMode' [opened]='menuOpened'></app-sidenav>
 
   <!-- fading backdrop : close menu on click -->
-  <div *ngIf='menuMode === "over"'  [class]='"my-mat-sidenav-backdrop" + getBackdropCss(sidenav.isOpen())' (click)='sidenav.open()'></div>
+  <div *ngIf='menuMode === "over"'  [class]='"my-mat-sidenav-backdrop"' [ngClass]='{"my-mat-sidenav-shown": sidenav.isOpen()}' (click)='sidenav.open()'></div>
 
   <!-- container -->
   <div class='router-container'>

@@ -15,10 +15,6 @@ export class SidenavcontainerComponent implements AfterViewInit {
 
   title = '';
 
-  /**
-  * desktop | mobile
-  */
-  layout: string;
 
   /**
   * https://material.angular.io/components/component/sidenav
@@ -75,7 +71,7 @@ export class SidenavcontainerComponent implements AfterViewInit {
                 const item = data;
                 this.titleService.setTitle(item.title);
 
-                if (this.layout === 'desktop') {
+                if (this.getLayout() === 'desktop') {
                   this.title = item.fulltitle;
                 } else {
                   this.title = item.title;
@@ -90,10 +86,10 @@ export class SidenavcontainerComponent implements AfterViewInit {
   }
 
   initLayout() {
-    this.layout = this.getLayout();
+    const layout = this.getLayout();
     this.menuOpened = false;
     this.menuMode = 'over';
-    if (this.layout === 'desktop') {
+    if (layout === 'desktop') {
       this.menuMode = 'side';
       this.menuOpened = true;
     }
@@ -101,17 +97,6 @@ export class SidenavcontainerComponent implements AfterViewInit {
   }
 
 
-  /**
-  * conditionnal CSS for displaying backdrop
-  */
-  getBackdropCss(mobileMenuOpened: boolean): string {
-    let result = ' ';
-    if (mobileMenuOpened) {
-      result += 'my-mat-sidenav-shown';
-    }
-
-    return result;
-  }
 
   getLayout(): string {
     let layout = 'mobile';
