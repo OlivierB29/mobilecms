@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
 import { environment } from 'environments/environment';
 import { MenuService } from './menu.service';
 
@@ -14,44 +14,44 @@ import 'rxjs/add/operator/filter';
   templateUrl: 'sidenav.component.html',
   styleUrls: ['sidenav.component.css']
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent implements OnInit, AfterViewInit {
 
   @Input() mode = 'side';
   @Input() opened: boolean;
 
-  @Input() expanded: boolean;
+  @Input() expanded = false;
 
-  lang: string;
+  @Input() lang: string;
 
   menuItems: any[] = [];
 
 
   constructor(private menuService: MenuService) {
-    // Load the menu items
-    this.lang = environment.defaultlocale;
-
-    this.menuItems = this.menuService.getMenuData(this.lang);
-
     this.setLayout();
 
-
-     const $resizeEvent = Observable.fromEvent(window, 'resize')
-    .map(() => {
-      return document.documentElement.clientWidth;
-    })
-    .debounceTime(200)
+     const $resizeEvent = Observable.fromEvent(window, 'resize').map(() => {
+       return document.documentElement.clientWidth;
+     }).debounceTime(200);
 
     $resizeEvent.subscribe(data => {
-      this.setLayout()
+      this.setLayout();
     });
+
    }
 
   ngOnInit() {
+    this.lang = environment.defaultlocale;
+    this.menuService.getMenuData(this.lang)
+        .subscribe((data: any[]) => {
+          data.forEach(item => this.menuItems.push(item));
+        });
+  }
+
+  ngAfterViewInit() {
 
   }
 
   open() {
-
     this.opened = !this.opened;
   }
 

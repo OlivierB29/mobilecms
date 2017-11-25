@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MenuItem } from './menuitem';
-import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -8,19 +7,12 @@ import { Router } from '@angular/router';
   templateUrl: 'menubutton.component.html',
   styleUrls: ['menubutton.component.css']
 })
-export class MenubuttonComponent implements OnInit {
+export class MenubuttonComponent {
 
   @Input() item: MenuItem;
 
   @Input() expanded: boolean;
 
-  constructor(private router: Router) { }
-
-  ngOnInit() {
-  }
-
-  open(): void {
-    this.router.navigate([this.item.routerLink]);
-  }
+  constructor() { }
 
 }

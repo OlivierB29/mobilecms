@@ -1,7 +1,8 @@
 <div *ngIf='isOpen()' [class]='"menu-container theme-primary"'  [ngClass]='{"menu-container-expanded": isExpanded()}'>
-
-<div *ngFor='let menu of menuItems'  (click)='expandClose()'  [routerLink]='menu.routerLink'  routerLinkActive='active'    [class]='"slidemenu-button-container my-mat-button-dark buttonseparator"'>
-  <app-menubutton [item]='menu' [expanded]='expanded' ></app-menubutton>
-</div>
 <div [class]='"buttonseparator"'></div>
+<span *ngFor='let menu of menuItems' (click)='expandClose()' >
+  <app-menubutton [item]='menu' [expanded]='expanded' ></app-menubutton>
+  <div [class]='"buttonseparator"'></div>
+</span>
+
 </div>

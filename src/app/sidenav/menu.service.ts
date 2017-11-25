@@ -1,4 +1,10 @@
 import { Injectable } from '@angular/core';
+
+
+import { HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+
 // import issue
 // const menufr = require('./menu.fr.json');
 // const menuen = require('./menu.en.json');
@@ -11,7 +17,7 @@ export class MenuService {
     * - It seems to block the loading and display of the page ( test with Google Page Insight).
     * - Menu data is rarely modified
     */
-    getMenuData(lang: string): any[] {
+    getMenuData(lang: string): Observable<any[]> {
     let result: any[];
     switch (lang) {
       case 'fr':
@@ -37,11 +43,10 @@ export class MenuService {
           { 'id': 'reports', 'routerLink': '/reports', 'title': 'Reports', 'icon': 'assignment', 'order': '6' },
           { 'id': 'links', 'routerLink': '/links', 'title': 'Links', 'icon': 'bookmark', 'order': '7' },
           { 'id': 'contact', 'routerLink': '/contact', 'title': 'Contact', 'icon': 'mail', 'order': '8' }];
-      };
+      }
     }
 
-
-    return result;
+    return Observable.of(result);
   }
 
 }

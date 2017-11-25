@@ -26,17 +26,12 @@
 .top-menu-icon-container {
   display: table-cell;
   padding: 0.5em ;
+  width: 2.8em;
 }
 
 .image-auto-width {
-  width:100%;
   height: auto;
-}
-
-
-.top-menu-icon {
-  height: 100%;
-  width: 100%;
+  width:100%;
 }
 
 .top-menu-title {

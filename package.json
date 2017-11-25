@@ -9,7 +9,9 @@
     "dist": "ng build --prod --build-optimizer",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "demo": "ng serve --env=demo",
+    "demobuild": "ng build --env=demo --base-href /mobilecms-demo/"
   },
   "private": true,
   "dependencies": {

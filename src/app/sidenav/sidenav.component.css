@@ -7,13 +7,9 @@
   transition-timing-function: cubic-bezier(.25, .8, .25, 1);
 
   z-index: 90;
+  width: 2.8em;
 }
 
-.slidemenu-button-container {
-  padding: 0.5em;
-  text-decoration: none;
-  width: 100%;
-}
 
 
 .menu-container {
