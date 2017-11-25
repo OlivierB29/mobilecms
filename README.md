@@ -47,3 +47,6 @@ I prefer a domain name, instead of mysite.company.com
 Some entry level offers don't have any database, and <10MB of file storage, such as a domain name package.
 In future plans, with the growing data, the database may become useful.
 For now, we have 10-20 news per year, and roughly the same for calendar events.
+
+- Server hardware requirements
+Depending of simultaneous users, it can be hosted on anything, even a Raspberry Pi.

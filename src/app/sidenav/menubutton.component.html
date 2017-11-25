@@ -1,3 +1,3 @@
 
 <i  class='material-icons slidemenu-button-icon' [innerHTML]='item.icon' ></i>
-<span class='slidemenu-button-text' [innerHTML]='item.title'></span>
+<span *ngIf='expanded' class='slidemenu-button-text' [innerHTML]='item.title'></span>

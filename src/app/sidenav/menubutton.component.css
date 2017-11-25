@@ -13,20 +13,20 @@ font-size: 0.9em;
 
 
 .slidemenu-button-text {
-font-size: 1.1em;
+font-size: 0.9em;
 font-weight: 500;
 }
 
 @media all and (min-width: 55em) {
 
 .slidemenu-button-icon {
-font-size: 0.9em;
+/*font-size: 0.9em;*/
 }
 
 
 
 .slidemenu-button-text {
-font-size: 1.1em;
+/*font-size: 1.1em;*/
 }
 
 }

@@ -1,16 +1,7 @@
-<div *ngIf='opened' [class]='"menu-container theme-primary"'>
-  
-<div  *ngIf='mode !== "over"'>
-  <div *ngFor="let menu of menuItems"  [routerLink]="menu.routerLink"  routerLinkActive="active"    [class]='"slidemenu-button-container my-mat-button-dark buttonseparator"'>
-    <app-menubutton [item]='menu' ></app-menubutton>
-  </div>
-  <div [class]='"buttonseparator"'></div>
-</div>
+<div *ngIf='isOpen()' [class]='"menu-container theme-primary"'  [ngClass]='{"menu-container-expanded": isExpanded()}'>
 
-<div *ngIf='mode === "over" && opened'>
-  <div *ngFor="let menu of menuItems"  (click)='close()' [routerLink]="menu.routerLink"  routerLinkActive="active"    [class]='"slidemenu-button-container my-mat-button-dark buttonseparator"'>
-    <app-menubutton [item]='menu' ></app-menubutton>
-  </div>
-  <div [class]='"buttonseparator"'></div>
+<div *ngFor='let menu of menuItems'  (click)='expandClose()'  [routerLink]='menu.routerLink'  routerLinkActive='active'    [class]='"slidemenu-button-container my-mat-button-dark buttonseparator"'>
+  <app-menubutton [item]='menu' [expanded]='expanded' ></app-menubutton>
 </div>
+<div [class]='"buttonseparator"'></div>
 </div>

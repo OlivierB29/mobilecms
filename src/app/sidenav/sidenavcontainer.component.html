@@ -2,7 +2,7 @@
 <div [class]='"top-menu-bar theme-dark"'>
 
   <!-- burger menu icon -->
-  <div (click)='sidenav.open()' >
+  <div (click)='sidenav.expandMenu()' >
     <span [class]='"top-menu-icon-container top-menu-icon my-mat-button-darker"' >
       <i [class]='"material-icons"'>menu</i>
     </span>
@@ -21,7 +21,7 @@
   <app-sidenav #sidenav [mode]='menuMode' [opened]='menuOpened'></app-sidenav>
 
   <!-- fading backdrop : close menu on click -->
-  <div *ngIf='menuMode === "over"'  [class]='"my-mat-sidenav-backdrop"' [ngClass]='{"my-mat-sidenav-shown": sidenav.isOpen()}' (click)='sidenav.open()'></div>
+  <div *ngIf='sidenav.isOverMenuOpened()'  [class]='"my-mat-sidenav-backdrop"' [ngClass]='{"my-mat-sidenav-shown": sidenav.isOpen()}' (click)='sidenav.open()'></div>
 
   <!-- container -->
   <div class='router-container'>

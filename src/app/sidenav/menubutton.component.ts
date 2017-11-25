@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class MenubuttonComponent implements OnInit {
 
-  @Input() item: MenuItem  ;
+  @Input() item: MenuItem;
+
+  @Input() expanded: boolean;
 
   constructor(private router: Router) { }
 
