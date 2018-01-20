@@ -2,12 +2,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
-import { Activity } from '../../shared/model/activity';
+import { Activity } from 'app/shared/model/activity';
 
 
-import { Log } from '../../shared/services/log.service';
-import { ReadService } from '../../shared/services/read.service';
+import { Log } from 'app/shared/services/log.service';
+import { ReadService } from 'app/shared/services/read.service';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -34,12 +35,14 @@ export class CalendarActivitiesComponent implements OnInit {
     activityObjectList: Activity[] = [];
 
   constructor(
+    private titleService: Title,
     private router: Router,
     private dataService: ReadService,
     private http: HttpClient,
     private log: Log,
     private route: ActivatedRoute
   ) {
+        // this.titleService.setTitle(this.type);
   }
 
   ngOnInit(): void {

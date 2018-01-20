@@ -2,11 +2,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
-import { Club } from '../../shared/model/club';
-import { Department } from '../../shared/model/department';
-import { Log } from '../../shared/services/log.service';
-import { ReadService } from '../../shared/services/read.service';
+import { Club } from 'app/shared/model/club';
+import { Department } from 'app/shared/model/department';
+import { Log } from 'app/shared/services/log.service';
+import { ReadService } from 'app/shared/services/read.service';
 import { HttpClient } from '@angular/common/http';
 
 /**
@@ -41,7 +42,10 @@ export class ClubListComponent implements OnInit {
   */
   department: string;
 
+
+
   constructor(
+    private titleService: Title,
     private router: Router,
     private dataService: ReadService,
     private log: Log,
@@ -51,6 +55,7 @@ export class ClubListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
 
     this.http.get<any>(this.dataService.getIndexUrl('departments'))
       .subscribe((data: Department[]) => {

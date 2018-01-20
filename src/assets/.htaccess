@@ -1,0 +1,36 @@
+<IfModule mod_headers.c>
+	<FilesMatch "\\.(js|css|jpg|png|jpeg|gif|css)$">
+		RequestHeader unset Cookie
+		Header unset Set-Cookie
+		Header set Cache-Control "max-age=8640000"
+	</FilesMatch>
+</IfModule>
+
+#Etag
+Header unset ETag
+FileETag None
+
+# turn on the module for this directory
+ExpiresActive on
+# set default
+ExpiresDefault "access plus 100 days"
+
+# Apache 2.4
+<IfModule mod_version.c>
+      <IfModule mod_filter.c>
+        <IfVersion >= 2.4>
+				FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'application/json'"
+				FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'text/plain'"
+				FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'text/html'"
+				FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'text/xml'"
+				FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'text/css'"
+				FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'application/xml'"
+				FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'application/xhtml+xml'"
+				FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'application/rss+xml'"
+				FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'application/javascript'"
+				FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'application/x-javascript'"
+				FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'image/svg+xml'"
+
+        </IfVersion>
+       </IfModule>
+</IfModule>

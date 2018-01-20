@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Log } from 'app/shared/services/log.service';
 import { ReadService } from 'app/shared/services/read.service';
+import { LayoutService } from 'app/shared/services';
 
 @Component({
     moduleId: module.id,
@@ -13,11 +14,17 @@ import { ReadService } from 'app/shared/services/read.service';
 })
 export class HomeComponent implements OnInit {
 
-    constructor() {
+    max = 2;
+
+    constructor(private layoutService: LayoutService) {
 
     }
 
     ngOnInit(): void {
+      if (this.layoutService.getLayout() === 'desktop') {
+        this.max = 4;
+      }
+
     }
 
 }

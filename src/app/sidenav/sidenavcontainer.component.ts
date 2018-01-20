@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { environment } from 'environments/environment';
-import { ReadService } from 'app/shared/services';
+import { ReadService, LayoutService } from 'app/shared/services';
 import { HttpClient } from '@angular/common/http';
 import { ImageService } from 'app/maincontent/image';
 
@@ -30,11 +30,14 @@ export class SidenavcontainerComponent implements AfterViewInit {
 
   bannerpicture = null;
 
+  item: any;
+
   constructor(private titleService: Title,
      private meta: Meta,
      private readService: ReadService,
      private http: HttpClient,
-     private imageService: ImageService) {
+     private imageService: ImageService,
+     private layoutService: LayoutService) {
 
     this.initLayout();
 
@@ -68,25 +71,25 @@ export class SidenavcontainerComponent implements AfterViewInit {
 
     this.http.get<any>(this.readService.getUrl('description', 'head'))
               .subscribe((data: any) => {
-                const item = data;
-                this.titleService.setTitle(item.title);
+                this.item = data;
 
-                if (this.getLayout() === 'desktop') {
-                  this.title = item.fulltitle;
+
+                if (this.layoutService.getLayout() === 'desktop') {
+                  this.title = this.item.fulltitle;
                 } else {
-                  this.title = item.title;
+                  this.title = this.item.title;
                 }
 
-                this.meta.addTag({ name: 'keywords', content: item.keywords });
-                this.meta.addTag({ name: 'description', content: item.description });
-
+                this.meta.addTag({ name: 'keywords', content: this.item.keywords });
+                this.meta.addTag({ name: 'description', content: this.item.description });
+                this.titleService.setTitle(this.title);
               });
 
 
   }
 
   initLayout() {
-    const layout = this.getLayout();
+    const layout = this.layoutService.getLayout();
     this.menuOpened = false;
     this.menuMode = 'over';
     if (layout === 'desktop') {
@@ -98,14 +101,6 @@ export class SidenavcontainerComponent implements AfterViewInit {
 
 
 
-  getLayout(): string {
-    let layout = 'mobile';
 
-    if (window.matchMedia('(min-width: 55em)').matches) {
-      layout = 'desktop';
-    }
-
-    return layout;
-  }
 
 }

@@ -1,8 +1,9 @@
 
 import { Component, OnInit, Input } from '@angular/core';
-import { OrderbyPipe } from '../../shared/filters';
-import { Log } from '../../shared/services/log.service';
-import { ReadService } from '../../shared/services/read.service';
+import { Title } from '@angular/platform-browser';
+import { OrderbyPipe } from 'app/shared/pipes';
+import { Log } from 'app/shared/services/log.service';
+import { ReadService } from 'app/shared/services/read.service';
 
 import { HttpClient, HttpResponse } from '@angular/common/http';
 
@@ -26,6 +27,7 @@ export class NewsPreviewComponent implements OnInit {
 
 
   constructor(
+    private titleService: Title,
     private dataService: ReadService,
     private log: Log,
     private orderby: OrderbyPipe,
@@ -51,7 +53,7 @@ export class NewsPreviewComponent implements OnInit {
       });
 
 
-
+      // this.titleService.setTitle(this.type);
 
   }
 

@@ -1,70 +1,37 @@
 var gulp = require('gulp');
-
-var Server = require('karma').Server;
+const zip = require('gulp-zip');
+const del = require('del');
 
 /**
-* Sample API endpoint for adminapp API :
-* http://localhost/adminapp/api/v1/
+*
 */
-var projectName = '';
+var projectName = 'mobilecms';
+var projectVersion = '0.1.5';
 
-/**
-* Local web server directory
-*/
-var serverDeployDir = '/var/www/html';
-
-/**
- * Run test once and exit
- */
-gulp.task('test', function (done) {
-  new Server({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: true
-  }, done).start();
-});
-
-/**
-* basedir for current gulp runtime
-*/
-
-var basedir = '.';
-/**
-* deploy runtime, assets WITHOUT sample data from public
- */
-gulp.task('deploy', function() {
-
-  var referenceGulpProject = basedir + '/dist/**';
-  var destPath = serverDeployDir + '/' + projectName;
-
-  console.log('Deploying server : ' + referenceGulpProject + ' --> ' + destPath);
-
- gulp.src([ referenceGulpProject + '/**' , '!'+referenceGulpProject + '/public', '!'+referenceGulpProject + '/public/**']).pipe(gulp.dest(destPath));
+gulp.task('cleandist', function() {
+  del(['dist/media', 'dist/public', 'dist/assets']).then(paths => {
+      console.log('Deleted files and folders:\n', paths.join('\n'));
+  });
 
 
 });
 
-/**
- * deploy runtime, assets WITH sample data from public
- */
-gulp.task('deployall', function() {
+gulp.task('release', function() {
 
-  var srcPath = basedir + '/dist/**';
-  var destPath = serverDeployDir + '/' + projectName;
 
-  console.log('Deploying server : ' + srcPath + ' --> ' + destPath);
+  var archiveFile = 'release/'+projectName + '-' + projectVersion + '.zip';
+  console.log('Creating : ' + archiveFile);
 
-  gulp.src(srcPath).pipe(gulp.dest(destPath));
+  gulp.src('dist/*')
+        .pipe(zip(archiveFile))
+        .pipe(gulp.dest('dist'))
+
 
 });
-
 
 gulp.task('default', function() {
 
-  console.log('gulp deploy #deploy runtime, assets WITHOUT sample data from public');
-  console.log('gulp deployall #deploy runtime, assets WITH sample data from public');
-  console.log('gulp test #Run test once and exit');
-
-
-
+  console.log('gulp cleandist #clean unused assets from dist');
+  console.log('gulp release #create release file');
 
 });

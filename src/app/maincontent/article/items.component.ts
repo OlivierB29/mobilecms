@@ -1,10 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params, Data } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
-import { ReadService } from '../../shared/services/read.service';
-import { Log } from '../../shared/services/log.service';
-import { Item } from '../../shared/model/item';
-import { OrderbyPipe } from '../../shared/filters';
+import { ReadService } from 'app/shared/services/read.service';
+import { Log } from 'app/shared/services/log.service';
+import { Item } from 'app/shared/model/item';
+import { OrderbyPipe } from 'app/shared/pipes';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -25,7 +26,7 @@ export class ItemsComponent implements OnInit {
   direction = 'asc';
 
 
-  constructor(private log: Log, private dataService: ReadService, private http: HttpClient,
+  constructor(private titleService: Title, private log: Log, private dataService: ReadService, private http: HttpClient,
     private route: ActivatedRoute, private orderbyPipe: OrderbyPipe) {
   }
 
@@ -62,7 +63,7 @@ export class ItemsComponent implements OnInit {
       }
     });
 
-
+ // this.titleService.setTitle(this.type);
   }
 
 

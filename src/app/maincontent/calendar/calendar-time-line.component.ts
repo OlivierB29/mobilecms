@@ -2,13 +2,13 @@ import { Component, AfterViewInit, Input } from '@angular/core';
 
 
 import { ReadService } from 'app/shared/services/read.service';
-import { OrderbyPipe } from 'app/shared/filters';
+import { OrderbyPipe } from 'app/shared/pipes';
 import { Event } from 'app/shared/model/event';
 import { environment } from 'environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Log } from 'app/shared/services/log.service';
-import { DateUtil } from 'app/shared/utils/date.util';
-import { RouteUtilService } from 'app/shared/services';
+
+import { RouteUtilService, DateUtilService } from 'app/shared/services';
 
 
 @Component({
@@ -26,13 +26,13 @@ export class CalendarTimeLineComponent {
 
   type = 'calendar';
 
-  dateutil = new DateUtil();
 
   constructor(protected dataService: ReadService,
     protected http: HttpClient,
     protected log: Log,
     protected orderby: OrderbyPipe,
-    private routeUtil: RouteUtilService) {
+    private routeUtil: RouteUtilService,
+    protected dateutil: DateUtilService) {
     // Add an empty item in order to display something.
     // Considering that IO operations are slow, it constructs a raw frame for the end user.
   //  this.items.push({ id: '', activity: '.....', title: '.... .... ........', date: '..-..-....' });

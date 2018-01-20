@@ -10,7 +10,7 @@
 
 
       <div [class]='"article-description-container"'>
-       <div *ngIf='item.activity && item.date' [class]='"article-subtitle"' [innerHTML]='item.activity + " - " + item.date'></div>
+       <div *ngIf='item.activity && item.date' [class]='"article-subtitle"' >{{item.activity}} {{item.date | localedate}}</div>
 
         <div [innerHTML]='item.description | br' [class]='"article-description"'></div>
 

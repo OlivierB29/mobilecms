@@ -19,7 +19,7 @@
 
 <div *ngIf="activity  && department ">
   <div class='article-list'>
-    <div *ngFor="let club of (clubs | activityfilter: activity | departmentfilter: department)" class='club-content'>
+    <div *ngFor='let club of (clubs | propertyfilter: "activity":activity | propertyfilter: "department":department)' class='club-content'>
       <app-my-clubdetail-component [id]="club.id"></app-my-clubdetail-component>
     </div>
   </div>

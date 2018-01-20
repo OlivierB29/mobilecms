@@ -1,9 +1,9 @@
 
 import { Component, AfterViewInit, Input } from '@angular/core';
 
-import { OrderbyPipe } from '../../shared/filters';
-import { Log } from '../../shared/services/log.service';
-import { ReadService } from '../../shared/services/read.service';
+import { OrderbyPipe } from 'app/shared/pipes';
+import { Log } from 'app/shared/services/log.service';
+import { ReadService } from 'app/shared/services/read.service';
 
 import { HttpClient, HttpResponse } from '@angular/common/http';
 
@@ -21,7 +21,7 @@ export class NewsComponent implements AfterViewInit {
 
   errorMessage: any;
 
-  @Input() max = 3;
+  @Input() max = 1;
 
   type = 'news';
 

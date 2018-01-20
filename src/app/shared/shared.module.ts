@@ -1,33 +1,37 @@
 
 
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { ActivityFilterPipe, BrPipe, DepartmentFilterPipe, OrderbyPipe } from './filters';
-import { Log, ReadService, RouteUtilService } from './services';
+import {  BrPipe, OrderbyPipe, LocaleDatePipe, PropertyFilterPipe } from './pipes';
+import { Log, ReadService, RouteUtilService, DateUtilService, MediaService, LayoutService } from './services';
+
 
 @NgModule({
     imports: [
 
     ],
     declarations: [
-      ActivityFilterPipe,
       BrPipe,
-      DepartmentFilterPipe,
+
       OrderbyPipe,
+      LocaleDatePipe,
+      PropertyFilterPipe,
     ],
     providers: [
       Log,
       ReadService,
+      DateUtilService,
+      LayoutService,
       RouteUtilService,
+      MediaService,
       OrderbyPipe
     ],
     entryComponents: [
     ],
     exports: [
-      ActivityFilterPipe,
       OrderbyPipe,
-      DepartmentFilterPipe,
       BrPipe,
-    ],
+      LocaleDatePipe,
+      PropertyFilterPipe,    ],
 
 })
 export class SharedModule {

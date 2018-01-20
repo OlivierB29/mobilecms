@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { RouteUtilService, ReadService, Log } from 'app/shared/services';
+import { RouteUtilService, ReadService, Log, MediaService } from 'app/shared/services';
 import { environment } from 'environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { MediaComponent } from 'app/maincontent/article';
@@ -12,7 +12,7 @@ import { MediaComponent } from 'app/maincontent/article';
     templateUrl: 'calendarevent.component.html',
     styleUrls: ['calendarevent.component.css']
 })
-export class CalendarEventComponent extends MediaComponent implements OnInit {
+export class CalendarEventComponent  implements OnInit {
 
     id= '';
 
@@ -31,10 +31,10 @@ export class CalendarEventComponent extends MediaComponent implements OnInit {
         private log: Log,
         private route: ActivatedRoute,
         private readService: ReadService,
+        private mediaService: MediaService,
         private http: HttpClient,
         private routeUtil: RouteUtilService
     ) {
-      super();
     }
 
     ngOnInit(): void {
@@ -61,7 +61,7 @@ export class CalendarEventComponent extends MediaComponent implements OnInit {
               this.activity = this.item.activity;
 
               this.parentUrl = '/' + this.routeUtil.getCalendarRoute(environment.defaultlocale) + '/' + this.item.activity ;
-              this.item.media = this.initMediaUrl(this.type, this.id, this.item.media, this.media);
+              this.item.media = this.mediaService.initMediaUrl(this.type, this.id, this.item.media, this.media);
             });
 
       } else {

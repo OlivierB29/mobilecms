@@ -8,6 +8,9 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/filter';
 
+
+import { LayoutService } from 'app/shared/services';
+
 @Component({
   moduleId: module.id,
   selector: 'app-sidenav',
@@ -26,7 +29,9 @@ export class SidenavComponent implements OnInit, AfterViewInit {
   menuItems: any[] = [];
 
 
-  constructor(private menuService: MenuService) {
+  constructor(private menuService: MenuService,
+  private layoutService: LayoutService
+  ) {
     this.setLayout();
 
      const $resizeEvent = Observable.fromEvent(window, 'resize').map(() => {
@@ -83,7 +88,7 @@ export class SidenavComponent implements OnInit, AfterViewInit {
   }
 
   initLayout() {
-    const layout = this.getLayout();
+    const layout = this.layoutService.getLayout();
 
     if (layout === 'desktop') {
       this.setSide();
@@ -146,17 +151,9 @@ export class SidenavComponent implements OnInit, AfterViewInit {
   }
 
   getMenuLayout(): string {
-    return this.getLayout() === 'mobile' ? 'over' : 'side';
+    return this.layoutService.getLayout() === 'mobile' ? 'over' : 'side';
   }
 
-  getLayout(): string {
-    let layout = 'mobile';
 
-    if (window.matchMedia('(min-width: 55em)').matches) {
-      layout = 'desktop';
-    }
-
-    return layout;
-  }
 
 }

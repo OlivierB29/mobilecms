@@ -5,11 +5,11 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 
 
-import { ReadService } from '../../shared/services/read.service';
-import { Log } from '../../shared/services/log.service';
+import { ReadService } from 'app/shared/services/read.service';
+import { Log } from 'app/shared/services/log.service';
 
 
-import { Event } from '../../shared/model/event';
+import { Event } from 'app/shared/model/event';
 
 
 @Component({

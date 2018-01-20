@@ -5,7 +5,7 @@
   <div class='article-title my-mat-button-dark' >
     <div>
       <i [class]='"material-icons calendar-icon"'>event</i>
-      <span [innerHTML]='item.date'>: </span> <span class='feed-subtitle' [innerHTML]='(item.activity | uppercase)'></span>
+      <span [innerHTML]='item.date | localedate'> </span> <span class='feed-subtitle' [innerHTML]='(item.activity | uppercase)'></span>
     </div>
     <div [innerHTML]='item.title'></div>
   </div>

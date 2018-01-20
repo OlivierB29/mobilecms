@@ -1,6 +1,6 @@
-export class MediaUtils {
+export class MediaService {
 
-    protected initMediaUrl(type: string, id: string, media: any[], mediaUri: string): any[] {
+    initMediaUrl(type: string, id: string, media: any[], mediaUri: string): any[] {
       const result = [];
       if (media) {
 

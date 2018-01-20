@@ -1,12 +1,12 @@
 
 import { Component, AfterViewInit, Input } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-import { ReadService } from 'app/shared//services/read.service';
-import { OrderbyPipe } from 'app/shared//filters';
+
+import { OrderbyPipe } from 'app/shared/pipes';
 import { Event } from 'app/shared//model/event';
 import { environment } from 'environments/environment';
-import { HttpClient } from '@angular/common/http';
-import { Log } from 'app/shared//services/log.service';
+import { ReadService, Log } from 'app/shared/services';
 
 
 /**
@@ -24,13 +24,13 @@ export class CalendarFeedComponent implements AfterViewInit {
 
   imageservice = '';
 
-  @Input() max = 4;
+  @Input() max = 1;
 
   items: any[] = [];
 
   type = 'calendar';
 
-  @Input() preview = 2;
+
 
   constructor(private dataService: ReadService,
     private http: HttpClient,

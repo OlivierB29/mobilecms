@@ -2,12 +2,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
-import { Activity } from '../../shared/model/activity';
+import { Activity } from 'app/shared/model/activity';
 
 
-import { Log } from '../../shared/services/log.service';
-import { ReadService } from '../../shared/services/read.service';
+import { Log } from 'app/shared/services/log.service';
+import { ReadService } from 'app/shared/services/read.service';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 
 /**
@@ -33,7 +34,10 @@ export class ClubActivitiesComponent implements OnInit {
   */
   activityObjectList: Activity[] = [];
 
+  type = 'clubs';
+
   constructor(
+    private titleService: Title,
     private router: Router,
     private dataService: ReadService,
 
@@ -41,9 +45,12 @@ export class ClubActivitiesComponent implements OnInit {
     private route: ActivatedRoute,
     private http: HttpClient
   ) {
+        // this.titleService.setTitle(this.type);
   }
 
   ngOnInit(): void {
+
+
     // path parameters
     this.route.params.forEach((params: Params) => {
       if (params['activity'] !== undefined) {

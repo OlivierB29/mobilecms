@@ -1,35 +1,26 @@
+import { Injectable } from '@angular/core';
 
+
+
+@Injectable()
 export class DateUtilService {
   // TODO find true library for i18n date format
   private lang = 'en';
 
-  daysOfWeek = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+  daysOfWeekShort = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
-  daysOfWeekFrShort = ['D', 'L', 'M', 'M', 'J', 'V', 'S'];
-  daysOfWeekFrLong = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+  daysOfWeekShortFr = ['D', 'L', 'M', 'M', 'J', 'V', 'S'];
 
   monthsLong = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-
-
-  monthsFrShort = ['Jan.', 'Fév.', 'Mar.', 'Avr.', 'Mai', 'Juin', 'Juil.', 'Aou.', 'Sep.', 'Oct.', 'Nov.', 'Déc.'];
   monthsFrLong = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 
   public setLang(lang: string) {
     this.lang = lang;
   }
 
-  public printDateYYYYMMDD(temp: Date): string {
-        const dateStr = temp.getFullYear() + '-' + (1 + temp.getMonth()) + '-' + temp.getDate();
-        return dateStr;
-    }
 
-  public printDate(temp: Date): string {
-        const dateStr =  (1 + temp.getMonth()) + ' ' + temp.getDate();
-        return dateStr;
-    }
-
-  public getMonthName = function(month: number): string {
+  public getMonthName(month: number): string {
 
       if (this.lang === 'fr') {
         return this.monthsFrLong[ month ];
@@ -38,25 +29,25 @@ export class DateUtilService {
       }
   }
 
-  public getWeek = function(date: Date): number {
+  public getWeek(date: Date): number {
         const onejan = new Date(date.getFullYear(), 0, 1);
         return Math.ceil((((date.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
   }
 
-  public addWeek = function(date: Date): number {
+  public addWeek(date: Date): number {
         const onejan = new Date(date.getFullYear(), 0, 1);
         return Math.ceil((((date.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
   }
 
-  public getMonthNumber = function(date: Date): number {
+  public getMonthNumber(date: Date): number {
     // sometimes I hate JS ...
       return date.getMonth() + 1;
   }
-  public getDayShort = function(d: number): string {
+  public getDayShort(d: number): string {
     if (this.lang === 'fr') {
-      return this.daysOfWeekFrShort[ d ];
+      return this.daysOfWeekShortFr[ d ];
     } else {
-      return this.daysOfWeek[ d ];
+      return this.daysOfWeekShort[ d ];
     }
   }
 
