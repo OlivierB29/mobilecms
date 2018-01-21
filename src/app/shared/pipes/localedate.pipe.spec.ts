@@ -1,11 +1,13 @@
 import { LocaleDatePipe } from './localedate.pipe';
+import { environment } from 'environments/environment';
 
 describe('LocaleDatePipe', () => {
   // This pipe is a pure, stateless function so no need for BeforeEach
   const pipe = new LocaleDatePipe();
 
   it('transforms string date to localedate', () => {
-    expect(pipe.transform('2017-06-01')).toBe('01/06/2017');
+    const date = '2017-06-01';
+    expect(pipe.transform(date)).toBe(new Date(date).toLocaleDateString(environment.locale));
   });
 
 

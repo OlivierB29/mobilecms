@@ -6,6 +6,7 @@
 export const environment = {
   production: false,
   defaultlocale: 'en',
+  locale: 'fr-FR',
   server: '',
   log: 'debug',
   public: 'public'

@@ -1,9 +1,8 @@
 import { Injectable, Pipe, PipeTransform } from '@angular/core';
+import { environment } from 'environments/environment';
 
 /*
-https://angular.io/docs/ts/latest/guide/pipes.html
-
-Filter by activity
+* https://angular.io/docs/ts/latest/guide/pipes.html
 */
 @Pipe({
     name: 'localedate'
@@ -13,7 +12,8 @@ export class LocaleDatePipe implements PipeTransform {
   transform(value: string) {
       let result = '';
       if (value) {
-         result = new Date(value).toLocaleDateString();
+        // const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+         result = new Date(value).toLocaleDateString(environment.locale);
       }
       return result;
   }
