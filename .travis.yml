@@ -12,4 +12,4 @@ before_script:
   - npm install
 script:
   - ng build --prod
-  - travis_wait 10 ng test
+#  - travis_wait 10 ng test
