@@ -4,18 +4,19 @@
     <span [innerHTML]='item.title'></span>
   </div>
 
+  <div class='article-subtitle'>{{item.activity}} - {{item.date | localedate}}</div>
 
 
-
-  <div class='article-description'>
-    <div class='article-subtitle'>{{item.activity}} - {{item.date | localedate}}</div>
-      <div [innerHTML]='getPreviewDescription()'  class='article-previewdescription'></div>
-
+  <div class='article-previewdescription-container' *ngIf='image'>
     <div class='thumbnail-container' *ngIf='image'>
       <img [src]='getThumbnail(image)' [alt]='image.title' >
     </div>
+    <div [innerHTML]='getPreviewDescription()'  class='article-previewdescription description-and-thumbnail'></div>
 
   </div>
 
+  <div class='article-previewdescription-container' *ngIf='!image'>
+    <div [innerHTML]='getPreviewDescription()'  class='article-previewdescription'></div>
+  </div>
 
 </div>

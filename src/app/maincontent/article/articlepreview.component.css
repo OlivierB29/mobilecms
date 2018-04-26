@@ -1,0 +1,28 @@
+.article-previewdescription-container {
+      align-content: flex-start;
+      display: flex;
+      flex-direction: row;
+}
+
+.thumbnail-container {
+  margin-right: 16px;
+  display: block;
+  min-width: 80px;
+  max-width: 144px;
+  overflow: hidden;
+}
+
+.thumbnail-container img {
+  height: auto;
+}
+
+.article-previewdescription {
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#ddd));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.description-and-thumbnail {
+  width: 80%;
+}

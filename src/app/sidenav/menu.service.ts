@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 
 
 import { HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
+import { Observable, of } from 'rxjs';
+
 
 // import issue
 // const menufr = require('./menu.fr.json');
@@ -46,7 +46,7 @@ export class MenuService {
       }
     }
 
-    return Observable.of(result);
+    return of(result);
   }
 
 }

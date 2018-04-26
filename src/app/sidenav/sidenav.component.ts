@@ -2,14 +2,14 @@ import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
 import { environment } from 'environments/environment';
 import { MenuService } from './menu.service';
 
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/fromEvent';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/filter';
+// https://stackoverflow.com/questions/45784825/frompromise-does-not-exist-on-type-observable
+import { Observable, fromEvent } from 'rxjs';
+import { map, debounceTime, filter  } from 'rxjs/operators';
 
 
-import { LayoutService } from 'app/shared/services';
+
+
+import { LayoutService, Log } from 'app/shared/services';
 
 @Component({
   moduleId: module.id,
@@ -30,15 +30,21 @@ export class SidenavComponent implements OnInit, AfterViewInit {
 
 
   constructor(private menuService: MenuService,
+    private log: Log,
   private layoutService: LayoutService
   ) {
     this.setLayout();
 
-     const $resizeEvent = Observable.fromEvent(window, 'resize').map(() => {
-       return document.documentElement.clientWidth;
-     }).debounceTime(200);
+    // https://www.learnrxjs.io/operators/creation/fromevent.html
+     const $resizeEvent = fromEvent(window, 'resize');
 
-    $resizeEvent.subscribe(data => {
+     // map to string with given event timestamp
+     const eventPipes = $resizeEvent.pipe(map(() => {
+       return document.documentElement.clientWidth;
+     }), debounceTime(200));
+
+    eventPipes.subscribe(val => {
+      this.log.debug('width : ' + val);
       this.setLayout();
     });
 

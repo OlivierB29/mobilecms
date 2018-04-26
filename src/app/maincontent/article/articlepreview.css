@@ -1,8 +1,3 @@
-.article-previewdescription {
-  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#ddd));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 
 .article-preview-content img {
@@ -10,12 +5,6 @@
 	padding-top: 0.5em;
 }
 
-
-.article-previewdescription {
-  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#ddd));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 
 .hidelink {
@@ -25,13 +14,4 @@
 
 .images-container {
 	border-top: 1px solid #ddd;
-}
-
-
-.thumbnail-container {
-  width: 10em;
-}
-
-.thumbnail-container img {
-  height: auto;
 }
