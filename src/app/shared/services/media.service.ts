@@ -15,10 +15,12 @@ export class MediaService {
     }
 
     isImage(element: any): boolean {
-      return element.mimetype && element.mimetype.indexOf('image') > -1;
+      return element.mimetype && element.mimetype.indexOf('image') > -1 ;
     }
 
-
+    isPdf(element: any): boolean {
+      return element.mimetype &&  element.mimetype.indexOf('application/pdf') > -1;
+    }
 
     getImages(item: any): any[] {
       let result = [];

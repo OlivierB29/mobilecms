@@ -22,7 +22,22 @@ export class ImageService {
   public getDefaultImage(server: string, recorduri: string,  picture: any): string {
 
     // default full size
-    let result =  picture.url;
+    let result = '';
+
+    if (picture.url) {
+      result = picture.url;
+    }
+    const defaultThumbnail = this.getDefaultThumbnail(server, recorduri, picture);
+    if (defaultThumbnail) {
+      result = defaultThumbnail;
+    }
+    return result;
+  }
+
+  public getDefaultThumbnail(server: string, recorduri: string,  picture: any): string {
+
+    // default full size
+    let result = '';
 
     if (picture && picture.thumbnails && picture.thumbnails.length > 0) {
       // set the highest thumbnail resolution, if the browser doesn't support srcset

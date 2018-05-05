@@ -1,0 +1,24 @@
+.tooltip {
+  position: relative;
+}
+
+.tooltip span {
+  margin-left: -999em;
+  position: absolute;
+}
+
+.tooltip:hover span {
+  left: 1em;
+  margin-left: 0;
+  position: absolute;
+  top: 2em;
+  width: 250px;
+  z-index: 99;
+}
+
+.tooltip:hover img {
+  border: 0;
+  float: left;
+  margin: -1em 0 0 4em;
+  position: absolute;
+}

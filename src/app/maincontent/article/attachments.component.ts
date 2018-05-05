@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { environment } from 'environments/environment';
+import { ImageService } from 'app/maincontent/image';
 
 @Component({
   moduleId: module.id,
@@ -10,4 +11,23 @@ import { environment } from 'environments/environment';
 export class AttachmentsComponent  {
 
   @Input() attachments: any[];
+
+  /**
+  * eg: media/news/3/thumbnails
+  */
+  @Input() recorduri: string;
+
+  constructor(private imageService: ImageService) {
+ }
+
+  public getDefaultImage(picture: any): string {
+    return this.imageService.getDefaultThumbnail(environment.server, this.recorduri, picture);
+  }
+
+  /**
+  * https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/
+  */
+  public getThumbnailSrcSet(picture: any): string {
+    return this.imageService.getThumbnailSrcSet(environment.server, this.recorduri, picture);
+  }
 }
