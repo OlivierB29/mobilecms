@@ -1,0 +1,23 @@
+
+
+.calendar-preview-title {
+  color: black;
+  font-size: 1.125em;
+  font-weight: bold;
+}
+.calendar-preview-title:hover {
+  color: #3B78E7;
+  text-decoration: underline;
+}
+
+.calendar-preview-description {
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#ddd));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.calendar-preview-table-row {
+  display: flex;
+  flex-direction: row;
+}

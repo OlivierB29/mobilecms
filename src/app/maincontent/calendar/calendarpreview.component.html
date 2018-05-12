@@ -1,28 +1,24 @@
-<a *ngIf='item' class='hidelink'   [href]='getUrl()'>
-  <div class='article-content article-preview-content'>
+<a *ngIf='item' class='hidelink' [href]='getUrl()'>
+  <div class='shadow'>
 
-
-  <div class='article-title my-mat-button-dark' >
-    <div>
-      <i [class]='"material-icons calendar-icon"'>event</i>
-      <span [innerHTML]='item.date | localedate'> </span> <span class='feed-subtitle' [innerHTML]='(item.activity | uppercase)'></span>
+    <div class='my-mat-button-dark'>
+      <div>
+        <i [class]='"material-icons calendar-icon"'>event</i>
+        <span [innerHTML]='item.date | localedate'> </span>: <span class='feed-subtitle' [innerHTML]='(item.activity | uppercase)'></span>
+      </div>
     </div>
-    <div [innerHTML]='item.title'></div>
-  </div>
 
-
-
-
-  <div *ngIf='show === "description"' class='article-description'>
-
-      <div [innerHTML]='getPreviewDescription()'  class='article-previewdescription'></div>
-
-    <div  *ngIf='image' class='thumbnail-container'>
-
-      <img [src]='getThumbnail(image)' [alt]='image.title' >
+    <div *ngIf='show === "description"'>
+      <div class='calendar-preview-table-row'>
+        <div *ngIf='image'>
+          <img [src]='getThumbnail(image)' [alt]='image.title'>
+        </div>
+        <div>
+          <span [innerHTML]='item.title' class='calendar-preview-title'></span>
+          <span [innerHTML]='getPreviewDescription()' class='calendar-preview-description'></span>
+        </div>
+      </div>
     </div>
 
   </div>
-
-</div>
 </a>
