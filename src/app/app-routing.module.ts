@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { ClubListComponent, ClubActivitiesComponent } from './maincontent/club';
 
 @NgModule({
   imports: [

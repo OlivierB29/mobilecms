@@ -10,7 +10,7 @@
 
 
       <div [class]='"article-description-container"'>
-       <div *ngIf='item.activity && item.date' [class]='"article-subtitle"' >{{item.activity}} {{item.date | localedate}}</div>
+       <div *ngIf='item.activity && item.date' [class]='"article-subtitle"' >{{item.activity | uppercase}} {{item.date | localedate}}</div>
 
         <div [innerHTML]='item.description | br' [class]='"article-description"'></div>
 
@@ -20,6 +20,7 @@
 
         <app-attachments *ngIf='item.media || item.attachments' [recorduri]='getRecordUri()' [attachments]='getAttachments()'></app-attachments>
         <app-imagelist *ngIf='item.media || item.images' [recorduri]='getRecordUri()' [images]='getImages()' [lazyload]='lazyload'></app-imagelist>
+        <app-videolist *ngIf='item.media || item.attachments' [recorduri]='getRecordUri()' [videos]='getVideos()'></app-videolist>
 
 
 

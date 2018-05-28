@@ -150,6 +150,10 @@ export class ArticleComponent  implements AfterViewInit {
     return this.mediaService.getAttachments(this.getItem());
   }
 
+  getVideos(): any[] {
+    return this.mediaService.getVideos(this.getItem());
+  }
+
   /**
   * eg media/news/3/thumbnails
   */

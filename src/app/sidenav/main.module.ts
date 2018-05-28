@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FeaturedComponent } from './featured/featured.component';
 import { MenuService } from './menu.service';
 import { ImageModule } from 'app/maincontent/image/image.module';
+import { VideoModule } from 'app/maincontent/video/video.module';
 import { mainRoutes } from './main.route';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { mainRoutes } from './main.route';
           CommonModule,
           RouterModule,
           ImageModule,
+          VideoModule,
           SharedModule,
           CalendarModule,
           NewsModule,

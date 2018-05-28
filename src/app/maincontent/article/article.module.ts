@@ -9,6 +9,7 @@ import { ArticleComponent, ArticlePreviewComponent, ArticlelistComponent,
 
 
 import { ImageModule } from 'app/maincontent/image/image.module';
+import { VideoModule } from 'app/maincontent/video/video.module';
 import { articleRoutes } from './article.route';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { articleRoutes } from './article.route';
       CommonModule,
       RouterModule,
       ImageModule,
+      VideoModule,
       SharedModule,
       RouterModule.forRoot(articleRoutes, { useHash: true })
     ],
@@ -35,6 +37,7 @@ import { articleRoutes } from './article.route';
     exports: [
       ArticleComponent,
       ArticlePreviewComponent,
+      AttachmentsComponent,
     ],
 
 })

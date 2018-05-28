@@ -19,7 +19,17 @@
 }
 
 .router-container {
+  padding: 0;
   width:100%;
+}
+
+
+
+
+@media all and (min-width: 55em) {
+  .router-container {
+    padding-left: 0.2em;
+  }
 }
 
 

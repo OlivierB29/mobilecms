@@ -1,11 +1,38 @@
 
 <div class='calendarevent-container'>
-  <h3>
-    <div class='my-mat-button-dark shadow' [routerLink]='parentUrl'>
-      <i [class]='"material-icons calendar-icon"'>date_range</i>
-       <span [innerHTML]='activity | uppercase'></span>
-    </div>
-  </h3>
 
-  <app-article [type]='type' [item]='item' [lazyload]='false'></app-article>
+  <div *ngIf='item' class='article-title theme-primary'>
+    <div>
+      <i [class]='"material-icons calendar-icon"'>event</i>
+      <span [innerHTML]='item.date | localedate'> </span><span *ngIf='item.enddate && item.enddate !== item.date'> - </span><span *ngIf='item.enddate && item.enddate !== item.date'  [innerHTML]='item.enddate | localedate'> </span> : <span class='feed-subtitle' [innerHTML]='(item.activity | uppercase)'></span>
+    </div>
+  </div>
+
+  <div *ngIf='item' [class]='"shadow"'>
+      			<div  [class]='"article-title theme-primary shadow"'>
+              <span [innerHTML]='item.title'></span>
+            </div>
+            <div  *ngIf='item.organization' class='article-subtitle article-title-moreinfo'>
+                <span class='article-title-moreinfo'> {{item.organization}}</span>
+      			</div>
+
+
+
+        <div [class]='"article-description-container"'>
+
+          <div [innerHTML]='item.description | br' [class]='"article-description"'></div>
+
+          <div *ngIf='item.location'><i class='material-icons'>pin_drop</i> {{item.location}}</div>
+
+          <!-- media -->
+
+          <app-attachments *ngIf='item.media || item.attachments' [recorduri]='getRecordUri()' [attachments]='getAttachments()'></app-attachments>
+          <app-imagelist *ngIf='item.media || item.images' [recorduri]='getRecordUri()' [images]='getImages()' [lazyload]='lazyload'></app-imagelist>
+
+
+
+        </div>
+
+    </div>
+
 <div>

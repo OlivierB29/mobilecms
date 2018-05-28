@@ -1,5 +1,4 @@
-
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { RouteUtilService, ReadService, Log, MediaService } from 'app/shared/services';
 import { environment } from 'environments/environment';
@@ -10,11 +9,11 @@ import { MediaComponent } from 'app/maincontent/article';
     moduleId: module.id,
     selector: 'app-my-calendar-event',
     templateUrl: 'calendarevent.component.html',
-    styleUrls: ['calendarevent.component.css']
+    styleUrls: ['calendarevent.component.css', '../article/article.css']
 })
 export class CalendarEventComponent  implements OnInit {
 
-    id= '';
+    @Input() public id: string;
 
     type = 'calendar';
 
@@ -80,6 +79,21 @@ export class CalendarEventComponent  implements OnInit {
 
     getItem(): any {
       return this.item;
+    }
+
+    getImages(): any[] {
+      return this.mediaService.getImages(this.getItem());
+    }
+
+    getAttachments(): any[] {
+      return this.mediaService.getAttachments(this.getItem());
+    }
+
+    /**
+    * eg media/news/3/thumbnails
+    */
+    getRecordUri(): string {
+      return this.type + '/' + this.id;
     }
 
 }

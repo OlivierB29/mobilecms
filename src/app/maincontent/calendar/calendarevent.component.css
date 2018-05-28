@@ -1,4 +1,19 @@
 .calendarevent-container {
-   padding: 0.7em;
+ 
+}
 
+.article-title {
+	font-weight: bold;
+  padding: 0.7em;
+}
+
+.article-subtitle {
+  font-size: 0.7em;
+  color: #999;
+}
+
+
+.article-title-moreinfo {
+  text-align: right;
+  padding-right: 1em;
 }
