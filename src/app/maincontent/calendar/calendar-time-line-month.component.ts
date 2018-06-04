@@ -28,7 +28,8 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
 
     // filter the next upcoming events
     const now = new Date();
-    localItems = localItems.filter(obj => this.dateutil.dateAfter(new Date(obj.date), now));
+    let date = this.dateutil.getFirstDayOfMonth(now);
+    localItems = localItems.filter(obj => this.dateutil.dateAfter(new Date(obj.date), date));
     localItems = this.orderby.transform(localItems, 'date', 'asc');
 
     this.log.debug(this.type + ' ' + localItems.length);
@@ -44,9 +45,8 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
 
 
     // #####################################################
-    const current = new Date();
 
-    let date = this.dateutil.getFirstDayOfMonth(current);
+    
     const end = this.findEndDate();
 
 
@@ -64,7 +64,6 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
     }
 */
     // list by months
-    date = this.dateutil.getFirstDayOfMonth(current);
 
     while (this.dateutil.dateBefore(date, end)) {
       const lastday = this.dateutil.getLastDayOfMonth(date);

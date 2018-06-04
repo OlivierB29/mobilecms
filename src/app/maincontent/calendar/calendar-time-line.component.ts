@@ -90,26 +90,19 @@ export class CalendarTimeLineComponent {
 
   }
 
-  getEndDate(start: Date): Date {
-    let date = new Date(start);
-    if (this.dateutil.getMonthNumber(start) >= 7 ) {
-      date = new Date(date.setFullYear(date.getFullYear() + 1)); // next year
-    }
-    date = new Date(date.setMonth(5)); // June
-    date = new Date(date.setDate(30)); // June
-    return date;
-  }
+
 
   findEndDate(): Date {
     let date: Date = null;
-    if (this.items && this.items[this.items.length - 1].date) {
+    if (this.items && this.items.length > 0 && this.items[this.items.length - 1].date) {
       date = new Date(this.items[this.items.length - 1].date);
-      // calculate last day of month
-      date = this.dateutil.getLastDayOfMonth(date);
-
     } else {
-      date = this.getEndDate(new Date());
+     date = new Date();
     }
+    // calculate last day of month
+    date.setMonth(date.getMonth() + 1);
+    date = this.dateutil.getLastDayOfMonth(date);
+
     return date;
   }
 
