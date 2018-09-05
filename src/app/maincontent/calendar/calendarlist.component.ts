@@ -15,7 +15,7 @@ import { OrderbyPipe } from 'app/shared/pipes';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-    moduleId: module.id,
+  
     selector: 'app-my-calendar-list',
     templateUrl: 'calendarlist.component.html',
     styleUrls: ['calendarlist.component.css']

@@ -10,7 +10,7 @@ import { ImageService } from 'app/maincontent/image';
 
 
 @Component({
-  moduleId: module.id,
+
   selector: 'app-calendarpreview',
   templateUrl: 'calendarpreview.component.html',
   styleUrls: ['calendarpreview.component.css', '../article/article.css', '../article/articlepreview.css']

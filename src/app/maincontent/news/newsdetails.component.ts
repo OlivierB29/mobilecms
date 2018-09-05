@@ -13,7 +13,7 @@ import { Event } from 'app/shared/model/event';
 
 
 @Component({
-    moduleId: module.id,
+  
     selector: 'app-my-newsdetails-component',
 
     templateUrl: 'newsdetails.component.html',

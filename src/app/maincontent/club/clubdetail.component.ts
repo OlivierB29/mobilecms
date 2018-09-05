@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 @Component({
-    moduleId: module.id,
+  
     selector: 'app-my-clubdetail-component',
     templateUrl: 'clubdetail.component.html',
     styleUrls: ['clubdetail.component.css']

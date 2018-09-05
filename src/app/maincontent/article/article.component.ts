@@ -11,7 +11,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 // import 'rxjs/add/operator/toPromise';
 
 @Component({
-  moduleId: module.id,
+
   selector: 'app-article',
   templateUrl: 'article.component.html',
   styleUrls: ['article.css', 'article.component.css']

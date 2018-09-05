@@ -8,7 +8,7 @@ import { ReadService } from 'app/shared/services/read.service';
 import { LayoutService } from 'app/shared/services';
 
 @Component({
-    moduleId: module.id,
+  
     templateUrl: 'home.component.html',
     styleUrls: ['home.component.css']
 })

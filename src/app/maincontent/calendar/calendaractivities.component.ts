@@ -18,7 +18,7 @@ import { HttpClient } from '@angular/common/http';
 * - When clicked, display a list of events for the current activity
 */
 @Component({
-  moduleId: module.id,
+
   templateUrl: 'calendaractivities.component.html',
   styleUrls: ['calendaractivities.component.css']
 })

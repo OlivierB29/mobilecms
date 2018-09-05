@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 @Component({
-  moduleId: module.id,
+
   selector: 'app-items',
   templateUrl: 'items.component.html',
   styleUrls: ['items.component.css']

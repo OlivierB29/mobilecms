@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 * same timing animations
 */
 @Component({
-    moduleId: module.id,
+  
     selector: 'app-my-footer-widget',
     templateUrl: 'footer.component.html',
     styleUrls: ['footer.component.css']

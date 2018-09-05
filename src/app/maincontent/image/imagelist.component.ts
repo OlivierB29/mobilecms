@@ -3,7 +3,7 @@ import { environment } from 'environments/environment';
 import { ImageService } from './image.service';
 
 @Component({
-  moduleId: module.id,
+
   selector: 'app-imagelist',
   templateUrl: 'imagelist.component.html',
   styleUrls: ['imagelist.component.css']

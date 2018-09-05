@@ -18,7 +18,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 */
 
 @Component({
-  moduleId: module.id,
+
   templateUrl: 'clubactivities.component.html',
   styleUrls: ['clubactivities.component.css']
 })

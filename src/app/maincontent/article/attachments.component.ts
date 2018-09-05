@@ -3,7 +3,7 @@ import { environment } from 'environments/environment';
 import { ImageService } from 'app/maincontent/image';
 
 @Component({
-  moduleId: module.id,
+
   selector: 'app-attachments',
   templateUrl: 'attachments.component.html',
   styleUrls: ['attachments.component.css']

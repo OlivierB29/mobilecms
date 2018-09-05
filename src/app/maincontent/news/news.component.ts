@@ -8,7 +8,7 @@ import { ReadService } from 'app/shared/services/read.service';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 
 @Component({
-  moduleId: module.id,
+
   selector: 'app-my-news-component',
   templateUrl: 'news.component.html',
   styleUrls: ['news.component.css']

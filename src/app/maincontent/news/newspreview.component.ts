@@ -9,7 +9,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 
 
 @Component({
-  moduleId: module.id,
+
   selector: 'app-newspreview-component',
   templateUrl: 'newspreview.component.html',
   styleUrls: ['newspreview.component.css']

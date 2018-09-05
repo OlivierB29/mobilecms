@@ -4,7 +4,7 @@ import { VideoService } from './video.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
-  moduleId: module.id,
+
   selector: 'app-videolist',
   templateUrl: 'videolist.component.html',
   styleUrls: ['videolist.component.css']

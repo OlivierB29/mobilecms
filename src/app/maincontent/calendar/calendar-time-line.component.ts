@@ -12,7 +12,7 @@ import { RouteUtilService, DateUtilService } from 'app/shared/services';
 
 
 @Component({
-    moduleId: module.id,
+  
     selector: 'app-calendar-time-line',
     templateUrl: 'calendar-time-line.component.html',
     styleUrls: ['divtable.css', 'calendar-time-line.component.css']

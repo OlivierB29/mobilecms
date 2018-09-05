@@ -13,7 +13,7 @@ import { ReadService, Log } from 'app/shared/services';
 * same timing animations
 */
 @Component({
-  moduleId: module.id,
+
   selector: 'app-my-calendar-feed',
   templateUrl: 'calendarfeed.component.html',
   styleUrls: ['calendarfeed.component.css']

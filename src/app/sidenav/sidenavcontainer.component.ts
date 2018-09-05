@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { ImageService } from 'app/maincontent/image';
 
 @Component({
-  moduleId: module.id,
+
   selector: 'app-sidenav-container',
   templateUrl: 'sidenavcontainer.component.html',
   styleUrls: ['sidenavcontainer.component.css']

@@ -12,7 +12,7 @@ import { map, debounceTime, filter  } from 'rxjs/operators';
 import { LayoutService, Log } from 'app/shared/services';
 
 @Component({
-  moduleId: module.id,
+
   selector: 'app-sidenav',
   templateUrl: 'sidenav.component.html',
   styleUrls: ['sidenav.component.css']

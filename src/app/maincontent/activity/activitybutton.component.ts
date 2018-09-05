@@ -4,7 +4,7 @@ import { Activity } from 'app/shared/model/activity';
 import { environment } from 'environments/environment';
 
 @Component({
-  moduleId: module.id,
+
   selector: 'app-activitybutton',
   templateUrl: 'activitybutton.component.html',
   styleUrls: ['activitybutton.component.css']

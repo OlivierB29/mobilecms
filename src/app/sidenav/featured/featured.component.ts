@@ -11,7 +11,7 @@ import { Log } from 'app/shared/services/log.service';
 * same timing animations
 */
 @Component({
-    moduleId: module.id,
+  
     selector: 'app-my-featured-widget',
     templateUrl: 'featured.component.html',
     styleUrls: ['featured.component.css']

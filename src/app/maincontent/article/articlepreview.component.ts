@@ -9,7 +9,7 @@ import { ImageService } from 'app/maincontent/image';
 
 
 @Component({
-  moduleId: module.id,
+
   selector: 'app-articlepreview',
   templateUrl: 'articlepreview.component.html',
   styleUrls: ['article.css', 'articlepreview.css', 'articlepreview.component.css']

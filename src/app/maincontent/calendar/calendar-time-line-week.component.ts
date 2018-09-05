@@ -5,7 +5,7 @@ import { CalendarTimeLineComponent } from './calendar-time-line.component';
 
 
 @Component({
-    moduleId: module.id,
+  
     selector: 'app-calendar-time-line-week',
     templateUrl: 'calendar-time-line-week.component.html',
     styleUrls: ['divtable.css', 'calendar-time-line.component.css']

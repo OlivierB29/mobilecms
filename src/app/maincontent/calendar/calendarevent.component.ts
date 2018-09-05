@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { MediaComponent } from 'app/maincontent/article';
 
 @Component({
-    moduleId: module.id,
+  
     selector: 'app-my-calendar-event',
     templateUrl: 'calendarevent.component.html',
     styleUrls: ['calendarevent.component.css', '../article/article.css']

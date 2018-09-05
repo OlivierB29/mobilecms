@@ -14,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
 * display a list of clubs, for a selected activity
 */
 @Component({
-  moduleId: module.id,
+
   selector: 'app-my-clubs-list',
   templateUrl: 'clublist.component.html',
   styleUrls: ['clublist.component.css']

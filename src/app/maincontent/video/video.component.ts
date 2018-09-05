@@ -5,7 +5,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { LayoutService, MediaService } from 'app/shared/services';
 
 @Component({
-  moduleId: module.id,
+
   selector: 'app-video',
   templateUrl: 'video.component.html',
   styleUrls: ['video.component.css']
