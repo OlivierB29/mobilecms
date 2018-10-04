@@ -4,17 +4,17 @@
     <div class='my-mat-button-dark'>
       <div>
         <i [class]='"material-icons calendar-icon"'>event</i>
-        <span [innerHTML]='item.date | localedate'> </span>: <span class='feed-subtitle' [innerHTML]='(item.activity | uppercase)'></span>
+        <span [innerHTML]='item.date | localedate'> </span> | <span class='feed-subtitle' [innerHTML]='(item.activity | uppercase)'></span> : 
+        <span [innerHTML]='item.title' class='feed-subtitle'></span>
       </div>
     </div>
 
-    <div *ngIf='show === "description"'>
+    <div *ngIf='show === "description"' class='largeview'>
       <div class='calendar-preview-table-row'>
         <div *ngIf='image'>
           <img [src]='getThumbnail(image)' [alt]='image.title'>
         </div>
         <div>
-          <span [innerHTML]='item.title' class='calendar-preview-title'></span>
           <span [innerHTML]='getPreviewDescription()' class='calendar-preview-description'></span>
         </div>
       </div>

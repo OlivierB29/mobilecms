@@ -1,7 +1,7 @@
     {
         "id" : "1",
-        "date": "2018-01-11",
-        "enddate": "2018-01-14",
+        "date": "2019-01-11",
+        "enddate": "2019-01-14",
         "activity": "tennis",
         "title": "some seminar of tennis with media",
         "organization": "Some org",
@@ -27,6 +27,11 @@
                             "width": "320",
                             "height": "",
                             "url": "tennis-178696_320.jpg"
+                        },
+                        {
+                            "width": "480",
+                            "height": "",
+                            "url": "tennis-178696_480.jpg"
                         }
             ]
                   },

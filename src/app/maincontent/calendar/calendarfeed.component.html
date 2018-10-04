@@ -1,14 +1,8 @@
 <div *ngFor="let currentItem of items; let i=index">
 
-  <div *ngIf='i <= 1'>
-    <app-my-calendar-event [id]='currentItem.id'></app-my-calendar-event>
-  </div>
-
-  <div *ngIf='i > 1'>
+  <div>
     <app-calendarpreview [type]='"calendar"' [id]='currentItem.id' [show]='"description"'></app-calendarpreview>
   </div>
-
-
 
   <div class='article-feed-spacer'></div>
 

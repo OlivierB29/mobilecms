@@ -11,10 +11,18 @@ body {
   padding: .7em 0;
 }
 
+.largeview {
+  display: none;
+}
+
 @media all and (min-width: 55em) {
   /* list */
   .article-list {
     padding: .7em .7em;
+  }
+
+  .largeview {
+    display: block;
   }
 }
 
