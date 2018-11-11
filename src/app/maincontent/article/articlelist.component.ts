@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Item } from 'app/shared/model/item';
+import { Item } from 'src/app/shared/model/item';
 @Component({
 
   selector: 'app-articlelist',

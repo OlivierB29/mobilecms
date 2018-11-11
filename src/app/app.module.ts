@@ -8,13 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
-import { ActivityModule } from 'app/maincontent/activity/activity.module';
-import { ArticleModule } from 'app/maincontent/article/article.module';
-import { CalendarModule } from 'app/maincontent/calendar/calendar.module';
-import { NewsModule } from 'app/maincontent/news/news.module';
-import { MainModule } from 'app/sidenav/main.module';
-import { ClubModule } from 'app/maincontent/club/club.module';
-import { ImageModule } from 'app/maincontent/image/image.module';
+import { ActivityModule } from 'src/app/maincontent/activity/activity.module';
+import { ArticleModule } from 'src/app/maincontent/article/article.module';
+import { CalendarModule } from 'src/app/maincontent/calendar/calendar.module';
+import { NewsModule } from 'src/app/maincontent/news/news.module';
+import { MainModule } from 'src/app/sidenav/main.module';
+import { ClubModule } from 'src/app/maincontent/club/club.module';
+import { ImageModule } from 'src/app/maincontent/image/image.module';
 
 @NgModule({
   imports: [

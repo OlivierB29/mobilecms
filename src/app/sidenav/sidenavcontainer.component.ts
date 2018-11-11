@@ -1,9 +1,9 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { environment } from 'environments/environment';
-import { ReadService, LayoutService } from 'app/shared/services';
+import { environment } from 'src/environments/environment';
+import { ReadService, LayoutService } from 'src/app/shared/services';
 import { HttpClient } from '@angular/common/http';
-import { ImageService } from 'app/maincontent/image';
+import { ImageService } from 'src/app/maincontent/image';
 
 @Component({
 

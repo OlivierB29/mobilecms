@@ -1,5 +1,5 @@
 import { Injectable, Pipe, PipeTransform } from '@angular/core';
-import { environment } from 'environments/environment';
+import { environment } from 'src/environments/environment';
 
 /*
 * https://angular.io/docs/ts/latest/guide/pipes.html

@@ -2,9 +2,9 @@
 import { Component, OnInit } from '@angular/core';
 
 
-import { Event } from 'app/shared/model/event';
+import { Event } from 'src/app/shared/model/event';
 
-import { Log } from 'app/shared/services/log.service';
+import { Log } from 'src/app/shared/services/log.service';
 
 
 /**

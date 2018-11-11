@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 
 
 
-import { Log } from 'app/shared/services/log.service';
-import { ReadService } from 'app/shared/services/read.service';
-import { LayoutService } from 'app/shared/services';
+import { Log } from 'src/app/shared/services/log.service';
+import { ReadService } from 'src/app/shared/services/read.service';
+import { LayoutService } from 'src/app/shared/services';
 
 @Component({
   
@@ -14,7 +14,7 @@ import { LayoutService } from 'app/shared/services';
 })
 export class HomeComponent implements OnInit {
 
-    max = 2;
+    max = 5;
 
     constructor(private layoutService: LayoutService) {
 
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
 
     ngOnInit(): void {
       if (this.layoutService.getLayout() === 'desktop') {
-        this.max = 4;
+        this.max = 10;
       }
 
     }

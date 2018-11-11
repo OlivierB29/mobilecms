@@ -3,15 +3,15 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
 
 
-import { ReadService } from 'app/shared/services/read.service';
+import { ReadService } from 'src/app/shared/services/read.service';
 
 
-import { Log } from 'app/shared/services/log.service';
+import { Log } from 'src/app/shared/services/log.service';
 
 
-import { Event } from 'app/shared/model/event';
-import { Activity } from 'app/shared/model/activity';
-import { OrderbyPipe } from 'app/shared/pipes';
+import { Event } from 'src/app/shared/model/event';
+import { Activity } from 'src/app/shared/model/activity';
+import { OrderbyPipe } from 'src/app/shared/pipes';
 import { HttpClient } from '@angular/common/http';
 
 @Component({

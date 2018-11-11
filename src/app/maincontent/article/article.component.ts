@@ -2,10 +2,10 @@ import { Component, AfterViewInit, Input } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 
 import { MediaComponent } from './media.component';
-import { ReadService, MediaService } from 'app/shared/services';
+import { ReadService, MediaService } from 'src/app/shared/services';
 
-import { Log } from 'app/shared/services/log.service';
-import { environment } from 'environments/environment';
+import { Log } from 'src/app/shared/services/log.service';
+import { environment } from 'src/environments/environment';
 
 import { HttpClient, HttpResponse } from '@angular/common/http';
 // import 'rxjs/add/operator/toPromise';

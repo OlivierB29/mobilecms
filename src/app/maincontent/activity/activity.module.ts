@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 
 import { RouterModule } from '@angular/router';
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { SharedModule } from 'app/shared/shared.module';
 
 import { ActivityButtonComponent } from './';
 
 
-import { ImageModule } from 'app/maincontent/image/image.module';
+import { ImageModule } from 'src/app/maincontent/image/image.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
     imports: [

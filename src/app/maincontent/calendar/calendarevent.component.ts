@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { RouteUtilService, ReadService, Log, MediaService } from 'app/shared/services';
-import { environment } from 'environments/environment';
+import { RouteUtilService, ReadService, Log, MediaService } from 'src/app/shared/services';
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { MediaComponent } from 'app/maincontent/article';
+import { MediaComponent } from 'src/app/maincontent/article';
 
 @Component({
   

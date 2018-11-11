@@ -1,12 +1,12 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
 
 import { MediaComponent } from '../article/media.component';
-import { ReadService } from 'app/shared/services';
-import { Log } from 'app/shared/services/log.service';
-import { environment } from 'environments/environment';
+import { ReadService } from 'src/app/shared/services';
+import { Log } from 'src/app/shared/services/log.service';
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { RouteUtilService, MediaService } from 'app/shared/services';
-import { ImageService } from 'app/maincontent/image';
+import { RouteUtilService, MediaService } from 'src/app/shared/services';
+import { ImageService } from 'src/app/maincontent/image';
 
 
 @Component({

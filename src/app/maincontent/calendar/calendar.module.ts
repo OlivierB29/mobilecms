@@ -4,11 +4,11 @@ import { RouterModule } from '@angular/router';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 
-import { ImageModule } from 'app/maincontent/image/image.module';
+import { ImageModule } from 'src/app/maincontent/image/image.module';
 
-import { SharedModule } from 'app/shared/shared.module';
-import { ActivityModule } from 'app/maincontent/activity/activity.module';
-import { ArticleModule } from 'app/maincontent/article/article.module';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { ActivityModule } from 'src/app/maincontent/activity/activity.module';
+import { ArticleModule } from 'src/app/maincontent/article/article.module';
 
 import { calendarRoutes } from './calendar.route';
 

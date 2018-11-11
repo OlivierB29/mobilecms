@@ -2,14 +2,14 @@ import { CommonModule } from '@angular/common';
 
 import { RouterModule } from '@angular/router';
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { SharedModule } from 'app/shared/shared.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 import { ArticleComponent, ArticlePreviewComponent, ArticlelistComponent,
    AttachmentsComponent, ItemsComponent } from './';
 
 
-import { ImageModule } from 'app/maincontent/image/image.module';
-import { VideoModule } from 'app/maincontent/video/video.module';
+import { ImageModule } from 'src/app/maincontent/image/image.module';
+import { VideoModule } from 'src/app/maincontent/video/video.module';
 import { articleRoutes } from './article.route';
 
 @NgModule({

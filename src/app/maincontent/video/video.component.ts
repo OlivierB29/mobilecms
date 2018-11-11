@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { environment } from 'environments/environment';
+import { environment } from 'src/environments/environment';
 
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { LayoutService, MediaService } from 'app/shared/services';
+import { LayoutService, MediaService } from 'src/app/shared/services';
 
 @Component({
 

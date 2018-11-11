@@ -1,5 +1,5 @@
 import { ReadService } from './read.service';
-import { environment } from 'environments/environment';
+import { environment } from 'src/environments/environment';
 
 
 describe('ReadService test', () => {

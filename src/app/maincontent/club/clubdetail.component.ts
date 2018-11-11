@@ -1,8 +1,8 @@
 
 import { Component, OnInit, Input } from '@angular/core';
-import { ReadService } from 'app/shared/services/read.service';
+import { ReadService } from 'src/app/shared/services/read.service';
 
-import { Log } from 'app/shared/services/log.service';
+import { Log } from 'src/app/shared/services/log.service';
 import { HttpClient } from '@angular/common/http';
 
 

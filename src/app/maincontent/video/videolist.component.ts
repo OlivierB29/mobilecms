@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { environment } from 'environments/environment';
+import { environment } from 'src/environments/environment';
 import { VideoService } from './video.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 

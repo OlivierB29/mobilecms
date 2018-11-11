@@ -4,10 +4,10 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
-import { Club } from 'app/shared/model/club';
-import { Department } from 'app/shared/model/department';
-import { Log } from 'app/shared/services/log.service';
-import { ReadService } from 'app/shared/services/read.service';
+import { Club } from 'src/app/shared/model/club';
+import { Department } from 'src/app/shared/model/department';
+import { Log } from 'src/app/shared/services/log.service';
+import { ReadService } from 'src/app/shared/services/read.service';
 import { HttpClient } from '@angular/common/http';
 
 /**

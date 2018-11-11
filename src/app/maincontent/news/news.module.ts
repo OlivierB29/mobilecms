@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 
 import { RouterModule } from '@angular/router';
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { SharedModule } from 'app/shared/shared.module';
-import { ArticleModule } from 'app/maincontent/article/article.module';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { ArticleModule } from 'src/app/maincontent/article/article.module';
 
 import {
   NewsComponent,
@@ -12,7 +12,7 @@ import {
 } from './';
 
 
-import { ImageModule } from 'app/maincontent/image/image.module';
+import { ImageModule } from 'src/app/maincontent/image/image.module';
 import { newsRoutes } from './news.route';
 
 @NgModule({

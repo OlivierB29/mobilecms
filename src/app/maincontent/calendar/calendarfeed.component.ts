@@ -3,10 +3,10 @@ import { Component, AfterViewInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
-import { OrderbyPipe } from 'app/shared/pipes';
-import { Event } from 'app/shared//model/event';
-import { environment } from 'environments/environment';
-import { ReadService, Log } from 'app/shared/services';
+import { OrderbyPipe } from 'src/app/shared/pipes';
+import { Event } from 'src/app/shared//model/event';
+import { environment } from 'src/environments/environment';
+import { ReadService, Log } from 'src/app/shared/services';
 
 
 /**

@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
-import { environment } from 'environments/environment';
+import { environment } from 'src/environments/environment';
 import { MenuService } from './menu.service';
 
 // https://stackoverflow.com/questions/45784825/frompromise-does-not-exist-on-type-observable
@@ -9,7 +9,7 @@ import { map, debounceTime, filter  } from 'rxjs/operators';
 
 
 
-import { LayoutService, Log } from 'app/shared/services';
+import { LayoutService, Log } from 'src/app/shared/services';
 
 @Component({
 

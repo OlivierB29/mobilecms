@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { environment } from 'environments/environment';
-import { ImageService } from 'app/maincontent/image';
+import { environment } from 'src/environments/environment';
+import { ImageService } from 'src/app/maincontent/image';
 
 @Component({
 

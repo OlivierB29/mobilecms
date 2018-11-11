@@ -2,10 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params, Data } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
-import { ReadService } from 'app/shared/services/read.service';
-import { Log } from 'app/shared/services/log.service';
-import { Item } from 'app/shared/model/item';
-import { OrderbyPipe } from 'app/shared/pipes';
+import { ReadService } from 'src/app/shared/services/read.service';
+import { Log } from 'src/app/shared/services/log.service';
+import { Item } from 'src/app/shared/model/item';
+import { OrderbyPipe } from 'src/app/shared/pipes';
 import { HttpClient } from '@angular/common/http';
 
 

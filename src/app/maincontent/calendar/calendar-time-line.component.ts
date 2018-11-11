@@ -1,14 +1,14 @@
 import { Component, AfterViewInit, Input } from '@angular/core';
 
 
-import { ReadService } from 'app/shared/services/read.service';
-import { OrderbyPipe } from 'app/shared/pipes';
-import { Event } from 'app/shared/model/event';
-import { environment } from 'environments/environment';
+import { ReadService } from 'src/app/shared/services/read.service';
+import { OrderbyPipe } from 'src/app/shared/pipes';
+import { Event } from 'src/app/shared/model/event';
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Log } from 'app/shared/services/log.service';
+import { Log } from 'src/app/shared/services/log.service';
 
-import { RouteUtilService, DateUtilService } from 'app/shared/services';
+import { RouteUtilService, DateUtilService } from 'src/app/shared/services';
 
 
 @Component({
