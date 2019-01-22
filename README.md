@@ -7,7 +7,7 @@ Visit the [demo](https://olivierb29.github.io/mobilecms-demo/) on github pages
 [![Build Status](https://travis-ci.org/OlivierB29/mobilecms.svg?branch=master)](https://travis-ci.org/OlivierB29/mobilecms)
 
 Briefly :
-- Angular 6
+- Angular 7
 - HTML 5 images
 - Hosted on a cheap server, with no database available (see explanation in FAQ)
 - All data is public
