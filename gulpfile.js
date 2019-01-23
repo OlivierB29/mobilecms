@@ -10,7 +10,7 @@ function defaultTask(done) {
 
 
 gulp.task('cleandist', cleandistTask);
-
+let projectName = 'mobilecms';
 function cleandistTask(done) {
     let assets = [
    'dist/'+projectName+'/media',

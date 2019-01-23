@@ -41,33 +41,26 @@ export class ArticlePreviewComponent   implements OnInit {
   ngOnInit() {
     this.log.debug('ArticlePreviewComponent ' + this.id);
 
+    if (this.type && this.id) {
+      this.http.get<any>(this.readService.getUrl(this.type, this.id))
+      .subscribe((data: any) => {
+        this.item = data;
+        this.item.media = this.mediaService.initMediaUrl(this.type, this.id, this.item.media, this.media);
 
+         if (this.getImages() && this.getImages().length > 0) {
+           this.image = this.getImages()[0];
+         }
 
-    if (!this.type) {
-      throw new Error('empty type');
+          // TODO : news/1 vs calendar/detail/1
+          if ('calendar' === this.type) {
+            this.url = '/' + this.type + '/detail/' + this.item.id;
+            } else {
+            this.url = '/' + this.type + '/' + this.item.id;
+          }
+
+      });
     }
-
-    if (!this.id) {
-      throw new Error('empty id');
-    }
-
-    this.http.get<any>(this.readService.getUrl(this.type, this.id))
-              .subscribe((data: any) => {
-                this.item = data;
-                this.item.media = this.mediaService.initMediaUrl(this.type, this.id, this.item.media, this.media);
-
-                 if (this.getImages() && this.getImages().length > 0) {
-                   this.image = this.getImages()[0];
-                 }
-
-                  // TODO : news/1 vs calendar/detail/1
-                  if ('calendar' === this.type) {
-                    this.url = '/' + this.type + '/detail/' + this.item.id;
-                    } else {
-                    this.url = '/' + this.type + '/' + this.item.id;
-                  }
-
-              });
+    
 
 
   }

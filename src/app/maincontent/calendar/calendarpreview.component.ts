@@ -49,33 +49,29 @@ export class CalendarPreviewComponent   implements OnInit {
 
   ngOnInit() {
 
-    if (!this.type) {
-      throw new Error('Empty type');
-    }
 
     if (this.item) {
       this.log.debug('CalendarPreviewComponent: ' + this.item.id);
-    } else  {
+    } else if (this.id && this.type) {
+        this.log.debug('CalendarPreviewComponent : ' + this.id);
 
 
-      if (!this.id) {
-        throw new Error('Empty id');
+        this.http.get<any>(this.readService.getUrl(this.type, this.id))
+                  .subscribe((data: any) => {
+                    this.item = data;
+                    this.item.media = this.mediaService.initMediaUrl(this.type, this.id, this.item.media, this.media);
+  
+                     if (this.getImages() && this.getImages().length > 0) {
+                       this.image = this.getImages()[0];
+                     }
+  
+                  });
       }
-      this.log.debug('CalendarPreviewComponent : ' + this.id);
+      
 
+    
 
-      this.http.get<any>(this.readService.getUrl(this.type, this.id))
-                .subscribe((data: any) => {
-                  this.item = data;
-                  this.item.media = this.mediaService.initMediaUrl(this.type, this.id, this.item.media, this.media);
-
-                   if (this.getImages() && this.getImages().length > 0) {
-                     this.image = this.getImages()[0];
-                   }
-
-                });
-
-    }
+    
 
 
   }
