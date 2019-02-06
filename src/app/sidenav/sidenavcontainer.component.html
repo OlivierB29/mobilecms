@@ -18,7 +18,7 @@
 
 <div [class]='"my-body"'>
 
-  <app-sidenav #sidenav [mode]='menuMode' [opened]='menuOpened'></app-sidenav>
+    <app-sidenav #sidenav [mode]='menuMode' [opened]='menuOpened'></app-sidenav>
 
   <!-- fading backdrop : close menu on click -->
   <div *ngIf='sidenav.isOverMenuOpened()'  [class]='"my-mat-sidenav-backdrop"' [ngClass]='{"my-mat-sidenav-shown": sidenav.isOpen()}' (click)='sidenav.open()'></div>
@@ -28,8 +28,9 @@
   <img [src]='bannerurl' [srcset]='getBannerSrcSet()' alt='' sizes='(min-width: 55em) 100vw' [class]='"image-auto-width"'>
 
     <!-- content -->
+    <main>
     <router-outlet></router-outlet>
-
+    </main>
   </div>
 
 </div>

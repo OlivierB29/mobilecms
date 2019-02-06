@@ -1,3 +1,4 @@
+<nav>
 <div *ngIf='isOpen()' [class]='"menu-container theme-primary"'  [ngClass]='{"menu-container-expanded": isExpanded()}'>
 <div [class]='"buttonseparator"'></div>
 <span *ngFor='let menu of menuItems' (click)='expandClose()' >
@@ -6,3 +7,4 @@
 </span>
 
 </div>
+</nav>

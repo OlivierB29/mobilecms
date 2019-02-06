@@ -19,16 +19,15 @@ Since this project is the frontend, an admin app is necessary :
 
 ## Development server
 - Node JS
-- yarn (optional)
-- `npm install -g @angular/cli`
-- `npm install` or `yarn`
-- Run `npm start` for a dev server.
+- `npm i -g @angular/cli`
+- `npm i`
+- `npm run dev`
 - Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 Run `npm run dist` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-Demo build for github pages : `npm run demobuild`
+Demo build for github pages : `npm start`
 
 ## Deploy
 Transfer files in `dist` directory to your server (such as `/var/www/html/`).
@@ -49,4 +48,4 @@ In future plans, with the growing data, the database may become useful.
 For now, we have 10-20 news per year, and roughly the same for calendar events.
 
 - Server hardware requirements
-Depending of simultaneous users, it can be hosted on anything, even a Raspberry Pi.
+It can be hosted on anything, even a Raspberry Pi.
