@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, Input } from '@angular/core';
+import { Component, AfterViewInit, Input, OnInit, ElementRef } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 
 import { MediaComponent } from './media.component';
@@ -16,7 +16,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
   templateUrl: 'article.component.html',
   styleUrls: ['article.css', 'article.component.css']
 })
-export class ArticleComponent  implements AfterViewInit {
+export class ArticleComponent  implements OnInit {
 
   /**
   * type data
@@ -31,7 +31,9 @@ export class ArticleComponent  implements AfterViewInit {
   /**
   * if data is preloaded
   */
-  @Input() public item: any;
+  @Input() public itemparam: any;
+
+  public item: any;
 
   @Input() public media = 'media';
 
@@ -41,6 +43,17 @@ export class ArticleComponent  implements AfterViewInit {
   fetched = false;
 
 
+  public io = new IntersectionObserver(
+    entries => {
+  //    console.log(entries);
+    },
+    {
+      /* Using default options. Details below */
+    }
+  );
+  // Start observing an element
+ // io.observe(element);
+  
 
 
   constructor(
@@ -48,7 +61,8 @@ export class ArticleComponent  implements AfterViewInit {
     private log: Log,
     private readService: ReadService,
     private mediaService: MediaService,
-    private http: HttpClient) {
+    private http: HttpClient,
+    private element: ElementRef) {
     if (!this.item) {
       this.item = {
         id: '', title: this.getEmptyTitle(),
@@ -82,10 +96,10 @@ export class ArticleComponent  implements AfterViewInit {
   // }
 
 
-  ngAfterViewInit() {
+  ngOnInit() {
 
     this.fetchData();
-
+    this.io.observe(this.element.nativeElement);
   }
 
 
@@ -105,6 +119,10 @@ export class ArticleComponent  implements AfterViewInit {
 
     } else if (this.isItemInit()) {
       this.log.debug('ArticleComponent item ' + this.item.id);
+      let tmpItem = this.itemparam;
+      
+      tmpItem.media = this.mediaService.initMediaUrl(this.type, tmpItem.id, tmpItem.media, this.media);
+      this.item = tmpItem;
       this.fetched = true;
     } else {
       if (!this.type) {
@@ -121,7 +139,7 @@ export class ArticleComponent  implements AfterViewInit {
   }
 
   private isItemInit() {
-    return this.item && this.item.id;
+    return this.itemparam && this.itemparam.id  ;
   }
 
   private isRouteInit() {

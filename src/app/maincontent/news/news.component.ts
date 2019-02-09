@@ -52,7 +52,7 @@ export class NewsComponent implements AfterViewInit {
 
             // in case of an unsorted index
             // About 20 news per season, unless cf to https://angular.io/guide/pipes#!#no-filter-pipe
-            dbItems = this.orderby.transform(dbItems, 'date', 'desc');
+           // dbItems = this.orderby.transform(dbItems, 'date', 'desc');
 
             if (this.max > 0 && dbItems.length > this.max) {
               dbItems = dbItems.slice(0, this.max);

@@ -84,7 +84,7 @@ export class CalendarListComponent implements OnInit {
                 this.items = this.items.filter(item => item.activity.indexOf(this.activity) !== -1);
 
                 // next events
-                this.orderby.transform(this.items, 'date', 'asc');
+               // this.orderby.transform(this.items, 'date', 'asc');
               });
 
 

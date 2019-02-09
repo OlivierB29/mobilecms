@@ -2,7 +2,8 @@
 <div *ngIf='images && images.length > 0' [class]='"images-container"'>
 <div *ngFor='let image of images'>
   <a [href]='image.url' [title]='image.title'>
-
-  <img  [src]='getDefaultImage(image)' [srcset]='getThumbnailSrcSet(image)' [alt]='image.title' sizes='(min-width: 55em) 60vw, 100vw'>
+    <ngui-in-view>
+    <img *ngIf [src]='getDefaultImage(image)' [srcset]='getThumbnailSrcSet(image)' [alt]='image.title' sizes='(min-width: 55em) 60vw, 100vw'>
+    </ngui-in-view>
   </a>
 </div>

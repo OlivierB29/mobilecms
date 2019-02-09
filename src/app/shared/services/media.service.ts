@@ -2,6 +2,8 @@ export class MediaService {
 
     initMediaUrl(type: string, id: string, media: any[], mediaUri: string): any[] {
       const result = [];
+
+     
       if (media) {
 
         media.forEach((m: any) => {

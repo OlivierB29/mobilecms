@@ -6,6 +6,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 import { ImageListComponent } from './';
 import { ImageService } from 'src/app/maincontent/image/image.service';
+import { NguiInViewComponent } from './ngui-in-view';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { ImageService } from 'src/app/maincontent/image/image.service';
     ],
     declarations: [
       ImageListComponent,
-
+      NguiInViewComponent
     ],
     providers: [
       ImageService
@@ -24,7 +25,8 @@ import { ImageService } from 'src/app/maincontent/image/image.service';
     entryComponents: [
     ],
     exports: [
-      ImageListComponent
+      ImageListComponent,
+      NguiInViewComponent
     ],
 
 })

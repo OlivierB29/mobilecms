@@ -13,6 +13,7 @@ gulp.task('cleandist', cleandistTask);
 let projectName = 'mobilecms';
 function cleandistTask(done) {
     let assets = [
+    'dist/'+projectName+'/favicon.ico',
    'dist/'+projectName+'/media',
    'dist/'+projectName+'/public',
    'dist/'+projectName+'/assets'];

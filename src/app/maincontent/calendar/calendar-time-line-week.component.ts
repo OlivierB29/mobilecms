@@ -28,7 +28,7 @@ export class CalendarTimeLineWeekComponent  extends CalendarTimeLineComponent   
     // filter the next upcoming events
     const now = new Date();
     localItems = localItems.filter(obj => this.dateutil.dateAfter(new Date(obj.date), now));
-    localItems = this.orderby.transform(localItems, 'date', 'asc');
+    //localItems = this.orderby.transform(localItems, 'date', 'asc');
 
     this.log.debug(this.type + ' ' + localItems.length);
 

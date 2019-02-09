@@ -27,6 +27,7 @@ import { ImageModule } from 'src/app/maincontent/image/image.module';
     ClubModule,
     CalendarModule,
     NewsModule,
+    ImageModule,
     MainModule
 ],
   declarations: [

@@ -30,7 +30,7 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
     const now = new Date();
     let date = this.dateutil.getFirstDayOfMonth(now);
     localItems = localItems.filter(obj => this.dateutil.dateAfter(new Date(obj.date), date));
-    localItems = this.orderby.transform(localItems, 'date', 'asc');
+   // localItems = this.orderby.transform(localItems, 'date', 'asc');
 
     this.log.debug(this.type + ' ' + localItems.length);
 

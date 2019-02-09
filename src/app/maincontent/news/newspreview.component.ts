@@ -40,7 +40,7 @@ export class NewsPreviewComponent implements OnInit {
       .subscribe((data: any[]) => {
         dbItems = data;
 
-        dbItems = this.orderby.transform(dbItems, 'date', 'desc');
+        //dbItems = this.orderby.transform(dbItems, 'date', 'desc');
 
         if (this.max > 0 && dbItems.length > this.max) {
           dbItems = dbItems.slice(dbItems.length - this.max, dbItems.length);
