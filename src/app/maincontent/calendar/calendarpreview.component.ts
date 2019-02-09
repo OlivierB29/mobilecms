@@ -52,6 +52,10 @@ export class CalendarPreviewComponent   implements OnInit {
 
     if (this.item) {
       this.log.debug('CalendarPreviewComponent: ' + this.item.id);
+      this.item.media = this.mediaService.initMediaUrl(this.type, this.item.id, this.item.media, this.media);
+      if (this.getImages() && this.getImages().length > 0) {
+        this.image = this.getImages()[0];
+      }
     } else if (this.id && this.type) {
         this.log.debug('CalendarPreviewComponent : ' + this.id);
 
