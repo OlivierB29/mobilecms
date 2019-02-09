@@ -12,7 +12,9 @@
     <div *ngIf='show === "description"' class='largeview'>
       <div class='calendar-preview-table-row'>
         <div *ngIf='image'>
-          <img [src]='getThumbnail(image)' [alt]='image.title'>
+          <ngui-in-view>
+            <img *ngIf [src]='getThumbnail(image)' [alt]='image.title'>
+          </ngui-in-view>
         </div>
         <div>
           <span [innerHTML]='getPreviewDescription()' class='calendar-preview-description'></span>
