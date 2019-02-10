@@ -1,7 +1,7 @@
 
 import { Component, OnInit, Input } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { OrderbyPipe } from 'src/app/shared/pipes';
+
 import { Log } from 'src/app/shared/services/log.service';
 import { ReadService } from 'src/app/shared/services/read.service';
 
@@ -30,7 +30,6 @@ export class NewsPreviewComponent implements OnInit {
     private titleService: Title,
     private dataService: ReadService,
     private log: Log,
-    private orderby: OrderbyPipe,
     private http: HttpClient
   ) {
   }

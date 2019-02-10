@@ -2,7 +2,7 @@ import { Component, AfterViewInit, Input } from '@angular/core';
 
 
 import { ReadService } from 'src/app/shared/services/read.service';
-import { OrderbyPipe } from 'src/app/shared/pipes';
+
 import { Event } from 'src/app/shared/model/event';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
@@ -30,7 +30,6 @@ export class CalendarTimeLineComponent {
   constructor(protected dataService: ReadService,
     protected http: HttpClient,
     protected log: Log,
-    protected orderby: OrderbyPipe,
     private routeUtil: RouteUtilService,
     protected dateutil: DateUtilService) {
     // Add an empty item in order to display something.

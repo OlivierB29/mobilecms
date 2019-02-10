@@ -71,7 +71,7 @@ export class Log {
 
   public warn(obj: any) {
     if (this.level >= Level.Warn) {
-      console.log(obj);
+      console.warn(obj);
     }
   }
 

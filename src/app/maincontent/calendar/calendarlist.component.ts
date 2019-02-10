@@ -10,8 +10,7 @@ import { Log } from 'src/app/shared/services/log.service';
 
 
 import { Event } from 'src/app/shared/model/event';
-import { Activity } from 'src/app/shared/model/activity';
-import { OrderbyPipe } from 'src/app/shared/pipes';
+
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -52,7 +51,6 @@ export class CalendarListComponent implements OnInit {
         private dataservice: ReadService,
         private log: Log,
         private route: ActivatedRoute,
-        private orderby: OrderbyPipe,
         private http: HttpClient
     ) {
     }

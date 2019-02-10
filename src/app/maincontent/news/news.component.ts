@@ -1,7 +1,7 @@
 
 import { Component, AfterViewInit, Input } from '@angular/core';
 
-import { OrderbyPipe } from 'src/app/shared/pipes';
+
 import { Log } from 'src/app/shared/services/log.service';
 import { ReadService } from 'src/app/shared/services/read.service';
 
@@ -29,7 +29,6 @@ export class NewsComponent implements AfterViewInit {
   constructor(
     private dataService: ReadService,
     private log: Log,
-    private orderby: OrderbyPipe,
     private http: HttpClient
   ) {
     // initialize the component with empty values.
@@ -50,9 +49,6 @@ export class NewsComponent implements AfterViewInit {
           .subscribe((data: any[]) => {
             dbItems = data;
 
-            // in case of an unsorted index
-            // About 20 news per season, unless cf to https://angular.io/guide/pipes#!#no-filter-pipe
-           // dbItems = this.orderby.transform(dbItems, 'date', 'desc');
 
             if (this.max > 0 && dbItems.length > this.max) {
               dbItems = dbItems.slice(0, this.max);

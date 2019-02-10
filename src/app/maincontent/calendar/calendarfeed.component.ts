@@ -3,7 +3,7 @@ import { Component, AfterViewInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
-import { OrderbyPipe } from 'src/app/shared/pipes';
+
 import { Event } from 'src/app/shared//model/event';
 import { environment } from 'src/environments/environment';
 import { ReadService, Log } from 'src/app/shared/services';
@@ -34,8 +34,7 @@ export class CalendarFeedComponent implements AfterViewInit {
 
   constructor(private dataService: ReadService,
     private http: HttpClient,
-    private log: Log,
-    private orderby: OrderbyPipe) {
+    private log: Log) {
     // Add an empty item in order to display something.
     // Considering that IO operations are slow, it constructs a raw frame for the end user.
     this.items.push({ id: '', activity: '.....', title: '.... .... ........', date: '..-..-....' });

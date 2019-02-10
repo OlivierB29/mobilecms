@@ -7,34 +7,34 @@ export const articleRoutes: Routes = [
 
   {
     path: 'structure',
-    component: ItemsComponent, data: { type: 'structure', orderby: 'id' }
+    component: ItemsComponent, data: { type: 'structure' }
   },
   {
     path: 'organisation',
-    component: ItemsComponent, data: { type: 'structure', orderby: 'id' }
+    component: ItemsComponent, data: { type: 'structure' }
   },
   {
     path: 'contact',
-    component: ItemsComponent, data: { type: 'contacts', orderby: 'id' }
+    component: ItemsComponent, data: { type: 'contacts' }
   },
   {
     path: 'reports',
-    component: ItemsComponent, data: { type: 'reports', orderby: 'id', direction: 'desc' }
+    component: ItemsComponent, data: { type: 'reports'  }
   },
   {
     path: 'comptesrendus',
-    component: ItemsComponent, data: { type: 'reports', orderby: 'id', direction: 'desc' }
+    component: ItemsComponent, data: { type: 'reports', }
   },
   {
     path: 'links',
-    component: ItemsComponent, data: { type: 'links', orderby: 'id' }
+    component: ItemsComponent, data: { type: 'links' }
   },
   {
     path: 'liens',
-    component: ItemsComponent, data: { type: 'links', orderby: 'id' }
+    component: ItemsComponent, data: { type: 'links' }
   },
   {
     path: 'documents',
-    component: ItemsComponent, data: { type: 'documents', orderby: 'id' }
+    component: ItemsComponent, data: { type: 'documents' }
   }
 ];
