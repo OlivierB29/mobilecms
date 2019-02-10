@@ -188,9 +188,10 @@ body {
 
 
 /*https://fonts.googleapis.com/icon?family=Material+Icons*/
+/* Controlling Font Performance with font-display : https://developers.google.com/web/updates/2016/02/font-display */
+/* issue with edge 
 @font-face {
-  /* Controlling Font Performance with font-display : https://developers.google.com/web/updates/2016/02/font-display */
-  font-display: auto; 
+  font-display: block; 
 
   font-family: 'Material Icons';
   font-style: normal;
@@ -198,8 +199,7 @@ body {
   src: url(https://fonts.gstatic.com/s/materialicons/v43/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
 }
 .material-icons {
-    /* Controlling Font Performance with font-display : https://developers.google.com/web/updates/2016/02/font-display */
-    font-display: auto; 
+  font-display: block; 
 
   font-family: 'Material Icons';
   font-weight: normal;
@@ -216,13 +216,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-
+/* Controlling Font Performance with font-display : https://developers.google.com/web/updates/2016/02/font-display */
 /*https://fonts.googleapis.com/css?family=Open+Sans*/
 /* latin-ext */
 @font-face {
-  /* Controlling Font Performance with font-display : https://developers.google.com/web/updates/2016/02/font-display */
-  font-display: auto; 
-
+  font-display: block; 
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
@@ -231,9 +229,7 @@ body {
 }
 /* latin */
 @font-face {
-  /* Controlling Font Performance with font-display : https://developers.google.com/web/updates/2016/02/font-display */
-  font-display: auto;
-  
+  font-display: block;
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
