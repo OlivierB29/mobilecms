@@ -43,18 +43,6 @@ export class ArticleComponent  implements OnInit {
   fetched = false;
 
 
-  public io = new IntersectionObserver(
-    entries => {
-  //    console.log(entries);
-    },
-    {
-      /* Using default options. Details below */
-    }
-  );
-  // Start observing an element
- // io.observe(element);
-  
-
 
   constructor(
     private titleService: Title,
@@ -99,7 +87,6 @@ export class ArticleComponent  implements OnInit {
   ngOnInit() {
 
     this.fetchData();
-    this.io.observe(this.element.nativeElement);
   }
 
 
