@@ -25,12 +25,23 @@ export class NewsComponent implements AfterViewInit {
 
   type = 'news';
 
+  enableinview = false;
+
+
 
   constructor(
     private dataService: ReadService,
     private log: Log,
     private http: HttpClient
   ) {
+    
+    if('IntersectionObserver' in window) {
+      this.log.debug('Intersection Observers enabled');
+      this.enableinview = true;
+    } else {
+      this.log.debug('Intersection Observers disabled');
+    }
+
     // initialize the component with empty values.
     // When using a low bandwith network, the goal is to display something during load.
     if (this.max > 0) {

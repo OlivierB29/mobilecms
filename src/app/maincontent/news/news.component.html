@@ -1,9 +1,25 @@
 <section>
 <div [class]='"article-list"'>
-  <div *ngFor="let item of items">
 
-    <app-article *ngIf='item.description' [type]='type' [itemparam]='item' ></app-article>
-    <app-article *ngIf='!item.description' [type]='type' [id]='item.id' ></app-article>
+ 
+
+  <div *ngFor="let item of items">
+        <ngui-inview *ngIf='this.enableinview'  [blurEnabled]='false'>
+                <div *ngIf>
+                        <app-article *ngIf='item.description' [type]='type' [itemparam]='item' ></app-article>
+                        <app-article *ngIf='!item.description' [type]='type' [id]='item.id' ></app-article>
+                </div>
+
+            </ngui-inview>
+      
+            <div *ngIf='!this.enableinview' >
+                    <div>
+                            <app-article *ngIf='item.description' [type]='type' [itemparam]='item' ></app-article>
+                            <app-article *ngIf='!item.description' [type]='type' [id]='item.id' ></app-article>
+                    </div>
+        
+            </div>
+          
   </div>
 </div>
 </section>
