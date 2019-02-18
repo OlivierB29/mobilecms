@@ -26,19 +26,13 @@ export class NewsComponent implements AfterViewInit {
 
   type = 'news';
 
-  enableinview = false;
-
-
 
   constructor(
     private dataService: ReadService,
     private log: Log,
-    private http: HttpClient,
-    private browserService : BrowserService
+    private http: HttpClient
   ) {
     
-    this.enableinview = this.browserService.isModernBrowser();
-
     // initialize the component with empty values.
     // When using a low bandwith network, the goal is to display something during load.
     if (this.max > 0) {

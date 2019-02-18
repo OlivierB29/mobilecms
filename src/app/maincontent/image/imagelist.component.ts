@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ImageService } from './image.service';
+import { BrowserService } from 'src/app/shared/services';
 
 @Component({
 
@@ -30,7 +31,14 @@ export class ImageListComponent  {
 
   @Input() lazyload = false;
 
-  constructor(private imageService: ImageService) {
+  enableinview = false;
+
+
+  constructor(private imageService: ImageService, private browserService : BrowserService
+    ) {
+      
+      this.enableinview = this.browserService.isModernBrowser();
+  
  }
 
   public getDefaultImage(picture: any): string {
