@@ -6,6 +6,7 @@ import { Log } from 'src/app/shared/services/log.service';
 import { ReadService } from 'src/app/shared/services/read.service';
 
 import { HttpClient, HttpResponse } from '@angular/common/http';
+import { BrowserService } from 'src/app/shared/services';
 
 @Component({
 
@@ -32,15 +33,11 @@ export class NewsComponent implements AfterViewInit {
   constructor(
     private dataService: ReadService,
     private log: Log,
-    private http: HttpClient
+    private http: HttpClient,
+    private browserService : BrowserService
   ) {
     
-    if('IntersectionObserver' in window) {
-      this.log.debug('Intersection Observers enabled');
-      this.enableinview = true;
-    } else {
-      this.log.debug('Intersection Observers disabled');
-    }
+    this.enableinview = this.browserService.isModernBrowser();
 
     // initialize the component with empty values.
     // When using a low bandwith network, the goal is to display something during load.

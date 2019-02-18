@@ -2,7 +2,7 @@
 
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import {  BrPipe, OrderbyPipe, LocaleDatePipe, PropertyFilterPipe } from './pipes';
-import { Log, ReadService, RouteUtilService, DateUtilService, MediaService, LayoutService } from './services';
+import { Log, ReadService, RouteUtilService, DateUtilService, MediaService, LayoutService, BrowserService } from './services';
 
 
 @NgModule({
@@ -23,6 +23,7 @@ import { Log, ReadService, RouteUtilService, DateUtilService, MediaService, Layo
       LayoutService,
       RouteUtilService,
       MediaService,
+      BrowserService,
       OrderbyPipe
     ],
     entryComponents: [

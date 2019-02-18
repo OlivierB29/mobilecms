@@ -1,10 +1,11 @@
-<div [class]='"flexcontainer"'>
 
-  <div [class]='"flexfeedcontainer article-list"'>
+<div [ngClass]='{"flexcontainer": isModernBrowser()}'>
+
+  <div [class]='"article-list"' [ngClass]='{"flexfeedcontainer": isModernBrowser()}'>
     <app-my-calendar-feed [max]='max'></app-my-calendar-feed>
   </div>
 
-  <div [class]='"flexmaincontent"'>
+  <div  [ngClass]='{"flexmaincontent": isModernBrowser()}'>
     <app-my-news-component [max]='max'></app-my-news-component>
     <div [routerLink]='"news"' [class]='"expand-title shadow"'>
       <i [class]='"material-icons"'>expand_more</i>

@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Log } from 'src/app/shared/services/log.service';
 import { ReadService } from 'src/app/shared/services/read.service';
-import { LayoutService } from 'src/app/shared/services';
+import { LayoutService, BrowserService } from 'src/app/shared/services';
 
 @Component({
   
@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
     max = 5;
 
-    constructor(private layoutService: LayoutService) {
+    constructor(private layoutService: LayoutService, private browserService: BrowserService) {
 
     }
 
@@ -24,7 +24,11 @@ export class HomeComponent implements OnInit {
       if (this.layoutService.getLayout() === 'desktop') {
         this.max = 10;
       }
+      
+    }
 
+    public isModernBrowser() {
+      return this.browserService.isModernBrowser();
     }
 
 }
