@@ -1,20 +1,37 @@
-.images-container {
-	border-top: 1px solid #ddd;
+
+.single-image-container {
 	padding-top: 0.5em;
 }
 
-.images-container img {
-	padding-top: 0.2em;
+.single-image-container img {
   width: 100%;
 }
 
 
 @media all and (min-width: 55em) {
-	.images-container img {
+	.single-image-container img {
 		display: block;
 		margin: 0 auto;
 	  max-width: 40em;
-		padding-top: 0.5em;
 	}
 
+}
+
+.images-container { 
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.image-div {
+  flex-basis: 30em;  
+}
+@media all and (min-width: 55em) {
+	.image-div {
+	  max-width: 40em; 
+	}
+
+}
+.image-div img { 
+  width: 100%; 
+  height: auto; 
 }

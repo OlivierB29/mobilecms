@@ -1,9 +1,19 @@
 <!-- images -->
-<div *ngIf='images && images.length > 0' [class]='"images-container"'>
-<div *ngFor='let image of images'>
+<div *ngIf='images && images.length > 1' class='images-container'>
+<div *ngFor='let image of images' class='image-div'>
   <a [href]='image.url' [title]='image.title'>
 
-    <img  [src]='getDefaultImage(image)' [srcset]='getThumbnailSrcSet(image)' [alt]='image.title' sizes='(min-width: 55em) 60vw, 100vw'>
+    <img  [src]='getDefaultImage(image)' [srcset]='getThumbnailSrcSet(image)' [alt]='image.title' sizes='(min-width: 55em) 60vw, 100vw' class='image'>
 
   </a>
+</div>
+</div>
+
+<div *ngIf='images && images.length === 1' class='single-image-container'>
+
+    <a [href]='images[0].url' [title]='images[0].title'>
+  
+      <img  [src]='getDefaultImage(images[0])' [srcset]='getThumbnailSrcSet(images[0])' [alt]='images[0].title' sizes='(min-width: 55em) 60vw, 100vw' >
+  
+    </a>
 </div>
