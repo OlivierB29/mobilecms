@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
 
     ngOnInit(): void {
       if (this.layoutService.getLayout() === 'desktop') {
-        this.max = 10;
+        this.max = 15;
       }
       
     }
