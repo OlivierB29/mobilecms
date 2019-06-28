@@ -1,7 +1,7 @@
 # MobileCms
 tl;dr : Small CMS with categories. Data is stored in JSON files.
 
-- Angular 7
+- Angular 8
 - HTML 5 images
 - Hosted on a cheap server
 - All data is public
@@ -48,22 +48,11 @@ For now, we have 10-20 news per year, and roughly the same for calendar events.
 It can be hosted on anything, even a Raspberry Pi.
 
 ## Passed audits
-Passed audits from PageSpeed Insights (91 Mobile score)
-- 1 Properly size images
-- 2 Defer offscreen images
-- 3 Minify CSS
-- 4 Minify JavaScript
-- 5 Defer unused CSS
-- 6 Efficiently encode images
-- 7 Serve images in next-gen formats
-- 8 Enable text compression
-- 9 Preconnect to required origins
-- 10 Server response times are low (TTFB) Root document took 80 ms
-- 11 Avoid multiple page redirects
-- 12 Preload key requests
-- 13 Use video formats for animated content
-- 14 Avoids enormous network payloads Total size was 265 KB
-- 15 Avoids an excessive DOM size 313 nodes
-- 16 JavaScript execution time 1.3 s
-- 17 Minimizes main-thread work 1.8 s
-- 18 All text remains visible during webfont loads
+Passed audits with Lighthouse 4.3.1
+
+Scores 
+- Performance : 98
+- Accessibility : 100
+- Best practices : 100
+- SEO : 100
+
