@@ -38,7 +38,8 @@ styles: [':host {display: block;}']
 })
 export class NguiInviewComponent implements OnInit, OnDestroy {
   /** <ng-template> reference */
-@ContentChild(TemplateRef) template: TemplateRef<any>;
+  /** 2019-06-28 : Angular8 - add mandatory parameter */
+@ContentChild(TemplateRef, {static: false}) template: TemplateRef<any>;
 
   /** IntersectionObserver options */
 @Input() observerOptions: IntersectionObserverInit = {threshold: [.1, .2, .3, .4, .5, .6, .7, .8]};
