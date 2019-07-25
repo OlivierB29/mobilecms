@@ -22,7 +22,7 @@ export class SidenavComponent implements OnInit, AfterViewInit {
   @Input() mode = 'side';
   @Input() opened: boolean;
 
-  @Input() expanded = false;
+  @Input() expanded = true;
 
   @Input() lang: string;
 
@@ -89,7 +89,7 @@ export class SidenavComponent implements OnInit, AfterViewInit {
   setSide() {
 
     this.mode = 'side';
-    this.expanded = false;
+    this.expanded = true;
     this.opened = true;
   }
 

@@ -1,13 +1,13 @@
 
 <div class='article-list'>
-  <h3><span [innerHTML]='(activity | uppercase)'></span> </h3>
+  <h3><span>{{activity | uppercase}}</span> </h3>
 <div *ngIf="activity" class='department-list'>
 
 
 <div *ngFor='let dep of departmentObjectList'>
 
   <button  [value]='dep.code' (click)='displayClubs(dep.code)' class='department-button my-mat-button-lighter shadow'>
-    <div [innerHTML]='dep.name'></div>
+    <div >{{dep.name}}</div>
 
   </button>
 

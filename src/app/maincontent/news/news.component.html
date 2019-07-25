@@ -1,12 +1,12 @@
 <section>
-<div [class]='"article-list"'>
+<div class='article-list'>
 
  
 
   <div *ngFor="let item of items">
 
-                <app-article *ngIf='item.description' [type]='type' [itemparam]='item' ></app-article>
-                <app-article *ngIf='!item.description' [type]='type' [id]='item.id' ></app-article>
+                <app-article *ngIf='item.description' type='{{type}}' [itemparam]='item' ></app-article>
+                <app-article *ngIf='!item.description' type='{{type}}' id='{{item.id}}' ></app-article>
 
           
   </div>

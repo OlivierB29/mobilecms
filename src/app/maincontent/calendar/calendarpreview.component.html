@@ -1,11 +1,11 @@
-<a *ngIf='item' class='hidelink' [href]='getUrl()'>
+<a *ngIf='item' class='hidelink' href='{{getUrl()}}'>
   <div class='shadow'>
 
     <div class='my-mat-button-dark'>
       <div>
-        <i [class]='"material-icons calendar-icon"'>event</i>
-        <span [innerHTML]='item.date | localedate'> </span> | <span class='feed-subtitle' [innerHTML]='(item.activity | uppercase)'></span> : 
-        <span [innerHTML]='item.title' class='feed-subtitle'></span>
+        <i class='material-icons calendar-icon'>event</i>
+        <span>{{item.date | localedate}}</span> | <span class='feed-subtitle'>{{item.activity | uppercase}}</span> : 
+        <span class='feed-subtitle'>{{item.title}}</span>
       </div>
     </div>
 
@@ -13,11 +13,11 @@
       <div class='calendar-preview-table-row'>
         <div *ngIf='image'>
 
-            <img [src]='getThumbnail(image)' [alt]='image.title'>
+            <img src='{{getThumbnail(image)}}' alt='{{image.title}}'>
 
         </div>
         <div>
-          <span [innerHTML]='getPreviewDescription()' class='calendar-preview-description'></span>
+          <span class='calendar-preview-description'>{{getPreviewDescription()}}</span>
         </div>
       </div>
     </div>

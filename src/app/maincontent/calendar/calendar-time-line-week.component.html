@@ -14,12 +14,12 @@
 
 <div class='divTableRow' *ngFor='let week of weeks'>
   <div class='divTableCell dayCell' *ngFor='let day of week.days'>
-        <div [class]='"cellBody "  + getCellStyle(day.date.getMonth())'>
-        <span [innerHTML]='day.number'></span>
-        <span *ngIf='day.number === 1' class='monthline' [innerHTML]='day.monthname' ></span>
+        <div class='cellBody "  + getCellStyle(day.date.getMonth())'>
+        <span>{{day.number}}</span>
+        <span *ngIf='day.number === 1' class='monthline'>{{day.monthname}}</span>
         <span *ngIf='day.items.length > 0' >
-    <div *ngFor="let currentItem of day.items" class='feed-article my-mat-button-dark shadow' [routerLink]='getUrl(currentItem)'>
-      <span class='calendar-icon' [innerHTML]='getShortTitle(currentItem)'></span>
+    <div *ngFor="let currentItem of day.items" class='feed-article my-mat-button-dark shadow' routerLink='{{getUrl(currentItem)}}'>
+      <span class='calendar-icon' >{{getShortTitle(currentItem)}}</span>
     </div>
 
   </span>

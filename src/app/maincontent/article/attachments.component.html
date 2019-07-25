@@ -3,8 +3,8 @@
 <div *ngFor='let attachment of attachments' class='tooltip'>
 
 
-    <a *ngIf='attachment.url' [href]='attachment.url' [innerHTML]='attachment.title'></a>
-    <span *ngIf='attachment.thumbnails'><img [src]='getDefaultImage(attachment)' [srcset]='getThumbnailSrcSet(attachment)' [alt]='attachment.title' sizes='(min-width: 55em) 10vw, 20vw'>
+    <a *ngIf='attachment.url' href='{{attachment.url}}' >{{attachment.title}}</a>
+    <span *ngIf='attachment.thumbnails'><img src='{{getDefaultImage(attachment)}}' srcset='{{getThumbnailSrcSet(attachment)}}' alt='{{attachment.title}}' sizes='(min-width: 55em) 10vw, 20vw'>
       </span>
 
 

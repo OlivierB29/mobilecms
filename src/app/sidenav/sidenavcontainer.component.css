@@ -1,6 +1,25 @@
+
+
+.banner-container img {
+  width: 100%;
+}
+
+
+@media all and (min-width: 55em) {
+	.banner-container img {
+		display: block;
+		margin: 0 auto;
+	}
+
+}
+/*
+.top-banner {
+  box-shadow: 5px 5px 10px 0 #656565;
+}*/
 /* top menu bar CSS */
 .top-menu-bar {
   box-shadow: 5px 5px 10px 0 #656565;
+  /*box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);*/
   display:table;
   font-size: 1.25em;
 

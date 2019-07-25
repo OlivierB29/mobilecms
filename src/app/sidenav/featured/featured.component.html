@@ -1,6 +1,7 @@
 <div class="feed-content">
 
 <div></div>
-<div *ngFor="let currentItem of items" (click)="gotoDetail(currentItem)" class='feed-article' [innerHTML]='currentItem.title' >
+<div *ngFor="let currentItem of items" (click)="gotoDetail(currentItem)" class='feed-article'>
+    {{currentItem.title}}
 </div>
 <div>

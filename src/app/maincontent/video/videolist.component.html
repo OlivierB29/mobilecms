@@ -1,5 +1,5 @@
 <!-- images -->
 <div *ngIf='videos && videos.length > 0' >
 <div *ngFor='let video of videos'>
-  <app-video [url]='video.url'></app-video>
+  <app-video url='{{video.url}}'></app-video>
 </div>

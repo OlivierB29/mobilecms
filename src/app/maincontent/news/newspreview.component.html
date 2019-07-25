@@ -4,8 +4,7 @@
 
   <div *ngFor="let currentItem of items; let i=index"  class="news-preview-container">
 
-
-    <app-articlepreview [type]='"news"' [id]='currentItem.id'></app-articlepreview>
+    <app-articlepreview type='news' id='{{currentItem.id}}'></app-articlepreview>
 
   </div>
 

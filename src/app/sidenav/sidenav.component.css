@@ -23,7 +23,7 @@
     left:auto;
     min-height: 60em;
     min-width: inherit;
-    padding-top: 3em;
+  /*  padding-top: 3em;*/
     position: relative;
     top:auto;
     z-index: 80;
@@ -33,5 +33,5 @@
 .buttonseparator {
   border-color: white;
   border-style: solid;
-  border-width: 0.07em 0 0 0;
+  border-width: 1px 0 0 0;
 }

@@ -1,8 +1,8 @@
 <div *ngFor="let item of items; let i=index">
 
   <div>
-    <app-calendarpreview  *ngIf='item.description' [type]='"calendar"' [item]='item' [show]='"description"'></app-calendarpreview>
-    <app-calendarpreview  *ngIf='!item.description' [type]='"calendar"' [id]='item.id' [show]='"description"'></app-calendarpreview>
+    <app-calendarpreview  *ngIf='item.description' type='calendar' [item]='item' show='description'></app-calendarpreview>
+    <app-calendarpreview  *ngIf='!item.description' type='calendar' id='{{item.id}}' show='description'></app-calendarpreview>
   </div>
 
   <div class='article-feed-spacer'></div>

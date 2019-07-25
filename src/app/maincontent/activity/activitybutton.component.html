@@ -1,9 +1,9 @@
  <div class='my-activity'>
-    <button [routerLink]='url' class='my-activity-button my-mat-button-lighter shadow'>
-    <h3 [innerHTML]='activity.name | uppercase'></h3>
+    <button routerLink='{{url}}' class='my-activity-button my-mat-button-lighter shadow'>
+    <h3>{{activity.name | uppercase}}</h3>
 
 
-    <img *ngIf='activity.logo' [src]="logo"  [alt]='activity.name' class='logo'>
+    <img *ngIf='activity.logo' src='{{logo}}'  alt='{{activity.name}}' class='logo'>
 
     </button>
 

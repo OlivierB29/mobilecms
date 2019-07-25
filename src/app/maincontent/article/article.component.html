@@ -1,8 +1,8 @@
 
-<div *ngIf='item' [class]='"article-content shadow"'>
+<div *ngIf='item' class='article-content shadow'>
   <article>
-    			<div  [class]='"article-title article-title-decoration shadow"'>
-            <span [innerHTML]='item.title'></span>
+    			<div  class='article-title article-title-decoration shadow'>
+            <span >{{item.title}}</span>
           </div>
           <div  *ngIf='item.organization' class='article-subtitle article-title-moreinfo'>
               <span class='article-title-moreinfo'> {{item.organization}}</span>
@@ -10,18 +10,18 @@
 
 
 
-      <div [class]='"article-description-container"'>
-       <div *ngIf='item.activity && item.date' [class]='"article-subtitle"' >{{item.activity | uppercase}} {{item.date | localedate}}</div>
+      <div class='article-description-container'>
+       <div *ngIf='item.activity && item.date' class='article-subtitle' >{{item.activity | uppercase}} {{item.date | localedate}}</div>
 
-        <div [innerHTML]='item.description | br' [class]='"article-description"'></div>
+        <div class='article-description'>{{item.description | br}}</div>
 
         <div *ngIf='item.location'><i class='material-icons'>pin_drop</i> {{item.location}}</div>
 
         <!-- media -->
 
-        <app-attachments *ngIf='item.media || item.attachments' [recorduri]='getRecordUri()' [attachments]='getAttachments()'></app-attachments>
-        <app-imagelist *ngIf='item.media || item.images' [recorduri]='getRecordUri()' [images]='getImages()' [lazyload]='lazyload'></app-imagelist>
-        <app-videolist *ngIf='item.media || item.attachments' [recorduri]='getRecordUri()' [videos]='getVideos()'></app-videolist>
+        <app-attachments *ngIf='item.media || item.attachments' recorduri='{{getRecordUri()}}' [attachments]='getAttachments()'></app-attachments>
+        <app-imagelist *ngIf='item.media || item.images' recorduri='{{getRecordUri()}}' [images]='getImages()' [lazyload]='lazyload'></app-imagelist>
+        <app-videolist *ngIf='item.media || item.attachments' recorduri='{{getRecordUri()}}' [videos]='getVideos()'></app-videolist>
 
 
 

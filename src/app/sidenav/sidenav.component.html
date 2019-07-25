@@ -1,9 +1,9 @@
 <nav>
-<div *ngIf='isOpen()' [class]='"menu-container theme-primary"'  [ngClass]='{"menu-container-expanded": isExpanded()}'>
-<div [class]='"buttonseparator"'></div>
+<div *ngIf='isOpen()' class='menu-container theme-primary'  [ngClass]='{"menu-container-expanded": isExpanded()}'>
+<div class='buttonseparator'></div>
 <span *ngFor='let menu of menuItems' (click)='expandClose()' >
   <app-menubutton [item]='menu' [expanded]='expanded' ></app-menubutton>
-  <div [class]='"buttonseparator"'></div>
+  <div class='buttonseparator'></div>
 </span>
 
 </div>

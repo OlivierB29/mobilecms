@@ -1,6 +1,6 @@
-<a [href]='' [routerLink]='item.routerLink'  routerLinkActive='active'  [title]='item.title' [class]='"slidemenu-button slidemenu-button-container my-mat-button-dark"'>
+<a href='' routerLink='{{item.routerLink}}'  routerLinkActive='active'  title='{{item.title}}' class='slidemenu-button slidemenu-button-container my-mat-button-dark'>
 
-<i  class='icon-container material-icons slidemenu-button-icon' [innerHTML]='item.icon' ></i>
-<span *ngIf='expanded' class='slidemenu-button-text' [innerHTML]='item.title'></span>
+<i  class='icon-container material-icons slidemenu-button-icon'>{{item.icon}}</i>
+<span *ngIf='expanded' class='slidemenu-button-text' >{{item.title}}</span>
 
 </a>
