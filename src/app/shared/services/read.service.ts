@@ -12,6 +12,10 @@ export class ReadService {
     constructor() {
     }
 
+    public getPublicData = (file: string): string => {
+     return this.root  +  '/' + environment.public + '/'  +  file;
+    // return this.root  +  '/assets/'  +  file;
+    }
 
     public getUrl = (type: string, id: string): string => {
       return this.root  +  '/' + environment.public + '/'  +  type  +  '/'  +  id  +  '.json';

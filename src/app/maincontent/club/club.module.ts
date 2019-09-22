@@ -9,6 +9,7 @@ import { ActivityModule } from 'src/app/maincontent/activity/activity.module';
 
 import { ImageModule } from 'src/app/maincontent/image/image.module';
 import { clubRoutes } from './club.route';
+import { ClubMapComponent } from './';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { clubRoutes } from './club.route';
     ClubListComponent,
     ClubActivitiesComponent,
     ClubDetailComponent,
+    ClubMapComponent
   ],
   providers: [
 
