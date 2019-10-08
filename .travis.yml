@@ -6,9 +6,10 @@ before_install:
   - export CHROME_BIN=chromium-browser
   - npm install -g @angular/cli
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+#  - "export DISPLAY=:99.0"
+#  - "sh -e /etc/init.d/xvfb start"
+#  give xvfb some time to start
+#  - sleep 3
   - npm install
 script:
   - ng build --prod
