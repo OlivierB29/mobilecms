@@ -24,9 +24,12 @@ export class MediaService {
       let result = (element.mimetype && element.mimetype.indexOf('video') > -1 )
       ||
       (
-        element.url.indexOf('youtube\.com') > -1
-        || element.url.indexOf('youtu\.be') > -1
-        || element.url.indexOf('vimeo') > -1
+      // issue :
+      //Refused to frame 'https://www.youtube.com/' because it violates the following Content Security Policy directive: "default-src 'self'".
+      // Note that 'frame-src' was not explicitly set, so 'default-src' is used as a fallback.  
+       // element.url.indexOf('youtube\.com') > -1
+        // || element.url.indexOf('youtu\.be') > -1
+        element.url.indexOf('vimeo') > -1
         || (element.url.indexOf('facebook') > -1 && element.url.indexOf('videos') > -1)
       );
       return result;
