@@ -12,8 +12,16 @@
 
       <div class='article-description-container'>
        <div *ngIf='item.activity && item.date' class='article-subtitle' >{{item.activity | uppercase}} {{item.date | localedate}}</div>
+        
+       <div *ngIf='!isMultilines()' class='article-description'>
+        <p>{{item.description}}</p>    
+      </div>
 
-        <div class='article-description'>{{item.description | br}}</div>
+
+       <div *ngIf='isMultilines()' class='article-description'>
+        <p *ngFor='let currentDescription of splitDescription()'>{{currentDescription}}</p>        
+       </div>
+        
 
         <div *ngIf='item.location'><i class='material-icons'>pin_drop</i> {{item.location}}</div>
 

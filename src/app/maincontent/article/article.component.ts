@@ -99,9 +99,6 @@ export class ArticleComponent  implements OnInit {
         .subscribe((data: any) => {
           this.item = data;
           this.item.media = this.mediaService.initMediaUrl(this.type, this.id, this.item.media, this.media);
-          //this.item.description = this.item.description.replace(new RegExp("\\\\n", "g"), "<br />");
-          this.item.descriptionsplit = this.item.description.split('\n');
-
           this.fetched = true;
         });
 
@@ -110,8 +107,6 @@ export class ArticleComponent  implements OnInit {
       let tmpItem = this.itemparam;
       
       tmpItem.media = this.mediaService.initMediaUrl(this.type, tmpItem.id, tmpItem.media, this.media);
-      this.item.descriptionsplit = this.item.description.split('\n');
-
       this.item = tmpItem;
       this.fetched = true;
     } else {
@@ -148,6 +143,10 @@ export class ArticleComponent  implements OnInit {
 
   public isMultilines(): boolean {
     return this.item.description && this.item.description.indexOf('\n') !== -1;
+  }
+
+  public splitDescription(): boolean {
+    return this.item.description.split('\n');
   }
 
   getItem(): any {
