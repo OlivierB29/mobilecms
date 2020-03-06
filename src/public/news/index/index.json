@@ -1,38 +1,11 @@
 [
-    {
-        "id" : "1",
-        "date": "2014-09-01 ",
-        "activity": "tennis",
-        "title": "2014 some event !",
-        "description": "See that page  from index",
-        "url": "",
-        "media": [
-                  {
-                      "title": "tennis-2290639_640.jpg",
-                      "url": "tennis-2290639_640.jpg",
-                      "size": 106894,
-                      "mimetype": "image\/jpeg"
-                  },
-                  {
-                      "title": "tennis-178696_640.jpg",
-                      "url": "tennis-178696_640.jpg",
-                      "size": 146955,
-                      "mimetype": "image\/jpeg"
-                  },
-                  {
-                      "title": "lorem ipsum.pdf",
-                      "url": "lorem ipsum.pdf",
-                      "size": 24612,
-                      "mimetype": "application\/pdf"
-                  }
-              ]
-    },
+   
     {
         "id" : "2",
         "date": "2019-01-01",
         "activity": "basketball",
         "title": "2019 another event !",
-        "description": "another event from index!",
+        "description": "another event  \n from index!",
         "url": ""
     },
     {
@@ -45,7 +18,7 @@
         "date": "2019-04-01 ",
         "activity": "tennis",
         "title": "2018 some event !",
-        "description": "See that page  from index",
+        "description": "See that page  \n from index",
         "url": ""
     },
     {
@@ -61,7 +34,7 @@
         "date": "2019-06-01 ",
         "activity": "tennis",
         "title": "2018 some event !",
-        "description": "See that page  from index",
+        "description": "See that page  \n from index",
         "url": ""
     },
     {
@@ -69,7 +42,7 @@
         "date": "2019-07-01 ",
         "activity": "tennis",
         "title": "2018 some event !",
-        "description": "See that page  from index",
+        "description": "See that page  \n from index",
         "url": ""
     },
     {
@@ -77,7 +50,7 @@
         "date": "2019-08-01 ",
         "activity": "tennis",
         "title": "2018 some event !",
-        "description": "See that page  from index",
+        "description": "See that page  \n from index",
         "url": ""
     }
 
