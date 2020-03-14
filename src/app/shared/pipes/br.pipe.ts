@@ -2,6 +2,7 @@ import { Pipe } from '@angular/core';
 import { PipeTransform } from '@angular/core';
 
 /*
+@deprecated
 https://angular.io/docs/ts/latest/guide/pipes.html
 
 */

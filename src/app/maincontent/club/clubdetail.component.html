@@ -3,6 +3,9 @@
             <a *ngIf='item.url' target='_blank' href='{{item.url}}' title="{{item.url}}"  class="club-website">{{item.title}} <i class='material-icons'>open_in_new</i></a>
             <span *ngIf='!item.url' class="club-website">{{item.title}}</span>
             </div>
-          <div>{{item.description | br}}</div>
+
+          <div >
+            <p *ngFor='let currentDescription of splitDescription()'>{{currentDescription}}</p>        
+           </div>
 
       </div>

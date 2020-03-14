@@ -8,7 +8,8 @@ import { Log } from 'src/app/shared/services/log.service';
 import { environment } from 'src/environments/environment';
 
 import { HttpClient, HttpResponse } from '@angular/common/http';
-// import 'rxjs/add/operator/toPromise';
+
+
 
 @Component({
 
@@ -118,9 +119,7 @@ export class ArticleComponent  implements OnInit {
         this.log.debug('ArticleComponent empty id');
       }
     }
-
-
-
+    
   }
 
   private isItemInit() {
@@ -141,13 +140,21 @@ export class ArticleComponent  implements OnInit {
     return result;
   }
 
-  public isMultilines(): boolean {
-    return this.item.description && this.item.description.indexOf('\n') !== -1;
+
+
+  public splitDescription(): any {
+    let result = [];
+    if (this.item.description) {
+      if (this.item.description.indexOf('\n') !== -1) {
+        result = this.item.description.split('\n');
+      } else {
+        result.push(this.item.description);
+      }
+    }
+    return result;
   }
 
-  public splitDescription(): boolean {
-    return this.item.description.split('\n');
-  }
+  
 
   getItem(): any {
     return this.item;
