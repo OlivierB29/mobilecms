@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <div *ngIf='show === "description"' class='largeview'>
+    <div class='largeview'>
       <div class='calendar-preview-table-row'>
         <div *ngIf='image'>
 
@@ -17,7 +17,7 @@
 
         </div>
         <div>
-          <span class='calendar-preview-description'>{{getPreviewDescription()}}</span>
+          <span class='calendar-preview-description'  *ngIf='show === "description"'  [innerHTML]='item.description | bbcode'></span>
         </div>
       </div>
     </div>

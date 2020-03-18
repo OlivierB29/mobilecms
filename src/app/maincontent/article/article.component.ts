@@ -10,7 +10,6 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 
 
-
 @Component({
 
   selector: 'app-article',
@@ -141,20 +140,7 @@ export class ArticleComponent  implements OnInit {
   }
 
 
-
-  public splitDescription(): any {
-    let result = [];
-    if (this.item.description) {
-      if (this.item.description.indexOf('\n') !== -1) {
-        result = this.item.description.split('\n');
-      } else {
-        result.push(this.item.description);
-      }
-    }
-    return result;
-  }
-
-  
+   
 
   getItem(): any {
     return this.item;

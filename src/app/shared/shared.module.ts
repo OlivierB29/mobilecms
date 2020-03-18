@@ -1,7 +1,7 @@
 
 
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import {  OrderbyPipe, LocaleDatePipe, PropertyFilterPipe } from './pipes';
+import {  BBcodePipe, OrderbyPipe, LocaleDatePipe, PropertyFilterPipe } from './pipes';
 import { Log, ReadService, RouteUtilService, DateUtilService, MediaService, LayoutService, BrowserService } from './services';
 
 
@@ -10,6 +10,7 @@ import { Log, ReadService, RouteUtilService, DateUtilService, MediaService, Layo
 
     ],
     declarations: [
+      BBcodePipe,
       OrderbyPipe,
       LocaleDatePipe,
       PropertyFilterPipe,
@@ -22,11 +23,13 @@ import { Log, ReadService, RouteUtilService, DateUtilService, MediaService, Layo
       RouteUtilService,
       MediaService,
       BrowserService,
+      BBcodePipe,
       OrderbyPipe
     ],
     entryComponents: [
     ],
     exports: [
+      BBcodePipe,
       OrderbyPipe,
       LocaleDatePipe,
       PropertyFilterPipe,    ],

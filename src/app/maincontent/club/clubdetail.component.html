@@ -4,8 +4,7 @@
             <span *ngIf='!item.url' class="club-website">{{item.title}}</span>
             </div>
 
-          <div >
-            <p *ngFor='let currentDescription of splitDescription()'>{{currentDescription}}</p>        
+          <div  [innerHTML]='item.description | bbcode'>
            </div>
 
       </div>

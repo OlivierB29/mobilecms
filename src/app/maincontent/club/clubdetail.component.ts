@@ -41,17 +41,5 @@ export class ClubDetailComponent implements OnInit {
 
     }
 
-    public splitDescription(): any {
-        let result = [];
-        if (this.item.description) {
-          if (this.item.description.indexOf('\n') !== -1) {
-            result = this.item.description.split('\n');
-          } else {
-            result.push(this.item.description);
-          }
-        }
-        return result;
-      }
-
 
 }
