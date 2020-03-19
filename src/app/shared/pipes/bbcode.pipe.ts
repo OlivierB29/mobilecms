@@ -1,14 +1,14 @@
 import { Pipe } from '@angular/core';
 import { PipeTransform } from '@angular/core';
-import BBCodeParser from 'bbcode-parser';
+import { BBcodeService } from '../services';
 
 @Pipe({name: 'bbcode'})
 export class BBcodePipe implements PipeTransform {
 
+    constructor(private bbCodeService: BBcodeService) {
+    }    
+
     transform(value: string) {
-        let parser = new BBCodeParser(BBCodeParser.defaultTags());
-        return parser.parseString(value);
+        return this.bbCodeService.parseString(value);
     }
-
-
 }
