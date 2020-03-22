@@ -3,6 +3,6 @@
         "date": "2019-01-01",
         "activity": "basketball",
         "title": "2019 another event !",
-        "description": "[b]Bold text[/b] \n another event !",
+        "description": "[b]Bold text[/b] \n another event ! \n [url]https://www.bbcode.org[/url] \n  [url site=\"https://www.bbcode.org\"]This be bbcode.org[/url]",
         "url": ""
 }
