@@ -5,7 +5,8 @@
   "keywords": "tennis,basketball,golf,some region",
   "socialnetworks":
   [
-    {"title":"Facebook", "url":"https://facebook.com","imageurl":"public/description/assets/f_logo_RGB-White_58.png", "imagealt":"F"},
+    {"title":"Facebook", "url":"https://facebook.com","imageurl":"public/description/assets/f_logo_RGB-Blue_58.png", "imagealt":"F"},
+    {"title":"Youtube", "url":"https://youtube.com","imageurl":"public/description/assets/youtube_social_icon_red.png", "imagealt":"Y"},
     {"title":"Discord", "url":"https://discordapp.com","imageurl":"public/description/assets/Discord-Logo-White.png", "imagealt":"D"}
   ]
 }
