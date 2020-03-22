@@ -1,0 +1,11 @@
+<div class='my-social-bar'>
+  <div *ngFor='let button of buttons' class='my-mat-button-darker my-social-links'>
+    <a target="_blank" href='{{button.url}}' title='{{button.title}}'>
+      <img
+        src='{{button.imageurl}}'
+        class='my-social-logo'
+        alt='{{button.imagealt}}'
+      />
+    </a>
+  </div>
+</div>

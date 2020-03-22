@@ -115,6 +115,9 @@ body {
   cursor: pointer;
   transition: background-color .7s cubic-bezier(.25, .8, .25, 1);
 }
+.my-mat-button-darker:visited {
+  color: white;
+}
 
 .my-mat-button-darker:active {
   background-color: #5e7987;

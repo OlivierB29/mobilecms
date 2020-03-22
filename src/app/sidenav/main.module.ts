@@ -12,6 +12,7 @@ import { MenuService } from './menu.service';
 import { ImageModule } from 'src/app/maincontent/image/image.module';
 import { VideoModule } from 'src/app/maincontent/video/video.module';
 import { mainRoutes } from './main.route';
+import { SocialComponent } from './social/social.component';
 
 @NgModule({
     imports: [
@@ -32,6 +33,7 @@ import { mainRoutes } from './main.route';
       SidenavcontainerComponent,
       FooterComponent,
       FeaturedComponent,
+      SocialComponent,
     ],
     providers: [
     MenuService,

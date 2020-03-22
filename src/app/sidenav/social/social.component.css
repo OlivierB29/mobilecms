@@ -1,0 +1,12 @@
+.my-social-links {
+  color: white;
+}
+
+.my-social-logo {
+  height: 1.1em;
+  padding: 0.08em;
+}
+
+.my-social-bar {
+  display: inline-flex;
+}
