@@ -2,5 +2,10 @@
   "defaultlocale": "en",
   "title": "MobileCMS",
   "fulltitle": "MobileCMS Demo",
-  "keywords": "tennis,basketball,golf,some region"
+  "keywords": "tennis,basketball,golf,some region",
+  "socialnetworks":
+  [
+    {"title":"Facebook", "url":"https://facebook.com","imageurl":"public/description/assets/f_logo_RGB-White_58.png", "imagealt":"F"},
+    {"title":"Discord", "url":"https://discordapp.com","imageurl":"public/description/assets/Discord-Logo-White.png", "imagealt":"D"}
+  ]
 }
