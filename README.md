@@ -5,6 +5,7 @@ tl;dr : Small CMS with categories. Data is stored in JSON files.
 - HTML 5 images
 - Hosted on a cheap server
 - All data is public
+- BBCode support
 
 It is initially intended to display content for a sport organization : News, calendar events, public pages, documents, ...
 
@@ -30,7 +31,7 @@ Transfer files in `dist` directory to your server (such as `/var/www/html/`).
 
 ## FAQ
 - Browser compatibility
-Same as [Angular](https://angular.io/guide/browser-support) with polyfills. I tried some third party components, but it broke IE 11 and iOS 7 support.
+Same as [Angular](https://angular.io/guide/browser-support) with polyfills. I tried some third party components, but it broke IE 11 and iOS support.
 
 - Why not using a true CMS on a web hosting package ?
 Value for money.
@@ -46,11 +47,11 @@ For now, we have 10-20 news per year, and roughly the same for calendar events.
 It can be hosted on anything, even a Raspberry Pi.
 
 ## Passed audits
-Passed audits with Lighthouse 4.3.1
+Passed audits with Lighthouse
 
 Scores 
-- Performance : 98
+- Performance : 99
 - Accessibility : 100
-- Best practices : 100
+- Best practices : 93
 - SEO : 100
 
