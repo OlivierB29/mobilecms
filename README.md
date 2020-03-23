@@ -1,7 +1,7 @@
 # MobileCms
 tl;dr : Small CMS with categories. Data is stored in JSON files.
 
-- Angular 8
+- Angular 9
 - HTML 5 images
 - Hosted on a cheap server
 - All data is public
