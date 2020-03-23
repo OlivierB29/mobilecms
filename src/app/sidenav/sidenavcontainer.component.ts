@@ -87,8 +87,6 @@ export class SidenavcontainerComponent implements AfterViewInit {
                 this.titleService.setTitle(this.title);
 
                 this.socialnetworks = this.item.socialnetworks;
-
-                console.log(this.socialnetworks);
               });
 
 
