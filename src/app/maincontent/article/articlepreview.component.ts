@@ -60,7 +60,7 @@ export class ArticlePreviewComponent   implements OnInit {
 
       });
     }
-    
+
 
 
   }
@@ -71,10 +71,23 @@ export class ArticlePreviewComponent   implements OnInit {
 
   getPreviewDescription(): string {
     let result = '';
-    if (this.item.description.length > this.maxPreviewLength) {
-      result = this.item.description.substring(0, this.maxPreviewLength) + ' ...';
+    // TODO remove all BBCode in preview, or regex to avoid cut between tags
+
+    // regex to remove tags and text
+    //str = str.replace(/\[(\w+)[^\]]*](.*?)\[\/\1]/g, '');
+    let desc = this.item.description;
+    if (desc.length > this.maxPreviewLength) {
+
+      // temporary code
+      let lastBBCode = desc.lastIndexOf(']');
+      if (lastBBCode !== -1 ) {
+        result = desc.substring(0, lastBBCode + 1) + ' ...';
+      } else {
+        result = desc.substring(0, this.maxPreviewLength) + ' ...';
+      }
+
     } else {
-      result = this.item.description;
+      result = desc;
     }
     return result;
 

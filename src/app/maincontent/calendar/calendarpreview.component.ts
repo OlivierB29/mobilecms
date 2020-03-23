@@ -64,18 +64,18 @@ export class CalendarPreviewComponent   implements OnInit {
                   .subscribe((data: any) => {
                     this.item = data;
                     this.item.media = this.mediaService.initMediaUrl(this.type, this.id, this.item.media, this.media);
-  
+
                      if (this.getImages() && this.getImages().length > 0) {
                        this.image = this.getImages()[0];
                      }
-  
+
                   });
       }
-      
 
-    
 
-    
+
+
+
 
 
   }
@@ -92,10 +92,21 @@ export class CalendarPreviewComponent   implements OnInit {
 
   getPreviewDescription(): string {
     let result = '';
-    if (this.item.description.length > this.maxPreviewLength) {
-      result = this.item.description.substring(0, this.maxPreviewLength) + ' ...';
+    // TODO remove all BBCode in preview, or regex to avoid cut between tags
+    //str = str.replace(/\[(\w+)[^\]]*](.*?)\[\/\1]/g, '');
+    let desc = this.item.description;
+    if (desc.length > this.maxPreviewLength) {
+
+      // temporary code
+      let lastBBCode = desc.lastIndexOf(']');
+      if (lastBBCode !== -1 ) {
+        result = desc.substring(0, lastBBCode + 1) + ' ...';
+      } else {
+        result = desc.substring(0, this.maxPreviewLength) + ' ...';
+      }
+
     } else {
-      result = this.item.description;
+      result = desc;
     }
     return result;
 
