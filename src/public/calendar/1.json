@@ -1,7 +1,7 @@
     {
         "id" : "1",
-        "date": "2020-01-11",
-        "enddate": "2020-01-14",
+        "date": "2021-01-11",
+        "enddate": "2021-01-14",
         "activity": "tennis",
         "title": "some seminar of tennis with media",
         "organization": "Some org",
@@ -9,7 +9,7 @@
         "url": "", "location" : "some place", "startdate" : "", "enddate" : "", "updated" : "", "updatedby" : "",
 
         "images":[
-            
+
           ],
         "attachments":
           [
