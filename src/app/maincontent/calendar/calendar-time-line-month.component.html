@@ -11,12 +11,12 @@
 <div class="divTableBody">
 <div class='divTableRow' *ngFor='let day of month.days'>
   <div class='divTableCell monthdaycell' >
-        <div class='cellBody "  + getDayOfMonthStyle(day.date.getDay())'>
+        <div [class]='"cellBody " + getDayOfMonthStyle(day.date.getDay())'>
         <span>{{day.number}}</span>
         <span>{{day.name}}</span>
 
         <span *ngIf='day.items.length > 0' >
-    <div *ngFor="let currentItem of day.items" class='feed-article shadow " + getCssColor(currentItem.activity)' routerLink='{{getUrl(currentItem)}}'>
+    <div *ngFor='let currentItem of day.items' [class]='"feed-article shadow " + getCssColor(currentItem.activity)' routerLink='{{getUrl(currentItem)}}'>
       <span class='calendar-icon' >{{getItemTitleMonthFormat(currentItem)}}</span>
     </div>
 
