@@ -1,11 +1,11 @@
 [
-   
+
     {
         "id" : "2",
         "date": "2019-01-01",
         "activity": "basketball",
         "title": "2019 another event !",
-        "description": "[b]Bold text[/b] \n another event !",
+        "description": "[b]Bold text[/b] \n another event !\n simple link : [url]https://www.angular.io[/url] \n  [url=\"https://www.nodejs.org/en\"]nodejs[/url]",
         "url": ""
     },
     {
