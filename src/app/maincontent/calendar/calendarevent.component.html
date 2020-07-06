@@ -20,7 +20,7 @@
 
         <div class='article-description-container'>
 
-          <div class='article-description'>{{item.description | bbcode}}</div>
+          <div class='article-description' [innerHTML]='item.description | bbcode'></div>
 
           <div *ngIf='item.location'><i class='material-icons'>pin_drop</i> {{item.location}}</div>
 
