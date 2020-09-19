@@ -11,10 +11,28 @@
 }
 
 .calendar-preview-description {
+
+
+  display: inline-block;
+}
+
+
+@media (prefers-color-scheme: light) {
+  .calendar-preview-description {
+
   background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#ddd));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .calendar-preview-description {
+    background: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(rgb(66,66,66)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+
 }
 
 

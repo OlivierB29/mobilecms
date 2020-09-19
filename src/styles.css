@@ -134,6 +134,15 @@ body {
   box-shadow: 5px 5px 10px 0 #656565;
 }
 
+
+@media (prefers-color-scheme: dark) {
+
+  .shadow {
+    box-shadow: 5px 5px 10px 0 #353535;
+  }
+}
+
+
 /* flex */
 .flexcontainer {
   display: flex;
@@ -197,7 +206,7 @@ body {
 /* Controlling Font Performance with font-display : https://developers.google.com/web/updates/2016/02/font-display */
 /* issue with edge */
 @font-face {
-  font-display: block; 
+  font-display: block;
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
@@ -238,7 +247,7 @@ body {
 /*https://fonts.googleapis.com/css?family=Open+Sans*/
 /* latin-ext */
 @font-face {
-  font-display: block; 
+  font-display: block;
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
@@ -254,3 +263,30 @@ body {
   src: local('Open Sans Regular'), local('OpenSans-Regular'), url(assets/opensans/mem8YaGs126MiZpBA-UFVZ0b.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background: rgb(66, 66, 66);
+  }
+
+  body a {
+    color: #809fff;
+  }
+  html {
+    --text-color-normal: hsl(210, 10%, 62%);
+    --text-color-light: hsl(210, 15%, 35%);
+    --text-color-richer: hsl(210, 50%, 72%);
+    --text-color-highlight: hsl(25, 70%, 45%);
+  }
+
+
+  img {
+    opacity: .75;
+    transition: opacity .5s ease-in-out;
+  }
+  img:hover {
+    opacity: 1;
+  }
+}
+

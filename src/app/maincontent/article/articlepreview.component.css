@@ -17,10 +17,26 @@
 }
 
 .article-previewdescription {
-  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#ddd));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
   display: inline-block;
+}
+
+@media (prefers-color-scheme: light) {
+
+  .article-previewdescription {
+    background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#ddd));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  .article-previewdescription {
+    background: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(rgb(66,66,66)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .description-and-thumbnail {

@@ -36,6 +36,14 @@
   text-align: center;
 }
 
+@media (prefers-color-scheme: dark) {
+
+  .monthline {
+    color: red;
+    background: rgb(33, 33, 33);
+  }
+}
+
 .dayline {
   font-size: 0.8em;
 }

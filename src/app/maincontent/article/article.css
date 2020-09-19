@@ -6,11 +6,27 @@
 
   /* spacing between article-content  */
 	margin-bottom: 1em;
+
+
+
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .article-content {
+    border-color: rgb(66, 66, 66);
+    }
+}
+
+
+@media (prefers-color-scheme: light) {
+
+  .article-content {
+	color: #333;
+  background: white;
   /* small decorating border */
 	border-color: #ddd;
-	color: #333;
-	background: white;
-
+  }
 }
 
 .article-description {
