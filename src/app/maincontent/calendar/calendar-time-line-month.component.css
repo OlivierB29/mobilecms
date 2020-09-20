@@ -2,11 +2,17 @@
   font-size: 0.75em;
 }
 
-
-.weekend {
-  background-color: #E8E8FF;
+@media (prefers-color-scheme: light) {
+  .weekend {
+    background-color: #E8E8FF;
+  }
 }
 
+@media (prefers-color-scheme: dark) {
+ .weekend {
+    background-color: black;
+  }
+}
 
 
 .monthtable {

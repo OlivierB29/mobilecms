@@ -52,19 +52,6 @@ body {
   color: white;
 }
 
-.my-mat-button-lighter {
-  background-color: white;
-  color: black;
-  cursor: pointer;
-  transition: background-color .7s cubic-bezier(.25, .8, .25, 1);
-}
-
-.my-mat-button-lighter:active {
-  background-color: #8ca8b7;
-}
-.my-mat-button-lighter:hover {
-  background-color: #8ca8b7;
-}
 
 
 .my-mat-button-light {
@@ -290,3 +277,83 @@ body {
   }
 }
 
+
+.article-content {
+  /*additional border: add a thicker aspect*/
+  border-width: 1px 1px 1px 1px ;
+  border-style: solid;
+
+  /* spacing between article-content  */
+	margin-bottom: 1em;
+
+
+
+}
+
+
+
+.article-description {
+  padding: 0.2em;
+}
+
+.article-description-container {
+  padding: 0.2em;
+}
+
+.article-subtitle {
+  font-size: 0.7em;
+
+}
+
+.article-title {
+	font-weight: bold;
+  padding: 0.7em;
+}
+
+.article-title-moreinfo {
+  text-align: right;
+  padding-right: 1em;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .article-content {
+    border-color: rgb(66, 66, 66);
+    }
+
+  .article-subtitle {
+      color: rgb(173, 173, 173);
+  }
+}
+
+
+@media (prefers-color-scheme: light) {
+
+  .article-content {
+	color: #333;
+  background: white;
+  /* small decorating border */
+	border-color: #ddd;
+  }
+
+  .article-subtitle {
+    color: #333;
+  }
+}
+
+
+
+/** @deprecated */
+.my-mat-button-lighter {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: background-color .7s cubic-bezier(.25, .8, .25, 1);
+}
+
+.my-mat-button-lighter:active {
+  background-color: #8ca8b7;
+}
+.my-mat-button-lighter:hover {
+  background-color: #8ca8b7;
+}
