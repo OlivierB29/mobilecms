@@ -321,6 +321,10 @@ body {
     border-color: rgb(66, 66, 66);
     }
 
+  .article-content {
+    background-color: rgb(58, 58, 58);
+  }
+
   .article-subtitle {
       color: rgb(173, 173, 173);
   }
