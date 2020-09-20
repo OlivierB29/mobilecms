@@ -5,7 +5,10 @@
 
 .divTable{
 	display: table;
-	width: 100%;
+  width: 100%;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: #E0E0E0;
 }
 .divTableRow {
 	display: table-row;
@@ -43,6 +46,9 @@
 }
 
 @media (prefers-color-scheme: dark) {
+  .divTable{
+    border-color: rgb(156, 156, 156);
+  }
 
   .divTableHeading {
     background-color: rgb(33, 33, 33);
