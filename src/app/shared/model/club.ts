@@ -1,9 +1,11 @@
 export class Club {
 
-  activity: string; //  kendo
-  department: string; //  22
-  url: string; //  http: // localhost
-  title: string; //  Some club
-  description: string; //  Informations
-
+  constructor(
+  public activity: string, //  kendo
+  public department: string, //  22
+  public url: string, //  http: // localhost
+  public title: string, //  Some club
+  public description: string, //  Informations
+  public coordinates: string //  coordinates
+  ) { }
 }

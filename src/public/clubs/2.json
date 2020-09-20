@@ -4,5 +4,6 @@
         "department": "02",
         "url": "http:\/\/example.com/",
         "title": "basket ball club",
-        "description": "some basket ball club"
+        "description": "some basket ball club",
+        "coordinates": "48.111990, -1.678607"
     }

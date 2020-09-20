@@ -1,17 +1,30 @@
 [
-    {
-        "id" : "1",
-        "activity": "tennis",
-        "department": "01"
-    },
-    {
-        "id" : "2",
-        "activity": "basketball",
-        "department": "02"
-    },
-    {
-        "id" : "3",
-        "activity": "tennis",
-        "department": "01"
-    }
+  {
+    "id" : "1",
+    "activity": "tennis",
+    "department": "01",
+    "url": "http:\/\/www.example.com",
+    "title": "tennis",
+    "description": "Lorem ipsum dolor sit amet,\n consectetur adipiscing elit,",
+    "coordinates": "48.394157, -4.486726"
+},
+
+{
+  "id" : "2",
+  "activity": "basketball",
+  "department": "02",
+  "url": "http:\/\/example.com/",
+  "title": "basket ball club",
+  "description": "some basket ball club",
+  "coordinates": "48.111990, -1.678607"
+},
+{
+  "id" : "3",
+  "activity": "tennis",
+  "department": "01",
+  "url": "http:\/\/www.example.com/with_a_long_internet_adress_or_blog_url",
+  "title": "A tennis club",
+  "description": "Some tennis club",
+  "coordinates": "47.756652, -3.381259"
+}
 ]

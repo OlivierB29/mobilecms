@@ -3,6 +3,7 @@
         "activity": "tennis",
         "department": "01",
         "url": "http:\/\/www.example.com",
-        "title": "www.example.com",
-        "description": "Lorem ipsum dolor sit amet,\n consectetur adipiscing elit,"
+        "title": "tennis",
+        "description": "Lorem ipsum dolor sit amet,\n consectetur adipiscing elit,",
+        "coordinates": "48.394157, -4.486726"
     }
