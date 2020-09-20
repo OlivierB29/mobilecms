@@ -3,13 +3,15 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { RouteUtilService, ReadService, Log, MediaService } from 'src/app/shared/services';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { MediaComponent } from 'src/app/maincontent/article';
 
+/**
+ * cf styles.css
+ */
 @Component({
-  
+
     selector: 'app-my-calendar-event',
     templateUrl: 'calendarevent.component.html',
-    styleUrls: ['calendarevent.component.css', '../article/article.css']
+    styleUrls: ['calendarevent.component.css']
 })
 export class CalendarEventComponent  implements OnInit {
 

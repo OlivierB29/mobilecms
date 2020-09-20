@@ -9,12 +9,14 @@ import { environment } from 'src/environments/environment';
 
 import { HttpClient, HttpResponse } from '@angular/common/http';
 
-
+/**
+ * cf styles.css
+ */
 @Component({
 
   selector: 'app-article',
   templateUrl: 'article.component.html',
-  styleUrls: ['article.css', 'article.component.css']
+  styleUrls: ['article.component.css']
 })
 export class ArticleComponent  implements OnInit {
 
@@ -105,7 +107,7 @@ export class ArticleComponent  implements OnInit {
     } else if (this.isItemInit()) {
       this.log.debug('ArticleComponent item ' + this.item.id);
       let tmpItem = this.itemparam;
-      
+
       tmpItem.media = this.mediaService.initMediaUrl(this.type, tmpItem.id, tmpItem.media, this.media);
       this.item = tmpItem;
       this.fetched = true;
@@ -118,7 +120,7 @@ export class ArticleComponent  implements OnInit {
         this.log.debug('ArticleComponent empty id');
       }
     }
-    
+
   }
 
   private isItemInit() {
@@ -140,7 +142,7 @@ export class ArticleComponent  implements OnInit {
   }
 
 
-   
+
 
   getItem(): any {
     return this.item;

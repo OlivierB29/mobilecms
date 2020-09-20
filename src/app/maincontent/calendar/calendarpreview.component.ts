@@ -13,7 +13,7 @@ import { ImageService } from 'src/app/maincontent/image';
 
   selector: 'app-calendarpreview',
   templateUrl: 'calendarpreview.component.html',
-  styleUrls: ['calendarpreview.component.css', '../article/article.css', '../article/articlepreview.css']
+  styleUrls: ['calendarpreview.component.css', '../article/articlepreview.css']
 })
 export class CalendarPreviewComponent   implements OnInit {
 
