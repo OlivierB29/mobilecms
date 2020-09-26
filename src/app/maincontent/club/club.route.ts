@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 import { ClubActivitiesComponent } from './';
 import { ClubMapComponent } from './';
-
+import { ClubDetailComponent } from './';
 
 export const clubRoutes: Routes = [
   {
@@ -16,6 +16,10 @@ export const clubRoutes: Routes = [
   {
     path: 'clubmap',
     component: ClubMapComponent
+  },
+  {
+    path: 'club/:id',
+    component: ClubDetailComponent
   },
   {
     path: 'clubs/:activity',

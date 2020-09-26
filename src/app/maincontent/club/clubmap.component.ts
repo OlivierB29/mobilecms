@@ -73,6 +73,7 @@ export class ClubMapComponent implements OnInit {
     promise.then((res: any)=>{
       this.clubs = res.map((res: any) => {
         return new Club(
+          res.id,
           res.activity,
           res.department,
           res.url,
@@ -113,7 +114,7 @@ export class ClubMapComponent implements OnInit {
           this.convertLongitudeToX(Number.parseFloat(coordStr[1])).toString(),
           this.convertLatitudeToY(Number.parseFloat(coordStr[0])).toString(),
           club.title,
-          club.url
+          'club/'+club.id
           );
       }
 
@@ -188,6 +189,10 @@ export class ClubMapComponent implements OnInit {
  }
 
 
+  /**
+   * TODO : hard coded values ...
+   * @param val
+   */
   convertLongitudeToX(val : number) : Number{
     let referenceMapPosition  = 469.0;
     let referenceGps  = -3.986535;
@@ -202,6 +207,7 @@ export class ClubMapComponent implements OnInit {
     let ratio  = 685 / -1.231743;
     return referenceMapPosition + (val - referenceGps) * ratio;
   }
+
 
 
   private appendClubToMap(doc: Document, x: string, y: string, clubTitle: string, clubLink: string) {
