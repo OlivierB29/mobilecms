@@ -14,6 +14,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { ViewChild, ElementRef } from '@angular/core';
 import { CoordinatesService } from 'src/app/shared/services';
+import { Coordinates } from 'src/app/shared/model/coordinates';
 
 /**
 * Club Map
@@ -104,17 +105,20 @@ export class ClubMapComponent implements OnInit {
 
   private addClubsToMap(): void{
           // First POI (Roscoff)
-          let firstPoiMap =  [469.0, 152.0]; // X, Y
-          let firstPoiGps = [48.726359, -3.986535]; // latitude, longitude
+          let firstPoi = new Coordinates(
+            [48.726359, -3.986535], // gps
+            [469.0, 152.0] // X, Y
+          );
 
           // Second POI (Penestin)
-          let secondPoiMap =  [1023.0, 837.0]; // X, Y
-          let secondPoiGps = [47.494616, -2.495609]; // latitude, longitude
+          let secondPoi = new Coordinates([47.494616, -2.495609], [1023.0, 837.0]);
+
 
           // translation vector
-          let vectorMap =  this.coordinatesService.getVector(firstPoiMap, secondPoiMap);
-          let vectorGps = this.coordinatesService.getVector(firstPoiGps, secondPoiGps); // latitude, longitude
-
+         let vector = new Coordinates(
+            this.coordinatesService.getVector(firstPoi.gps, secondPoi.gps),
+            this.coordinatesService.getVector(firstPoi.map, secondPoi.map),
+          );
 
 
 
@@ -127,7 +131,8 @@ export class ClubMapComponent implements OnInit {
 
       if (coord && coord.length === 2) {
 
-        let result = this.coordinatesService.convertGpsToXY(coord, firstPoiGps, firstPoiMap, vectorGps, vectorMap);
+
+        let result = this.coordinatesService.convertGpsToXY(coord, firstPoi, vector);
 
         this.appendClubToMap(this.doc,
           result[0].toString(),
