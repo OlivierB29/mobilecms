@@ -13,6 +13,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 import { ViewChild, ElementRef } from '@angular/core';
+import { CoordinatesService } from 'src/app/shared/services';
 
 /**
 * Club Map
@@ -55,6 +56,7 @@ export class ClubMapComponent implements OnInit {
     private titleService: Title,
     private router: Router,
     private dataService: ReadService,
+    private coordinatesService : CoordinatesService,
     private log: Log,
     private route: ActivatedRoute,
     private http: HttpClient
@@ -99,7 +101,21 @@ export class ClubMapComponent implements OnInit {
   }
 
 
+
   private addClubsToMap(): void{
+          // First POI (Roscoff)
+          let firstPoiMap =  [469.0, 152.0]; // X, Y
+          let firstPoiGps = [48.726359, -3.986535]; // latitude, longitude
+
+          // Second POI (Penestin)
+          let secondPoiMap =  [1023.0, 837.0]; // X, Y
+          let secondPoiGps = [47.494616, -2.495609]; // latitude, longitude
+
+          // translation vector
+          let vectorMap =  this.coordinatesService.getVector(firstPoiMap, secondPoiMap);
+          let vectorGps = this.coordinatesService.getVector(firstPoiGps, secondPoiGps); // latitude, longitude
+
+
 
 
   this.clubs.forEach((club: Club) => {
@@ -107,12 +123,15 @@ export class ClubMapComponent implements OnInit {
 
     if (club.coordinates !== undefined) {
       // format : ["48.111990", "-1.678607"]
-      let coordStr : Array<string>  = this.getCoordinates(club.coordinates);
+      let coord : Array<number>  = this.getCoordinates(club.coordinates);
 
-      if (coordStr.length) {
+      if (coord && coord.length === 2) {
+
+        let result = this.coordinatesService.convertGpsToXY(coord, firstPoiGps, firstPoiMap, vectorGps, vectorMap);
+
         this.appendClubToMap(this.doc,
-          this.convertLongitudeToX(Number.parseFloat(coordStr[1])).toString(),
-          this.convertLatitudeToY(Number.parseFloat(coordStr[0])).toString(),
+          result[0].toString(),
+          result[1].toString(),
           club.title,
           'club/'+club.id
           );
@@ -152,7 +171,8 @@ export class ClubMapComponent implements OnInit {
 
 
     }).catch((error)=>{
-      console.log("Promise2 rejected with " + JSON.stringify(error));
+      console.log("Promise2 rejected with ");
+      console.error(error);
     });
   }
 
@@ -248,13 +268,26 @@ export class ClubMapComponent implements OnInit {
     return 'public/activities/' + id + '/' + file;
   }
 
-  getCoordinates(coordinates: string) : Array<string> {
+  getCoordinatesOld(coordinates: string) : Array<string> {
     let coord = coordinates.replace(' ', '');
    // let coordArrayStr = coord.split(',');
     return coord.split(',')
   }
 
 
+  getCoordinates(coordinates: string) : Array<number> {
+    let coord = coordinates.replace(' ', '');
+
+    let strArray = coord.split(',');
+    let result : Array<number> = [];
+    strArray.forEach((val: any) => {
+
+      result.push(Number.parseFloat(val));
+    });
+
+
+    return result;
+  }
 
   /**
    * print X,Y positions into map
