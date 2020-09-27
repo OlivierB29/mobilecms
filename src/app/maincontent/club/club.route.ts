@@ -18,6 +18,10 @@ export const clubRoutes: Routes = [
     component: ClubMapComponent
   },
   {
+    path: 'clubmap/:activity',
+    component: ClubMapComponent
+  },
+  {
     path: 'club/:id',
     component: ClubDetailComponent
   },

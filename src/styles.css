@@ -345,6 +345,17 @@ body {
   }
 }
 
+/** poi on map */
+
+
+.poi {
+  border-bottom: 1px solid red;
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+}
+.poi:hover {
+  opacity: 0.75;
+}
 
 
 /** @deprecated */
