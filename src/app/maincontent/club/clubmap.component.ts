@@ -46,6 +46,7 @@ export class ClubMapComponent implements OnInit {
   clubs: Club[] = [];
 
 
+
   /**
   * list of clubs
   */
@@ -70,6 +71,77 @@ export class ClubMapComponent implements OnInit {
 
   private fetchData() : void {
 
+
+
+    const headPromise = this.http.get(this.dataService.getUrl('description', 'head')).toPromise();
+    console.log(headPromise);
+    headPromise.then((res: any)=>{
+
+      console.log(res);
+
+      let mapUrl = res.geographicdata.mapurl;
+
+      let firstPoi = Coordinates.parse(
+          res.geographicdata.firstpoi.gps,
+          res.geographicdata.firstpoi.map
+        );
+
+
+        let secondPoi = Coordinates.parse(
+          res.geographicdata.lastpoi.gps,
+          res.geographicdata.lastpoi.map
+        );
+
+
+
+      // continue processing
+      this.loadClubsAndSvg(mapUrl, firstPoi, secondPoi);
+
+    }).catch((error)=>{
+      console.error("Head Promise rejected with ");
+      console.error(error);
+    });
+
+
+
+
+  }
+
+  private loadClubsAndSvg(mapUrl : string, firstPoi : Coordinates, lastPoi: Coordinates): void {
+
+
+    const api = this.dataService.getIndexUrl('clubs');
+    const promise = this.http.get(api).toPromise();
+    console.log(promise);
+    promise.then((res: any)=>{
+      this.clubs = res.map((res: any) => {
+        return new Club(
+          res.id,
+          res.activity,
+          res.department,
+          res.url,
+          res.title,
+          res.description,
+          res.coordinates
+        );
+      });
+      console.log("Club Promise resolved with: " + JSON.stringify(res));
+
+      // load SVG map
+      this.loadSvg(mapUrl, firstPoi, lastPoi);
+
+
+    }).catch((error)=>{
+      console.log("Club Promise rejected with " + JSON.stringify(error));
+    });
+
+
+
+  }
+
+  private loadClubsAndSvgOld(): void {
+
+
     const api = this.dataService.getIndexUrl('clubs');
     const promise = this.http.get(api).toPromise();
     console.log(promise);
@@ -87,7 +159,7 @@ export class ClubMapComponent implements OnInit {
       });
       console.log("Promise resolved with: " + JSON.stringify(res));
 
-      this.loadSvg();
+      this.loadSvgOld();
 
 
     }).catch((error)=>{
@@ -96,14 +168,47 @@ export class ClubMapComponent implements OnInit {
 
 
 
-
-
-
   }
 
+  private addClubsToMap(firstPoi: Coordinates, lastPoi : Coordinates): void{
 
 
-  private addClubsToMap(): void{
+    // translation vector
+   let vector = new Coordinates(
+      this.coordinatesService.getVector(firstPoi.gps, lastPoi.gps),
+      this.coordinatesService.getVector(firstPoi.map, lastPoi.map),
+    );
+
+
+
+this.clubs.forEach((club: Club) => {
+
+
+if (club.coordinates !== undefined) {
+// format : "48.111990, -1.678607"
+let coord : Array<number>  = this.parseCoordinates(club.coordinates);
+
+if (coord && coord.length === 2) {
+
+
+  let result = this.coordinatesService.convertGpsToXY(coord, firstPoi, vector);
+
+  this.appendClubToMap(this.doc,
+    result[0].toString(),
+    result[1].toString(),
+    club.title,
+    'club/'+club.id
+    );
+}
+
+}
+
+});
+
+
+}
+
+  private addClubsToMapOld(): void{
           // First POI (Roscoff)
           let firstPoi = new Coordinates(
             [48.726359, -3.986535], // gps
@@ -111,7 +216,10 @@ export class ClubMapComponent implements OnInit {
           );
 
           // Second POI (Penestin)
-          let secondPoi = new Coordinates([47.494616, -2.495609], [1023.0, 837.0]);
+          let secondPoi = new Coordinates(
+            [47.494616, -2.495609], // gps
+             [1023.0, 837.0] // X, Y
+             );
 
 
           // translation vector
@@ -126,8 +234,8 @@ export class ClubMapComponent implements OnInit {
 
 
     if (club.coordinates !== undefined) {
-      // format : ["48.111990", "-1.678607"]
-      let coord : Array<number>  = this.getCoordinates(club.coordinates);
+      // format : "48.111990, -1.678607"
+      let coord : Array<number>  = this.parseCoordinates(club.coordinates);
 
       if (coord && coord.length === 2) {
 
@@ -149,7 +257,40 @@ export class ClubMapComponent implements OnInit {
 
   }
 
-  private loadSvg(): void{
+  private loadSvg(mapUrl : string, firstPoi: Coordinates, lastPoi: Coordinates): void{
+
+
+    // SVG from assets
+    const promise2 = this.http.get(mapUrl, { responseType: 'text' })
+    .toPromise();
+
+
+    promise2.then((svgdata: any) => {
+
+      // parse SVG
+      let parser = new DOMParser();
+      this.doc = parser.parseFromString(svgdata, "image/svg+xml");
+
+      // print X,Y positions into map
+      //this.debugMapPositions(this.doc);
+      this.addClubsToMap(firstPoi, lastPoi);
+     // this.appendPointToMap(doc, '1023', '837', 'X', 'http://angular.io');
+      let s = new XMLSerializer();
+
+      //serialize SVG content
+      //console.log(s.serializeToString(doc));
+      this.mySvg.nativeElement.innerHTML = s.serializeToString(this.doc);
+      console.log("Promise2 resolved" );
+
+
+    }).catch((error)=>{
+      console.error("Promise2 rejected with");
+      console.error(error);
+    });
+  }
+
+
+  private loadSvgOld(): void{
 
 
     // SVG from assets
@@ -165,7 +306,7 @@ export class ClubMapComponent implements OnInit {
 
       // print X,Y positions into map
       //this.debugMapPositions(this.doc);
-      this.addClubsToMap();
+      this.addClubsToMapOld();
      // this.appendPointToMap(doc, '1023', '837', 'X', 'http://angular.io');
       let s = new XMLSerializer();
 
@@ -176,7 +317,7 @@ export class ClubMapComponent implements OnInit {
 
 
     }).catch((error)=>{
-      console.log("Promise2 rejected with ");
+      console.error("Promise2 rejected with");
       console.error(error);
     });
   }
@@ -195,15 +336,6 @@ export class ClubMapComponent implements OnInit {
 
       });
 
-  /*  this.http.get<any>(this.dataService.getIndexUrl('clubs'))
-      .subscribe((data: Club[]) => {
-        this.clubs = data;
-        this.log.debug('getClubs complete ' + this.clubs.length);
-
-
-
-      });
-*/
 
       this.fetchData();
   }
@@ -212,27 +344,6 @@ export class ClubMapComponent implements OnInit {
   this.log.debug('ngAfterViewInit ' + this.clubs.length);
 
  }
-
-
-  /**
-   * TODO : hard coded values ...
-   * @param val
-   */
-  convertLongitudeToX(val : number) : Number{
-    let referenceMapPosition  = 469.0;
-    let referenceGps  = -3.986535;
-    let ratio  = 554 / 1.490926;
-    return referenceMapPosition + (val - referenceGps) * ratio;
-  }
-
-
-  convertLatitudeToY(val : number) : Number{
-    let referenceMapPosition  = 152.0;
-    let referenceGps  = 48.726359;
-    let ratio  = 685 / -1.231743;
-    return referenceMapPosition + (val - referenceGps) * ratio;
-  }
-
 
 
   private appendClubToMap(doc: Document, x: string, y: string, clubTitle: string, clubLink: string) {
@@ -273,14 +384,8 @@ export class ClubMapComponent implements OnInit {
     return 'public/activities/' + id + '/' + file;
   }
 
-  getCoordinatesOld(coordinates: string) : Array<string> {
-    let coord = coordinates.replace(' ', '');
-   // let coordArrayStr = coord.split(',');
-    return coord.split(',')
-  }
 
-
-  getCoordinates(coordinates: string) : Array<number> {
+  parseCoordinates(coordinates: string) : Array<number> {
     let coord = coordinates.replace(' ', '');
 
     let strArray = coord.split(',');
