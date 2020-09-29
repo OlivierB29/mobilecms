@@ -161,15 +161,19 @@ export class ClubMapComponent implements OnInit {
 
           let result = this.coordinatesService.convertGpsToXY(coord, firstPoi, vector);
 
-          if (this.poiAlreadyExists(result, 20)) {
-            //result[0] += 20;
-            result[1] -= 20;
+          let displayPosition = this.findDisplayPosition(result);
+
+
+          this.poiPositions.push(displayPosition);
+
+          if (this.log.isDebug()) {
+            if (displayPosition[0] != result[0] && displayPosition[1] != result[1])
+            this.log.debug("place " + club.title + " " + result.toString() + " --> " + displayPosition.toString());
           }
-          this.poiPositions.push(result);
 
           this.appendClubToMap(this.doc,
-            result[0],
-            result[1],
+            displayPosition[0],
+            displayPosition[1],
             club
           );
         }
@@ -179,8 +183,25 @@ export class ClubMapComponent implements OnInit {
     });
   }
 
+  /**
+   * Considering a zoomed out regional map : Adjust position, if others POI are nearby.
+   * POI are just clickable items, not really GPS oriented.
+   * @param position new position
+   */
+  private findDisplayPosition(position: Array<number> ) : Array<number>{
+    let coord = [];
+    position.forEach(element => {
+      coord.push(element);
+    });
+    while(this.poiAlreadyExistsNearPosition(coord, 5)) {
+      coord[0] += 5;
+      coord[1] += 5;
+    }
 
-  private poiAlreadyExists(position : Array<number>, approx : number) : boolean {
+    return coord;
+  }
+
+  private poiAlreadyExistsNearPosition(position : Array<number>, approx : number) : boolean {
 
     let result = false;
 
