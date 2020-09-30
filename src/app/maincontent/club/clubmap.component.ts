@@ -225,7 +225,7 @@ export class ClubMapComponent implements OnInit {
 
 
   getClubLink(club: Club): string {
-    return 'club/' + club.id;
+    return '#/club/' + club.id;
   }
 
   getActivityImg(club: Club): string {
