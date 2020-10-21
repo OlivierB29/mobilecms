@@ -12,6 +12,7 @@
     "polyfills.ts"
   ],
   "include": [
+    "../BBCodeParser/src/**/*",
     "**/*.spec.ts",
     "**/*.d.ts"
   ]

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-
-import BBCodeParser from 'bbcode-parser';
+//import BBCodeParser from 'bbcode-parser';
+import { BBCodeParser } from '../../../../../BBCodeParser/src/bbCodeParser';
 /**
  * User defined tags for https://github.com/svenslaggare/BBCodeParser
  */
@@ -12,6 +12,8 @@ export class BBcodeService {
 
   parseString(value: string): string {
     if (value) {
+      console.log(value);
+        console.log(this.parser.parseString(value));
         return this.parser.parseString(value);
     }
     return '';
@@ -29,7 +31,7 @@ export class BBcodeService {
         if (defaultTags[t]) {
             result[t] = defaultTags[t];
         }
-        
+
     });
 
     return result;

@@ -16,7 +16,6 @@ import { MainModule } from 'src/app/sidenav/main.module';
 import { ClubModule } from 'src/app/maincontent/club/club.module';
 import { ImageModule } from 'src/app/maincontent/image/image.module';
 
-import 'bbcode-parser';
 
 
 @NgModule({
