@@ -18,6 +18,8 @@ Since this project is the frontend, an admin app is necessary :
 
 ## Development server
 - Node JS
+- `git clone https://github.com/OlivierB29/BBCodeParser`
+- clone this repo
 - `npm i -g @angular/cli`
 - `npm i`
 - `npm start`
