@@ -9,7 +9,8 @@ before_script:
 #  - "sh -e /etc/init.d/xvfb start"
 #  give xvfb some time to start
 #  - sleep 3
-  - npm install
 script:
-  - ng build --prod
+# todo : ng test with CI
+  - npm install
+#  - ng build --prod
 #  - travis_wait 10 ng test
