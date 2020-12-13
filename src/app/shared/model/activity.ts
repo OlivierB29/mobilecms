@@ -18,4 +18,9 @@ logo: string;
 */
 calendar: string;
 
+/**
+* 'true'|'false'
+*/
+clublist: string;
+
 }

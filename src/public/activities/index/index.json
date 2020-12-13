@@ -3,18 +3,33 @@
         "id": "tennis",
         "name": "tennis",
         "logo": "tennis.png",
-        "calendar": "true"
+        "mapicon": "tennis-32px.png",
+        "calendar": "true",
+        "clublist": "true"
     },
     {
         "id": "golf",
         "name": "golf",
         "logo": "golf.jpg",
-        "calendar": "false"
+        "mapicon": "golf-32px.png",
+        "calendar": "false",
+        "clublist": "true"
     },
     {
         "id": "basketball",
         "name": "basketball",
         "logo": "basketball.jpg",
-        "calendar": "true"
+        "mapicon": "basketball-32px.png",
+        "calendar": "true",
+        "clublist": "true"
+    }
+    ,
+    {
+        "id": "organization",
+        "name": "local organization",
+        "logo": "organization.jpg",
+        "mapicon": "",
+        "calendar": "true",
+        "clublist": "false"
     }
 ]

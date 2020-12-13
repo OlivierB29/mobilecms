@@ -63,8 +63,9 @@ export class ClubActivitiesComponent implements OnInit {
     //
     this.http.get<any>(this.dataService.getIndexUrl('activities'))
     .subscribe((data: Activity[]) => {
-      // all activities are displayed
-      this.activityObjectList = data;
+      // exclude activities without clubs
+      let result = data.filter(a => a.clublist && 'false' !== a.clublist);
+      this.activityObjectList = result;
     });
 
 
