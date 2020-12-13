@@ -1,5 +1,5 @@
 <div class='article-list'>
-  
+
   <div *ngIf='!activity'>
     <div *ngFor='let activityLink of activityObjectList'>
       <app-activitybutton [activity]='activityLink'></app-activitybutton>
@@ -7,7 +7,7 @@
   </div>
 
   <div *ngIf='activity'>
-    <app-my-clubs-list [activity]='activity'></app-my-clubs-list>
+    <app-my-clubmap [activity]='activity'></app-my-clubmap>
   </div>
 
 </div>
