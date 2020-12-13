@@ -8,5 +8,10 @@
     {"title":"Facebook", "url":"https://facebook.com","imageurl":"public/description/assets/f_logo_RGB-Blue_58.png", "imagealt":"F"},
     {"title":"Youtube", "url":"https://youtube.com","imageurl":"public/description/assets/youtube_social_icon_red.png", "imagealt":"Y"},
     {"title":"Discord", "url":"https://discordapp.com","imageurl":"public/description/assets/Discord-Logo-White.png", "imagealt":"D"}
-  ]
+  ],
+  "geographicdata": {
+    "mapurl": "public/description/assets/map.svg",
+    "firstpoi": {"gps":"48.726359, -3.986535", "map": "469.0, 152.0", "name": "Roscoff"},
+    "lastpoi": {"gps":"47.494616, -2.495609", "map": "1023.0, 837.0", "name": "Penestin"}
+  }
 }
