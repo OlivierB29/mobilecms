@@ -1,6 +1,7 @@
 language: node_js
 node_js:
-  - "12"
+  - "14"
+  - "15"
 before_install:
   - export CHROME_BIN=chromium-browser
   - npm install -g @angular/cli
