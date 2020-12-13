@@ -23,4 +23,6 @@ calendar: string;
 */
 clublist: string;
 
+
+mapicon: string;
 }

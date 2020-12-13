@@ -5,7 +5,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 import { Club } from 'src/app/shared/model/club';
-import { Department } from 'src/app/shared/model/department';
+
 import { Log } from 'src/app/shared/services/log.service';
 import { ReadService } from 'src/app/shared/services/read.service';
 import { HttpClient } from '@angular/common/http';
@@ -14,7 +14,10 @@ import { HttpClient } from '@angular/common/http';
 
 import { ViewChild, ElementRef } from '@angular/core';
 import { CoordinatesService } from 'src/app/shared/services';
+import { SvgService } from 'src/app/shared/services';
 import { Coordinates } from 'src/app/shared/model/coordinates';
+import { Activity } from 'src/app/shared/model/activity';
+
 
 /**
 * Club Map
@@ -49,6 +52,11 @@ export class ClubMapComponent implements OnInit {
   */
   clubs: Club[] = [];
 
+  /**
+  * list of activities
+  */
+ @Input() activities: Activity[] = [];
+
   poiPositions = [];
 
 
@@ -57,6 +65,7 @@ export class ClubMapComponent implements OnInit {
     private router: Router,
     private dataService: ReadService,
     private coordinatesService: CoordinatesService,
+    private svgService: SvgService,
     private log: Log,
     private route: ActivatedRoute,
     private http: HttpClient
@@ -147,6 +156,8 @@ export class ClubMapComponent implements OnInit {
       this.coordinatesService.getVector(firstPoi.map, lastPoi.map),
     );
 
+    // SVG g element
+    let g : SVGElement = this.svgService.g(this.doc);
 
 
     this.clubs.forEach((club: Club) => {
@@ -171,10 +182,18 @@ export class ClubMapComponent implements OnInit {
             this.log.debug("place " + club.title + " " + result.toString() + " --> " + displayPosition.toString());
           }
 
-          this.appendClubToMap(this.doc,
+          this.log.debug('appendClubToMap ' + club.title + ' ' + displayPosition[0] + ',' + displayPosition[1]);
+
+
+
+
+          this.svgService.appendClubToMap(this.doc,
+            g,
             displayPosition[0],
             displayPosition[1],
-            club
+            this.getClubLink(club),
+            club.title + " | " + club.activity.toUpperCase(),
+            this.getActivityImg(club)
           );
         }
 
@@ -223,13 +242,24 @@ export class ClubMapComponent implements OnInit {
   }
 
 
-
   getClubLink(club: Club): string {
     return '#/club/' + club.id;
   }
 
+
+
   getActivityImg(club: Club): string {
-    return 'public/activities/' + club.activity + '/' + club.activity + '-32px.png';
+    let result = '';
+    //return 'public/activities/' + club.activity + '/' + club.activity + '-32px.png';
+
+    if(this.activities ) {
+      let filter = this.activities.filter(a => a.name === club.activity);
+      if (filter.length > 0) {
+        result = 'public/activities/' + club.activity + '/' + filter[0].mapicon;
+      }
+    }
+
+    return result;
   }
 
 
@@ -244,18 +274,14 @@ export class ClubMapComponent implements OnInit {
     promise2.then((svgdata: any) => {
 
       // parse SVG
-      let parser = new DOMParser();
-      this.doc = parser.parseFromString(svgdata, "image/svg+xml");
+      this.doc = this.svgService.parseFromString(svgdata);
 
       // print X,Y positions into map
       //this.debugMapPositions(this.doc);
       this.addClubsToMap(firstPoi, lastPoi);
       //  this.appendPointToMap(this.doc, '73', '933', 'X', 'http://angular.io');
-      let s = new XMLSerializer();
 
-      //serialize SVG content
-      //console.log(s.serializeToString(doc));
-      this.mySvg.nativeElement.innerHTML = s.serializeToString(this.doc);
+      this.mySvg.nativeElement.innerHTML = this.svgService.serializeToString(this.doc);
       console.log("Promise2 resolved");
 
 
@@ -290,58 +316,7 @@ export class ClubMapComponent implements OnInit {
   }
 
 
-  private appendClubToMap(doc: Document, x: number, y: number, club: Club) {
-    this.log.debug('appendClubToMap ' + club.title + ' ' + x + ',' + y);
-    // SVG g element
-    var svg = doc.getElementsByTagName('svg')[0]; //Get svg element
-    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    var g = doc.createElementNS("http://www.w3.org/2000/svg", 'g'); //Create a g element in SVG's namespace
-    g.setAttribute("x", '0'); //Set g dat
-    g.setAttribute("y", '0'); //Set g dat
-    svg.appendChild(g);
 
-    // SVG rect
-    let rectWidth: number = 32;
-    let rectHeight: number = 32;
-
-    let newNode = doc.createElementNS("http://www.w3.org/2000/svg", 'foreignObject'); //Create a rect in SVG's namespace
-    newNode.setAttribute("x", this.centerRectangle(x, rectWidth).toString()); //Set rect data
-    newNode.setAttribute("y", this.centerRectangle(y, rectHeight).toString()); //Set rect data
-
-    newNode.setAttribute("width", rectWidth.toString()); //Set rect data
-    newNode.setAttribute("height", rectHeight.toString()); //Set rect data
-    newNode.setAttribute('class', 'poi');
-
-    //newNode.setAttribute('style', 'border-width: 1px; border-style: solid; border-color: red; font-size : 16px');
-    //newNode.setAttribute('style', 'background-color: white');
-    //border-color: red; border-width: 1px; border-style: solid;
-    g.appendChild(newNode);
-
-    // HTML div
-    let newDiv = document.createElement('div');
-    newNode.appendChild(newDiv);
-
-    newDiv.setAttribute('title', club.title + " | " + club.activity.toUpperCase()); // hover
-
-    // HTML Link
-    let newLink = document.createElement('a');
-    newLink.setAttribute('href', this.getClubLink(club));
-    newLink.setAttribute('target', '_blank');
-    newDiv.appendChild(newLink);
-
-    // display image
-    let newImg = document.createElement('img');
-    newImg.setAttribute('src', this.getActivityImg(club));
-    newImg.setAttribute('alt', club.activity);
-
-    newLink.appendChild(newImg);
-
-
-  }
-
-  private centerRectangle(val: number, size: number): number {
-    return val - size / 2;
-  }
 
 
 
