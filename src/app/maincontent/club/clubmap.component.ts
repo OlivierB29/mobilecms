@@ -121,7 +121,7 @@ export class ClubMapComponent implements OnInit {
     const promise = this.http.get(api).toPromise();
     console.log(promise);
     promise.then((res: any) => {
-      this.clubs = res.map((res: any) => {
+      let tmpclubs = res.map((res: any) => {
         return new Club(
           res.id,
           res.activity,
@@ -133,6 +133,11 @@ export class ClubMapComponent implements OnInit {
         );
       });
       console.log("Club Promise resolved with: " + JSON.stringify(res));
+      if (this.activity ) {
+        this.clubs = tmpclubs.filter(club => club.activity === this.activity);
+      } else {
+        this.clubs = tmpclubs;
+      }
 
       // load SVG map
       this.loadSvg(mapUrl, firstPoi, lastPoi);
@@ -172,7 +177,7 @@ export class ClubMapComponent implements OnInit {
 
           let result = this.coordinatesService.convertGpsToXY(coord, firstPoi, vector);
 
-          let displayPosition = this.findDisplayPosition(result);
+          let displayPosition = this.svgService.findDisplayPosition(this.poiPositions, result);
 
 
           this.poiPositions.push(displayPosition);
@@ -192,8 +197,10 @@ export class ClubMapComponent implements OnInit {
             displayPosition[0],
             displayPosition[1],
             this.getClubLink(club),
-            club.title + " | " + club.activity.toUpperCase(),
-            this.getActivityImg(club)
+            club.title,
+            this.getActivityImg(club),
+            32,
+            32
           );
         }
 
@@ -202,44 +209,8 @@ export class ClubMapComponent implements OnInit {
     });
   }
 
-  /**
-   * Considering a zoomed out regional map : Adjust position, if others POI are nearby.
-   * POI are just clickable items, not really GPS oriented.
-   * @param position new position
-   */
-  private findDisplayPosition(position: Array<number> ) : Array<number>{
-    let coord = [];
-    position.forEach(element => {
-      coord.push(element);
-    });
-    while(this.poiAlreadyExistsNearPosition(coord, 5)) {
-      coord[0] += 5;
-      coord[1] += 5;
-    }
 
-    return coord;
-  }
 
-  private poiAlreadyExistsNearPosition(position : Array<number>, approx : number) : boolean {
-
-    let result = false;
-
-    this.poiPositions.forEach((p : Array<number>) => {
-
-      if (
-          position[0] >= (p[0] - approx)
-          && position[0] <= (p[0] + approx)
-          &&
-          position[1] >= (p[1] - approx)
-          && position[1] <= (p[1] + approx)
-
-          ) {
-            result = true;
-          }
-
-    });
-    return result;
-  }
 
 
   getClubLink(club: Club): string {
@@ -339,98 +310,6 @@ export class ClubMapComponent implements OnInit {
     return result;
   }
 
-  /**
-   * print X,Y positions into map
-   * @param doc SVG document
-   */
-  private debugMapPositions(doc: Document) {
-    let width = 1615;
-    let height = 1001;
-    let x = 0;
-    let y = 0;
-    while (x < width) {
-      y = 0;
-      while (y < height) {
-        let posX = x.toString();
-        let posY = y.toString();
-        this.appendLinkToMap(doc, posX, posY, '[' + posX + ',' + posY + ']', 'http://angular.io');
-        y += 50;
-      }
-      x += 50;
-    }
-  }
-
-  private appendPointToMap(doc: Document, x: string, y: string, clubTitle: string, clubLink: string) {
-
-    // SVG g element
-    var svg = doc.getElementsByTagName('svg')[0]; //Get svg element
-    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    var g = doc.createElementNS("http://www.w3.org/2000/svg", 'g'); //Create a g element in SVG's namespace
-    g.setAttribute("x", '0'); //Set g dat
-    g.setAttribute("y", '0'); //Set g dat
-    svg.appendChild(g);
-
-    // SVG rect
-    let newNode = doc.createElementNS("http://www.w3.org/2000/svg", 'foreignObject'); //Create a rect in SVG's namespace
-    newNode.setAttribute("x", x); //Set rect data
-    newNode.setAttribute("y", y); //Set rect data
-    newNode.setAttribute("width", "2"); //Set rect data
-    newNode.setAttribute("height", "2"); //Set rect data
-    newNode.setAttribute('style', 'font-size : 1px; background-color: red;');
-    //border-color: red; border-width: 1px; border-style: solid;
-    g.appendChild(newNode);
-
-    // HTML div
-    let newDiv = document.createElement('div');
-    newNode.appendChild(newDiv);
-
-    // HTML Link
-    let newLink = document.createElement('a');
-    newLink.setAttribute('href', clubLink);
-    newLink.innerHTML = clubTitle;
-    newDiv.appendChild(newLink);
-  }
-
-
-  private appendLinkToMap(doc: Document, x: string, y: string, title: string, link: string) {
-    this.log.debug('appendClubToMap ' + title + ' ' + x + ',' + y + ' ' + link);
-    // SVG g element
-    var svg = doc.getElementsByTagName('svg')[0]; //Get svg element
-    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    var g = doc.createElementNS("http://www.w3.org/2000/svg", 'g'); //Create a g element in SVG's namespace
-    g.setAttribute("x", '0'); //Set g dat
-    g.setAttribute("y", '0'); //Set g dat
-    svg.appendChild(g);
-
-    // SVG rect
-    let newNode = doc.createElementNS("http://www.w3.org/2000/svg", 'foreignObject'); //Create a rect in SVG's namespace
-    newNode.setAttribute("x", x); //Set rect data
-    newNode.setAttribute("y", y); //Set rect data
-    let rectWidth: number = title.length * 9;
-    newNode.setAttribute("width", rectWidth.toString()); //Set rect data
-    newNode.setAttribute("height", "16"); //Set rect data
-    newNode.setAttribute('style', 'border-width: 1px; border-style: solid; border-color: red; font-size : 16px');
-    //border-color: red; border-width: 1px; border-style: solid;
-    g.appendChild(newNode);
-
-    // HTML div
-    let newDiv = document.createElement('div');
-    newNode.appendChild(newDiv);
-
-    // HTML Link
-    /*  let newLink = document.createElement('a');
-      newLink.setAttribute('href', clubLink);
-      newLink.innerHTML = clubTitle;
-      newDiv.appendChild(newLink);
-  */
-    let newImg = document.createElement('img');
-    newImg.setAttribute('src', link);
-    newImg.setAttribute('alt', link);
-
-    newDiv.appendChild(newImg);
-
-
-  }
 
 
 

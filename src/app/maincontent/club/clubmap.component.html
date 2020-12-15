@@ -1,6 +1,16 @@
 <!-- svg #mySvg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"/ -->
 
 
-<div #mySvg>
 
+<div class="map-row">
+  <div class="map-left-column">
+
+  <div *ngFor='let club of clubs' class='my-mat-button-dark spaced'>
+    <a href='{{getClubLink(club)}}' class='mini-title'>{{club.title}}</a>
+  </div>
+
+  </div>
+  <div #mySvg class="map-right-column"></div>
 </div>
+
+<span class='map-license'><a title="Eric Gaba (Sting - fr:Sting), CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Bretagne_region_location_map.svg">CC BY-SA 3.0 via Wikimedia Commons</a></span>

@@ -1,0 +1,23 @@
+.map-row {
+  display: flex;
+}
+
+.map-left-column{
+  flex: 20%;
+}
+.map-right-column{
+  flex: 80%;
+}
+
+.map-license {
+  font-size: x-small;
+}
+
+.mini-title {
+  font-size: x-small;
+  color: white;
+}
+
+.spaced {
+  margin-bottom: 0.2em;
+}
