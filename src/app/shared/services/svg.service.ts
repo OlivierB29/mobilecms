@@ -154,9 +154,9 @@ export class SvgService {
     position.forEach(element => {
       coord.push(element);
     });
-    while(this.poiAlreadyExistsNearPosition(poiPositions, coord, 30)) {
-      coord[0] -= 10;
-      coord[1] -= 10;
+    while(this.poiAlreadyExistsNearPosition(poiPositions, coord, 10)) {
+      coord[0] -= 5;
+      coord[1] -= 5;
     }
 
     return coord;
