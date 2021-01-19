@@ -11,7 +11,7 @@ import { Log } from 'src/app/shared/services/log.service';
 * same timing animations
 */
 @Component({
-  
+
     selector: 'app-my-featured-widget',
     templateUrl: 'featured.component.html',
     styleUrls: ['featured.component.css']
@@ -20,7 +20,7 @@ import { Log } from 'src/app/shared/services/log.service';
 
 export class FeaturedComponent implements OnInit {
 
-    items: Event[] = [];
+    items: Event[] = <any>[];
 
     constructor(private log: Log) {}
 

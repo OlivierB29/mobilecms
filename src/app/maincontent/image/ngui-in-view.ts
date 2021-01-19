@@ -39,7 +39,7 @@ styles: [':host {display: block;}']
 export class NguiInviewComponent implements OnInit, OnDestroy {
   /** <ng-template> reference */
   /** 2019-06-28 : Angular8 - add mandatory parameter */
-@ContentChild(TemplateRef, {static: false}) template: TemplateRef<any>;
+@ContentChild(TemplateRef, {static: false}) template!: TemplateRef<any>;
 
   /** IntersectionObserver options */
 @Input() observerOptions: IntersectionObserverInit = {threshold: [.1, .2, .3, .4, .5, .6, .7, .8]};
@@ -54,7 +54,7 @@ export class NguiInviewComponent implements OnInit, OnDestroy {
 @Output() inview: EventEmitter<IntersectionObserverEntry> = new EventEmitter();
 @Output() notInview: EventEmitter<IntersectionObserverEntry> = new EventEmitter();
 
-observer: IntersectionObserver;
+observer!: IntersectionObserver;
   /** indicates that this element is in viewport */
 isInview = false;
   /** indicates that this element is 80% in viewport. Used by the default callback */
@@ -87,11 +87,11 @@ ngOnDestroy(): void {
   if (this.observer) {
     this.observer.disconnect();
   }
-  
+
 }
 
   /** fires (inview) and (notInview) events when this component is visible or not visible  */
-handleIntersect(entries): void {
+handleIntersect(entries : any[]): void {
   if (entries) {
     entries.forEach((entry: IntersectionObserverEntry) => {
       if (entry['isIntersecting']) {
@@ -110,7 +110,7 @@ handleIntersect(entries): void {
    * default intersection handler, which sets blur dependes on intersection ratio
    * this won't be invoked if user provides any (inview) event. e.g. (inview)="something()"
    */
-defaultInviewHandler(entry): any {
+defaultInviewHandler(entry: any): any {
   if (!this.blurEnabled || this.once80PctVisible || this.inview.observers.length || !entry) {
     return;
   }

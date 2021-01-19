@@ -16,9 +16,9 @@ import { BrowserService } from 'src/app/shared/services';
 })
 export class NewsComponent implements AfterViewInit {
 
-  index: any[] = [];
+  index: any[] = <any>[];
 
-  items: any[] = [];
+  items: any[] = <any>[];
 
   errorMessage: any;
 
@@ -32,7 +32,7 @@ export class NewsComponent implements AfterViewInit {
     private log: Log,
     private http: HttpClient
   ) {
-    
+
     // initialize the component with empty values.
     // When using a low bandwith network, the goal is to display something during load.
     if (this.max > 0) {
@@ -46,7 +46,7 @@ export class NewsComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
 
-    let dbItems = null;
+    let dbItems;
     this.http.get<any>(this.dataService.getIndexUrl(this.type))
           .subscribe((data: any[]) => {
             dbItems = data;

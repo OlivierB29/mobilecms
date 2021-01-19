@@ -17,7 +17,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 export class NewsPreviewComponent implements OnInit {
 
 
-  items: any[] = [];
+  items: any[] = <any>[];
 
   maxElements = 4;
 
@@ -34,7 +34,7 @@ export class NewsPreviewComponent implements OnInit {
   ) {
   }
   ngOnInit(): void {
-    let dbItems = null;
+    let dbItems;
     this.http.get<any>(this.dataService.getIndexUrl(this.type))
       .subscribe((data: any[]) => {
         dbItems = data;

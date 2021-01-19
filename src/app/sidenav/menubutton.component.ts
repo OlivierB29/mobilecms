@@ -9,9 +9,9 @@ import { MenuItem } from './menuitem';
 })
 export class MenubuttonComponent {
 
-  @Input() item: MenuItem;
+  @Input() item!: MenuItem;
 
-  @Input() expanded: boolean;
+  @Input() expanded: boolean = false;
 
   constructor() { }
 

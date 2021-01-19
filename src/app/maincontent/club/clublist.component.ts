@@ -24,23 +24,23 @@ export class ClubListComponent implements OnInit {
   /**
   * current activity name
   */
-  @Input() activity: string;
+  @Input() activity: string ='';
 
   /**
   * list of clubs
   */
-  clubs: Club[] = [];
+  clubs: Club[] = <any>[];
 
 
   /**
   * list of clubs
   */
-  departmentObjectList: Department[] = [];
+  departmentObjectList: any[] = [];
 
   /**
   * selected regional area
   */
-  department: string;
+  department: string ='';
 
 
 

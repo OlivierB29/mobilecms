@@ -21,7 +21,7 @@ export class Coordinates {
     let coord = coordinates.replace(' ', '');
 
     let strArray = coord.split(',');
-    let result : Array<number> = [];
+    let result : Array<number> = <any>[];
     strArray.forEach((val: any) => {
 
       result.push(Number.parseFloat(val));

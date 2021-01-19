@@ -27,12 +27,12 @@ export class CalendarActivitiesComponent implements OnInit {
     /**
     * selected activity name (tennis, basketball, ...)
     */
-    activity: string;
+    activity: string ='';
 
     /**
     * list of activities objects
     */
-    activityObjectList: Activity[] = [];
+    activityObjectList: Activity[] = <any>[];
 
   constructor(
     private titleService: Title,

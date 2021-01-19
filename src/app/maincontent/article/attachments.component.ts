@@ -10,12 +10,12 @@ import { ImageService } from 'src/app/maincontent/image';
 })
 export class AttachmentsComponent  {
 
-  @Input() attachments: any[];
+  @Input() attachments!: any[];
 
   /**
   * eg: media/news/3/thumbnails
   */
-  @Input() recorduri: string;
+  @Input() recorduri: string ='';
 
   constructor(private imageService: ImageService) {
  }

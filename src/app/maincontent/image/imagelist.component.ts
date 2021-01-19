@@ -23,10 +23,10 @@ export class ImageListComponent  {
   /**
   * eg: media/news/3/thumbnails
   */
-  @Input() recorduri: string;
+  @Input() recorduri: string ='';
 
 
-  @Input() images: any[];
+  @Input() images!: any[];
 
 
   @Input() lazyload = false;
@@ -36,9 +36,9 @@ export class ImageListComponent  {
 
   constructor(private imageService: ImageService, private browserService : BrowserService
     ) {
-      
+
       this.enableinview = this.browserService.isModernBrowser();
-  
+
  }
 
   public getDefaultImage(picture: any): string {

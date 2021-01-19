@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 export class ActivityButtonComponent implements OnInit {
 
 
-  @Input() public activity: Activity = null;
+  @Input() public activity!: Activity ;
 
   @Input() public url = '';
 

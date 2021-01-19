@@ -27,7 +27,7 @@
           <!-- media -->
 
           <app-attachments *ngIf='item.media || item.attachments' recorduri='{{getRecordUri()}}' [attachments]='getAttachments()'></app-attachments>
-          <app-imagelist *ngIf='item.media || item.images' recorduri='{{getRecordUri()}}' [images]='getImages()' [lazyload]='lazyload'></app-imagelist>
+          <app-imagelist *ngIf='item.media || item.images' recorduri='{{getRecordUri()}}' [images]='getImages()' ></app-imagelist>
 
 
 

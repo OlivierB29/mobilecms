@@ -5,7 +5,7 @@ import { CalendarTimeLineComponent } from './calendar-time-line.component';
 
 
 @Component({
-  
+
     selector: 'app-calendar-time-line-week',
     templateUrl: 'calendar-time-line-week.component.html',
     styleUrls: ['divtable.css', 'calendar-time-line.component.css']
@@ -13,11 +13,11 @@ import { CalendarTimeLineComponent } from './calendar-time-line.component';
 export class CalendarTimeLineWeekComponent  extends CalendarTimeLineComponent   implements AfterViewInit {
 
 
-    weeks: any[] = [];
+    weeks: any[] = <any>[];
 
 
     ngAfterViewInit(): void {
-      let localItems = null;
+      let localItems;
       // Load activities and add link URL, logo URL
       this.http.get<any>(this.dataService.getIndexUrl(this.type))
     .subscribe((data: any[]) => {
@@ -57,7 +57,7 @@ export class CalendarTimeLineWeekComponent  extends CalendarTimeLineComponent   
       let sunday = new Date(date);
       sunday = new Date(sunday.setDate(sunday.getDate() + 6));
 
-      const days = [];
+      const days = <any>[];
       let dayOfWeek = new Date(date);
       while (this.dateutil.dateBefore(dayOfWeek, sunday)) {
         const day = new Date(dayOfWeek); // issue when not cloning

@@ -5,20 +5,20 @@ import { CalendarTimeLineComponent } from './calendar-time-line.component';
 
 
 @Component({
-  
+
     selector: 'app-calendar-time-line-month',
     templateUrl: 'calendar-time-line-month.component.html',
     styleUrls: ['divtable.css', 'calendar-time-line.component.css', 'calendar-time-line-month.component.css']
 })
 export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  implements AfterViewInit {
 
-//  years: any[] = [];
+//  years: any[] = <any>[];
 
-  months: any[] = [];
+  months: any[] = <any>[];
 
 
     ngAfterViewInit(): void {
-      let localItems = null;
+      let localItems;
       // Load activities and add link URL, logo URL
       this.http.get<any>(this.dataService.getIndexUrl(this.type))
     .subscribe((data: any[]) => {
@@ -46,7 +46,7 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
 
     // #####################################################
 
-    
+
     const end = this.findEndDate();
 
 
@@ -68,7 +68,7 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
     while (this.dateutil.dateBefore(date, end)) {
       const lastday = this.dateutil.getLastDayOfMonth(date);
 
-      const days = [];
+      const days = <any>[];
       let dayOfMonth = new Date(date);
       while (this.dateutil.dateBefore(dayOfMonth, lastday)) {
         const day = new Date(dayOfMonth); // issue when not cloning

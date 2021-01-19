@@ -12,16 +12,16 @@ import { RouteUtilService, DateUtilService } from 'src/app/shared/services';
 
 
 @Component({
-  
+
     selector: 'app-calendar-time-line',
     templateUrl: 'calendar-time-line.component.html',
     styleUrls: ['divtable.css', 'calendar-time-line.component.css']
 })
 export class CalendarTimeLineComponent {
 
-  @Input() items: any[] = [];
+  @Input() items: any[] = <any>[];
 
-  days: any[] = [];
+  days: any[] = <any>[];
 
 
   type = 'calendar';
@@ -67,7 +67,7 @@ export class CalendarTimeLineComponent {
     /**
     * get URL for current locale.
     */
-    getUrl(item): string {
+    getUrl(item : any): string {
       return  'detail/' + item.id;
     }
 
@@ -75,8 +75,19 @@ export class CalendarTimeLineComponent {
   dateMatch(obj: any, from: Date): boolean {
     let result = false;
 
-    const date = obj.date ? new Date(obj.date) : null;
-    const enddate = obj.enddate ? new Date(obj.enddate) : null;
+  //  const date = obj.date ? new Date(obj.date) : null;
+  //  const enddate = obj.enddate ? new Date(obj.enddate) : null;
+
+    let date!: Date ;
+    if (obj.date) {
+      date = new Date(obj.date) ;
+    }
+
+    let enddate!: Date;
+    if (obj.enddate) {
+      enddate = new Date(obj.enddate) ;
+    }
+
 
     if (this.dateutil.dateEquals(date, from)) {
         result = true;
@@ -92,7 +103,7 @@ export class CalendarTimeLineComponent {
 
 
   findEndDate(): Date {
-    let date: Date = null;
+    let date: Date ;
     if (this.items && this.items.length > 0 && this.items[this.items.length - 1].date) {
       date = new Date(this.items[this.items.length - 1].date);
     } else {

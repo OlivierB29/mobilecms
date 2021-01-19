@@ -13,7 +13,7 @@ export class CoordinatesService {
 
     let y = firstPoi.map[1] + (this.getLatitude(gps) - firstPoi.getLatitude()) * (vector.map[1] / vector.getLatitude());
 
-    let result : Array<number> = [];
+    let result : Array<number> = <any>[];
     result.push(x);
     result.push(y);
 
@@ -28,7 +28,7 @@ export class CoordinatesService {
 
     let y = firstPoiMap[1] + (this.getLatitude(gps) - this.getLatitude(firstPoiGps)) * (vectorMap[1] / this.getLatitude(vectorGps));
 
-    let result : Array<number> = [];
+    let result : Array<number> = <any>[];
     result.push(x);
     result.push(y);
 
@@ -39,7 +39,7 @@ export class CoordinatesService {
    * TODO : remove hard coded values ...
    * @param val
    */
-  convertLongitudeToX(val : number, firstRefMapPosition : number, firstRefGpsLongitude : number, secondRefMapPosition, secondRefLongitude : number) : Number{
+  convertLongitudeToX(val : number, firstRefMapPosition : number, firstRefGpsLongitude : number, secondRefMapPosition : number, secondRefLongitude : number) : Number{
 
 
 
@@ -77,7 +77,7 @@ export class CoordinatesService {
    * @param b
    */
   getVector(a: Array<number>, b: Array<number>) : Array<number> {
-    let result : Array<number> = [];
+    let result : Array<number> = <any>[];
     for(let i = 0; i < a.length; i++) {
       result.push(b[i] - a[i]);
     }

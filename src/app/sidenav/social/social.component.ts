@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SocialComponent implements OnInit {
 
 
-  @Input() buttons: any[] = [];
+  @Input() buttons: any[] = <any>[];
 
   constructor() { }
 

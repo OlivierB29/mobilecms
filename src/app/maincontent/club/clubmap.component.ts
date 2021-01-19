@@ -37,15 +37,15 @@ export class ClubMapComponent implements OnInit {
   /**
    * SVG map
    */
-  @ViewChild('mySvg', { static: false }) mySvg: ElementRef;
+  @ViewChild('mySvg', { static: false }) mySvg!: ElementRef;
 
   /** SVG document */
-  doc: Document = null;
+  doc!: Document ;
 
   /**
   * current activity name
   */
-  @Input() activity: string;
+  @Input() activity: string ='';
 
   /**
   * list of clubs
@@ -57,7 +57,7 @@ export class ClubMapComponent implements OnInit {
   */
  @Input() activities: Activity[] = [];
 
-  poiPositions = [];
+  poiPositions = <any>[];
 
 
   constructor(
@@ -134,7 +134,7 @@ export class ClubMapComponent implements OnInit {
       });
       console.log("Club Promise resolved with: " + JSON.stringify(res));
       if (this.activity ) {
-        this.clubs = tmpclubs.filter(club => club.activity === this.activity);
+        this.clubs = tmpclubs.filter((club : Club) => club.activity === this.activity);
       } else {
         this.clubs = tmpclubs;
       }
@@ -300,7 +300,7 @@ export class ClubMapComponent implements OnInit {
     let coord = coordinates.replace(' ', '');
 
     let strArray = coord.split(',');
-    let result: Array<number> = [];
+    let result: Array<number> = <any>[];
     strArray.forEach((val: any) => {
 
       result.push(Number.parseFloat(val));

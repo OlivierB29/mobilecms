@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 * same timing animations
 */
 @Component({
-  
+
     selector: 'app-my-footer-widget',
     templateUrl: 'footer.component.html',
     styleUrls: ['footer.component.css']
@@ -19,7 +19,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class FooterComponent implements OnInit {
 
-  items: any[] = [];
+  items: any[] = <any>[];
   errorMessage: any = '';
 
 

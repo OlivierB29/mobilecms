@@ -64,7 +64,7 @@ export class ImageService {
     let result = '';
     if (picture && picture.thumbnails) {
 
-      picture.thumbnails.forEach( th => {
+      picture.thumbnails.forEach( (th : any) => {
         if (th.url && th.width) {
           result += prefix + th.url + ' ' + th.width + 'w,';
 

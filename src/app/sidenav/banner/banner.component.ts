@@ -14,7 +14,7 @@ import { environment } from 'src/environments/environment';
 
 export  class BannerComponent implements OnInit {
 
-   @Input() layout: string = null;
+   @Input() layout: string = '';
 
     url= '';
 

@@ -15,7 +15,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CalendarEventComponent  implements OnInit {
 
-    @Input() public id: string;
+    @Input() public id: string ='';
 
     type = 'calendar';
 

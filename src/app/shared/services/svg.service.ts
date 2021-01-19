@@ -127,7 +127,7 @@ export class SvgService {
 
   appendTwoColumns(node: SVGElement): any[] {
 
-    let result = [];
+    let result = <any>[];
     let col1 = this.appendDiv(node, '', 'flex: 50%;');
    // col1.innerHTML = 'test';
     let col2 = this.appendDiv(node, '', 'flex: 50%;');
@@ -150,8 +150,8 @@ export class SvgService {
    * @param position new position
    */
   findDisplayPosition(poiPositions= [], position: Array<number> ) : Array<number>{
-    let coord = [];
-    position.forEach(element => {
+    let coord = <any>[];
+    position.forEach((element : any) => {
       coord.push(element);
     });
     while(this.poiAlreadyExistsNearPosition(poiPositions, coord, 10)) {

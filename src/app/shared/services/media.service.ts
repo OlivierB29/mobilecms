@@ -1,9 +1,9 @@
 export class MediaService {
 
     initMediaUrl(type: string, id: string, media: any[], mediaUri: string): any[] {
-      const result = [];
+      const result : any[] = [];
 
-     
+
       if (media) {
 
         media.forEach((m: any) => {
@@ -26,7 +26,7 @@ export class MediaService {
       (
       // issue :
       //Refused to frame 'https://www.youtube.com/' because it violates the following Content Security Policy directive: "default-src 'self'".
-      // Note that 'frame-src' was not explicitly set, so 'default-src' is used as a fallback.  
+      // Note that 'frame-src' was not explicitly set, so 'default-src' is used as a fallback.
        // element.url.indexOf('youtube\.com') > -1
         // || element.url.indexOf('youtu\.be') > -1
         element.url.indexOf('vimeo') > -1
@@ -37,7 +37,7 @@ export class MediaService {
 
     getEmbedUrl(url: string) {
       const youtubeId = this.getYouTubeID(url);
-      let embedUrl = null;
+      let embedUrl;
       if (url.indexOf('youtu') > -1 && youtubeId) {
         embedUrl = 'https://www.youtube.com/embed/' + youtubeId;
       }
@@ -56,38 +56,38 @@ export class MediaService {
       return embedUrl;
     }
 
-    getFacebookID(url) {
+    getFacebookID(_url : string) {
       let ID = '';
-      url = url.replace(/(>|<)/gi, '').split(/(facebook\.com\/facebook\/videos\/|player\.facebook\.com\/)/);
+      let url = _url.replace(/(>|<)/gi, '').split(/(facebook\.com\/facebook\/videos\/|player\.facebook\.com\/)/);
       if (url[2] !== undefined) {
-        ID = url[2].split(/[^0-9a-z_\-]/i);
-        ID = ID[0];
+
+        ID = url[2].split(/[^0-9a-z_\-]/i)[0];
       } else {
-        ID = url;
+        ID = _url;
       }
        return ID;
     }
 
-    getVimeoID(url) {
+    getVimeoID(_url : string) {
       let ID = '';
-      url = url.replace(/(>|<)/gi, '').split(/(vimeo\.com\/|player\.vimeo\.com\/)/);
+      let url = _url.replace(/(>|<)/gi, '').split(/(vimeo\.com\/|player\.vimeo\.com\/)/);
       if (url[2] !== undefined) {
-        ID = url[2].split(/[^0-9a-z_\-]/i);
-        ID = ID[0];
+
+        ID = url[2].split(/[^0-9a-z_\-]/i)[0];
       } else {
-        ID = url;
+        ID = _url;
       }
        return ID;
     }
 
-    getYouTubeID(url) {
+    getYouTubeID(_url : string) {
       let ID = '';
-      url = url.replace(/(>|<)/gi, '').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+      let url = _url.replace(/(>|<)/gi, '').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
       if (url[2] !== undefined) {
-        ID = url[2].split(/[^0-9a-z_\-]/i);
-        ID = ID[0];
+
+        ID = url[2].split(/[^0-9a-z_\-]/i)[0];
       } else {
-        ID = url;
+        ID = _url;
       }
        return ID;
     }
@@ -98,7 +98,7 @@ export class MediaService {
     }
 
     getImages(item: any): any[] {
-      let result = [];
+      let result : any[]= [];
 
       if (item.images) {
         result = result.concat(item.images);
@@ -107,35 +107,35 @@ export class MediaService {
 
       if (item.media) {
 
-        result = result.concat(item.media.filter(element => this.isImage(element)));
+        result = result.concat(item.media.filter((element : any) => this.isImage(element)));
       }
 
       return result;
     }
 
     getAttachments(item: any): any[] {
-      let result = [];
+      let result : any[]= [];
 
       if (item && item.attachments) {
         result = result.concat(item.attachments);
       }
 
       if (item && item.media) {
-        result = result.concat(item.media.filter(element => !this.isImage(element)));
+        result = result.concat(item.media.filter((element : any) => !this.isImage(element)));
       }
 
       return result;
     }
 
     getVideos(item: any): any[] {
-      let result = [];
+      let result : any[]= [];
 
       if (item && item.attachments) {
-        result = result.concat(item.attachments.filter(element => this.isVideo(element)));
+        result = result.concat(item.attachments.filter((element : any) => this.isVideo(element)));
       }
 
       if (item && item.media) {
-        result = result.concat(item.media.filter(element => this.isVideo(element)));
+        result = result.concat(item.media.filter((element : any) => this.isVideo(element)));
       }
 
       return result;

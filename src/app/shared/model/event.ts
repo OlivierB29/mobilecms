@@ -1,12 +1,12 @@
 export class Event {
-    id: string;
-    date: string; //  20151017
-    activity: string; //  activitya
-    title: string; //  17-03 interesting seminar
-    organization: string; //  Some org
-    description: string; //  Some informations
-    location: string; // location
-    url: string; // url
+    id: string ='';
+    date: string =''; //  20151017
+    activity: string =''; //  activitya
+    title: string =''; //  17-03 interesting seminar
+    organization: string =''; //  Some org
+    description: string =''; //  Some informations
+    location: string =''; // location
+    url: string =''; // url
 
     state = 'inactive';
 

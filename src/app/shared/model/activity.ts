@@ -6,23 +6,23 @@ export class Activity {
 /**
 * tennis, golf, ...
 */
-name: string;
+name: string ='';
 
 /**
 * basketball.jpg
 */
-logo: string;
+logo: string ='';
 
 /**
 * 'true'|'false'
 */
-calendar: string;
+calendar: string ='';
 
 /**
 * 'true'|'false'
 */
-clublist: string;
+clublist: string ='';
 
 
-mapicon: string;
+mapicon: string ='';
 }

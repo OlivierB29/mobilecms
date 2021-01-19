@@ -16,10 +16,10 @@ import { ImageService } from 'src/app/maincontent/image';
 })
 export class ArticlePreviewComponent   implements OnInit {
 
-  @Input() type: string;
+  @Input() type: string ='';
 
 
-  @Input() id: string;
+  @Input() id: string ='';
 
   @Input() item: any;
 

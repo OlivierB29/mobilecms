@@ -15,7 +15,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class ClubDetailComponent implements OnInit {
 
-    @Input() id: string;
+    @Input() id: string ='';
 
     item: any = {};
 

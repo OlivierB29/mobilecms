@@ -22,8 +22,8 @@ export class BBcodeService {
   /**
    * img not allowed : only images uploaded by the API are allowed. It is aimed to avoid very big picture in a <img> tag .
    */
-  customTags(): any {
-    let result = [];
+  customTags(): any[] {
+    let result = <any>[];
     let defaultTags: Array<any> = BBCodeParser.defaultTags();
     let allowedTags = ['b', 'u', 'i', 'url'];
 

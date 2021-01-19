@@ -23,12 +23,12 @@ export class ArticleComponent  implements OnInit {
   /**
   * type data
   */
-  @Input() public type: string;
+  @Input() public type: string ='';
 
   /**
   * item id
   */
-  @Input() public id: string;
+  @Input() public id: string ='';
 
   /**
   * if data is preloaded
@@ -132,7 +132,7 @@ export class ArticleComponent  implements OnInit {
   }
 
   public getId() {
-    let result = null;
+    let result;
     if (this.type && this.id) {
       result = this.id;
     } else  if (this.isItemInit()) {

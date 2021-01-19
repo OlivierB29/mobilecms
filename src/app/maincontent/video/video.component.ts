@@ -14,11 +14,11 @@ export class VideoComponent implements OnInit {
   /**
   * eg: media/news/3/thumbnails
   */
-  @Input() url: string;
+  @Input() url: string ='';
 
-  videoUrl: SafeUrl;
+  videoUrl!: SafeUrl;
 
-  sanitized: boolean;
+  sanitized = true;
 
   constructor(private mediaService: MediaService, private sanitizer: DomSanitizer) {
 

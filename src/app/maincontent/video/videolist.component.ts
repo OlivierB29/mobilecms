@@ -14,10 +14,10 @@ export class VideoListComponent  {
   /**
   * eg: media/news/3/thumbnails
   */
-  @Input() recorduri: string;
+  @Input() recorduri: string ='';
 
 
-  @Input() videos: any[];
+  @Input() videos!: any[];
 
   constructor(private imageService: VideoService, private sanitizer: DomSanitizer) {
  }

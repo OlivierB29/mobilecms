@@ -17,9 +17,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ItemsComponent implements OnInit {
 
-  items: Item[] = null;
+  items!: Item[] ;
 
-  type: string = null;
+  type: string = '';
 
 
 

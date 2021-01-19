@@ -28,11 +28,11 @@ export class SidenavcontainerComponent implements AfterViewInit {
 
   bannerurl = '';
 
-  bannerpicture = null;
+  bannerpicture : any;
 
   item: any;
 
-  socialnetworks = [];
+  socialnetworks = <any>[];
 
   constructor(private titleService: Title,
      private meta: Meta,
@@ -46,14 +46,15 @@ export class SidenavcontainerComponent implements AfterViewInit {
     this.bannerurl = environment.server + '/assets/banner-1900.jpg';
 
 
-    this.bannerpicture = {};
-    this.bannerpicture.thumbnails = [];
-    this.bannerpicture.thumbnails.push({url : 'banner-672.jpg', width : '672'});
-    this.bannerpicture.thumbnails.push({url : 'banner-768.jpg', width : '768'});
-    this.bannerpicture.thumbnails.push({url : 'banner-1024.jpg', width : '1024'});
-    this.bannerpicture.thumbnails.push({url : 'banner-1200.jpg', width : '1200'});
-    this.bannerpicture.thumbnails.push({url : 'banner-1600.jpg', width : '1600'});
-    this.bannerpicture.thumbnails.push({url : 'banner-1600.jpg', width : '1900'});
+    let banner :any = {};
+    banner.thumbnails = <any>[];
+    banner.thumbnails.push({url : 'banner-672.jpg', width : '672'});
+    banner.thumbnails.push({url : 'banner-768.jpg', width : '768'});
+    banner.thumbnails.push({url : 'banner-1024.jpg', width : '1024'});
+    banner.thumbnails.push({url : 'banner-1200.jpg', width : '1200'});
+    banner.thumbnails.push({url : 'banner-1600.jpg', width : '1600'});
+    banner.thumbnails.push({url : 'banner-1600.jpg', width : '1900'});
+    this.bannerpicture = banner;
   }
 
 

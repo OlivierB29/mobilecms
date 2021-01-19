@@ -8,12 +8,12 @@ import { Item } from 'src/app/shared/model/item';
 })
 export class ArticlelistComponent implements OnInit {
 
-  @Input() type: string;
+  @Input() type: string ='';
 
   @Input() max = 0;
 
 
-  items: Item[] = null;
+  items!: Item[];
 
   constructor() { }
 

@@ -14,18 +14,18 @@ import { Event } from 'src/app/shared/model/event';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  
+
     selector: 'app-my-calendar-list',
     templateUrl: 'calendarlist.component.html',
     styleUrls: ['calendarlist.component.css']
 })
 export class CalendarListComponent implements OnInit {
 
-    items: Event[] = [];
+    items: Event[] = <any>[];
 
-    years: string[] = [];
+    years: string[] = <any>[];
 
-     @Input() activity: string;
+     @Input() activity: string ='';
 
 
 
@@ -37,7 +37,7 @@ export class CalendarListComponent implements OnInit {
     * - en: calendar
     * - fr: calendrier
     */
-    routerLink = '';
+    routerLink ?: string = '';
 
 
     logosUrl  = '';
@@ -69,8 +69,11 @@ export class CalendarListComponent implements OnInit {
 
         // Explanation :
         // if locale is en: calendar
-        // if locale is fr: calendrier
-        this.routerLink = this.route.routeConfig.path;
+        // if locale is fr:
+        if (this.route.routeConfig) {
+          this.routerLink = this.route.routeConfig.path;
+        }
+
 
 
         if (this.activity) {

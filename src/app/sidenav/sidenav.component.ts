@@ -20,13 +20,13 @@ import { LayoutService, Log } from 'src/app/shared/services';
 export class SidenavComponent implements OnInit, AfterViewInit {
 
   @Input() mode = 'side';
-  @Input() opened: boolean;
+  @Input() opened = false;
 
   @Input() expanded = true;
 
-  @Input() lang: string;
+  @Input() lang: string ='';
 
-  menuItems: any[] = [];
+  menuItems: any[] = <any>[];
 
 
   constructor(private menuService: MenuService,

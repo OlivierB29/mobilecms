@@ -26,7 +26,7 @@ export class CalendarFeedComponent implements AfterViewInit {
 
   @Input() max = 1;
 
-  items: any[] = [];
+  items: any[] = <any>[];
 
   type = 'calendar';
 
@@ -41,7 +41,7 @@ export class CalendarFeedComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    let localItems = null;
+    let localItems;
     // Load activities and add link URL, logo URL
     this.http.get<any>(this.dataService.getIndexUrl(this.type))
 .subscribe((data: any[]) => {
