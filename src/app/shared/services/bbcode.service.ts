@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 //import BBCodeParser from 'bbcode-parser';
 import { BBCodeParser } from '../../../../../BBCodeParser/src/bbCodeParser';
+import {BBTag} from "../../../../../BBCodeParser/src/bbTag";
 /**
  * User defined tags for https://github.com/svenslaggare/BBCodeParser
  */
 @Injectable()
 export class BBcodeService {
 
+  allowedTags = ['b', 'u', 'i', 'url'];
 
   parser = new BBCodeParser(this.customTags());
 
@@ -22,12 +24,13 @@ export class BBcodeService {
   /**
    * img not allowed : only images uploaded by the API are allowed. It is aimed to avoid very big picture in a <img> tag .
    */
-  customTags(): any[] {
-    let result = <any>[];
-    let defaultTags: Array<any> = BBCodeParser.defaultTags();
-    let allowedTags = ['b', 'u', 'i', 'url'];
+  customTags(): Array<BBTag> {
 
-    allowedTags.forEach((t: string) => {
+    let result = new Array<BBTag>();
+    let defaultTags: Array<BBTag> = BBCodeParser.defaultTags();
+
+    this.allowedTags.forEach((t: string) => {
+
         if (defaultTags[t]) {
             result[t] = defaultTags[t];
         }
@@ -38,6 +41,10 @@ export class BBcodeService {
 }
 
 
+isAllowed(tag: string): boolean {
+  console.log(tag + " " + this.allowedTags.includes(tag));
+ return this.allowedTags.includes(tag);
+}
 
 
 }
