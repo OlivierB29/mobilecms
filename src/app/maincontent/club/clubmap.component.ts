@@ -81,10 +81,10 @@ export class ClubMapComponent implements OnInit {
 
 
     const headPromise = this.http.get(this.dataService.getUrl('description', 'head')).toPromise();
-    console.log(headPromise);
+    this.log.debug(headPromise);
     headPromise.then((res: any) => {
 
-      console.log(res);
+      this.log.debug(res);
 
       let mapUrl = res.geographicdata.mapurl;
 
@@ -119,7 +119,7 @@ export class ClubMapComponent implements OnInit {
 
     const api = this.dataService.getIndexUrl('clubs');
     const promise = this.http.get(api).toPromise();
-    console.log(promise);
+    this.log.debug(promise);
     promise.then((res: any) => {
       let tmpclubs = res.map((res: any) => {
         return new Club(
@@ -132,7 +132,7 @@ export class ClubMapComponent implements OnInit {
           res.coordinates
         );
       });
-      console.log("Club Promise resolved with: " + JSON.stringify(res));
+      this.log.debug("Club Promise resolved with: " + JSON.stringify(res));
       if (this.activity ) {
         this.clubs = tmpclubs.filter((club : Club) => club.activity === this.activity);
       } else {
@@ -144,7 +144,7 @@ export class ClubMapComponent implements OnInit {
 
 
     }).catch((error) => {
-      console.log("Club Promise rejected with " + JSON.stringify(error));
+      this.log.debug("Club Promise rejected with " + JSON.stringify(error));
     });
 
 
@@ -253,7 +253,7 @@ export class ClubMapComponent implements OnInit {
       //  this.appendPointToMap(this.doc, '73', '933', 'X', 'http://angular.io');
 
       this.mySvg.nativeElement.innerHTML = this.svgService.serializeToString(this.doc);
-      console.log("Promise2 resolved");
+      this.log.debug("Promise2 resolved");
 
 
     }).catch((error) => {

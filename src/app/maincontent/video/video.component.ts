@@ -29,7 +29,7 @@ export class VideoComponent implements OnInit {
 
 
    const embedUrl = this.mediaService.getEmbedUrl(this.url);
-    //console.log(embedUrl);
+
     if (embedUrl) {
       this.videoUrl =  this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
       if (this.videoUrl) {

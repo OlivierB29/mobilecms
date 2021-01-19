@@ -15,8 +15,7 @@ export class BBcodeService {
 
   parseString(value: string): string {
     if (value) {
-      console.log(value);
-        console.log(this.parser.parseString(value));
+
         return this.parser.parseString(value);
     }
     return '';
@@ -43,7 +42,7 @@ export class BBcodeService {
 
 
 isAllowed(tag: string): boolean {
-  console.log(tag + " " + this.allowedTags.includes(tag));
+
  return this.allowedTags.includes(tag);
 }
 
