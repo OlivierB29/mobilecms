@@ -1,8 +1,16 @@
 import { Injectable } from '@angular/core';
-//import BBCodeParser from 'bbcode-parser';
+
+// import from repository
 
 import { BBCodeParser } from '../../../../node_modules/bbcode-parser/src/bbCodeParser';
-import {BBTag} from "../../../../node_modules/bbcode-parser/src/bbTag";
+import { BBTag } from "../../../../node_modules/bbcode-parser/src/bbTag";
+
+
+// import with a local install
+//import { BBCodeParser } from '../../../../../BBCodeParser/src/bbCodeParser';
+//import { BBTag } from "../../../../../BBCodeParser/src/bbTag";
+
+
 /**
  * User defined tags for https://github.com/svenslaggare/BBCodeParser
  */
