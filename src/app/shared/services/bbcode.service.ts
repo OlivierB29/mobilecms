@@ -19,7 +19,7 @@ export class BBcodeService {
 
   allowedTags = ['b', 'u', 'i', 'url'];
 
-  parser = new BBCodeParser(this.customTags());
+  parser = new BBCodeParser(this.customTags(), this.customOptions());
 
   parseString(value: string): string {
     if (value) {
@@ -27,6 +27,14 @@ export class BBcodeService {
         return this.parser.parseString(value);
     }
     return '';
+  }
+
+  customOptions() : any {
+    return {
+      escapeHTML: false,
+      attrNameChars : "[a-zA-Z0-9\\.\\-_:;/]",
+      attrValueChars : "[\?\=\&a-zA-Z0-9\\.\\-_:;#/\\s]"        
+  };
   }
 
   /**
