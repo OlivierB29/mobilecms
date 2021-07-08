@@ -2,6 +2,7 @@
         "id" : "1",
         "activity": "tennis",
         "department": "01",
+        "city": "CITY A",
         "url": "http:\/\/www.example.com",
         "title": "tennis",
         "description": "Lorem ipsum dolor sit amet,\n consectetur adipiscing elit,",

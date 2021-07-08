@@ -126,6 +126,7 @@ export class ClubMapComponent implements OnInit {
           res.id,
           res.activity,
           res.department,
+          res.city,
           res.url,
           res.title,
           res.description,

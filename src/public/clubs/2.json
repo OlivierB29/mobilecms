@@ -2,6 +2,7 @@
         "id" : "2",
         "activity": "basketball",
         "department": "02",
+        "city": "CITY B",
         "url": "http:\/\/example.com/",
         "title": "basket ball club",
         "description": "some basket ball club",

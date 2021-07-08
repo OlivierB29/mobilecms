@@ -4,6 +4,7 @@ export class Club {
   public id: string, //  1
   public activity: string, //  kendo
   public department: string, //  22
+  public city: string, //  city name
   public url: string, //  http: // localhost
   public title: string, //  Some club
   public description: string, //  Informations
