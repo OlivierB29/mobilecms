@@ -98,7 +98,11 @@ export class SvgService {
     let newNode = this.foreignObject(doc, x, y, width, height);
     g.appendChild(newNode);
 
-    let label = title + ' | ' + city;
+    let label = title;
+    if (city) {
+      label += ' | ' + city;
+    }
+
     if (mode === 'columns') {
       let newLink = this.appendLink(newNode, link);
 
