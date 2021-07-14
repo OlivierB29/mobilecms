@@ -88,7 +88,7 @@ export class SvgService {
     return newNode;
   }
 
-  appendClubToMap(doc: Document, g: any, x: number, y: number, link: string, title: string, activityImg: string, width = 32, height = 32) {
+  appendClubToMap(doc: Document, g: any, x: number, y: number, link: string, title: string, city: string, activityImg: string, width = 32, height = 32) {
 
     let mode = 'icon'; // icon | columns
 
@@ -98,22 +98,22 @@ export class SvgService {
     let newNode = this.foreignObject(doc, x, y, width, height);
     g.appendChild(newNode);
 
-
+    let label = title + ' | ' + city;
     if (mode === 'columns') {
       let newLink = this.appendLink(newNode, link);
 
       let row = this.appendRow(newLink);
       let columns = this.appendTwoColumns(row);
-      columns[0].innerHTML = title;
+      columns[0].innerHTML = label;
       columns[0].setAttribute('style', 'font-size: x-small');
 
       // display image
 
-      this.appendImg(columns[1], activityImg, title);
+      this.appendImg(columns[1], activityImg, label);
     } else {
-      let newDiv = this.appendDiv(newNode, title);
+      let newDiv = this.appendDiv(newNode, label);
       let newLink = this.appendLink(newDiv, link);
-      this.appendImg(newLink, activityImg, title);
+      this.appendImg(newLink, activityImg, label);
 
     }
 

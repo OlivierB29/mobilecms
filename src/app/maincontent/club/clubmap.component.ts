@@ -199,6 +199,7 @@ export class ClubMapComponent implements OnInit {
             displayPosition[1],
             this.getClubLink(club),
             club.title,
+            club.city,
             this.getActivityImg(club),
             32,
             32
