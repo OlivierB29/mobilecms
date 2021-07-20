@@ -17,6 +17,7 @@ import { CoordinatesService } from 'src/app/shared/services';
 import { SvgService } from 'src/app/shared/services';
 import { Coordinates } from 'src/app/shared/model/coordinates';
 import { Activity } from 'src/app/shared/model/activity';
+import { Thumbnail } from 'src/app/shared/model/thumbnail';
 
 
 /**
@@ -40,12 +41,12 @@ export class ClubMapComponent implements OnInit {
   @ViewChild('mySvg', { static: false }) mySvg!: ElementRef;
 
   /** SVG document */
-  doc!: Document ;
+  doc!: Document;
 
   /**
   * current activity name
   */
-  @Input() activity: string ='';
+  @Input() activity: string = '';
 
   /**
   * list of clubs
@@ -55,7 +56,7 @@ export class ClubMapComponent implements OnInit {
   /**
   * list of activities
   */
- @Input() activities: Activity[] = [];
+  @Input() activities: Activity[] = [];
 
   poiPositions = <any>[];
 
@@ -130,12 +131,13 @@ export class ClubMapComponent implements OnInit {
           res.url,
           res.title,
           res.description,
-          res.coordinates
+          res.coordinates,
+          res.media
         );
       });
       this.log.debug("Club Promise resolved with: " + JSON.stringify(res));
-      if (this.activity ) {
-        this.clubs = tmpclubs.filter((club : Club) => club.activity === this.activity);
+      if (this.activity) {
+        this.clubs = tmpclubs.filter((club: Club) => club.activity === this.activity);
       } else {
         this.clubs = tmpclubs;
       }
@@ -163,7 +165,7 @@ export class ClubMapComponent implements OnInit {
     );
 
     // SVG g element
-    let g : SVGElement = this.svgService.g(this.doc);
+    let g: SVGElement = this.svgService.g(this.doc);
 
 
     this.clubs.forEach((club: Club) => {
@@ -185,14 +187,14 @@ export class ClubMapComponent implements OnInit {
 
           if (this.log.isDebug()) {
             if (displayPosition[0] != result[0] && displayPosition[1] != result[1])
-            this.log.debug("place " + club.title + " " + result.toString() + " --> " + displayPosition.toString());
+              this.log.debug("place " + club.title + " " + result.toString() + " --> " + displayPosition.toString());
           }
 
           this.log.debug('appendClubToMap ' + club.title + ' ' + displayPosition[0] + ',' + displayPosition[1]);
 
 
 
-
+          let logo = this.getClubImg(club);
           this.svgService.appendClubToMap(this.doc,
             g,
             displayPosition[0],
@@ -200,9 +202,9 @@ export class ClubMapComponent implements OnInit {
             this.getClubLink(club),
             club.title,
             club.city,
-            this.getActivityImg(club),
-            32,
-            32
+            logo.url,
+            Number.parseInt(logo.width),
+            Number.parseInt(logo.height)
           );
         }
 
@@ -219,13 +221,62 @@ export class ClubMapComponent implements OnInit {
     return '#/club/' + club.id;
   }
 
+  getClubImg(club: Club): Thumbnail {
+    let result: Thumbnail = new Thumbnail("10", "10", "");
+    //return 'public/activities/' + club.activity + '/' + club.activity + '-32px.png';
+
+    // detect if a club has a logo (the first image)
+    if (club.media && club.media.length > 0 && club.media[0].thumbnails && club.media[0].thumbnails.length > 0) {
+      result = this.findSmallestThumbnail(club);
+    } else {
+      result = this.getDefaultActivityLogo(club.activity);
+    }
+
+
+    return result;
+  }
+
+  findSmallestThumbnail(club: Club) {
+    let result: Thumbnail = new Thumbnail("10", "10", "");
+
+    //let currentWidth = -1;
+    club.media[0].thumbnails.forEach((t: Thumbnail) => {
+      // first iteration
+      if (!result.url) {
+        t.url = this.getThumbnailUrl(club.id, t.url);
+        result = t;
+      } else {
+        if (Number.parseInt(t.width) < Number.parseInt(result.width)) {
+          t.url = this.getThumbnailUrl(club.id, t.url);
+          result = t;
+        }
+      }
+
+    });
+    return result;
+  }
+
+  getThumbnailUrl(id: string, url: string) {
+    return 'media/clubs/' + id + '/thumbnails/' + url;
+  }
+
+  getDefaultActivityLogo(activity: string): Thumbnail {
+    let result: Thumbnail = new Thumbnail("10", "10", "");
+    if (this.activities) {
+      let filter = this.activities.filter(a => a.name === activity);
+      if (filter.length > 0) {
+        result = new Thumbnail("32", "32", 'public/activities/' + activity + '/' + filter[0].mapicon);
+      }
+    }
+    return result;
+  }
 
 
   getActivityImg(club: Club): string {
     let result = '';
     //return 'public/activities/' + club.activity + '/' + club.activity + '-32px.png';
 
-    if(this.activities ) {
+    if (this.activities) {
       let filter = this.activities.filter(a => a.name === club.activity);
       if (filter.length > 0) {
         result = 'public/activities/' + club.activity + '/' + filter[0].mapicon;

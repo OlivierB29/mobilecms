@@ -1,3 +1,5 @@
+import { Media } from "./media";
+
 export class Club {
 
   constructor(
@@ -8,6 +10,7 @@ export class Club {
   public url: string, //  http: // localhost
   public title: string, //  Some club
   public description: string, //  Informations
-  public coordinates: string //  coordinates
+  public coordinates: string, //  coordinates,
+  public media: Array<Media>
   ) { }
 }
