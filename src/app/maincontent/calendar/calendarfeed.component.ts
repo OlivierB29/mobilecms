@@ -98,12 +98,12 @@ for (let i = 0; i < localItems.length; i++) {
 
  }
  getActivityLogo(activity: string): string {
-  console.log('YYYYYYYYYYYY ' + activity);
+
   return this.getDefaultActivityLogo(activity).url;
 }
 
 getDefaultActivityLogo(activity: string): Thumbnail {
-  console.log('ZZZZZZZZZZZZZ ' + activity);
+
   let result: Thumbnail = new Thumbnail("10", "10", "");
   if (this.activities) {
     let filter = this.activities.filter(a => a.name === activity);
