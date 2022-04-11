@@ -4,7 +4,7 @@
     <div class='my-mat-button-dark'>
       <div>
         <i class='material-icons calendar-icon'>event</i>
-        <span>{{item.date | localedate}}</span> | <span class='feed-subtitle'>{{item.activity | uppercase}}</span> : 
+        <span>{{item.date | localedate}}</span> | <img *ngIf='activitylogo' src='{{activitylogo}}' alt='{{item.activity | uppercase}}'> | 
         <span class='feed-subtitle'>{{item.title}}</span>
       </div>
     </div>

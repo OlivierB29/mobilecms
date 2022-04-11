@@ -28,6 +28,8 @@ export class CalendarPreviewComponent   implements OnInit {
 
   @Input() show = '';
 
+  @Input() activitylogo = '';
+
   maxPreviewLength = 240;
 
   offset = 100;
@@ -124,4 +126,6 @@ export class CalendarPreviewComponent   implements OnInit {
   getAttachments(): any[] {
     return this.mediaService.getAttachments(this.getItem());
   }
+
+
 }

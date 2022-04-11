@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
 import { Event } from 'src/app/shared//model/event';
 import { environment } from 'src/environments/environment';
 import { ReadService, Log } from 'src/app/shared/services';
+import { Thumbnail } from 'src/app/shared/model/thumbnail';
+import { Activity } from 'src/app/shared/model/activity';
 
 
 /**
@@ -30,7 +32,10 @@ export class CalendarFeedComponent implements AfterViewInit {
 
   type = 'calendar';
 
-
+  /**
+  * list of activities
+  */
+   activities: Activity[] = [];
 
   constructor(private dataService: ReadService,
     private http: HttpClient,
@@ -69,7 +74,15 @@ for (let i = 0; i < localItems.length; i++) {
 }
 });
 
-
+    //
+    // Load activities and add link URL, logo URL
+    //
+    this.http.get<any>(this.dataService.getIndexUrl('activities'))
+    .subscribe((data: Activity[]) => {
+      // exclude activities without clubs
+      let result = data.filter(a => a.clublist && 'false' !== a.clublist);
+      this.activities = result;
+    });
   }
 
  dateAfter(date: Date, from: Date): boolean {
@@ -84,7 +97,22 @@ for (let i = 0; i < localItems.length; i++) {
    return result;
 
  }
+ getActivityLogo(activity: string): string {
+  console.log('YYYYYYYYYYYY ' + activity);
+  return this.getDefaultActivityLogo(activity).url;
+}
 
+getDefaultActivityLogo(activity: string): Thumbnail {
+  console.log('ZZZZZZZZZZZZZ ' + activity);
+  let result: Thumbnail = new Thumbnail("10", "10", "");
+  if (this.activities) {
+    let filter = this.activities.filter(a => a.name === activity);
+    if (filter.length > 0) {
+      result = new Thumbnail("32", "32", 'public/activities/' + activity + '/' + filter[0].mapicon);
+    }
+  }
+  return result;
+}
 
 
 }
