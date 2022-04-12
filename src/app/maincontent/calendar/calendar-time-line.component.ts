@@ -3,8 +3,7 @@ import { Component, AfterViewInit, Input, OnInit } from '@angular/core';
 
 import { ReadService } from 'src/app/shared/services/read.service';
 
-import { Event } from 'src/app/shared/model/event';
-import { environment } from 'src/environments/environment';
+
 import { HttpClient } from '@angular/common/http';
 import { Log } from 'src/app/shared/services/log.service';
 
@@ -43,6 +42,20 @@ export class CalendarTimeLineComponent  {
 
 
 
+  findEndDate(): Date {
+    let date: Date ;
+    if (this.items && this.items.length > 0 && this.items[this.items.length - 1].date) {
+      date = new Date(this.items[this.items.length - 1].date);
+    } else {
+     date = new Date();
+    }
+    // calculate last day of month
+    date.setMonth(date.getMonth() + 1);
+    date = this.dateutil.getLastDayOfMonth(date);
+
+    return date;
+  }
+
 
 
   getDayContent(day: Date): any {
@@ -51,7 +64,7 @@ export class CalendarTimeLineComponent  {
        number: day.getDate(),
        monthnumber: day.getMonth(),
        monthname: this.dateutil.getMonthName(day.getMonth()),
-       items: this.items.filter(obj => this.dateMatch(obj, day))
+       items: this.items.filter(obj => this.dateutil.dateMatch(obj, day))
      };
   }
 
@@ -75,49 +88,6 @@ export class CalendarTimeLineComponent  {
     }
 
 
-  dateMatch(obj: any, from: Date): boolean {
-    let result = false;
-
-  //  const date = obj.date ? new Date(obj.date) : null;
-  //  const enddate = obj.enddate ? new Date(obj.enddate) : null;
-
-    let date!: Date ;
-    if (obj.date) {
-      date = new Date(obj.date) ;
-    }
-
-    let enddate!: Date;
-    if (obj.enddate) {
-      enddate = new Date(obj.enddate) ;
-    }
-
-
-    if (this.dateutil.dateEquals(date, from)) {
-        result = true;
-    } else if (this.dateutil.dateEquals(enddate, from)) {
-      result = true;
-    } else if (this.dateutil.dateAfter(from, date) && this.dateutil.dateBefore(from, enddate)) {
-      result = true;
-    }
-    return result;
-
-  }
-
-
-
-  findEndDate(): Date {
-    let date: Date ;
-    if (this.items && this.items.length > 0 && this.items[this.items.length - 1].date) {
-      date = new Date(this.items[this.items.length - 1].date);
-    } else {
-     date = new Date();
-    }
-    // calculate last day of month
-    date.setMonth(date.getMonth() + 1);
-    date = this.dateutil.getLastDayOfMonth(date);
-
-    return date;
-  }
 
   getShortTitle(item: any): string {
     let result = '';

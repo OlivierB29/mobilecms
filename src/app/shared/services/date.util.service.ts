@@ -150,4 +150,35 @@ export class DateUtilService {
 
       }
 
+
+  dateMatch(obj: any, from: Date): boolean {
+    let result = false;
+
+  //  const date = obj.date ? new Date(obj.date) : null;
+  //  const enddate = obj.enddate ? new Date(obj.enddate) : null;
+
+    let date!: Date ;
+    if (obj.date) {
+      date = new Date(obj.date) ;
+    }
+
+    let enddate!: Date;
+    if (obj.enddate) {
+      enddate = new Date(obj.enddate) ;
+    }
+
+
+    if (this.dateEquals(date, from)) {
+        result = true;
+    } else if (this.dateEquals(enddate, from)) {
+      result = true;
+    } else if (this.dateAfter(from, date) && this.dateBefore(from, enddate)) {
+      result = true;
+    }
+    return result;
+
+  }
+
+
+
 }
