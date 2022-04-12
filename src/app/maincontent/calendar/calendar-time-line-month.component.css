@@ -19,7 +19,7 @@
 flex: 1 1 100%;
 }
 
-.flexcontainer {
+.calendarflexcontainer {
  display: flex;
  flex-direction: row;
  flex-wrap: wrap;
@@ -39,7 +39,7 @@ flex: 1 1 100%;
 
 /* https://stackoverflow.com/questions/3839809/detect-iphone-ipad-purely-by-css#3839896 */
 @media screen and (max-device-width: 480px) and (orientation:portrait) {
-  .flexcontainer {
+  .calendarflexcontainer {
     flex:none;
     display: table;
     width: 20em;
@@ -51,7 +51,7 @@ flex: 1 1 100%;
 }
 
 @media screen and (max-device-width: 480px) and (orientation:landscape) {
-  .flexcontainer {
+  .calendarflexcontainer {
    flex:none;
    display: table;
     width: 20em;
