@@ -13,14 +13,14 @@ export class ActivityService {
     let color = 'black';
 
 
-    if (activities) {
+    if (activities && activity) {
       let filter = activities.filter(a => a.name === activity);
-      if (filter.length > 0) {
+      if (filter.length > 0 && filter[0].color) {
         color =  filter[0].color;
       }
     }
 
-    return 'background-color: ' + color.toString();
+    return 'background-color: ' + color;
   }
 
   getActivityLogo(activities: Activity[], activity: string): string {
