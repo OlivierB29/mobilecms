@@ -16,8 +16,9 @@ import { ViewChild, ElementRef } from '@angular/core';
 import { CoordinatesService } from 'src/app/shared/services';
 import { SvgService } from 'src/app/shared/services';
 import { Coordinates } from 'src/app/shared/model/coordinates';
-import { Activity } from 'src/app/shared/model/activity';
+
 import { Thumbnail } from 'src/app/shared/model/thumbnail';
+import { Activity } from '../activity/activity';
 
 
 /**

@@ -8,6 +8,7 @@ import { ActivityButtonComponent } from './';
 
 import { ImageModule } from 'src/app/maincontent/image/image.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ActivityService } from './activity.service';
 
 @NgModule({
     imports: [
@@ -22,7 +23,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
     ],
     providers: [
-
+      ActivityService,
     ],
     entryComponents: [
     ],

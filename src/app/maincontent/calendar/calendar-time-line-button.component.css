@@ -1,0 +1,14 @@
+.activity-logo {
+    height: 20px;
+  }
+
+.timeline-button {
+    color: white;
+    margin: 0.2em;
+    padding: 0.2em;
+  
+}
+
+.timeline-button:hover {
+    cursor: pointer;
+}

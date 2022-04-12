@@ -3,7 +3,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import {  BBcodePipe, OrderbyPipe, LocaleDatePipe, PropertyFilterPipe } from './pipes';
 import { Log, ReadService, RouteUtilService, DateUtilService, MediaService, LayoutService, BrowserService, BBcodeService, CoordinatesService, SvgService } from './services';
-import { ActivityService } from './services/activity.service';
+
 
 
 @NgModule({
@@ -27,7 +27,7 @@ import { ActivityService } from './services/activity.service';
       BBcodeService,
       CoordinatesService,
       SvgService,
-      ActivityService,
+
       BBcodePipe,
       OrderbyPipe
     ],

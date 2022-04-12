@@ -4,12 +4,11 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
-import { Activity } from 'src/app/shared/model/activity';
-
 
 import { Log } from 'src/app/shared/services/log.service';
 import { ReadService } from 'src/app/shared/services/read.service';
 import { HttpClient } from '@angular/common/http';
+import { Activity } from '../activity/activity';
 
 
 /**

@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, Input } from '@angular/core';
-import { Activity } from 'src/app/shared/model/activity';
+import { Activity } from '../activity/activity';
+
 import { CalendarTimeLineComponent } from './calendar-time-line.component';
 
 
@@ -104,21 +105,7 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
       return this.dateutil.isWeekEndDay(day) ? 'weekend' : '';
     }
 
-    getItemTitleMonthFormat(item: any): string {
-      let result = '';
-      const activitysize = 3;
-      const size = 45;
 
-
-      if (item.title) {
-      result += item.title;
-      if ( result.length > size) {
-        result = result.substring(0, size);
-        result += '...';
-      }
-      }
-      return result;
-    }
 
     /**
     * Maximum 10 colors.

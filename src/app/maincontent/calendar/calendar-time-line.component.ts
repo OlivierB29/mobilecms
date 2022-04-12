@@ -8,8 +8,9 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Log } from 'src/app/shared/services/log.service';
 
-import { RouteUtilService, DateUtilService, ActivityService } from 'src/app/shared/services';
-import { Activity } from 'src/app/shared/model/activity';
+import { RouteUtilService, DateUtilService } from 'src/app/shared/services';
+
+import { ActivityService } from '../activity';
 
 
 @Component({

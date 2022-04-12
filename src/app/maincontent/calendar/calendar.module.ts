@@ -21,7 +21,9 @@ import {
   CalendarTimeLineWeekComponent,
   CalendarTimeLineMonthComponent,
   CalendarPreviewComponent,
-  CalendarFeedComponent
+  CalendarFeedComponent,
+  CalendarTimeLineButtonComponent
+
 } from './';
 
 @NgModule({
@@ -43,6 +45,7 @@ import {
       CalendarTimeLineMonthComponent,
       CalendarPreviewComponent,
       CalendarFeedComponent,
+      CalendarTimeLineButtonComponent,
     ],
     providers: [
 

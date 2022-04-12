@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Activity } from '../model/activity';
-import { Thumbnail } from '../model/thumbnail';
 
+import { Thumbnail } from 'src/app/shared/model/thumbnail';
+import { Activity } from './activity';
 
 
 @Injectable()

@@ -6,9 +6,10 @@ import { HttpClient } from '@angular/common/http';
 
 import { Event } from 'src/app/shared//model/event';
 import { environment } from 'src/environments/environment';
-import { ReadService, Log, ActivityService } from 'src/app/shared/services';
-import { Thumbnail } from 'src/app/shared/model/thumbnail';
-import { Activity } from 'src/app/shared/model/activity';
+import { ReadService, Log } from 'src/app/shared/services';
+
+import { ActivityService } from '../activity';
+import { Activity } from '../activity/activity';
 
 
 /**

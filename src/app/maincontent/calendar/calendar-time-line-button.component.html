@@ -1,0 +1,5 @@
+<div  class='timeline-button shadow' [routerLink]="getUrl()" [style]="getActivityStyle()">
+    <img *ngIf='getActivityLogo()' [src]='getActivityLogo()' alt='{{item.activity | uppercase}}' class='activity-logo'>
+    | 
+    <span class='calendar-icon' >{{getItemTitleMonthFormat()}}</span>
+  </div>
