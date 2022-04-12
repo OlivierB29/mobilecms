@@ -1,4 +1,5 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, Input } from '@angular/core';
+import { Activity } from 'src/app/shared/model/activity';
 import { CalendarTimeLineComponent } from './calendar-time-line.component';
 
 
@@ -16,6 +17,10 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
 
   months: any[] = <any>[];
 
+  /**
+  * list of activities
+  */
+   @Input() activities: Activity[] = [];
 
     ngAfterViewInit(): void {
       let localItems;
@@ -104,9 +109,7 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
       const activitysize = 3;
       const size = 45;
 
-      if (item.activity) {
-        result += item.activity.toUpperCase() + ': ';
-      }
+
       if (item.title) {
       result += item.title;
       if ( result.length > size) {
@@ -129,5 +132,15 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
       color = color % 10;
 
       return 'activitycolor' + color.toString();
+    }
+
+    getActivityStyle( activity: string): string {
+
+  
+      return this.activityService.getActivityStyle(this.activities, activity);
+    }
+    getActivityLogo(activity: string): string {
+
+      return this.activityService.getDefaultActivityLogo(this.activities, activity).url;
     }
 }

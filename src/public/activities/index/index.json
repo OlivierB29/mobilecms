@@ -5,7 +5,8 @@
         "logo": "tennis.png",
         "mapicon": "tennis-32px.png",
         "calendar": "true",
-        "clublist": "true"
+        "clublist": "true",
+        "color": "rgb(124, 179, 66)"
     },
     {
         "id": "golf",
@@ -13,7 +14,8 @@
         "logo": "golf.jpg",
         "mapicon": "golf-32px.png",
         "calendar": "false",
-        "clublist": "true"
+        "clublist": "true",
+        "color": "rgb(240, 147, 0)"
     },
     {
         "id": "basketball",
@@ -21,15 +23,17 @@
         "logo": "basketball.jpg",
         "mapicon": "basketball-32px.png",
         "calendar": "true",
-        "clublist": "true"
+        "clublist": "true",
+        "color": "rgb(63, 81, 181)"
     }
     ,
     {
         "id": "organization",
-        "name": "local organization",
+        "name": "localorganization",
         "logo": "organization.jpg",
         "mapicon": "",
         "calendar": "true",
-        "clublist": "false"
+        "clublist": "false",
+        "color": "black"
     }
 ]

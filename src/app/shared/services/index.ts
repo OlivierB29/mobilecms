@@ -8,3 +8,4 @@ export * from './browser.service';
 export * from './bbcode.service';
 export * from './coordinates.service';
 export * from './svg.service';
+export * from './activity.service';

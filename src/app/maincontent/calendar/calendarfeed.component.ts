@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Event } from 'src/app/shared//model/event';
 import { environment } from 'src/environments/environment';
-import { ReadService, Log } from 'src/app/shared/services';
+import { ReadService, Log, ActivityService } from 'src/app/shared/services';
 import { Thumbnail } from 'src/app/shared/model/thumbnail';
 import { Activity } from 'src/app/shared/model/activity';
 
@@ -38,6 +38,7 @@ export class CalendarFeedComponent implements AfterViewInit {
    activities: Activity[] = [];
 
   constructor(private dataService: ReadService,
+    protected activityService : ActivityService,
     private http: HttpClient,
     private log: Log) {
     // Add an empty item in order to display something.
@@ -99,20 +100,10 @@ for (let i = 0; i < localItems.length; i++) {
  }
  getActivityLogo(activity: string): string {
 
-  return this.getDefaultActivityLogo(activity).url;
+  return this.activityService.getDefaultActivityLogo(this.activities, activity).url;
 }
 
-getDefaultActivityLogo(activity: string): Thumbnail {
 
-  let result: Thumbnail = new Thumbnail("10", "10", "");
-  if (this.activities) {
-    let filter = this.activities.filter(a => a.name === activity);
-    if (filter.length > 0) {
-      result = new Thumbnail("32", "32", 'public/activities/' + activity + '/' + filter[0].mapicon);
-    }
-  }
-  return result;
-}
 
 
 }

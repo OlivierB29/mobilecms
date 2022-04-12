@@ -14,7 +14,7 @@
 
 <div class='divTableRow' *ngFor='let week of weeks'>
   <div class='divTableCell dayCell' *ngFor='let day of week.days'>
-        <div class='cellBody "  + getCellStyle(day.date.getMonth())'>
+        <div [class]='"cellBody "  + getCellStyle(day.date.getMonth())'>
         <span>{{day.number}}</span>
         <span *ngIf='day.number === 1' class='monthline'>{{day.monthname}}</span>
         <span *ngIf='day.items.length > 0' >

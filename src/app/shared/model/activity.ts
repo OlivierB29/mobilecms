@@ -25,4 +25,6 @@ clublist: string ='';
 
 
 mapicon: string ='';
+
+color: string ='';
 }

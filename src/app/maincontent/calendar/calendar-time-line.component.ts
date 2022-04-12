@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, Input } from '@angular/core';
+import { Component, AfterViewInit, Input, OnInit } from '@angular/core';
 
 
 import { ReadService } from 'src/app/shared/services/read.service';
@@ -8,7 +8,8 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Log } from 'src/app/shared/services/log.service';
 
-import { RouteUtilService, DateUtilService } from 'src/app/shared/services';
+import { RouteUtilService, DateUtilService, ActivityService } from 'src/app/shared/services';
+import { Activity } from 'src/app/shared/model/activity';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { RouteUtilService, DateUtilService } from 'src/app/shared/services';
     templateUrl: 'calendar-time-line.component.html',
     styleUrls: ['divtable.css', 'calendar-time-line.component.css']
 })
-export class CalendarTimeLineComponent {
+export class CalendarTimeLineComponent  {
 
   @Input() items: any[] = <any>[];
 
@@ -31,7 +32,8 @@ export class CalendarTimeLineComponent {
     protected http: HttpClient,
     protected log: Log,
     private routeUtil: RouteUtilService,
-    protected dateutil: DateUtilService) {
+    protected dateutil: DateUtilService,
+    protected activityService : ActivityService) {
     // Add an empty item in order to display something.
     // Considering that IO operations are slow, it constructs a raw frame for the end user.
   //  this.items.push({ id: '', activity: '.....', title: '.... .... ........', date: '..-..-....' });

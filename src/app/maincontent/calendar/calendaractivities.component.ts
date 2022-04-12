@@ -63,4 +63,7 @@ this.activityObjectList = data.filter(function(el) { return el.calendar === 'tru
 
 
   }
+
+ 
+
 }

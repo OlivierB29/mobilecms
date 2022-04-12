@@ -16,7 +16,9 @@
         <span>{{day.name}}</span>
 
         <span *ngIf='day.items.length > 0' >
-    <div *ngFor='let currentItem of day.items' [class]='"feed-article shadow " + getCssColor(currentItem.activity)' routerLink='{{getUrl(currentItem)}}'>
+    <div *ngFor='let currentItem of day.items' class='feed-article shadow' routerLink='{{getUrl(currentItem)}} ' [style]="getActivityStyle(currentItem.activity)">
+      <img *ngIf='getActivityLogo(currentItem.activity)' [src]='getActivityLogo(currentItem.activity)' alt='{{currentItem.activity | uppercase}}' class='activity-logo'>
+      | 
       <span class='calendar-icon' >{{getItemTitleMonthFormat(currentItem)}}</span>
     </div>
 
