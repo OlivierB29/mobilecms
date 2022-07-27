@@ -25,6 +25,7 @@ import {
   CalendarTimeLineButtonComponent
 
 } from './';
+import { GooglecalendarComponent } from './googlecalendar.component';
 
 @NgModule({
     imports: [
@@ -46,6 +47,7 @@ import {
       CalendarPreviewComponent,
       CalendarFeedComponent,
       CalendarTimeLineButtonComponent,
+      GooglecalendarComponent,
     ],
     providers: [
 

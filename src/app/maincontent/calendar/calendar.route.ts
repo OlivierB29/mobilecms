@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
-import { CalendarActivitiesComponent, CalendarEventComponent } from './';
+import { CalendarActivitiesComponent, CalendarEventComponent, GooglecalendarComponent } from './';
+
 
 
 export const calendarRoutes: Routes = [
@@ -28,5 +29,9 @@ export const calendarRoutes: Routes = [
          {
            path: 'calendar/detail/:id',
            component: CalendarEventComponent
-         }
+         },
+         {
+          path: 'agenda',
+          component: GooglecalendarComponent
+        },
 ];
