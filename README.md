@@ -33,7 +33,7 @@ Transfer files in `dist` directory to your server (such as `/var/www/html/`).
 
 ## FAQ
 - Browser compatibility
-Same as [Angular](https://angular.io/guide/browser-support) with polyfills. I tried some third party components, but it broke IE 11 and iOS support.
+Same as [Angular](https://angular.io/guide/browser-support) with polyfills. 
 
 - Why not using a true CMS on a web hosting package ?
 Value for money.
