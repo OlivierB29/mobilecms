@@ -5,10 +5,10 @@
 
   <div *ngFor="let item of items">
 
-                <app-article *ngIf='item.description' type='{{type}}' [itemparam]='item' ></app-article>
-                <app-article *ngIf='!item.description' type='{{type}}' id='{{item.id}}' ></app-article>
+                <app-my-article-component  *ngIf='item.description' type='{{type}}' [itemparam]='item' ></app-my-article-component >
+                <app-my-article-component  *ngIf='!item.description' type='{{type}}' id='{{item.id}}' ></app-my-article-component >
 
-          
+                
   </div>
 </div>
 </section>

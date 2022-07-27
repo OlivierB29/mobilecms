@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 
 import { RouterModule } from '@angular/router';
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-import { ArticleComponent, ArticlePreviewComponent, ArticlelistComponent,
+import { ArticleComponent, ArticlePreviewComponent, ArticleDetailsComponent, ArticlelistComponent,
    AttachmentsComponent, ItemsComponent } from './';
 
 
@@ -24,6 +24,7 @@ import { articleRoutes } from './article.route';
     declarations: [
       ArticleComponent,
       ArticlePreviewComponent,
+      ArticleDetailsComponent,
       ArticlelistComponent,
       AttachmentsComponent,
 
@@ -37,9 +38,10 @@ import { articleRoutes } from './article.route';
     exports: [
       ArticleComponent,
       ArticlePreviewComponent,
+      ArticleDetailsComponent,
       AttachmentsComponent,
     ],
-
+    schemas: [   CUSTOM_ELEMENTS_SCHEMA ], 
 })
 export class ArticleModule {
 }

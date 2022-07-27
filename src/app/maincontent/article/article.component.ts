@@ -14,7 +14,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
  */
 @Component({
 
-  selector: 'app-article',
+  selector: 'app-my-article-component',
   templateUrl: 'article.component.html',
   styleUrls: ['article.component.css']
 })

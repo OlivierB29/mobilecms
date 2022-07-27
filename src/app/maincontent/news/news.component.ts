@@ -78,5 +78,12 @@ export class NewsComponent implements AfterViewInit {
 
   }
 
+      /**
+    * get URL for current locale.
+    */
+       getUrl(item : any): string {
+        return  'news/' + item.id;
+      }
+  
 
 }

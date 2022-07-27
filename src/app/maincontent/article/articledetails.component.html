@@ -1,0 +1,70 @@
+
+
+
+
+
+
+
+<!-- You can use Open Graph tags to customize link previews.
+Learn more: https://developers.facebook.com/docs/sharing/webmasters 
+<meta property="og:url"           content="https://www.your-domain.com/your-page.html" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="Your Website Title" />
+<meta property="og:description"   content="Your description" />
+<meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
+-->
+
+<!-- Load Facebook SDK for JavaScript -->
+
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+<a class="fb-share-button"  href="{{getArticleUrl()}}">link</a>
+
+
+
+
+
+
+
+
+
+<div *ngIf='item' class='article-content shadow'>
+  <div id="fb-root"></div>
+  <article>
+      			<div  class='article-title article-title-decoration shadow'>
+            <span >{{item.title}}</span>
+          </div>
+          <div  *ngIf='item.organization' class='article-subtitle article-title-moreinfo'>
+              <span class='article-title-moreinfo'> {{item.organization}}</span>
+    			</div>
+
+
+
+      <div class='article-description-container'>
+       <div *ngIf='item.activity && item.date' class='article-subtitle' >{{item.activity | uppercase}} {{item.date | localedate}}</div>
+        
+       <div class='article-description' [innerHTML]='item.description | bbcode'>
+       </div>
+     
+
+        <div *ngIf='item.location'><i class='material-icons'>pin_drop</i> {{item.location}}</div>
+
+        <!-- media -->
+
+        <app-attachments *ngIf='item.media || item.attachments' recorduri='{{getRecordUri()}}' [attachments]='getAttachments()'></app-attachments>
+        <app-imagelist *ngIf='item.media || item.images' recorduri='{{getRecordUri()}}' [images]='getImages()' [lazyload]='lazyload'></app-imagelist>
+        <app-videolist *ngIf='item.media || item.attachments' recorduri='{{getRecordUri()}}' [videos]='getVideos()'></app-videolist>
+
+
+
+      </div>
+    </article>
+  </div>

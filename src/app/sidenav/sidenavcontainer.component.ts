@@ -85,7 +85,7 @@ export class SidenavcontainerComponent implements AfterViewInit {
 
                 this.meta.addTag({ name: 'keywords', content: this.item.keywords });
                 this.meta.addTag({ name: 'description', content: this.item.description });
-                this.titleService.setTitle(this.title);
+//                this.titleService.setTitle(this.title);
 
                 this.socialnetworks = this.item.socialnetworks;
               });

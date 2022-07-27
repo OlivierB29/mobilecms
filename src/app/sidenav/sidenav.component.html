@@ -3,6 +3,7 @@
 <div class='buttonseparator'></div>
 <span *ngFor='let menu of menuItems' (click)='expandClose()' >
   <app-menubutton [item]='menu' [expanded]='expanded' ></app-menubutton>
+  
   <div class='buttonseparator'></div>
 </span>
 
