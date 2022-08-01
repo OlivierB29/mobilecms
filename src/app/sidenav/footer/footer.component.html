@@ -3,7 +3,7 @@
   <div *ngFor="let currentItem of items" class='footer-article' >
 
     <span *ngIf="currentItem.title" class="footer-title" >{{currentItem.title}}</span>
-    <div *ngIf="currentItem.description">{{currentItem.description | bbcode}}</div>
+    <div *ngIf="currentItem.description">{{currentItem.description }}</div>
 
   </div>
 

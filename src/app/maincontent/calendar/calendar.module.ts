@@ -22,10 +22,11 @@ import {
   CalendarTimeLineMonthComponent,
   CalendarPreviewComponent,
   CalendarFeedComponent,
-  CalendarTimeLineButtonComponent
+  CalendarTimeLineButtonComponent,
+  GooglecalendarComponent,
+  GooglecalendarIframeComponent,
 
 } from './';
-import { GooglecalendarComponent } from './googlecalendar.component';
 
 @NgModule({
     imports: [
@@ -48,6 +49,7 @@ import { GooglecalendarComponent } from './googlecalendar.component';
       CalendarFeedComponent,
       CalendarTimeLineButtonComponent,
       GooglecalendarComponent,
+      GooglecalendarIframeComponent,
     ],
     providers: [
 

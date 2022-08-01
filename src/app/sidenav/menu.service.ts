@@ -24,25 +24,29 @@ export class MenuService {
         result = [
           { 'id': 'news', 'routerLink': '/actualites', 'title': 'Actualités', 'icon': 'list', 'order': '1' },
           { 'id': 'clubs', 'routerLink': '/clubs', 'title': 'Clubs', 'icon': 'place', 'order': '2' },
-          { 'id': 'calendar', 'routerLink': '/calendrier', 'title': 'Calendriers', 'icon': 'date_range', 'order': '3' },
+          { 'id': 'googlecalendar', 'routerLink': '/calendriergoogle', 'title': 'Calendriers', 'icon': 'date_range', 'order': '3' },
           { 'id': 'structure', 'routerLink': '/structure', 'title': 'Organisation', 'icon': 'person', 'order': '4' },
           { 'id': 'documents', 'routerLink': '/documents', 'title': 'Documents', 'icon': 'folder_open', 'order': '5' },
           { 'id': 'reports', 'routerLink': '/comptesrendus', 'title': 'Comptes Rendus', 'icon': 'assignment', 'order': '6' },
           { 'id': 'links', 'routerLink': '/links', 'title': 'Liens', 'icon': 'bookmark', 'order': '7' },
-          { 'id': 'contact', 'routerLink': '/contact', 'title': 'Contact', 'icon': 'mail', 'order': '8' }
+          { 'id': 'contact', 'routerLink': '/contact', 'title': 'Contact', 'icon': 'mail', 'order': '8' },
+          { "id": "calendar", "routerLink": "/calendar", "title": "Calendriers2", "icon": "date_range", "order": "9" }
         ];
         break;
 
 
       default: {
-        result = [{ 'id': 'news', 'routerLink': '/news', 'title': 'News', 'icon': 'list', 'order': '1' },
+        result = [
+          { 'id': 'news', 'routerLink': '/news', 'title': 'News', 'icon': 'list', 'order': '1' },
           { 'id': 'clubs', 'routerLink': '/clubs', 'title': 'Clubs', 'icon': 'place', 'order': '2' },
-          { 'id': 'calendar', 'routerLink': '/calendar', 'title': 'Calendar', 'icon': 'date_range', 'order': '3' },
+          { "id": "googlecalendar", "routerLink": "/googlecalendar", "title": "Calendar", "icon": "date_range", "order": "3" },
           { 'id': 'structure', 'routerLink': '/structure', 'title': 'Structure', 'icon': 'person', 'order': '4' },
           { 'id': 'documents', 'routerLink': '/documents', 'title': 'Documents', 'icon': 'folder_open', 'order': '5' },
           { 'id': 'reports', 'routerLink': '/reports', 'title': 'Reports', 'icon': 'assignment', 'order': '6' },
           { 'id': 'links', 'routerLink': '/links', 'title': 'Links', 'icon': 'bookmark', 'order': '7' },
-          { 'id': 'contact', 'routerLink': '/contact', 'title': 'Contact', 'icon': 'mail', 'order': '8' }];
+          { 'id': 'contact', 'routerLink': '/contact', 'title': 'Contact', 'icon': 'mail', 'order': '8' },
+          { "id": "calendar", "routerLink": "/calendar", "title": "Calendriers2", "icon": "date_range", "order": "9" }
+        ];
       }
     }
 

@@ -16,8 +16,11 @@
             <img src='{{getThumbnail(image)}}' alt='{{image.title}}'>
 
         </div>
-        <div>
+        <div *ngIf='item.format === "bbcode"' >
           <span class='calendar-preview-description'  *ngIf='show === "description"'  [innerHTML]='item.description | bbcode'></span>
+        </div>
+        <div *ngIf='item.format !== "bbcode"' >
+          <span class='calendar-preview-description'  *ngIf='show === "description"'  [innerHTML]='item.description'></span>
         </div>
       </div>
     </div>

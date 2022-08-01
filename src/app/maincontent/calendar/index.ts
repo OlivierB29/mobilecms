@@ -8,3 +8,4 @@ export * from './calendar-time-line-month.component';
 export * from './calendar-time-line-button.component';
 export * from './calendarpreview.component';
 export * from './googlecalendar.component';
+export * from './googlecalendariframe.component';

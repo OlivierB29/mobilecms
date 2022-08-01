@@ -10,6 +10,8 @@ import { ReadService } from 'src/app/shared/services/read.service';
 import { HttpClient } from '@angular/common/http';
 import { Activity } from '../activity/activity';
 
+import { Event } from 'src/app/shared/model/event';
+
 
 /**
 * Display a list of club activities, which have calendar events :
@@ -23,15 +25,8 @@ import { Activity } from '../activity/activity';
 })
 export class GooglecalendarComponent implements OnInit {
 
-    /**
-    * selected activity name (tennis, basketball, ...)
-    */
-    activity: string ='';
+  items: any[] = <any>[];
 
-    /**
-    * list of activities objects
-    */
-    activityObjectList: Activity[] = <any>[];
 
   constructor(
     private titleService: Title,
@@ -46,9 +41,23 @@ export class GooglecalendarComponent implements OnInit {
 
   ngOnInit(): void {
 
+/*
+    this.http.get<any>(this.googleCalendarUrl('c2l0ZS5jcmtkci5icmV0YWduZUBnbWFpbC5jb20'))
+    .subscribe((data: Event[]) => {
+      this.items = data;
+      this.log.debug('getGoogleCalendarEvents complete : '  +  ' '  +  this.items.length);
 
+    });
+
+
+*/
   }
 
+  googleCalendarUrl(calendarId : String) {
+    
+    return 'https://www.googleapis.com/calendar/v3/calendars/'+calendarId+'/events';
+
+  }
  
 
 }

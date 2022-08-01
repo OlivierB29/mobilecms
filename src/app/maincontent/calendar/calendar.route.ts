@@ -1,13 +1,13 @@
 import { Routes } from '@angular/router';
 
-import { CalendarActivitiesComponent, CalendarEventComponent, GooglecalendarComponent } from './';
+import { CalendarActivitiesComponent, CalendarEventComponent, GooglecalendarComponent, GooglecalendarIframeComponent } from './';
 
 
 
 export const calendarRoutes: Routes = [
 
          {
-           path: 'calendrier',
+           path: 'calendrierbackup',
            component: CalendarActivitiesComponent
          },
          {
@@ -19,7 +19,7 @@ export const calendarRoutes: Routes = [
            component: CalendarEventComponent
          },
          {
-           path: 'calendar',
+           path: 'calendarbackup',
            component: CalendarActivitiesComponent
          },
          {
@@ -31,7 +31,19 @@ export const calendarRoutes: Routes = [
            component: CalendarEventComponent
          },
          {
-          path: 'agenda',
-          component: GooglecalendarComponent
+          path: 'googlecalendar',
+          component: GooglecalendarIframeComponent
         },
+         {
+          path: 'calendriergoogle',
+          component: GooglecalendarIframeComponent
+        },
+        {
+         path: 'calendar',
+         component: GooglecalendarIframeComponent
+       },
+        {
+         path: 'calendrier',
+         component: GooglecalendarIframeComponent
+       },
 ];
