@@ -1,0 +1,38 @@
+# Apache 2.4
+<IfModule mod_version.c>
+      <IfModule mod_filter.c>
+        <IfVersion >= 2.4>
+      FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'application/json'"
+			FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'text/plain'"
+			FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'text/html'"
+			FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'text/xml'"
+			FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'text/css'"
+			FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'application/xml'"
+			FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'application/xhtml+xml'"
+			FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'application/rss+xml'"
+			FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'application/javascript'"
+			FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'application/x-javascript'"
+			FilterProvider COMPRESS  DEFLATE "%{Content_Type} = 'image/svg+xml'"
+
+        </IfVersion>
+       </IfModule>
+</IfModule>
+
+# https://stackoverflow.com/questions/16385541/content-security-policy-invalid-command#19382957
+# add rule : Google Fonts
+# add rule : Google Calendar calendar.google.com
+# add rule : Google APIs www.googleapis.com
+<IfModule mod_headers.c>
+Header unset Content-Security-Policy
+Header add Content-Security-Policy "default-src 'self' 'unsafe-inline' calendar.google.com www.googleapis.com; script-src 'self' 'unsafe-inline' calendar.google.com www.googleapis.com; connect-src 'self' 'unsafe-inline' calendar.google.com www.googleapis.com; img-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com calendar.google.com www.googleapis.com; font-src 'self' fonts.googleapis.com fonts.gstatic.com calendar.google.com www.googleapis.com; "
+Header unset X-Content-Security-Policy
+Header add X-Content-Security-Policy "default-src 'self' 'unsafe-inline' calendar.google.com www.googleapis.com; script-src 'self' 'unsafe-inline' calendar.google.com www.googleapis.com; connect-src 'self' 'unsafe-inline' calendar.google.com www.googleapis.com; img-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com calendar.google.com www.googleapis.com; font-src 'self' fonts.googleapis.com fonts.gstatic.com calendar.google.com www.googleapis.com;"
+Header unset X-WebKit-CSP
+Header add X-WebKit-CSP "default-src 'self' 'unsafe-inline' calendar.google.com www.googleapis.com; script-src 'self' 'unsafe-inline' calendar.google.com www.googleapis.com; connect-src 'self' 'unsafe-inline' calendar.google.com www.googleapis.com; img-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com calendar.google.com www.googleapis.com; font-src 'self' fonts.googleapis.com fonts.gstatic.com calendar.google.com www.googleapis.com;"
+Header set X-Content-Type-Options "nosniff"
+Header set X-XSS-Protection "1; mode=block"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set Strict-Transport-Security "max-age=631138519; includeSubDomains"
+</IfModule>
+
+
