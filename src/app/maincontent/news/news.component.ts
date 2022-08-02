@@ -1,5 +1,5 @@
 
-import { Component, AfterViewInit, Input } from '@angular/core';
+import { Component, AfterViewInit, Input, OnInit } from '@angular/core';
 
 
 import { Log } from 'src/app/shared/services/log.service';
@@ -14,7 +14,7 @@ import { BrowserService } from 'src/app/shared/services';
   templateUrl: 'news.component.html',
   styleUrls: ['news.component.css']
 })
-export class NewsComponent implements AfterViewInit {
+export class NewsComponent implements OnInit {
 
   index: any[] = <any>[];
 
@@ -44,7 +44,7 @@ export class NewsComponent implements AfterViewInit {
     }
   }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
 
     let dbItems;
     this.http.get<any>(this.dataService.getIndexUrl(this.type))

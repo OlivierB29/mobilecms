@@ -30,7 +30,7 @@ export class MenuService {
           { 'id': 'reports', 'routerLink': '/comptesrendus', 'title': 'Comptes Rendus', 'icon': 'assignment', 'order': '6' },
           { 'id': 'links', 'routerLink': '/links', 'title': 'Liens', 'icon': 'bookmark', 'order': '7' },
           { 'id': 'contact', 'routerLink': '/contact', 'title': 'Contact', 'icon': 'mail', 'order': '8' },
-          { "id": "calendar", "routerLink": "/calendar", "title": "Calendriers2", "icon": "date_range", "order": "9" }
+        //  { "id": "calendar", "routerLink": "/calendar", "title": "Calendriers2", "icon": "date_range", "order": "9" }
         ];
         break;
 
@@ -45,7 +45,7 @@ export class MenuService {
           { 'id': 'reports', 'routerLink': '/reports', 'title': 'Reports', 'icon': 'assignment', 'order': '6' },
           { 'id': 'links', 'routerLink': '/links', 'title': 'Links', 'icon': 'bookmark', 'order': '7' },
           { 'id': 'contact', 'routerLink': '/contact', 'title': 'Contact', 'icon': 'mail', 'order': '8' },
-          { "id": "calendar", "routerLink": "/calendar", "title": "Calendriers2", "icon": "date_range", "order": "9" }
+   //       { "id": "calendar", "routerLink": "/calendar", "title": "Calendriers2", "icon": "date_range", "order": "9" }
         ];
       }
     }

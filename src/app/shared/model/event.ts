@@ -1,5 +1,6 @@
 export class Event {
     id: string ='';
+    status: string ='';//draft, published
     date: string =''; //  20151017
     activity: string =''; //  activitya
     title: string =''; //  17-03 interesting seminar

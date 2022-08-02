@@ -4,5 +4,5 @@ export class Item {
   description: string =''; //  Some informations
   attachments!: any[];
   format: string ='';//bbcode, html
-
+  status: string ='';//draft, published
 }

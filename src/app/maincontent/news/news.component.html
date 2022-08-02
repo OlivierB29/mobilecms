@@ -5,8 +5,8 @@
 
   <div *ngFor="let item of items">
 
-                <app-my-article-component  *ngIf='item.description' type='{{type}}' [itemparam]='item' ></app-my-article-component >
-                <app-my-article-component  *ngIf='!item.description' type='{{type}}' id='{{item.id}}' ></app-my-article-component >
+                <app-my-article-component  *ngIf='"draft" !== item.status && item.description' type='{{type}}' [itemparam]='item' ></app-my-article-component >
+                <app-my-article-component  *ngIf='"draft" !== item.status && !item.description' type='{{type}}' id='{{item.id}}' ></app-my-article-component >
 
                 
   </div>
