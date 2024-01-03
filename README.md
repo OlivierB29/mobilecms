@@ -5,7 +5,7 @@ tl;dr : Small CMS with categories. Data is stored in JSON files.
 - HTML 5 images
 - Hosted on a cheap server
 - All data is public
-- BBCode support
+
 
 It is initially intended to display content for a sport organization : News, calendar events, public pages, documents, ...
 
@@ -18,8 +18,7 @@ Since this project is the frontend, an admin app is necessary :
 
 ## Development server
 - Node JS
-- `git clone https://github.com/OlivierB29/BBCodeParser`
-- clone this repo
+
 - `npm i -g @angular/cli`
 - `npm i`
 - `npm start`

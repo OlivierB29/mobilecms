@@ -11,8 +11,7 @@
     <div class='thumbnail-container' *ngIf='image'>
       <img src='{{getThumbnail(image)}}' alt='{{image.title}}' >
     </div>
-    <div *ngIf='item.format === "bbcode"' class='article-previewdescription description-and-thumbnail' [innerHTML]='getPreviewDescription()  | bbcode'></div>
-    <div *ngIf='item.format !== "bbcode"' class='article-previewdescription description-and-thumbnail' [innerHTML]='getPreviewDescription()  | bbcode'></div>
+    <div  class='article-previewdescription description-and-thumbnail' [innerHTML]='getPreviewDescription()'></div>
 
   </div>
 

@@ -94,18 +94,11 @@ export class CalendarPreviewComponent   implements OnInit {
 
   getPreviewDescription(): string {
     let result = '';
-    // TODO remove all BBCode in preview, or regex to avoid cut between tags
-    //str = str.replace(/\[(\w+)[^\]]*](.*?)\[\/\1]/g, '');
+
     let desc = this.item.description;
     if (desc.length > this.maxPreviewLength) {
 
-      // temporary code
-      let lastBBCode = desc.lastIndexOf(']');
-      if (lastBBCode !== -1 ) {
-        result = desc.substring(0, lastBBCode + 1) + ' ...';
-      } else {
-        result = desc.substring(0, this.maxPreviewLength) + ' ...';
-      }
+      result = desc.substring(0, this.maxPreviewLength) + ' ...';
 
     } else {
       result = desc;
