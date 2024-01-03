@@ -32,8 +32,7 @@ import { newsRoutes } from './news.route';
   providers: [
 
   ],
-  entryComponents: [
-  ],
+
   exports: [
     NewsComponent,
   ],

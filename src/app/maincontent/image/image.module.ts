@@ -22,8 +22,7 @@ import { NguiInviewComponent } from './ngui-in-view';
     providers: [
       ImageService
     ],
-    entryComponents: [
-    ],
+
     exports: [
       ImageListComponent,
       NguiInviewComponent

@@ -25,8 +25,7 @@ import { ActivityService } from './activity.service';
     providers: [
       ActivityService,
     ],
-    entryComponents: [
-    ],
+
     exports: [
       ActivityButtonComponent,
     ],

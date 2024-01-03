@@ -23,8 +23,7 @@ import { VideoService } from './video.service';
     providers: [
       VideoService
     ],
-    entryComponents: [
-    ],
+
     exports: [
       VideoListComponent
     ],

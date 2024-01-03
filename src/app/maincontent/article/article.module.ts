@@ -33,8 +33,7 @@ import { articleRoutes } from './article.route';
     providers: [
 
     ],
-    entryComponents: [
-    ],
+
     exports: [
       ArticleComponent,
       ArticlePreviewComponent,

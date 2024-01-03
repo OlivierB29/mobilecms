@@ -54,8 +54,7 @@ import {
     providers: [
 
     ],
-    entryComponents: [
-    ],
+
     exports: [
       CalendarFeedComponent,
     ],

@@ -10,7 +10,6 @@
     "src/polyfills.ts"
   ],
   "include": [
-    "node_modules/bbcode-parser/src/**/*",
     "src/**/*.d.ts"
   ]
 }

@@ -30,8 +30,7 @@ import { ClubMapComponent } from './';
   providers: [
 
   ],
-  entryComponents: [
-  ],
+
   exports: [
     ClubListComponent,
     ClubActivitiesComponent,
