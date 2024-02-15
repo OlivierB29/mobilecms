@@ -1,12 +1,12 @@
 {
   "name": "mobilecms",
-  "version": "0.16.2",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "dist": "ng build --configuration production && rm -rf ./dist/media ./dist/public ",
+    "dist": "ng build --configuration production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
