@@ -38,7 +38,7 @@ import { SocialComponent } from './social/social.component';
     providers: [
     MenuService,
     ],
-
+    
     exports: [
       HomeComponent,
       MenubuttonComponent,

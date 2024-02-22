@@ -9,14 +9,19 @@
 
     <div class='card-body'>
       <div *ngIf='item.activity && item.date' class='card-subtitle mb-2 '>{{item.activity | uppercase}} {{item.date | localedate}}</div>
-      <div class='card-text' [innerHTML]='item.description'></div>
 
-      <div *ngIf='item.location'> {{item.location}}</div>
+        <div *ngIf='item.format === "bbcode"'  class='card-text' [innerHTML]='item.description | bbcode'> </div>
+        <div *ngIf='item.format !== "bbcode"'  class='card-text' [innerHTML]='item.description'> </div>
 
-      <!-- media -->
-      <app-attachments *ngIf='item.media || item.attachments' recorduri='{{getRecordUri()}}' [attachments]='getAttachments()'></app-attachments>
-      <app-imagelist *ngIf='item.media || item.images' recorduri='{{getRecordUri()}}' [images]='getImages()' [lazyload]='lazyload'></app-imagelist>
-      <app-videolist *ngIf='item.media || item.attachments' recorduri='{{getRecordUri()}}' [videos]='getVideos()'></app-videolist>
-    </div>
-  </article>
-</div>
+
+
+
+        <div *ngIf='item.location'> {{item.location}}</div>
+
+        <!-- media -->
+        <app-attachments *ngIf='item.media || item.attachments' recorduri='{{getRecordUri()}}' [attachments]='getAttachments()'></app-attachments>
+        <app-imagelist *ngIf='item.media || item.images' recorduri='{{getRecordUri()}}' [images]='getImages()' [lazyload]='lazyload'></app-imagelist>
+        <app-videolist *ngIf='item.media || item.attachments' recorduri='{{getRecordUri()}}' [videos]='getVideos()'></app-videolist>
+      </div>
+    </article>
+  </div>

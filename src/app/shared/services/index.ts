@@ -5,5 +5,6 @@ export * from './date.util.service';
 export * from './media.service';
 export * from './layout.service';
 export * from './browser.service';
+export * from './bbcode.service';
 export * from './coordinates.service';
 export * from './svg.service';

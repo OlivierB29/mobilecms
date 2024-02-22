@@ -17,37 +17,40 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters
 <!-- Load Facebook SDK for JavaScript -->
 
 <script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  
+  
+  
+  <a class="btn btn-primary" href="{{getArticleUrl()}}">link</a>
+  
+  <div *ngIf='item' class='card shadow'>
+    <div id="fb-root"></div>
+    <article>
+      <div class='card-header'>
+        <h5 class='card-title'>{{item.title}}</h5>
+      </div>
+      <div *ngIf='item.organization' class='card-subtitle mb-2 '>
+        <span>{{item.organization}}</span>
+      </div>
+  
+      <div class='card-body'>
+        <div *ngIf='item.activity && item.date' class='card-subtitle mb-2 '>{{item.activity | uppercase}} {{item.date | localedate}}</div>
+        <div *ngIf='item.format === "bbcode"'  class='card-text' [innerHTML]='item.description | bbcode'></div>
+        <div *ngIf='item.format !== "bbcode"'  class='card-text' [innerHTML]='item.description'></div>
 
 
-
-<a class="btn btn-primary" href="{{getArticleUrl()}}">link</a>
-
-<div *ngIf='item' class='card shadow'>
-  <div id="fb-root"></div>
-  <article>
-    <div class='card-header'>
-      <h5 class='card-title'>{{item.title}}</h5>
-    </div>
-    <div *ngIf='item.organization' class='card-subtitle mb-2 '>
-      <span>{{item.organization}}</span>
-    </div>
-
-    <div class='card-body'>
-      <div *ngIf='item.activity && item.date' class='card-subtitle mb-2 '>{{item.activity | uppercase}} {{item.date | localedate}}</div>
-      <div class='card-text' [innerHTML]='item.description'></div>
-
-      <div *ngIf='item.location'><i class="bi bi-geo-alt"></i> {{item.location}}</div>
-
-      <!-- media -->
-      <app-attachments *ngIf='item.media || item.attachments' recorduri='{{getRecordUri()}}' [attachments]='getAttachments()'></app-attachments>
-      <app-imagelist *ngIf='item.media || item.images' recorduri='{{getRecordUri()}}' [images]='getImages()' [lazyload]='lazyload'></app-imagelist>
-      <app-videolist *ngIf='item.media || item.attachments' recorduri='{{getRecordUri()}}' [videos]='getVideos()'></app-videolist>
-    </div>
-  </article>
-</div>
+  
+        <div *ngIf='item.location'><i class="bi bi-geo-alt"></i> {{item.location}}</div>
+  
+        <!-- media -->
+        <app-attachments *ngIf='item.media || item.attachments' recorduri='{{getRecordUri()}}' [attachments]='getAttachments()'></app-attachments>
+        <app-imagelist *ngIf='item.media || item.images' recorduri='{{getRecordUri()}}' [images]='getImages()' [lazyload]='lazyload'></app-imagelist>
+        <app-videolist *ngIf='item.media || item.attachments' recorduri='{{getRecordUri()}}' [videos]='getVideos()'></app-videolist>
+      </div>
+    </article>
+  </div>
