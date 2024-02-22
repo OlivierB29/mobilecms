@@ -1,8 +1,7 @@
-import { Component, AfterViewInit } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
+import { Component } from '@angular/core';
+
 import { environment } from 'src/environments/environment';
-import { ReadService, LayoutService } from 'src/app/shared/services';
-import { HttpClient } from '@angular/common/http';
+
 import { ImageService } from 'src/app/maincontent/image';
 
 @Component({
@@ -11,7 +10,7 @@ import { ImageService } from 'src/app/maincontent/image';
   templateUrl: 'sidenavcontainer.component.html',
   styleUrls: ['sidenavcontainer.component.css']
 })
-export class SidenavcontainerComponent implements AfterViewInit {
+export class SidenavcontainerComponent {
 
   title = '';
 
@@ -30,18 +29,10 @@ export class SidenavcontainerComponent implements AfterViewInit {
 
   bannerpicture : any;
 
-  item: any;
 
-  socialnetworks = <any>[];
+  constructor(
+     private imageService: ImageService) {
 
-  constructor(private titleService: Title,
-     private meta: Meta,
-     private readService: ReadService,
-     private http: HttpClient,
-     private imageService: ImageService,
-     private layoutService: LayoutService) {
-
-    this.initLayout();
 
     this.bannerurl = environment.server + '/assets/banner-1900.jpg';
 
@@ -58,10 +49,6 @@ export class SidenavcontainerComponent implements AfterViewInit {
   }
 
 
-  ngAfterViewInit() {
-    this.fetchData();
-
-  }
 
 
 
@@ -70,39 +57,8 @@ export class SidenavcontainerComponent implements AfterViewInit {
   }
 
 
-  fetchData() {
-
-    this.http.get<any>(this.readService.getUrl('description', 'head'))
-              .subscribe((data: any) => {
-                this.item = data;
 
 
-                if (this.layoutService.getLayout() === 'desktop') {
-                  this.title = this.item.fulltitle;
-                } else {
-                  this.title = this.item.title;
-                }
-
-                this.meta.addTag({ name: 'keywords', content: this.item.keywords });
-                this.meta.addTag({ name: 'description', content: this.item.description });
-//                this.titleService.setTitle(this.title);
-
-                this.socialnetworks = this.item.socialnetworks;
-              });
-
-
-  }
-
-  initLayout() {
-    const layout = this.layoutService.getLayout();
-    this.menuOpened = false;
-    this.menuMode = 'over';
-    if (layout === 'desktop') {
-      this.menuMode = 'side';
-      this.menuOpened = true;
-    }
-
-  }
 
 
 
