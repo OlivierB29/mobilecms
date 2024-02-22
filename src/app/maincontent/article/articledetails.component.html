@@ -42,7 +42,7 @@ fjs.parentNode.insertBefore(js, fjs);
       <div *ngIf='item.activity && item.date' class='card-subtitle mb-2 text-muted'>{{item.activity | uppercase}} {{item.date | localedate}}</div>
       <p class='card-text' [innerHTML]='item.description'></p>
 
-      <div *ngIf='item.location'><i class='material-icons'>pin_drop</i> {{item.location}}</div>
+      <div *ngIf='item.location'><i class="bi bi-geo-alt"></i> {{item.location}}</div>
 
       <!-- media -->
       <app-attachments *ngIf='item.media || item.attachments' recorduri='{{getRecordUri()}}' [attachments]='getAttachments()'></app-attachments>

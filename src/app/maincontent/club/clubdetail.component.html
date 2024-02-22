@@ -1,6 +1,6 @@
 <div *ngIf='item' class='card shadow'>
   <div class='card-header bg-primary text-white'>
-    <a *ngIf='item.url' target='_blank' href='{{item.url}}' title="{{item.url}}"  class="text-white">{{item.title}} <i class='material-icons'>open_in_new</i></a>
+    <a *ngIf='item.url' target='_blank' href='{{item.url}}' title="{{item.url}}"  class="text-white">{{item.title}} <i class="bi bi-box-arrow-up-right"></i></a>
     <span *ngIf='!item.url' class="">{{item.title}}</span>
   </div>
   <div class='card-body'>

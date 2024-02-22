@@ -3,7 +3,7 @@
 
   <div *ngIf='item' class='article-title theme-primary'>
     <div>
-      <i class='material-icons calendar-icon'>event</i>
+      <i class="bi bi-calendar-event"></i>
       <span>{{item.date | localedate}} </span><span *ngIf='item.enddate && item.enddate !== item.date'> - </span><span *ngIf='item.enddate && item.enddate !== item.date' >{{item.enddate | localedate}} </span> : <span class='feed-subtitle'>{{item.activity | uppercase}}</span>
     </div>
   </div>
@@ -22,7 +22,7 @@
 
           <div class='article-description' [innerHTML]='item.description '></div>
 
-          <div *ngIf='item.location'><i class='material-icons'>pin_drop</i> {{item.location}}</div>
+          <div *ngIf='item.location'><i class="bi bi-geo-alt"></i> {{item.location}}</div>
 
           <!-- media -->
 
