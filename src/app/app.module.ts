@@ -16,11 +16,14 @@ import { MainModule } from 'src/app/sidenav/main.module';
 import { ClubModule } from 'src/app/maincontent/club/club.module';
 import { ImageModule } from 'src/app/maincontent/image/image.module';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
   imports: [
     BrowserModule,
+    NgbModule,
     HttpClientModule,
     AppRoutingModule,
     SharedModule,

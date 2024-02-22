@@ -1,15 +1,11 @@
-
 <div *ngIf="activity">
-<h3><span>{{activity | uppercase}}</span></h3>
+  <h3><span>{{activity | uppercase}}</span></h3>
 
-  <div class='article-list' *ngIf='items' >
-      <div *ngFor="let currentItem of items" >
+  <div class='list-group' *ngIf='items' >
+    <div *ngFor="let currentItem of items" class='list-group-item'>
 
-        <app-calendarpreview type='{{type}}' id='{{currentItem.id}}' show='description'></app-calendarpreview>
+      <app-calendarpreview type='{{type}}' id='{{currentItem.id}}' show='description'></app-calendarpreview>
 
     </div>
   </div>
-
-
-
 </div>

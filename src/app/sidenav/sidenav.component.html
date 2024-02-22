@@ -1,11 +1,18 @@
-<nav>
-<div *ngIf='isOpen()' class='menu-container theme-primary'  [ngClass]='{"menu-container-expanded": isExpanded()}'>
-<div class='buttonseparator'></div>
-<span *ngFor='let menu of menuItems' (click)='expandClose()' >
-  <app-menubutton [item]='menu' [expanded]='expanded' ></app-menubutton>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
   
-  <div class='buttonseparator'></div>
-</span>
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">{{title}}</a>
+    </li>
+    <li class="nav-item" *ngFor='let menu of menuItems'>
+      <app-menubutton [item]='menu' ></app-menubutton>
+    </li>
+
+
+  </ul>
+  <app-social [buttons]='socialnetworks'></app-social>
+  <!-- div *ngIf='isOpen()' class='d-flex flex-column bg-primary' [ngClass]='{"flex-grow-1": isExpanded()}' -->
 
 </div>
 </nav>

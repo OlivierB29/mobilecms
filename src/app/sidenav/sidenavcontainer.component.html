@@ -1,35 +1,17 @@
+<div class='bg-dark'>
 
 
-<div class='top-menu-bar theme-dark'>
+<div class='container-fluid'>
 
-  <!-- burger menu icon -->
-  <div (click)='sidenav.expandMenu()' >
-    <span class='top-menu-icon-container my-mat-button-darker' >
-      <i class='material-icons'>menu</i>
-    </span>
-  </div>
-
-  <!-- title -->
-  <div class='top-menu-title-container my-mat-button-darker' routerLink='/'>
-    <span class='top-menu-title' >{{title}}</span>
-  </div>
-
-  <!-- social -->
-  <app-social [buttons]='socialnetworks'></app-social>
-</div>
-
-
-<div class='my-body'>
-
-    <app-sidenav #sidenav [mode]='menuMode' [opened]='menuOpened'></app-sidenav>
+    <app-sidenav #sidenav></app-sidenav>
 
   <!-- fading backdrop : close menu on click -->
-  <div *ngIf='sidenav.isOverMenuOpened()'  class='my-mat-sidenav-backdrop"' [ngClass]='{"my-mat-sidenav-shown": sidenav.isOpen()}' (click)='sidenav.open()'></div>
-
+  <!-- div *ngIf='sidenav.isOverMenuOpened()'  class='modal-backdrop fade show' [ngClass]='{"show": sidenav.isOpen()}' (click)='sidenav.open()'></div -->
+  <div ></div>
   <!-- container -->
-  <div class='router-container'>
-    <div  class='banner-container'  routerLink='/'>
-      <img class='shadow' src='{{bannerurl}}' srcset='{{getBannerSrcSet()}}' alt='' sizes='(min-width: 55em) 60vw, 100vw'>
+  <div class='container-fluid'>
+    <div  class='shadow'  routerLink='/'>
+      <img src='{{bannerurl}}' srcset='{{getBannerSrcSet()}}' alt='' sizes='(min-width: 55em) 60vw, 100vw'>
     </div>
     <!-- content -->
     <main>

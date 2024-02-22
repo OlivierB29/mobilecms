@@ -1,6 +1,6 @@
-<a href='' routerLink='{{item.routerLink}}'  routerLinkActive='active'  title='{{item.title}}' class='slidemenu-button slidemenu-button-container my-mat-button-dark'>
+<a href='' routerLink='{{item.routerLink}}'  routerLinkActive='active'  title='{{item.title}}' class='btn btn-dark'>
 
-<i  class='icon-container material-icons slidemenu-button-icon'>{{item.icon}}</i>
-<span *ngIf='expanded' class='slidemenu-button-text' >{{item.title}}</span>
-
-</a>
+    <i  [class]="'bi ' + item.icon"></i>
+    <span >{{item.title}}</span>
+    
+    </a>

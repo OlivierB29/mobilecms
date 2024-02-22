@@ -9,7 +9,9 @@ import { map, debounceTime, filter  } from 'rxjs/operators';
 
 
 
-import { LayoutService, Log } from 'src/app/shared/services';
+import { LayoutService, Log, ReadService } from 'src/app/shared/services';
+import { HttpClient } from '@angular/common/http';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
 
@@ -28,10 +30,20 @@ export class SidenavComponent implements OnInit, AfterViewInit {
 
   menuItems: any[] = <any>[];
 
+  title = '';
 
-  constructor(private menuService: MenuService,
+  item: any;
+
+  socialnetworks = <any>[];
+
+
+  constructor(
+    private menuService: MenuService,
+    private meta: Meta,
     private log: Log,
-  private layoutService: LayoutService
+  private layoutService: LayoutService,
+  private readService: ReadService,
+  private http: HttpClient,
   ) {
     this.setLayout();
 
@@ -50,12 +62,35 @@ export class SidenavComponent implements OnInit, AfterViewInit {
 
    }
 
+   fetchData() {
+
+    this.http.get<any>(this.readService.getUrl('description', 'head'))
+              .subscribe((data: any) => {
+                this.item = data;
+
+
+
+                this.title = this.item.title;
+
+                this.meta.addTag({ name: 'keywords', content: this.item.keywords });
+                this.meta.addTag({ name: 'description', content: this.item.description });
+//                this.titleService.setTitle(this.title);
+
+                this.socialnetworks = this.item.socialnetworks;
+              });
+
+
+  }
+
   ngOnInit() {
     this.lang = environment.defaultlocale;
     this.menuService.getMenuData(this.lang)
         .subscribe((data: any[]) => {
           data.forEach(item => this.menuItems.push(item));
         });
+
+    this.fetchData();
+
   }
 
   ngAfterViewInit() {

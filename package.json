@@ -13,7 +13,6 @@
     "demobuild": "ng build --base-href /mobilecms-demo/"
   },
   "private": true,
-  
   "dependencies": {
     "@angular/animations": "^16.2.12",
     "@angular/common": "^16.2.12",
@@ -23,9 +22,12 @@
     "@angular/platform-browser": "^16.2.12",
     "@angular/platform-browser-dynamic": "^16.2.12",
     "@angular/router": "^16.2.12",
+    "@ng-bootstrap/ng-bootstrap": "^15.1.2",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.13.0"    
+    "zone.js": "~0.13.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.12",

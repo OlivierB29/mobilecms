@@ -1,28 +1,20 @@
-
-<div class='article-list'>
+<div class='list-group'>
   <h3><span>{{activity | uppercase}}</span> </h3>
-<div *ngIf="activity" class='department-list'>
+  <div *ngIf="activity" class='list-group'>
 
+    <div *ngFor='let dep of departmentObjectList'>
+      <button  [value]='dep.code' (click)='displayClubs(dep.code)' class='btn btn-dark list-group-item'>
+        <div >{{dep.name}}</div>
+      </button>
+    </div>
 
-<div *ngFor='let dep of departmentObjectList'>
+  </div>
 
-  <button  [value]='dep.code' (click)='displayClubs(dep.code)' class='department-button my-mat-button-dark shadow'>
-    <div >{{dep.name}}</div>
-
-  </button>
-
-</div>
-
-</div>
-
-
-
-<div *ngIf="activity  && department ">
-  <div class='article-list'>
-    <div *ngFor='let club of (clubs | propertyfilter: "activity":activity | propertyfilter: "department":department)' class='club-content'>
-      <app-my-clubdetail-component [id]="club.id"></app-my-clubdetail-component>
+  <div *ngIf="activity  && department ">
+    <div class='list-group'>
+      <div *ngFor='let club of (clubs | propertyfilter: "activity":activity | propertyfilter: "department":department)' class='list-group-item'>
+        <app-my-clubdetail-component [id]="club.id"></app-my-clubdetail-component>
+      </div>
     </div>
   </div>
-</div>
-
 </div>

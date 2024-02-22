@@ -1,12 +1,11 @@
 <!-- attachments -->
-<div *ngIf='attachments && attachments.length > 0'>
-<div *ngFor='let attachment of attachments' class='tooltip'>
-
-
-    <a *ngIf='attachment.url' href='{{attachment.url}}' >{{attachment.title}}</a>
-    <span *ngIf='attachment.thumbnails'><img src='{{getDefaultImage(attachment)}}' srcset='{{getThumbnailSrcSet(attachment)}}' alt='{{attachment.title}}' sizes='(min-width: 55em) 10vw, 20vw'>
+<div *ngIf='attachments && attachments.length > 0' class='list-group'>
+  <div *ngFor='let attachment of attachments' class='list-group-item'>
+    <a *ngIf='attachment.url' href='{{attachment.url}}' class='d-flex align-items-center'>
+      <span *ngIf='attachment.thumbnails' class='mr-3'>
+        <img src='{{getDefaultImage(attachment)}}' srcset='{{getThumbnailSrcSet(attachment)}}' alt='{{attachment.title}}' class='img-thumbnail' sizes='(min-width: 55em) 10vw, 20vw'>
       </span>
-
-
-</div>
+      {{attachment.title}}
+    </a>
+  </div>
 </div>

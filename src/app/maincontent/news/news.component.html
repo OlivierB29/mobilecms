@@ -1,14 +1,11 @@
 <section>
-<div class='article-list'>
+  <div class='list-group'>
 
- 
+    <div *ngFor="let item of items" class='list-group-item'>
 
-  <div *ngFor="let item of items">
+      <app-my-article-component  *ngIf='"draft" !== item.status && item.description' type='{{type}}' [itemparam]='item' class='list-group-item-action'></app-my-article-component >
+      <app-my-article-component  *ngIf='"draft" !== item.status && !item.description' type='{{type}}' id='{{item.id}}' class='list-group-item-action'></app-my-article-component >
 
-                <app-my-article-component  *ngIf='"draft" !== item.status && item.description' type='{{type}}' [itemparam]='item' ></app-my-article-component >
-                <app-my-article-component  *ngIf='"draft" !== item.status && !item.description' type='{{type}}' id='{{item.id}}' ></app-my-article-component >
-
-                
+    </div>
   </div>
-</div>
 </section>

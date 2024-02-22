@@ -1,13 +1,13 @@
-<div class='article-list'>
+<div class='list-group'>
 
   <div *ngIf='!activity'>
-    <div *ngFor='let activityLink of activityObjectList'>
-      <app-activitybutton [activity]='activityLink'></app-activitybutton>
+    <div *ngFor='let activityLink of activityObjectList' class='list-group-item'>
+      <app-activitybutton [activity]='activityLink' class='list-group-item-action'></app-activitybutton>
     </div>
   </div>
 
-  <div *ngIf='activity'>
-    <app-my-clubmap [activity]='activity' [activities]='activityObjectList'></app-my-clubmap>
+  <div *ngIf='activity' class='list-group-item'>
+    <app-my-clubmap [activity]='activity' [activities]='activityObjectList' class='list-group-item-action'></app-my-clubmap>
   </div>
 
 </div>

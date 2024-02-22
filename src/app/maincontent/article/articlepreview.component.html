@@ -1,22 +1,19 @@
-<div *ngIf='item' class='article-content article-preview-content'   routerLink='{{url}}'>
-  <div class='article-title my-mat-button-dark' >
-    <div >{{item.date | localedate}} {{item.activity | uppercase}}</div>
-    <span >{{item.title}}</span>
+<div *ngIf='item' class='card' routerLink='{{url}}'>
+  <div class='card-header bg-dark text-white'>
+    <div>{{item.date | localedate}} {{item.activity | uppercase}}</div>
+    <h5 class='card-title'>{{item.title}}</h5>
   </div>
 
-  <div class='article-subtitle'>{{item.activity | uppercase}} - {{item.date | localedate}}</div>
+  <div class='card-subtitle mb-2 text-muted'>{{item.activity | uppercase}} - {{item.date | localedate}}</div>
 
-
-  <div class='article-previewdescription-container' *ngIf='image'>
+  <div class='card-body' *ngIf='image'>
     <div class='thumbnail-container' *ngIf='image'>
-      <img src='{{getThumbnail(image)}}' alt='{{image.title}}' >
+      <img src='{{getThumbnail(image)}}' alt='{{image.title}}' class='img-thumbnail'>
     </div>
-    <div  class='article-previewdescription description-and-thumbnail' [innerHTML]='getPreviewDescription()'></div>
-
+    <p class='card-text' [innerHTML]='getPreviewDescription()'></p>
   </div>
 
-  <div class='article-previewdescription-container' *ngIf='!image'>
-    <div class='article-previewdescription' [innerHTML]='getPreviewDescription() '></div>
+  <div class='card-body' *ngIf='!image'>
+    <p class='card-text' [innerHTML]='getPreviewDescription()'></p>
   </div>
-
 </div>

@@ -1,22 +1,20 @@
-<a *ngIf='item' class='hidelink' href='{{getUrl()}}'>
-  <div class='shadow'>
+<a *ngIf='item' class='text-decoration-none' href='{{getUrl()}}'>
+  <div class='card shadow'>
 
-    <div class='my-mat-button-dark'>
-      <div>
-        <i class='material-icons calendar-icon'>event</i>
-        <span>{{item.date | localedate}}</span> | <img *ngIf='activitylogo' src='{{activitylogo}}' alt='{{item.activity | uppercase}}'> | 
-        <span class='feed-subtitle'>{{item.title}}</span>
-      </div>
+    <div class='card-header bg-dark text-white d-flex align-items-center'>
+      <i class='material-icons calendar-icon'>event</i>
+      <span>{{item.date | localedate}}</span> | <img *ngIf='activitylogo' src='{{activitylogo}}' alt='{{item.activity | uppercase}}' class='mr-2'> | 
+      <span class='card-subtitle mb-2 text-muted'>{{item.title}}</span>
     </div>
 
-    <div class='largeview'>
-      <div class='calendar-preview-table-row'>
-        <div *ngIf='image'>
+    <div class='card-body'>
+      <div class='row'>
+        <div *ngIf='image' class='col-md-4'>
 
-            <img src='{{getThumbnail(image)}}' alt='{{image.title}}'>
+            <img src='{{getThumbnail(image)}}' alt='{{image.title}}' class='img-thumbnail'>
 
         </div>
-          <span class='calendar-preview-description'  *ngIf='show === "description"'  [innerHTML]='item.description'></span>
+          <span class='card-text'  *ngIf='show === "description"'  [innerHTML]='item.description'></span>
       </div>
     </div>
 

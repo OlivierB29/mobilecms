@@ -1,13 +1,12 @@
+<div [ngClass]='{"d-flex": isModernBrowser()}'>
 
-<div [ngClass]='{"flexcontainer": isModernBrowser()}'>
-
-  <div class='article-list' [ngClass]='{"flexfeedcontainer": isModernBrowser()}'>
+  <div class='list-group' [ngClass]='{"d-flex flex-column": isModernBrowser()}' >
     <app-my-calendar-feed [max]='max'></app-my-calendar-feed>
   </div>
 
-  <div  [ngClass]='{"flexmaincontent": isModernBrowser()}'>
+  <div [ngClass]='{"d-flex flex-column": isModernBrowser()}' >
     <app-my-news-component [max]='max'></app-my-news-component>
-    <div routerLink='news' class='expand-title my-mat-button-dark'>
+    <div routerLink='news' class='btn btn-dark'>
       <i class='material-icons'>expand_more</i>
     </div>
   </div>
