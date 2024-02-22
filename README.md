@@ -1,7 +1,8 @@
 # MobileCms
 tl;dr : Small CMS with categories. Data is stored in JSON files.
 
-- Angular 11
+- Angular 16
+- now with bootstrap
 - HTML 5 images
 - Hosted on a cheap server
 - All data is public
@@ -46,13 +47,3 @@ For now, we have 10-20 news per year, and roughly the same for calendar events.
 
 - Server hardware requirements
 It can be hosted on anything, even a Raspberry Pi.
-
-## Passed audits
-Passed audits with Lighthouse (oct 2020)
-
-Scores 
-- Performance : 89
-- Accessibility : 100
-- Best practices : 86
-- SEO : 100
-
