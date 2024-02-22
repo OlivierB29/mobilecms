@@ -1,8 +1,5 @@
 <div [ngClass]='{"d-flex": isModernBrowser()}'>
 
-  <div class='list-group' [ngClass]='{"d-flex flex-column": isModernBrowser()}' >
-    <app-my-calendar-feed [max]='max'></app-my-calendar-feed>
-  </div>
 
   <div [ngClass]='{"d-flex flex-column": isModernBrowser()}' >
     <app-my-news-component [max]='max'></app-my-news-component>
@@ -11,4 +8,9 @@
       <i class="bi bi-arrows-expand"></i>
     </div>
   </div>
+
+  <div class='list-group' [ngClass]='{"d-flex flex-column": isModernBrowser()}' >
+    <app-my-calendar-feed [max]='max'></app-my-calendar-feed>
+  </div>
+
 </div>
