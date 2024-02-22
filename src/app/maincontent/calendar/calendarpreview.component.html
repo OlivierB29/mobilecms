@@ -4,7 +4,7 @@
     <div class='card-header bg-dark text-white d-flex align-items-center'>
       <i class="bi bi-calendar-event"></i>
       <span>{{item.date | localedate}}</span> | <img *ngIf='activitylogo' src='{{activitylogo}}' alt='{{item.activity | uppercase}}' class='mr-2'> | 
-      <span class='card-subtitle mb-2 text-muted'>{{item.title}}</span>
+      <span class='card-subtitle mb-2 '>{{item.title}}</span>
     </div>
 
     <div class='card-body'>

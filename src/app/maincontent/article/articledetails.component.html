@@ -34,13 +34,13 @@ fjs.parentNode.insertBefore(js, fjs);
     <div class='card-header'>
       <h5 class='card-title'>{{item.title}}</h5>
     </div>
-    <div *ngIf='item.organization' class='card-subtitle mb-2 text-muted'>
+    <div *ngIf='item.organization' class='card-subtitle mb-2 '>
       <span>{{item.organization}}</span>
     </div>
 
     <div class='card-body'>
-      <div *ngIf='item.activity && item.date' class='card-subtitle mb-2 text-muted'>{{item.activity | uppercase}} {{item.date | localedate}}</div>
-      <p class='card-text' [innerHTML]='item.description'></p>
+      <div *ngIf='item.activity && item.date' class='card-subtitle mb-2 '>{{item.activity | uppercase}} {{item.date | localedate}}</div>
+      <div class='card-text' [innerHTML]='item.description'></div>
 
       <div *ngIf='item.location'><i class="bi bi-geo-alt"></i> {{item.location}}</div>
 
