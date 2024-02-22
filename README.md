@@ -6,7 +6,7 @@ tl;dr : Small CMS with categories. Data is stored in JSON files.
 - HTML 5 images
 - Hosted on a cheap server
 - All data is public
-
+- BBCode support
 
 It is initially intended to display content for a sport organization : News, calendar events, public pages, documents, ...
 
