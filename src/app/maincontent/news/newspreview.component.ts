@@ -44,7 +44,7 @@ export class NewsPreviewComponent implements OnInit {
         if (this.max > 0 && dbItems.length > this.max) {
           dbItems = dbItems.slice(dbItems.length - this.max, dbItems.length);
         }
-        this.log.debug(this.type + ' ' + dbItems.length);
+        this.log.debug('NewsPreviewComponent ' + this.type + ' ' + dbItems.length);
 
         this.items = dbItems;
 

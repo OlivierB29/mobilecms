@@ -3,6 +3,8 @@
   <div>
     <app-calendarpreview  *ngIf='item.description' type='calendar' [item]='item' show='title' activitylogo='{{getActivityLogo(item.activity)}}'></app-calendarpreview>
     <app-calendarpreview  *ngIf='!item.description' type='calendar' id='{{item.id}}' show='title' activitylogo='{{getActivityLogo(item.activity)}}'></app-calendarpreview>
+
+
   </div>
 
   <div class='article-feed-spacer'></div>

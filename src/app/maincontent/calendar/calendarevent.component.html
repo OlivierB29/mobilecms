@@ -20,7 +20,9 @@
 
         <div class='article-description-container'>
 
-          <div class='article-description' [innerHTML]='item.description '></div>
+
+          <div *ngIf='item.format === "bbcode"'  class='card-text' [innerHTML]='item.description | bbcode'> </div>
+          <div *ngIf='item.format !== "bbcode"'  class='card-text' [innerHTML]='item.description'> </div>
 
           <div *ngIf='item.location'><i class="bi bi-geo-alt"></i> {{item.location}}</div>
 

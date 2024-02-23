@@ -4,6 +4,8 @@
     <span *ngIf='!item.url' class="">{{item.title}}</span>
   </div>
   <div class='card-body'>
-    <div [innerHTML]='item.description' class='card-text'></div>
+
+    <div *ngIf='item.format === "bbcode"'  class='card-text' [innerHTML]='item.description | bbcode'> </div>
+    <div *ngIf='item.format !== "bbcode"'  class='card-text' [innerHTML]='item.description'> </div>
   </div>
 </div>

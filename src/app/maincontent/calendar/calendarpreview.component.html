@@ -1,10 +1,14 @@
 <a *ngIf='item' class='text-decoration-none' href='{{getUrl()}}'>
   <div class='card shadow'>
 
-    <div class='card-header bg-dark text-white d-flex align-items-center'>
-      <i class="bi bi-calendar-event"></i>
-      <span>{{item.date | localedate}}</span> | <img *ngIf='activitylogo' src='{{activitylogo}}' alt='{{item.activity | uppercase}}' class='mr-2'> | 
-      <span class='card-subtitle mb-2 '>{{item.title}}</span>
+    <div class='card-header bg-dark text-white '>
+      
+      <div>
+        <i class="bi bi-calendar-event"></i><span>{{item.date | localedate}}</span> <span *ngIf='item.activity'>|</span><img *ngIf='item.activity && activitylogo' src='{{activitylogo}}' alt='{{item.activity | uppercase}}' class='mr-2'>
+      </div>
+      <div class='card-subtitle mb-2 '>
+        <span>{{item.title}}</span>
+      </div>
     </div>
 
     <div class='card-body'>
