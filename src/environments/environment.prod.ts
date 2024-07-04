@@ -1,8 +1,8 @@
 export const environment = {
   production: true,
-  server: '',
+  server: '/',
   defaultlocale: 'fr',
   locale: 'fr-FR',
   log: 'error',
-  public: 'public'
+  public: '/public'
 };
