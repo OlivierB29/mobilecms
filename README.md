@@ -47,3 +47,5 @@ For now, we have 10-20 news per year, and roughly the same for calendar events.
 
 - Server hardware requirements
 It can be hosted on anything, even a Raspberry Pi.
+
+- Angular 16, Node 18.10
