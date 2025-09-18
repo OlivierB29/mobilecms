@@ -2,6 +2,7 @@
 tl;dr : Small CMS with categories. Data is stored in JSON files.
 
 - Angular 16
+- Node 18.10
 - now with bootstrap
 - HTML 5 images
 - Hosted on a cheap server
@@ -48,4 +49,3 @@ For now, we have 10-20 news per year, and roughly the same for calendar events.
 - Server hardware requirements
 It can be hosted on anything, even a Raspberry Pi.
 
-- Angular 16, Node 18.10
