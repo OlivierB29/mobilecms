@@ -23,18 +23,18 @@ export class ActivityService {
     return 'background-color: ' + color;
   }
 
-  getActivityLogo(activities: Activity[], activity: string): string {
+  getActivityLogo(mediaserver:string, activities: Activity[], activity: string): string {
 
-    return this.getDefaultActivityLogo(activities, activity).url;
+    return this.getDefaultActivityLogo(mediaserver, activities, activity).url;
   }
   
-  getDefaultActivityLogo(activities: Activity[], activity: string): Thumbnail {
+  getDefaultActivityLogo(mediaserver:string, activities: Activity[], activity: string): Thumbnail {
   
     let result: Thumbnail = new Thumbnail("10", "10", "");
     if (activities) {
       let filter = activities.filter(a => a.name === activity);
       if (filter.length > 0) {
-        result = new Thumbnail("32", "32", 'public/activities/' + activity + '/' + filter[0].mapicon);
+        result = new Thumbnail("32", "32", mediaserver + '/activities/' + activity + '/' + filter[0].mapicon);
       }
     }
     return result;

@@ -11,7 +11,7 @@ export class ImageService {
     if (picture && picture.thumbnails && picture.thumbnails.length > 0) {
       const index = 0 ;
       if (picture.thumbnails[index].url) {
-        result = server + '/media/' + recorduri + '/thumbnails/' + picture.thumbnails[index].url;
+        result = server + '/' + recorduri + '/thumbnails/' + picture.thumbnails[index].url;
       }
     }
 
@@ -43,7 +43,7 @@ export class ImageService {
       // set the highest thumbnail resolution, if the browser doesn't support srcset
       const index = picture.thumbnails.length - 1 ;
       if (picture.thumbnails[index].url) {
-        result = server + '/media/' + recorduri + '/thumbnails/' + picture.thumbnails[index].url;
+        result = server + '/' + recorduri + '/thumbnails/' + picture.thumbnails[index].url;
 
       }
     }
@@ -56,7 +56,7 @@ export class ImageService {
   */
   public getThumbnailSrcSet(server: string, recorduri: string, picture: any): string {
 
-    return this.getSrcSet(server + '/media/' + recorduri + '/thumbnails/', picture);
+    return this.getSrcSet(server + '/' + recorduri + '/thumbnails/', picture);
   }
 
   public getSrcSet(prefix: string, picture: any): string {

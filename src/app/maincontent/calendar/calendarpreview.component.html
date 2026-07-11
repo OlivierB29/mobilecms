@@ -2,7 +2,7 @@
   <div class='card shadow'>
 
     <div class='card-header bg-dark text-white '>
-      
+
       <div>
         <i class="bi bi-calendar-event"></i><span>{{item.date | localedate}}</span> <span *ngIf='item.activity'>|</span><img *ngIf='item.activity && activitylogo' src='{{activitylogo}}' alt='{{item.activity | uppercase}}' class='mr-2'>
       </div>
@@ -13,7 +13,7 @@
 
     <div class='card-body'>
       <div class='row'>
-        <div *ngIf='image' class='col-md-4'>
+        <div *ngIf='image'>
 
             <img src='{{getThumbnail(image)}}' alt='{{image.title}}' class='img-thumbnail'>
 

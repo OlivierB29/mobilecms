@@ -4,6 +4,7 @@ import { Log } from 'src/app/shared/services/log.service';
 import { Item } from 'src/app/shared/model/item';
 import { ReadService } from 'src/app/shared/services/read.service';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -33,7 +34,7 @@ export class FooterComponent implements OnInit {
     ngOnInit(): void {
 
 
-    this.http.get<any>(this.readService.getIndexUrl('about'))
+    this.http.get<any>(this.readService.getIndexUrl(environment.apiserver, 'about'))
     .subscribe((data: any[]) => this.items = data);
 
 

@@ -50,7 +50,7 @@ export class CalendarFeedComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     let localItems;
     // Load activities and add link URL, logo URL
-    this.http.get<any>(this.dataService.getIndexUrl(this.type))
+    this.http.get<any>(this.dataService.getIndexUrl(environment.apiserver, this.type))
 .subscribe((data: any[]) => {
 localItems = data;
 // About 10-20 events per season.
@@ -58,13 +58,13 @@ localItems = data;
 
 // filter the next upcoming events
 const begin = new Date();
-begin.setDate(begin.getDate() - 1);
+begin.setDate(begin.getDate() - 2);
 localItems = localItems.filter(obj => this.dateAfter(new Date(obj.date), begin));
 //localItems = this.orderby.transform(localItems, 'date', 'asc');
 if (this.max > 0 && localItems.length > this.max) {
   localItems = localItems.slice(0, this.max);
 }
-this.log.debug(this.type + ' ' + localItems.length);
+//this.log.debug(this.type + ' ' + localItems.length);
 
 // replace or add new items
 for (let i = 0; i < localItems.length; i++) {
@@ -79,7 +79,7 @@ for (let i = 0; i < localItems.length; i++) {
     //
     // Load activities and add link URL, logo URL
     //
-    this.http.get<any>(this.dataService.getIndexUrl('activities'))
+    this.http.get<any>(this.dataService.getIndexUrl(environment.apiserver, 'activities'))
     .subscribe((data: Activity[]) => {
       // exclude activities without clubs
       let result = data.filter(a => a.clublist && 'false' !== a.clublist);
@@ -101,7 +101,7 @@ for (let i = 0; i < localItems.length; i++) {
  }
  getActivityLogo(activity: string): string {
 
-  return this.activityService.getDefaultActivityLogo(this.activities, activity).url;
+  return this.activityService.getDefaultActivityLogo(environment.mediaserver, this.activities, activity).url;
 }
 
 

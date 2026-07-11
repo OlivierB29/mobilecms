@@ -6,6 +6,7 @@ import { Log } from 'src/app/shared/services/log.service';
 import { ReadService } from 'src/app/shared/services/read.service';
 
 import { HttpClient, HttpResponse } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -35,7 +36,7 @@ export class NewsPreviewComponent implements OnInit {
   }
   ngOnInit(): void {
     let dbItems;
-    this.http.get<any>(this.dataService.getIndexUrl(this.type))
+    this.http.get<any>(this.dataService.getIndexUrl(environment.apiserver, this.type))
       .subscribe((data: any[]) => {
         dbItems = data;
 

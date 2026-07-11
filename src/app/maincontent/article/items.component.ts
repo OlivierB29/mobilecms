@@ -7,6 +7,7 @@ import { Log } from 'src/app/shared/services/log.service';
 import { Item } from 'src/app/shared/model/item';
 
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -40,7 +41,7 @@ export class ItemsComponent implements OnInit {
 
     });
 
-    this.http.get<any>(this.dataService.getIndexUrl(this.type))
+    this.http.get<any>(this.dataService.getIndexUrl(environment.apiserver, this.type))
     .subscribe((data: any[]) => {
       this.items = data;
       this.log.debug(this.type + ' ' + this.items.length);

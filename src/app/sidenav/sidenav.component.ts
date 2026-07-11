@@ -64,7 +64,7 @@ export class SidenavComponent implements OnInit, AfterViewInit {
 
    fetchData() {
 
-    this.http.get<any>(this.readService.getUrl('description', 'head'))
+    this.http.get<any>(this.readService.getUrl(environment.apiserver, 'description', 'head'))
               .subscribe((data: any) => {
                 this.item = data;
 

@@ -18,7 +18,7 @@ export class ImageListComponent  {
   /**
   * default image displayed by  for ImageModule
   */
-  defaultImage = environment.server + '/' + environment.public + '/resources/ring-alt-32.svg';
+  defaultImage = environment.assetserver +  '/resources/ring-alt-32.svg';
 
   /**
   * eg: media/news/3/thumbnails
@@ -42,13 +42,13 @@ export class ImageListComponent  {
  }
 
   public getDefaultImage(picture: any): string {
-    return this.imageService.getDefaultImage(environment.server, this.recorduri, picture);
+    return this.imageService.getDefaultImage(environment.mediaserver, this.recorduri, picture);
   }
 
   /**
   * https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/
   */
   public getThumbnailSrcSet(picture: any): string {
-    return this.imageService.getThumbnailSrcSet(environment.server, this.recorduri, picture);
+    return this.imageService.getThumbnailSrcSet(environment.mediaserver, this.recorduri, picture);
   }
 }

@@ -37,8 +37,6 @@ export class ArticleComponent  implements OnInit {
 
   public item: any;
 
-  @Input() public media = 'media';
-
 
   @Input() public lazyload = true;
 
@@ -97,10 +95,10 @@ export class ArticleComponent  implements OnInit {
     if (this.isRouteInit()) {
       this.log.debug('ArticleComponent init ' + this.type + ' ' + this.id);
 
-      this.http.get<any>(this.readService.getUrl(this.type, this.id))
+      this.http.get<any>(this.readService.getUrl(environment.apiserver, this.type, this.id))
         .subscribe((data: any) => {
           this.item = data;
-          this.item.media = this.mediaService.initMediaUrl(this.type, this.id, this.item.media, this.media);
+          this.item.media = this.mediaService.initMediaUrl(environment.mediaserver, this.type, this.id, this.item.media);
           this.fetched = true;
         });
 
@@ -108,7 +106,7 @@ export class ArticleComponent  implements OnInit {
       this.log.debug('ArticleComponent item ' + this.item.id);
       let tmpItem = this.itemparam;
 
-      tmpItem.media = this.mediaService.initMediaUrl(this.type, tmpItem.id, tmpItem.media, this.media);
+      tmpItem.media = this.mediaService.initMediaUrl(environment.mediaserver, this.type, tmpItem.id, tmpItem.media);
       this.item = tmpItem;
       this.fetched = true;
     } else {

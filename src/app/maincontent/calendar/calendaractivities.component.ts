@@ -9,6 +9,7 @@ import { Log } from 'src/app/shared/services/log.service';
 import { ReadService } from 'src/app/shared/services/read.service';
 import { HttpClient } from '@angular/common/http';
 import { Activity } from '../activity/activity';
+import { environment } from 'src/environments/environment';
 
 
 /**
@@ -54,7 +55,8 @@ export class CalendarActivitiesComponent implements OnInit {
     });
 
     // Load activities and add link URL, logo URL
-    this.http.get<any>(this.dataService.getIndexUrl('activities'))
+    this.log.debug('CalendarActivitiesComponent ngOnInit ' + this.dataService.getIndexUrl(environment.apiserver, 'activities'));
+    this.http.get<any>(this.dataService.getIndexUrl(environment.apiserver, 'activities'))
 .subscribe((data: Activity[]) => {
 this.activityObjectList = data.filter(function(el) { return el.calendar === 'true'; });
 });

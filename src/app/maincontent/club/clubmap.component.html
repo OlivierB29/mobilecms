@@ -1,12 +1,11 @@
-<div class="row">
-  <div class="col-md-6">
-
-  <div *ngFor='let club of clubs' class='btn btn-dark mb-2'>
+<div class="map-row">
+  <div class="map-left-column">
+a
+  <div *ngFor='let club of clubs' class='btn btn-dark'>
     <a href='{{getClubLink(club)}}' class='text-white'>{{club.title}} | {{club.city}}</a>
   </div>
 
   </div>
-  <div #mySvg class="col-md-6"></div>
+  <div #mySvg class="map-right-column"></div>
 </div>
-
 <span class='text-muted'><a title="Eric Gaba (Sting - fr:Sting), CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Bretagne_region_location_map.svg">CC BY-SA 3.0 via Wikimedia Commons</a></span>

@@ -21,7 +21,7 @@ export class ActivityButtonComponent implements OnInit {
 
 
   offset = 100;
-  defaultImage = environment.server + '/' + environment.public +  '/resources/ring-alt-32.svg';
+  defaultImage = environment.assetserver + '/resources/ring-alt-32.svg';
 
 
 
@@ -32,7 +32,7 @@ export class ActivityButtonComponent implements OnInit {
   ngOnInit() {
 
     if (this.activity) {
-      this.logo =  environment.public + '/activities/'  +  this.activity.name  +  '/'  +  this.activity.logo;
+      this.logo =  environment.mediaserver + '/activities/'  +  this.activity.name  +  '/'  +  this.activity.logo;
 
       if (!this.url) {
         // if the current page is /clubs/, then add 'tennis'
