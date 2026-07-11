@@ -10,6 +10,7 @@ import { Log } from 'src/app/shared/services/log.service';
 import { ReadService } from 'src/app/shared/services/read.service';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Activity } from '../activity/activity';
+import { environment } from 'src/environments/environment';
 
 /**
 * Display a list of club activities :
@@ -61,11 +62,13 @@ export class ClubActivitiesComponent implements OnInit {
     //
     // Load activities and add link URL, logo URL
     //
-    this.http.get<any>(this.dataService.getIndexUrl('activities'))
+    this.log.debug('ngOnInit ' + this.dataService.getIndexUrl(environment.apiserver, 'activities'));
+    this.http.get<any>(this.dataService.getIndexUrl(environment.apiserver, 'activities'))
     .subscribe((data: Activity[]) => {
       // exclude activities without clubs
       let result = data.filter(a => a.clublist && 'false' !== a.clublist);
       this.activityObjectList = result;
+      this.log.debug('activities loaded ' + this.activityObjectList.length);
     });
 
 

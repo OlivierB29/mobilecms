@@ -9,6 +9,7 @@ import { Department } from 'src/app/shared/model/department';
 import { Log } from 'src/app/shared/services/log.service';
 import { ReadService } from 'src/app/shared/services/read.service';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 /**
 * display a list of clubs, for a selected activity
@@ -57,14 +58,14 @@ export class ClubListComponent implements OnInit {
   ngOnInit(): void {
 
 
-    this.http.get<any>(this.dataService.getIndexUrl('departments'))
+    this.http.get<any>(this.dataService.getIndexUrl(environment.apiserver, 'departments'))
       .subscribe((data: Department[]) => {
         this.departmentObjectList = data;
 
       this.log.debug('getDepartments complete ' + this.departmentObjectList.length);
     });
 
-    this.http.get<any>(this.dataService.getIndexUrl('clubs'))
+    this.http.get<any>(this.dataService.getIndexUrl(environment.apiserver, 'clubs'))
       .subscribe((data: Club[]) => {
         this.clubs = data;
         this.log.debug('getClubs complete ' + this.clubs.length);
@@ -77,7 +78,8 @@ export class ClubListComponent implements OnInit {
   }
 
   getLogoUrl(id: string, file: string): string {
-    return 'public/activities/' + id + '/' + file;
+    return environment.mediaserver + '/activities/' +
+    '/activities/' + id + '/' + file;
   }
 
 }

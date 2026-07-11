@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
     constructor(private layoutService: LayoutService, private browserService: BrowserService, 
       private imageService: ImageService) {
-      this.bannerurl = environment.server + '/assets/banner-1900.jpg';
+      this.bannerurl = environment.assetserver + '/assets/banner-1900.jpg';
 
 
       let banner :any = {};
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
     }
 
     public getBannerSrcSet() {
-      return this.imageService.getSrcSet(environment.server + '/assets/', this.bannerpicture);
+      return this.imageService.getSrcSet(environment.assetserver, this.bannerpicture);
     }
   
 

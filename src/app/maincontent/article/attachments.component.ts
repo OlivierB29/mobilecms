@@ -21,13 +21,13 @@ export class AttachmentsComponent  {
  }
 
   public getDefaultImage(picture: any): string {
-    return this.imageService.getDefaultThumbnail(environment.server, this.recorduri, picture);
+    return this.imageService.getDefaultThumbnail(environment.mediaserver, this.recorduri, picture);
   }
 
   /**
   * https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/
   */
   public getThumbnailSrcSet(picture: any): string {
-    return this.imageService.getThumbnailSrcSet(environment.server, this.recorduri, picture);
+    return this.imageService.getThumbnailSrcSet(environment.mediaserver, this.recorduri, picture);
   }
 }

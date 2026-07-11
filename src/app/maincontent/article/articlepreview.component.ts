@@ -28,7 +28,7 @@ export class ArticlePreviewComponent   implements OnInit {
   maxPreviewLength = 240;
 
   offset = 100;
-  defaultImage = environment.server + '/' + environment.public +  '/resources/ring-alt-32.svg';
+  defaultImage = environment.assetserver + '/resources/ring-alt-32.svg';
 
   image: any ;
   url = '';
@@ -42,10 +42,10 @@ export class ArticlePreviewComponent   implements OnInit {
     this.log.debug('ArticlePreviewComponent ' + this.id);
 
     if (this.type && this.id) {
-      this.http.get<any>(this.readService.getUrl(this.type, this.id))
+      this.http.get<any>(this.readService.getUrl(environment.apiserver, this.type, this.id))
       .subscribe((data: any) => {
         this.item = data;
-        this.item.media = this.mediaService.initMediaUrl(this.type, this.id, this.item.media, this.media);
+        this.item.media = this.mediaService.initMediaUrl(environment.mediaserver, this.type, this.id, this.item.media);
 
          if (this.getImages() && this.getImages().length > 0) {
            this.image = this.getImages()[0];
@@ -98,7 +98,7 @@ export class ArticlePreviewComponent   implements OnInit {
 
   public getThumbnail(picture: any): string {
 
-    return this.imageService.getThumbnail(environment.server, this.type + '/' + this.item.id, picture);
+    return this.imageService.getThumbnail(environment.mediaserver, this.type + '/' + this.item.id, picture);
   }
   getImages(): any[] {
     return this.mediaService.getImages(this.getItem());

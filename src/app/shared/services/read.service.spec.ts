@@ -9,8 +9,8 @@ describe('ReadService test', () => {
        service = new ReadService();
    });
 
-  it('getUrl', () => expect(service.getUrl('calendar', '1')).toBe('/public/calendar/1.json'));
-  it('getIndexUrl', () => expect(service.getIndexUrl('calendar')).toBe('/public/calendar/index/index.json'));
+  it('getUrl', () => expect(service.getUrl('calendar', '1')).toBe('/calendar/1'));
+  it('getIndexUrl', () => expect(service.getIndexUrl('calendar')).toBe('/calendar'));
 
 
 

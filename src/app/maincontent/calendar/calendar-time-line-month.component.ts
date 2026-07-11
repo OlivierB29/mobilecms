@@ -2,6 +2,7 @@ import { Component, AfterViewInit, Input } from '@angular/core';
 import { Activity } from '../activity/activity';
 
 import { CalendarTimeLineComponent } from './calendar-time-line.component';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -26,7 +27,7 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
     ngAfterViewInit(): void {
       let localItems;
       // Load activities and add link URL, logo URL
-      this.http.get<any>(this.dataService.getIndexUrl(this.type))
+      this.http.get<any>(this.dataService.getIndexUrl(environment.apiserver, this.type))
     .subscribe((data: any[]) => {
     localItems = data;
     // About 10-20 events per season.
@@ -128,6 +129,6 @@ export class CalendarTimeLineMonthComponent  extends CalendarTimeLineComponent  
     }
     getActivityLogo(activity: string): string {
 
-      return this.activityService.getDefaultActivityLogo(this.activities, activity).url;
+      return this.activityService.getDefaultActivityLogo(environment.mediaserver, this.activities, activity).url;
     }
 }

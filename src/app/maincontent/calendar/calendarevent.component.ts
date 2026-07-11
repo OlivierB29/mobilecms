@@ -55,14 +55,14 @@ export class CalendarEventComponent  implements OnInit {
 
       if (this.type && this.id) {
 
-        this.http.get<any>(this.readService.getUrl(this.type, this.id))
+        this.http.get<any>(this.readService.getUrl(environment.apiserver, this.type, this.id))
             .subscribe((data: any) => {
               this.item = data;
 
               this.activity = this.item.activity;
 
               this.parentUrl = '/' + this.routeUtil.getCalendarRoute(environment.defaultlocale) + '/' + this.item.activity ;
-              this.item.media = this.mediaService.initMediaUrl(this.type, this.id, this.item.media, this.media);
+              this.item.media = this.mediaService.initMediaUrl(environment.mediaserver, this.type, this.id, this.item.media);
             });
 
       } else {

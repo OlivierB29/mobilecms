@@ -1,28 +1,25 @@
 import { Injectable } from '@angular/core';
 
 
-import { environment } from 'src/environments/environment';
 
 
 @Injectable()
 export class ReadService {
 
-  private root = environment.server;
-
     constructor() {
     }
 
-    public getPublicData = (file: string): string => {
-     return this.root  +  '/' + environment.public + '/'  +  file;
+    public getPublicData = (server: string, file: string): string => {
+     return server  +  '/' + 'foobar01' + '/'  +  file;
     // return this.root  +  '/assets/'  +  file;
     }
 
-    public getUrl = (type: string, id: string): string => {
-      return this.root  +  '/' + environment.public + '/'  +  type  +  '/'  +  id  +  '.json';
+    public getUrl = (server: string, type: string, id: string): string => {
+      return server  +  '/' + 'webapi/content' + '/'  +  type  +  '/'  +  id;
     }
 
-    public getIndexUrl = (type: string): string => {
-      return this.root  +  '/' + environment.public + '/'  +  type  +  '/index/index.json';
+    public getIndexUrl = (server: string, type: string): string => {
+      return server  +  '/' + 'webapi/content' + '/'  +  type  ;
     }
 
 

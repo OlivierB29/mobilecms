@@ -12,6 +12,7 @@ import { Log } from 'src/app/shared/services/log.service';
 import { Event } from 'src/app/shared/model/event';
 
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
 
@@ -77,7 +78,7 @@ export class CalendarListComponent implements OnInit {
 
 
         if (this.activity) {
-          this.http.get<any>(this.dataservice.getIndexUrl(this.type))
+          this.http.get<any>(this.dataservice.getIndexUrl(environment.apiserver, this.type))
               .subscribe((data: Event[]) => {
                 this.items = data;
                 this.log.debug('getCalendarEvents complete : '  +  this.activity  +  ' '  +  this.items.length);

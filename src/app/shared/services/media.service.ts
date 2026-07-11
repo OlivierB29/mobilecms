@@ -1,6 +1,6 @@
 export class MediaService {
 
-    initMediaUrl(type: string, id: string, media: any[], mediaUri: string): any[] {
+    initMediaUrl(server: string,type: string, id: string, media: any[]): any[] {
       const result : any[] = [];
 
 
@@ -8,7 +8,7 @@ export class MediaService {
 
         media.forEach((m: any) => {
           const newMedia: any = Object.assign({}, m);
-          newMedia.url = mediaUri + '/' + type + '/' + id + '/' + m.url;
+          newMedia.url = server + '/' + type + '/' + id + '/' + m.url;
 
           result.push(newMedia);
         });

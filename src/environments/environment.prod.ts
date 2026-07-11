@@ -1,8 +1,10 @@
 export const environment = {
   production: true,
-  server: '/',
+  apiserver: '/',
+  mediaserver: '/media',
+  assetserver: '/assets',
   defaultlocale: 'fr',
   locale: 'fr-FR',
   log: 'error',
-  public: '/public'
+
 };

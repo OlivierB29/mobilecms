@@ -7,7 +7,8 @@ export const environment = {
   production: false,
   defaultlocale: 'en',
   locale: 'fr-FR',
-  server: '',
+  apiserver: 'http://localhost:8888/mobilecmsapi/v43',
+  mediaserver: 'http://localhost:8888/media',
+  assetserver: 'http://localhost:8888/assets',
   log: 'debug',
-  public: 'public'
 };

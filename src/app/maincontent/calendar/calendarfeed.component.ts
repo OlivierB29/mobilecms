@@ -50,7 +50,7 @@ export class CalendarFeedComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     let localItems;
     // Load activities and add link URL, logo URL
-    this.http.get<any>(this.dataService.getIndexUrl(this.type))
+    this.http.get<any>(this.dataService.getIndexUrl(environment.apiserver, this.type))
 .subscribe((data: any[]) => {
 localItems = data;
 // About 10-20 events per season.
@@ -79,7 +79,7 @@ for (let i = 0; i < localItems.length; i++) {
     //
     // Load activities and add link URL, logo URL
     //
-    this.http.get<any>(this.dataService.getIndexUrl('activities'))
+    this.http.get<any>(this.dataService.getIndexUrl(environment.apiserver, 'activities'))
     .subscribe((data: Activity[]) => {
       // exclude activities without clubs
       let result = data.filter(a => a.clublist && 'false' !== a.clublist);
@@ -101,7 +101,7 @@ for (let i = 0; i < localItems.length; i++) {
  }
  getActivityLogo(activity: string): string {
 
-  return this.activityService.getDefaultActivityLogo(this.activities, activity).url;
+  return this.activityService.getDefaultActivityLogo(environment.mediaserver, this.activities, activity).url;
 }
 
 

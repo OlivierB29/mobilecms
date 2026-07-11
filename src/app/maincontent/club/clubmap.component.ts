@@ -19,6 +19,7 @@ import { Coordinates } from 'src/app/shared/model/coordinates';
 
 import { Thumbnail } from 'src/app/shared/model/thumbnail';
 import { Activity } from '../activity/activity';
+import { environment } from 'src/environments/environment';
 
 
 /**
@@ -82,7 +83,7 @@ export class ClubMapComponent implements OnInit {
 
 
 
-    const headPromise = this.http.get(this.dataService.getUrl('description', 'head')).toPromise();
+    const headPromise = this.http.get(this.dataService.getUrl(environment.apiserver, 'description', 'head')).toPromise();
     this.log.debug(headPromise);
     headPromise.then((res: any) => {
 
@@ -119,7 +120,7 @@ export class ClubMapComponent implements OnInit {
   private loadClubsAndSvg(mapUrl: string, firstPoi: Coordinates, lastPoi: Coordinates): void {
 
 
-    const api = this.dataService.getIndexUrl('clubs');
+    const api = this.dataService.getIndexUrl(environment.apiserver, 'clubs');
     const promise = this.http.get(api).toPromise();
     this.log.debug(promise);
     promise.then((res: any) => {
@@ -224,7 +225,6 @@ export class ClubMapComponent implements OnInit {
 
   getClubImg(club: Club): Thumbnail {
     let result: Thumbnail = new Thumbnail("10", "10", "");
-    //return 'public/activities/' + club.activity + '/' + club.activity + '-32px.png';
 
     // detect if a club has a logo (the first image)
     if (club.media && club.media.length > 0 && club.media[0].thumbnails && club.media[0].thumbnails.length > 0) {
@@ -266,7 +266,7 @@ export class ClubMapComponent implements OnInit {
     if (this.activities) {
       let filter = this.activities.filter(a => a.name === activity);
       if (filter.length > 0) {
-        result = new Thumbnail("32", "32", 'public/activities/' + activity + '/' + filter[0].mapicon);
+        result = new Thumbnail("32", "32", environment.mediaserver + '/activities/' + activity + '/' + filter[0].mapicon);
       }
     }
     return result;
@@ -275,12 +275,11 @@ export class ClubMapComponent implements OnInit {
 
   getActivityImg(club: Club): string {
     let result = '';
-    //return 'public/activities/' + club.activity + '/' + club.activity + '-32px.png';
 
     if (this.activities) {
       let filter = this.activities.filter(a => a.name === club.activity);
       if (filter.length > 0) {
-        result = 'public/activities/' + club.activity + '/' + filter[0].mapicon;
+        result = environment.mediaserver + '/activities/' + club.activity + '/' + filter[0].mapicon;
       }
     }
 
@@ -346,7 +345,7 @@ export class ClubMapComponent implements OnInit {
 
 
   getLogoUrl(id: string, file: string): string {
-    return 'public/activities/' + id + '/' + file;
+    return 'activities/' + id + '/' + file;
   }
 
 

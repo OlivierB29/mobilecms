@@ -20,7 +20,7 @@ Since this project is the frontend, an admin app is necessary :
 ## Development server
 - Node JS
 
-- `npm i -g @angular/cli`
+- `npm i -g @angular/cli@v16-lts`
 - `npm i`
 - `npm start`
 - Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

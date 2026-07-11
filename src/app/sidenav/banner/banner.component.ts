@@ -23,7 +23,7 @@ export  class BannerComponent implements OnInit {
 
 ngOnInit(): void {
 
-       this.url = environment.server + '/' + environment.public + '/resources/banner-' + this.layout + '.jpg';
+       this.url = environment.assetserver + '/resources/banner-' + this.layout + '.jpg';
 }
 
 }

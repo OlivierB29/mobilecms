@@ -2,6 +2,7 @@
 
 import { ActivityService } from '../activity';
 import { Activity } from '../activity/activity';
+import { environment } from 'src/environments/environment';
  
  @Component({
      selector: 'app-calendar-time-line-button',
@@ -49,7 +50,7 @@ import { Activity } from '../activity/activity';
       }
       getActivityLogo(): string {
   
-        return this.activityService.getDefaultActivityLogo(this.activities, this.item.activity).url;
+        return this.activityService.getDefaultActivityLogo(environment.mediaserver, this.activities, this.item.activity).url;
       }
       /**
     * get URL for current locale.

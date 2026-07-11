@@ -5,6 +5,7 @@ import { ReadService } from 'src/app/shared/services/read.service';
 import { Log } from 'src/app/shared/services/log.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Params } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -38,7 +39,7 @@ export class ClubDetailComponent implements OnInit {
 
         if (this.id) {
 
-            this.http.get<any>(this.readService.getUrl('clubs', this.id))
+            this.http.get<any>(this.readService.getUrl(environment.apiserver, 'clubs', this.id))
                 .subscribe((data: any) => {
                   this.item = data;
             });
