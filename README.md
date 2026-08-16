@@ -1,3 +1,7 @@
+# Discontinued
+New project
+https://github.com/OlivierB29/mobilecms-vue
+
 # MobileCms
 tl;dr : Small CMS with categories. Data is stored in JSON files.
 
